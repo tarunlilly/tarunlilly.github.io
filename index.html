@@ -1,0 +1,1463 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Japan 2026 — trip and visa file</title>
+<meta name="description" content="Route, day calendar, city maps, budget, visa file and consulate letter for a 16-night trip to Japan, 19 November to 5 December 2026.">
+<meta name="theme-color" content="#14203a">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Japan 2026">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root{--sumi:#14203a;--indigo:#2c4a7c;--paper:#f6f5f1;--card:#fffefb;--rule:#d6d8dd;--shu:#b93a26;--moss:#48704f;--mute:#6d7480;
+--tokyo:#2c4a7c;--fuji:#3f7d6a;--kyoto:#b93a26;--miya:#8a6d3b;--osaka:#6b4a7c;--transit:#6d7480}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--sumi);font:15px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif;padding:22px 18px 70px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.shell{max-width:1120px;margin:0 auto}
+.cover{border:1.5px solid var(--sumi);background:var(--card);margin-bottom:20px}
+.coverTop{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:20px 22px 16px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+h1{font-size:27px;letter-spacing:-.02em;margin:0 0 4px;font-weight:700}
+.sub{color:var(--mute);font-size:13.5px;margin:0;max-width:56ch}
+.seal{width:104px;height:104px;border:2.5px solid var(--rule);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--rule);flex:none;transition:color .45s,border-color .45s,transform .45s}
+.seal.on{border-color:var(--shu);color:var(--shu);transform:rotate(-7deg)}
+.sealPct{font-size:25px;font-weight:700;line-height:1}
+.sealTxt{font-size:9.5px;letter-spacing:.16em;margin-top:5px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.fld{border-right:1px solid var(--rule);padding:11px 16px 13px}
+.fld:last-child{border-right:none}
+.fld label{display:block;font-size:11px;color:var(--mute);margin-bottom:5px}
+.fld input{width:100%;border:none;border-bottom:1.5px solid var(--sumi);background:transparent;font:inherit;font-size:14.5px;color:var(--sumi);padding:2px 0 4px;outline:none}
+.fld input:focus{border-bottom-color:var(--shu)}
+.bar{height:5px;background:var(--rule);position:relative}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--indigo);transition:width .5s;display:block}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1.5px solid var(--sumi);margin-bottom:20px}
+.tab{background:none;border:none;border-bottom:3px solid transparent;font:inherit;font-size:14.5px;padding:9px 16px;cursor:pointer;color:var(--mute);margin-bottom:-1.5px}
+.tab:hover{color:var(--sumi)}
+.tab.on{color:var(--sumi);font-weight:700;border-bottom-color:var(--shu)}
+.panel{background:var(--card);border:1px solid var(--rule)}
+.phead{padding:15px 18px;border-bottom:1px solid var(--rule)}
+.phead h2{margin:0 0 3px;font-size:19px;letter-spacing:-.01em}
+.phead p{margin:0;font-size:13px;color:var(--mute);max-width:76ch}
+.btn{border:1px solid var(--sumi);background:transparent;color:var(--sumi);font:inherit;font-size:12.5px;padding:6px 12px;cursor:pointer}
+.btn:hover{background:var(--sumi);color:var(--card)}
+.btn.q{border-color:var(--rule);color:var(--mute)}
+.btn.q:hover{background:var(--rule);color:var(--sumi)}
+.tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.hide{display:none}
+/* map */
+.mapwrap{padding:10px 14px 16px}
+svg.map{width:100%;height:auto;display:block}
+.edge{fill:none;stroke:var(--rule);stroke-width:2}
+.edge.air{stroke-dasharray:6 6}
+.prog{fill:none;stroke:var(--shu);stroke-width:2.6;stroke-linecap:round}
+.node circle{fill:var(--card);stroke:var(--sumi);stroke-width:2;cursor:pointer}
+.node.visited circle{fill:var(--indigo);stroke:var(--indigo)}
+.node.sel circle{stroke:var(--shu);stroke-width:3.5}
+.node text{font:600 12.5px "Helvetica Neue",Helvetica,Arial;fill:var(--sumi);cursor:pointer}
+.node .nights{font:11px ui-monospace,Menlo,monospace;fill:var(--mute)}
+.legLbl{font:11px ui-monospace,Menlo,monospace;fill:var(--mute)}
+.mover{fill:var(--shu)}
+.mapfoot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:12px 18px;border-top:1px solid var(--rule)}
+.readout{font-size:13px;color:var(--mute);flex:1;min-width:220px}
+.readout b{color:var(--sumi)}
+/* calendar */
+.cals{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:16px 18px}
+@media(max-width:760px){.cals{grid-template-columns:1fr}}
+.cal h3{margin:0 0 9px;font-size:15px}
+.cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.dow{font-size:10.5px;color:var(--mute);text-align:center;padding-bottom:3px}
+.cell{aspect-ratio:1;border:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;color:var(--mute);cursor:default;padding:2px}
+.cell.trip{cursor:pointer;color:#fff;border-color:transparent;font-weight:600}
+.cell.trip:hover{outline:2px solid var(--sumi);outline-offset:-2px}
+.cell.sel{outline:3px solid var(--shu);outline-offset:-3px}
+.cell small{font-size:8.5px;font-weight:400;opacity:.85;line-height:1.1;text-align:center}
+.legend{display:flex;flex-wrap:wrap;gap:12px;padding:0 18px 14px;font-size:12px;color:var(--mute)}
+.sw{display:inline-block;width:11px;height:11px;margin-right:5px;vertical-align:-1px}
+.day{border-top:1px solid var(--rule);padding:16px 18px}
+.dayhead{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline;margin-bottom:10px}
+.dayhead h3{margin:0;font-size:18px}
+.daymeta{font-size:12px;color:var(--mute)}
+.line{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed var(--rule);font-size:13.5px}
+.line:last-child{border-bottom:none}
+.line .tm{flex:none;width:78px;color:var(--indigo);font-size:12px;padding-top:2px}
+.tag{display:inline-block;font-size:10.5px;padding:1px 7px;border:1px solid var(--rule);color:var(--mute);margin-left:6px}
+/* checklist */
+.grid2{display:grid;grid-template-columns:252px 1fr;gap:22px;align-items:start}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.nb{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--rule);border-left:3px solid transparent;padding:11px 12px;cursor:pointer;font:inherit;color:var(--sumi)}
+.nb:hover{background:var(--card)}
+.nb.sel{border-left-color:var(--shu);background:var(--card);font-weight:700}
+.nb span:first-child{display:flex;gap:9px;align-items:baseline}
+.nid{color:var(--indigo);font-size:12px}
+.cnt{font-size:11.5px;color:var(--mute)}
+.cnt.full{color:var(--moss)}
+.row{border-bottom:1px solid var(--rule)}
+.rhead{display:flex;align-items:center;gap:12px;padding:12px 18px;cursor:pointer}
+.rhead:hover{background:var(--paper)}
+.tick{width:19px;height:19px;border:1.5px solid var(--sumi);flex:none;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;background:transparent;cursor:pointer;padding:0;line-height:1}
+.tick.on{background:var(--moss);border-color:var(--moss)}
+.tick.skip{background:var(--rule);border-color:var(--rule);color:var(--mute)}
+.rid{font-size:12px;color:var(--indigo);width:26px;flex:none}
+.rt{flex:1;font-size:14.5px}
+.opt{font-size:11px;color:var(--mute);border:1px solid var(--rule);padding:1px 6px}
+.body{padding:2px 18px 18px 54px;display:grid;gap:13px}
+.spec{font-size:13.5px;max-width:72ch}
+.why{font-size:13px;color:var(--mute);border-left:2px solid var(--shu);padding-left:11px;max-width:70ch}
+.file{font-size:12px;color:var(--moss)}
+textarea,.txt{width:100%;border:1px solid var(--rule);background:var(--paper);font:inherit;font-size:13px;padding:8px 10px;color:var(--sumi);resize:vertical}
+textarea:focus,.txt:focus{outline:none;border-color:var(--indigo)}
+/* letter */
+.lgrid{display:grid;grid-template-columns:320px 1fr;gap:0}
+@media(max-width:860px){.lgrid{grid-template-columns:1fr}}
+.lform{padding:15px 18px;border-right:1px solid var(--rule);display:grid;gap:11px;align-content:start}
+.lf label{display:block;font-size:11px;color:var(--mute);margin-bottom:3px}
+.lf input,.lf select{width:100%;border:1px solid var(--rule);background:var(--paper);font:inherit;font-size:13px;padding:6px 8px;color:var(--sumi)}
+.lf input:focus,.lf select:focus{outline:none;border-color:var(--indigo)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.letter{padding:15px 18px}
+pre.out{background:#fff;border:1px solid var(--rule);padding:18px 20px;font:13px/1.65 "Helvetica Neue",Helvetica,Arial;white-space:pre-wrap;margin:0 0 12px;max-height:620px;overflow:auto}
+pre.tree{background:var(--paper);border:1px solid var(--rule);padding:13px;font:11.5px/1.5 ui-monospace,Menlo,monospace;overflow:auto;max-height:300px;margin:0}
+.warn{border:1px solid var(--shu);background:#fff;padding:11px 15px;font-size:13px;margin-bottom:20px}
+.lk{display:block;padding:10px 18px;border-bottom:1px solid var(--rule);font-size:13.5px;text-decoration:none;color:var(--sumi)}
+.lk:hover{background:var(--paper)}
+.lk small{display:block;color:var(--mute);font-size:11.5px}
+a{color:var(--indigo)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--sumi);color:var(--card);padding:9px 17px;font-size:13px;z-index:60}
+.foot2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+@media(max-width:820px){.foot2{grid-template-columns:1fr}}
+.step{display:flex;gap:13px;padding:11px 18px;border-bottom:1px solid var(--rule);font-size:13.5px}
+.step b{color:var(--indigo);flex:none;width:16px}
+.land{fill:#e5e3dd;stroke:#ccc9c2;stroke-width:1}
+.seaLbl{font:italic 11px "Helvetica Neue",Helvetica,Arial;fill:#bcc0c5}
+.spur{fill:none;stroke:#aeb2b8;stroke-width:1.4;stroke-dasharray:2 4}
+.spurLbl{font:10px ui-monospace,Menlo,monospace;fill:#8b9098}
+.leader{stroke:#9aa0a8;stroke-width:1}
+.node .lbl{font:600 12.5px "Helvetica Neue",Helvetica,Arial;fill:var(--sumi);cursor:pointer}
+.node.sat circle{fill:var(--card);stroke:var(--mute);stroke-width:1.6}
+.node.sat .lbl{font-weight:400;font-size:11.5px;fill:var(--mute)}
+.node.opt circle{stroke-dasharray:3 3}
+.node.peak path{fill:#cbc8bf;stroke:#a9a69d;stroke-width:1}
+.node.peak .lbl{font:400 11px "Helvetica Neue",Helvetica,Arial;fill:var(--mute)}
+.insetBox{fill:#fffefb;stroke:var(--rule);stroke-width:1}
+.insetTitle{font:700 12.5px "Helvetica Neue",Helvetica,Arial;fill:var(--sumi)}
+.insetSub{font:10.5px "Helvetica Neue",Helvetica,Arial;fill:var(--mute)}
+.insetDot{fill:var(--indigo)}
+.insetLine{stroke:var(--indigo);stroke-width:1.2}
+.insetTxt{font:11.5px "Helvetica Neue",Helvetica,Arial;fill:var(--sumi)}
+.insetTime{font:10.5px ui-monospace,Menlo,monospace;fill:var(--mute)}
+.bsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-bottom:1px solid var(--rule)}
+.bcell{border-right:1px solid var(--rule);padding:13px 16px}
+.bcell:last-child{border-right:none}
+.bcell small{display:block;font-size:11px;color:var(--mute);margin-bottom:4px}
+.bcell b{font-size:20px;letter-spacing:-.01em}
+.bcell.tot b{color:var(--shu)}
+.bsec{border-bottom:1px solid var(--rule);padding:14px 18px}
+.bsec:last-child{border-bottom:none}
+.bsec h3{margin:0 0 3px;font-size:16px}
+.bsec .bnote{font-size:12.5px;color:var(--mute);margin:0 0 10px;max-width:80ch}
+.brow{display:grid;grid-template-columns:22px 1fr 110px 92px 78px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--rule);font-size:13px}
+.brow:last-of-type{border-bottom:none}
+.brow .wn{font-size:11.5px;color:var(--mute);font-family:ui-monospace,Menlo,monospace}
+.brow input[type=number]{width:100%;border:1px solid var(--rule);background:var(--paper);font:inherit;font-size:12.5px;padding:4px 6px;text-align:right;color:var(--sumi);font-family:ui-monospace,Menlo,monospace}
+.brow input[type=number]:focus{outline:none;border-color:var(--indigo)}
+.brow .inr{text-align:right;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--mute)}
+.brow.off{opacity:.42}
+.brow .lb{line-height:1.35}
+@media(max-width:760px){.brow{grid-template-columns:22px 1fr 84px;gap:6px}.brow .wn,.brow .inr{display:none}}
+.bsub{display:flex;justify-content:space-between;padding:9px 0 0;font-size:13px;font-weight:700;border-top:1.5px solid var(--sumi);margin-top:8px}
+.capbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 11px;border:1px solid var(--moss);font-size:12.5px;margin-bottom:10px;flex-wrap:wrap}
+.capbar.over{border-color:var(--shu);color:var(--shu)}
+.fxrow{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;padding:13px 18px;border-bottom:1px solid var(--rule)}
+.fxrow label{display:block;font-size:11px;color:var(--mute);margin-bottom:4px}
+.fxrow input{width:120px;border:none;border-bottom:1.5px solid var(--sumi);background:transparent;font:inherit;font-size:15px;padding:2px 0 3px;color:var(--sumi);font-family:ui-monospace,Menlo,monospace}
+.fxrow input:focus{outline:none;border-bottom-color:var(--shu)}
+.city{border-bottom:1px solid var(--rule);padding:16px 18px}
+.city:last-child{border-bottom:none}
+.city h3{margin:0 0 3px;font-size:18px}
+.city .sub2{font-size:13px;color:var(--mute);margin:0 0 12px;max-width:80ch}
+svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px solid var(--rule)}
+.cgreen{fill:#d7dfd0;stroke:#c6d0bd;stroke-width:1}
+.cwater{fill:#ccd8e1;stroke:#b8c7d3;stroke-width:1}
+.criver{fill:none;stroke:#c2d0da;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.ccont{fill:none;stroke:#dcd7c9;stroke-width:1.2;stroke-dasharray:3 4}
+.geoNote{font-size:12px;color:var(--mute);margin:9px 0 0;max-width:82ch}
+.cpt{stroke:#fffefb;stroke-width:1.5}
+.cpt.peak{stroke:none}
+.clbl{font:11.5px "Helvetica Neue",Helvetica,Arial;fill:var(--sumi)}
+.clbl.dim{fill:var(--mute)}
+.croute{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.72}
+.coff{font:10.5px ui-monospace,Menlo,monospace;fill:var(--mute)}
+.coffBox{fill:#fffefb;stroke:var(--rule)}
+.cscale{stroke:var(--sumi);stroke-width:1.4}
+.cscaleTxt{font:10px ui-monospace,Menlo,monospace;fill:var(--sumi)}
+.ckey{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12px;color:var(--mute)}
+.ckey b{color:var(--sumi);font-weight:600}
+.rkey{display:flex;flex-direction:column;gap:5px;margin-top:9px;font-size:12.5px}
+.rkey span i{display:inline-block;width:20px;height:3px;margin-right:8px;vertical-align:3px}
+.wake{display:inline-block;font:10.5px ui-monospace,Menlo,monospace;padding:1px 7px;border:1px solid var(--rule);color:var(--mute);margin-left:8px}
+.wake.EARLY{border-color:var(--shu);color:var(--shu)}
+.wake.late{border-color:var(--moss);color:var(--moss)}
+.datastrip{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  margin:-14px 0 20px;font-size:12px;color:var(--mute)}
+.dtools{display:flex;gap:7px;flex-wrap:wrap}
+.datastrip .btn{font-size:11.5px;padding:4px 9px}
+@media print{.datastrip{display:none}}
+.stay{border-bottom:1px solid var(--rule);padding:15px 18px}
+.stay h3{margin:0 0 2px;font-size:17px}
+.stay .when{font-size:12px;color:var(--mute);margin:0 0 8px}
+.stay .note{font-size:13px;max-width:78ch;margin:0 0 12px;background:none;border:none;padding:0}
+.optrow{display:grid;grid-template-columns:1.25fr .75fr .8fr 2fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--rule);font-size:13px;align-items:baseline}
+.optrow:last-of-type{border-bottom:none}
+.optrow .nm{font-weight:600}
+.optrow .ty{color:var(--mute);font-size:12px}
+.optrow .pr{color:var(--moss);font-size:12.5px;font-family:ui-monospace,Menlo,monospace}
+.optrow .wy{color:var(--mute)}
+@media(max-width:700px){.optrow{grid-template-columns:1fr;gap:2px;padding:11px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{.tabs,.btn,.mapfoot,.tools{display:none}}
+</style>
+
+<div class="shell">
+  <div class="cover">
+    <div class="coverTop">
+      <div>
+        <h1>Japan 2026</h1>
+        <p class="sub">Sixteen nights, 19 November to 5 December. Route, day calendar, visa file and consulate letter in one place. Everything you type is saved on this device.</p>
+      </div>
+      <div class="seal" id="seal"><div class="sealPct" id="sealPct">0%</div><div class="sealTxt mono" id="sealTxt">0 / 0</div></div>
+    </div>
+    <div class="fields">
+      <div class="fld"><label for="f_name">Applicant, as in passport</label><input id="f_name" data-k="name" placeholder="Full name"></div>
+      <div class="fld"><label for="f_trip">Travel window</label><input id="f_trip" data-k="trip"></div>
+      <div class="fld"><label for="f_sub">Target submission date</label><input id="f_sub" data-k="submit" placeholder="approx. 12 Oct 2026"></div>
+    </div>
+    <div class="bar"><i id="bar" style="width:0%"></i></div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+  <div class="datastrip">
+    <span id="dataMsg">Everything you type is saved in this browser only. Nothing is uploaded.</span>
+    <span class="dtools">
+      <button class="btn q" id="dExport">Export data</button>
+      <label class="btn q">Import<input type="file" accept="application/json" id="dImport" style="display:none"></label>
+      <button class="btn q" id="dReset">Reset</button>
+    </span>
+  </div>
+
+  <!-- ROUTE -->
+  <section id="p_route" class="tabpane">
+    <div class="panel">
+      <div class="phead"><h2>The route</h2><p>Honshu at true scale, greyed out, so you can see how little of Japan this covers. Solid lines are moves with luggage; dotted lines are day trips you come back from. Press play to walk the journey, or tap any stop for its hour-by-hour plan.</p></div>
+      <div class="mapwrap">
+        <svg class="map" viewBox="-40 60 760 420" id="svg" role="img" aria-label="Map of Honshu showing the four bases, travel legs and day trips"></svg>
+      </div>
+      <div class="mapfoot">
+        <button class="btn" id="play">Play route</button>
+        <button class="btn q" id="reset">Reset</button>
+        <span class="readout" id="readout">Bengaluru to Tokyo, then west across Honshu and home from Kansai.</span>
+      </div>
+    </div>
+    <div class="panel" id="nodeInfo" style="margin-top:22px"></div>
+  </section>
+
+  <!-- BUDGET -->
+  <section id="p_budget" class="tabpane hide">
+    <div class="panel"><div class="phead"><h2>Budget</h2><p>Every line below comes from the itinerary rather than a guess at a daily average. Edit any figure, untick anything you would skip, and the totals move. Saved on this device.</p></div>
+      <div id="budgetBody"></div>
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section id="p_cal" class="tabpane hide">
+    <div class="panel">
+      <div class="phead"><h2>Day calendar</h2><p>Each coloured square is a night of the trip. Click a day for flights, times, where you sleep and how you get to the next place.</p></div>
+      <div class="cals" id="cals"></div>
+      <div class="legend" id="legend"></div>
+      <div class="day" id="dayDetail"></div>
+    </div>
+  </section>
+
+  <!-- VISA -->
+  <section id="p_visa" class="tabpane hide">
+    <div class="warn">Visa rules for Indian nationals changed more than once recently, including the arrival of the online eVisa route. Confirm the current requirement and fee on the Embassy of Japan in India site before you submit. This is the assembly plan, not the legal source.</div>
+    <div class="grid2">
+      <nav id="secnav"></nav>
+      <div class="panel" id="docpanel"></div>
+    </div>
+    <div class="foot2">
+      <div class="panel"><div class="phead"><h2>Order of work</h2><p>Start with the slowest item, not the easiest one.</p></div><div id="steps"></div></div>
+      <div>
+        <div class="panel" style="margin-bottom:22px">
+          <div class="phead"><h2>Your Drive folder</h2><p>Create this structure in Drive, then paste the shared link so it lives with the checklist.</p></div>
+          <div style="padding:15px 18px;display:grid;gap:9px">
+            <input class="txt" id="drive" data-k="drive" placeholder="https://drive.google.com/drive/folders/…">
+            <div id="driveLink"></div>
+            <pre class="tree" id="tree"></pre>
+            <div class="tools"><button class="btn" id="copyTree">Copy structure</button><button class="btn q" id="saveTree">Download as .txt</button></div>
+          </div>
+        </div>
+        <div class="panel"><div class="phead"><h2>Official links</h2><p>Verify everything here before you rely on it.</p></div><div id="links"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAYS -->
+  <section id="p_stays" class="tabpane hide">
+    <div class="warn">Prices are indicative bands for a solo traveller, not quotes. Japanese rates move a long way with season and day of week, and late November to early December is the most expensive fortnight of the Kyoto year. Check the live rate before you count on any number here.</div>
+    <div class="panel" id="flightPanel" style="margin-bottom:22px"></div>
+    <div class="panel" id="staysPanel"></div>
+    <div class="panel" style="margin-top:22px"><div class="phead"><h2>Things to book ahead</h2><p>Everything here sells out or has a limited season.</p></div><div id="bookLinks"></div></div>
+  </section>
+
+  <!-- LETTER -->
+  <section id="p_letter" class="tabpane hide">
+    <div class="panel">
+      <div class="phead"><h2>Cover letter and schedule of stay</h2><p>Fill the left column once. The letter and the day-by-day schedule build themselves from your itinerary, so the two documents can't contradict each other.</p></div>
+      <div class="lgrid">
+        <div class="lform lf" id="lform"></div>
+        <div class="letter">
+          <div class="tools" style="margin-bottom:12px">
+            <button class="btn" id="copyLetter">Copy letter</button>
+            <button class="btn q" id="wordLetter">Download letter (.doc)</button>
+            <button class="btn q" id="wordSched">Download schedule of stay (.doc)</button>
+          </div>
+          <pre class="out" id="letterOut"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="toast hide" id="toast"></div>
+
+<script>
+"use strict";
+/* ---------- storage: Claude artifact storage if present, otherwise this device ---------- */
+var store={
+  async get(k){
+    if(window.storage&&window.storage.get){try{var r=await window.storage.get(k);return r&&r.value||null}catch(e){return null}}
+    try{return window.localStorage.getItem(k)}catch(e){return null}
+  },
+  async set(k,v){
+    if(window.storage&&window.storage.set){try{await window.storage.set(k,v);return}catch(e){}}
+    try{window.localStorage.setItem(k,v)}catch(e){}
+  }
+};
+var KEY="japan-2026-planner-v1";
+var D={name:"",trip:"19 Nov – 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{}};
+var blobs={};
+
+/* ---------- itinerary data ---------- */
+var PROJ={lon0:129.8,lat0:38.6,kx:62,ky:76};
+function px(lon){return (lon-PROJ.lon0)*PROJ.kx}
+function py(lat){return (PROJ.lat0-lat)*PROJ.ky}
+var COAST={
+ honshu:[[130.95,34.02],[131.6,33.98],[132.2,34.32],[132.9,34.36],[133.5,34.45],[134.2,34.60],[134.7,34.75],[135.2,34.68],[135.42,34.62],[135.15,34.30],[135.35,33.95],[135.78,33.48],[136.03,33.58],[136.35,34.05],[136.85,34.24],[136.72,34.62],[136.95,34.78],[137.2,34.63],[137.6,34.60],[138.2,34.60],[138.35,34.78],[138.55,34.65],[138.78,34.98],[138.85,34.72],[139.15,35.12],[139.55,35.30],[139.78,35.28],[139.85,35.05],[140.22,34.90],[140.42,35.40],[140.62,35.72],[140.86,35.75],[140.75,36.10],[140.85,36.40],[141.00,36.95],[140.95,37.80],[141.05,38.30],[141.40,38.60],[140.0,38.58],[139.55,38.15],[139.2,37.90],[138.55,37.45],[138.25,37.15],[137.85,37.05],[137.35,36.80],[137.10,37.05],[136.90,37.40],[136.72,37.30],[136.75,36.90],[136.35,36.55],[136.00,36.25],[135.95,35.95],[135.50,35.70],[135.15,35.58],[134.85,35.68],[134.40,35.60],[133.80,35.55],[133.20,35.50],[132.60,35.45],[132.05,35.10],[131.50,34.72],[131.05,34.38]],
+ shikoku:[[133.0,34.28],[133.7,34.35],[134.35,34.22],[134.64,33.95],[134.28,33.55],[133.60,33.50],[133.0,33.43],[132.55,33.25],[132.35,33.50],[132.80,33.90],[132.55,34.05]],
+ kyushu:[[130.90,33.90],[131.05,33.60],[131.70,33.28],[131.88,32.90],[131.45,32.45],[130.95,31.95],[130.20,31.35],[130.15,32.10],[129.80,32.60],[129.90,33.20],[130.30,33.60]],
+ awaji:[[134.75,34.58],[135.0,34.40],[134.95,34.22],[134.62,34.25],[134.55,34.45]]
+};
+var BASES=[
+  {id:"tokyo", name:"Tokyo",       colour:"#2c4a7c", nights:5, stay:"Nui. Hostel & Bar Lounge, Kuramae", area:"Taito, Tokyo"},
+  {id:"fuji",  name:"Kawaguchiko", colour:"#3f7d6a", nights:2, stay:"One night ryokan, one night hostel", area:"Fujikawaguchiko, Yamanashi"},
+  {id:"kyoto", name:"Kyoto",       colour:"#b93a26", nights:5, stay:"Len Kyoto Kawaramachi", area:"Shimogyo, Kyoto"},
+  {id:"osaka", name:"Osaka",       colour:"#6b4a7c", nights:4, stay:"Hostel Mitsuwaya Osaka", area:"Nipponbashi, Osaka"}
+];
+var NODES=[
+  {id:"tokyo", label:"Tokyo",       lon:139.70,lat:35.68, r:14, base:"tokyo", dx:16, dy:-14},
+  {id:"kamakura",label:"Kamakura",  lon:139.55,lat:35.32, r:6,  sat:"tokyo", dx:20, dy:16},
+  {id:"fuji",  label:"Kawaguchiko", lon:138.76,lat:35.50, r:10, base:"fuji", dx:-12, dy:-15},
+  {id:"fujisan",label:"Mt Fuji",    lon:138.73,lat:35.36, r:0,  peak:true, dx:-4, dy:24},
+  {id:"shizuoka",label:"Fuji Dream Bridge", lon:138.40,lat:34.98, r:5, sat:"fuji", opt:true, dx:0, dy:22},
+  {id:"kyoto", label:"Kyoto",       lon:135.77,lat:35.01, r:14, base:"kyoto", dx:-16, dy:-14},
+  {id:"uji",   label:"Uji",         lon:135.80,lat:34.88, r:6,  sat:"kyoto", dx:32, dy:-3},
+  {id:"nara",  label:"Nara",        lon:135.83,lat:34.69, r:6,  sat:"osaka", dx:34, dy:17},
+  {id:"himeji",label:"Himeji",      lon:134.694,lat:34.839, r:6, sat:"osaka", dx:-16, dy:-13},
+  {id:"osaka", label:"Osaka",       lon:135.50,lat:34.67, r:13, base:"osaka", dx:-26, dy:8},
+  {id:"kix",   label:"Kansai airport", lon:135.23,lat:34.43, r:7, dx:-30, dy:22}
+];
+var LEGS=[
+  {from:"tokyo",to:"fuji", mode:"Fuji Excursion limited express", dur:"2 h 00", note:"Direct from Shinjuku. Reserve ahead."},
+  {from:"fuji",to:"kyoto", mode:"Bus, then Shinkansen", dur:"3 h 45", note:"Bus to Mishima 1 h 45, Shinkansen on to Kyoto. Sit right side, seats D or E, for Fuji."},
+  {from:"kyoto",to:"osaka", mode:"JR or Hankyu", dur:"30 min", note:"The shortest move of the trip. Barely counts as travelling."},
+  {from:"osaka",to:"kix", mode:"Nankai or JR Haruka", dur:"40\u201375 min", note:"From Namba. Rapi:t is the fast one."}
+];
+var SPURS=[["tokyo","kamakura","1 h"],["fuji","shizuoka","1 h"],["kyoto","uji","17 min"],["osaka","nara","45 min"],["osaka","himeji","1 h"]];
+var DAYS=[
+ {date:"2026-11-19",base:"tokyo",title:"Arrive Tokyo",wake:"none",items:[
+   ["\u2014","No alarm, no plan. Whatever time you land, today is for nothing in particular."],
+   ["on arrival","Haneda. Visit Japan Web QR at immigration, Suica into Apple Wallet before you leave the plane. Haneda to Kuramae is one through-train, about 35 minutes."],
+   ["afternoon","Drop bags, walk the river. Dandelion Chocolate's factory caf\u00e9 is on the corner."],
+   ["21:00","Senso-ji lit up with nobody in it. Completely different place after nine."],
+   ["konbini","Your first 7-Eleven run. Egg sando, and the pudding."]]},
+ {date:"2026-11-20",base:"tokyo",title:"Kamakura",wake:"mid",items:[
+   ["\u2014","Friday, and the only clean weekday in the Tokyo block \u2014 which is exactly why Kamakura goes here rather than on the holiday weekend."],
+   ["09:00","JR Yokosuka line to Kita-Kamakura, about an hour."],
+   ["10:15","Engaku-ji and Meigetsu-in off the platform, then the wooded path south into Kamakura proper."],
+   ["11:45","Tsurugaoka Hachimangu, up the wide approach through its torii."],
+   ["12:45","Komachi-dori for lunch on your feet \u2014 shirasu rice bowls, croquettes, purple sweet potato soft serve."],
+   ["14:00","Hokoku-ji: a small bamboo grove where you sit at the back with a bowl of matcha. Quieter than anything in Arashiyama, which is part of why you can skip Arashiyama."],
+   ["15:15","Enoden two stops to Hase. Hasedera, and the Great Buddha ten minutes away. The Hasedera illumination may only just be starting this early in the season."],
+   ["16:20","Enoden to Kamakura-Koh\u014dmae. Sunset over the sea, and on a clear evening Fuji sits on the horizon across the bay."],
+   ["19:30","Back in Tokyo. Nothing planned."]]},
+ {date:"2026-11-21",base:"tokyo",title:"Cameras, then clothes",wake:"late",items:[
+   ["10:30","Map Camera, Shinjuku, at opening. Five floors, the deepest used inventory in Japan, graded honestly, tax-free with your passport. Used floors first."],
+   ["11:45","Kitamura, Alps Camera, Lemon-sha and Chuko Camera Box, all within the same blocks. Prices differ on identical glass, so this is where you compare."],
+   ["13:30","Nakano: Fujiya Camera and its used annex, then Nakano Broadway. Older manual glass is priced better here."],
+   ["15:30","Clothes. Aoyama and Ura-Harajuku: PUBLIC TOKYO for urban minimal, then Graphpaper, Auralee, Comoli, Lemaire, stein, Nanamica."],
+   ["17:30","Second-hand designer at Ragtag and Kindal, Harajuku. This is where the value is."],
+   ["19:30","Kikanbo in Kanda, spicy miso. Pork and chicken base."],
+   ["21:30","Omoide Yokocho, then Golden Gai. Albatross and Bar Araku take walk-ins and are used to foreigners. Cover \u00a5500\u20131,500; ask before you sit. Last trains around 00:30."]],
+   flag:"Saturday, and the first day of a three-day national holiday. Tokyo handles it better than anywhere \u2014 it is where everyone leaves from."},
+ {date:"2026-11-22",base:"tokyo",title:"Flea market, Yanaka, tea, Shibuya at sunset",wake:"late",items:[
+   ["09:30","Sunday. Tomioka Hachimangu's antique flea market in Monzen-nakacho, fifteen minutes from Kuramae. Small, local, and the only market on this trip whose date actually lines up."],
+   ["11:30","Yanaka. Wooden houses, cats, the cemetery avenue in late colour. Yanaka Ginza for a menchi-katsu on the street."],
+   ["13:30","Tea, the non-viral kind: Tokyo Saryo in Sangenjaya, single-origin sencha hand-dripped at a nine-seat counter. Reserve well ahead \u2014 it is a Sunday."],
+   ["16:00","Shibuya Sky for sunset, around 16:25 at this point in November. Holiday-weekend sunset slots vanish the day they release, so book about a month out."],
+   ["17:30","If it sold out: Tokyu Plaza 17F rooftop, Sakura Stage terrace, Hikarie 11F, or the crossing from the Starbucks in Q-Front. All free, all good."],
+   ["19:30","Nonbei Yokocho, behind Shibuya station. Six-seat bars where you cannot avoid talking to whoever is next to you."]]},
+ {date:"2026-11-23",base:"tokyo",title:"Slow west Tokyo",wake:"late",items:[
+   ["\u2014","Holiday Monday. Deliberately light, and deliberately not a day trip \u2014 everywhere outside the city is full today."],
+   ["11:00","Nakameguro and Daikanyama: 1LDK, Okura for indigo, Nanamica. I'm donut? before noon or the good flavours are gone."],
+   ["14:00","Shimokitazawa for vintage: New York Joe Exchange, Flamingo, Toyo Hyakkaten. Or Koenji, scruffier and cheaper."],
+   ["16:00","Meiji Jingu Gaien ginkgo avenue. Two weeks early for full gold, so expect green tipping to yellow rather than the postcard. Meiji Shrine through the forest afterwards."],
+   ["19:00","Ebisu Yokocho: communal tables, loud, the fastest way in Tokyo to end up drinking with strangers."],
+   ["23:00","The SG Club in Shibuya if you want one proper cocktail bar. Sleep in tomorrow; you are only moving as far as a mountain."]]},
+ {date:"2026-11-24",base:"fuji",title:"Tokyo to Kawaguchiko",wake:"late",items:[
+   ["\u2014","Tuesday. The holiday crowds went home last night, which is the single best thing about these dates."],
+   ["10:00","Check out. Fuji Excursion from Shinjuku, two hours, reserved."],
+   ["12:00","Drop bags. Walk the town and scout the Lawson angle in daylight so you know exactly where to stand tomorrow at dawn."],
+   ["15:00","Chureito Pagoda \u2014 400 steps up from Shimoyoshida. On a Tuesday in late November you may have the platform close to yourself."],
+   ["16:20","Honcho street in Fujiyoshida on the way down: Fuji framed at the end of a sloping shopping street. Also your fallback if the Lawson view is screened."],
+   ["17:00","The lake maples are at their tail end around now \u2014 the Momiji Corridor on the north shore is worth ten minutes if you pass it."],
+   ["18:30","The Lawson after dark. Sign lit, mountain behind, nobody there. The better version of that photograph."],
+   ["20:00","Dinner, bath, early night. This is the one you set an alarm for."]]},
+ {date:"2026-11-25",base:"fuji",title:"Fuji, all day",wake:"EARLY",items:[
+   ["06:20","The Lawson at first light. The one genuinely early morning of the trip, and the reason you came. Fuji grows its own cap cloud as the ground warms, so this hour decides everything. Stand on the legal side; there are wardens."],
+   ["07:30","North shore at Ubuyagasaki or Oishi Park for the inverted reflection \u2014 the water is stillest just after sunrise."],
+   ["09:30","Oshino Hakkai at opening, before the coaches. Eight spring-fed ponds with the mountain behind."],
+   ["12:00","Lake Yamanaka and the Panorama-dai viewpoint. Long lunch."],
+   ["14:30","Mt Tenjo by the Kachi Kachi ropeway, then walk down through the woods."],
+   ["17:00","Onsen. Yurari or Benifuji-no-Yu give you Fuji from the outdoor bath for about \u00a51,000 \u2014 which is how you get the ryokan feeling inside your budget."]]},
+ {date:"2026-11-26",base:"kyoto",title:"Optional second dawn, then Kyoto",wake:"optional",items:[
+   ["06:20","Only if yesterday clouded over. Insurance, not obligation \u2014 if the shot is in the bag, sleep until nine."],
+   ["11:00","Bus Kawaguchiko to Mishima, 1 h 45."],
+   ["optional","Fuji Dream Bridge detour: Kodama from Mishima to Shizuoka is 25 min, then a taxi each way. Two hours door to door, and only on a clear morning."],
+   ["13:40","Shinkansen to Kyoto. Right-hand side, seats D or E \u2014 Fuji fills the window for the first ten minutes out of Mishima."],
+   ["16:30","Check in. Nothing demanding today."],
+   ["19:00","Nishiki Market as it closes, then Pontocho alley for dinner."]]},
+ {date:"2026-11-27",base:"kyoto",title:"The Eizan line into the northern mountains",wake:"late",items:[
+   ["\u2014","Friday, and first in the Kyoto block on purpose: northern Kyoto colours a week or two ahead of the city, so this day is best taken early and on a weekday."],
+   ["10:30","Demachiyanagi and the Eizan railway."],
+   ["10:50","Take the Kirara observation car if one comes \u2014 side-facing windows. Between Ichihara and Ninose the line runs through the momiji tunnel, where the train slows right down inside a canopy of maples."],
+   ["11:30","Kurama. The temple climb through exposed cedar roots to the summit, then over the ridge and down into Kibune \u2014 about an hour of walking, and the best hour of the Kyoto week."],
+   ["14:00","Kifune Shrine and its stone lantern staircase. Lunch in Kibune."],
+   ["15:30","Eizan back. If Rurikoin's autumn opening is running, change for the Yase branch \u2014 these dates give it a real chance where the old ones did not. Timed tickets, book ahead."],
+   ["17:00","Otherwise stop at Ichijoji for Shisen-do and Enko-ji, two small quiet temples with very good late colour."],
+   ["19:00","Ichijoji ramen street. Menya Gokkei for thick chicken paitan. Students, not tourists."]]},
+ {date:"2026-11-28",base:"kyoto",title:"Uji all day, Fushimi Inari at night",wake:"late",items:[
+   ["\u2014","Saturday in peak season. Uji absorbs a weekend far better than central Kyoto does, and Inari after dark has no crowd at all \u2014 so today sidesteps the worst day of the week."],
+   ["10:30","JR south to Uji, twenty-five minutes from Kyoto station."],
+   ["11:15","Byodoin and the Phoenix Hall on its pond; the interior needs a separate timed ticket. Then Byodoin Omotesando for lunch: matcha soba, matcha everything."],
+   ["14:00","Matcha culture, hands on: grind your own tea in a stone mill at Fukujuen's Ujicha Kobo or the Chazuna tea museum. Then compare houses \u2014 Nakamura Tokichi for the famous parfait, Marukyu Koyamaen and Itoh Kyuemon for the serious leaf."],
+   ["16:00","Taiho-an, the municipal tea house. A formal ceremony for about \u00a5500, unhurried, nearly always empty. The one you will actually remember."],
+   ["17:15","The Uji river at dusk, then the JR Nara line back \u2014 Inari station is twelve minutes up."],
+   ["18:45","Fushimi Inari at night. The shrine never closes and never charges, and after dark the senbon torii are lit from within while the crowd is simply gone. Go as far as Yotsutsuji for the city below, take a torch, and turn back there \u2014 above that the path is genuinely dark and the boar signs are not decorative."],
+   ["21:30","Ramen on the way home."]]},
+ {date:"2026-11-29",base:"kyoto",title:"Kinkaku-ji, Nijo, and Kiyomizu after dark",wake:"late",items:[
+   ["\u2014","Sunday in peak koyo. Today deliberately favours big sites that swallow a crowd over narrow ones that choke on it."],
+   ["10:30","Kinkaku-ji, the golden pavilion. Twenty minutes is enough \u2014 it is one view on a one-way loop, which keeps moving even when busy."],
+   ["11:30","Ryoan-ji's rock garden, fifteen minutes away, then Ninna-ji if you are enjoying yourself."],
+   ["14:00","Nijo Castle. Ninomaru Palace and the nightingale floors, which squeak deliberately underfoot. A big site on a big plot, so Sunday barely registers. Last entry around 16:00."],
+   ["16:30","Bus east. Coffee somewhere around Gion before the light goes."],
+   ["18:00","Kiyomizu-dera's autumn night opening. Lit hillside, the beam of light thrown into the sky, the whole veranda after dark. Verify the dates; these ones sit comfortably inside the usual window."],
+   ["21:00","Pontocho or Kiyamachi afterwards. You are twelve minutes' walk from your bed."]]},
+ {date:"2026-11-30",base:"kyoto",title:"Tofuku-ji, Higashiyama, Eikan-do lit",wake:"late",items:[
+   ["10:00","Tofuku-ji on a Monday. The Tsutenkyo bridge over a valley of maples, exactly in its week and without the weekend crush \u2014 which is precisely why it sits here and not yesterday."],
+   ["12:00","North to Kodai-ji and its bamboo path, then Yasaka Shrine and Maruyama Park."],
+   ["14:00","Matcha, properly: Ippodo's Kaboku tearoom on Teramachi, brewed in front of you with the water temperature explained. Founded 1717 and still not a queue attraction."],
+   ["15:45","Gion \u2014 Hanamikoji, then Shirakawa lane along the canal, which is the prettier half and takes a fraction of the traffic."],
+   ["17:00","The Philosopher's Path at dusk and the Nanzen-ji aqueduct. Both outdoors and open when the halls have shut."],
+   ["18:00","Eikan-do's autumn illumination. The hillside lit and reflected in the pond \u2014 the best night photograph in Kyoto, and your last night here."],
+   ["20:30","Late dinner on Kiyamachi."]]},
+ {date:"2026-12-01",base:"osaka",title:"Slow morning, then Osaka",wake:"late",items:[
+   ["\u2014","Nothing booked before eleven. Sixth day in Kyoto, thirteenth of the trip."],
+   ["11:00","A last coffee, or anything you missed. Kyoto station is fifteen minutes away whenever you decide to move."],
+   ["13:00","Train to Osaka. Thirty minutes. Barely counts as travelling."],
+   ["14:30","Check in at Nipponbashi."],
+   ["15:00","Den Den Town, directly below you. Second-hand electronics and camera gear, sometimes under Tokyo prices on older lenses. Kuromon Market next door."],
+   ["18:00","Shinsekai and Tsutenkaku, better after dark than in daylight. Kushikatsu in Janjan Yokocho \u2014 one dip in the communal sauce, no second dip, they will tell you."],
+   ["20:30","Dotonbori for the neon, briefly, then the smaller streets behind it."]]},
+ {date:"2026-12-02",base:"osaka",title:"Himeji",wake:"mid",items:[
+   ["09:30","JR Special Rapid from Osaka, about an hour, \u00a51,520 each way and no Shinkansen surcharge. A Wednesday, which matters \u2014 the castle is a different place midweek."],
+   ["10:45","Out of the station and straight down the avenue. The castle sits at the end of it, framed, about fifteen minutes' walk. That approach is the photograph."],
+   ["11:00","Himeji Castle. The only great Japanese castle never burned, bombed or rebuilt in concrete \u2014 everything you climb through is original timber. The keep is six storeys of steep wooden stairs, so soft shoes."],
+   ["13:00","Koko-en next door: nine walled Edo gardens, very good late colour, and a tea house where you can sit with matcha looking at the moat."],
+   ["14:30","Bus to the Mount Shosha ropeway for Engyo-ji \u2014 wooden halls on a cedar ridge above the city, where The Last Samurai was filmed. Quiet, atmospheric, and the best of the day if the weather holds."],
+   ["17:00","Down and back to the station."],
+   ["18:45","Osaka. Dinner in Namba."]]},
+ {date:"2026-12-03",base:"osaka",title:"Nara",wake:"mid",items:[
+   ["09:30","Forty-five minutes out, on a Thursday. Not dawn, but ahead of the coaches and without a weekend."],
+   ["10:30","Todai-ji and the Great Buddha, the largest wooden building you will ever stand inside."],
+   ["12:00","Kasuga Taisha's stone lantern paths through the forest."],
+   ["13:30","Nigatsu-do's terrace \u2014 free, open, and hardly anyone climbs to it. The whole valley from above."],
+   ["15:00","Nara Park holds its colour into December and the deer are genuinely everywhere. The most relaxed photography of the trip."],
+   ["18:00","Back to Osaka. Okonomiyaki, karaoke in Namba."]]},
+ {date:"2026-12-04",base:"osaka",title:"Minoh Falls, then the last night",wake:"late",items:[
+   ["10:30","Hankyu from Umeda to Minoo, about thirty minutes. Out of the city and into a forested gorge in under an hour, on a Friday rather than a Sunday, which matters here \u2014 this is an Osaka local favourite."],
+   ["11:15","The walk up the valley is 2.7 km on a paved riverside path, about 45 minutes each way, uphill but gentle. The first week of December is exactly when this gorge peaks."],
+   ["12:15","Minoh Falls itself, 33 metres straight down into the pool."],
+   ["13:00","Momiji tempura on the way back \u2014 maple leaves salted, battered and fried, sold from stalls along the path. A local thing, not a tourist thing."],
+   ["15:00","Back in Namba. Desserts: Rikuro Ojisan cheesecake eaten warm, Gram Caf\u00e9 pancakes if you want the queue."],
+   ["18:30","Jinrui Mina Menrui in Esaka, or Menya Joroku."],
+   ["20:30","Ura-Namba on a Friday night, which is the best it gets. Standing bars and people who start conversations unprompted \u2014 your last and best night for making friends."]]},
+ {date:"2026-12-05",base:null,title:"Fly home",wake:"mid",items:[
+   ["11:00","Nankai Rapi:t or JR Haruka from Namba to Kansai, 40\u201375 min. This assumes an afternoon departure; a 09:00 flight would mean leaving Namba at six."],
+   ["3 h before","Tax-free purchases can be inspected. Keep receipts sealed until past Japanese customs."],
+   ["","Fly KIX to Bengaluru, landing late on Saturday night. Sunday to recover. Declare honestly on arrival \u2014 the allowance is \u20b950,000 of goods."]]}
+];
+var CITYMAPS=[
+ {id:"tokyo",name:"Tokyo",sub:"You sleep on the quiet river side and commute west. Nothing here is more than 35 minutes from Kuramae.",
+  pts:[{n:"Kuramae",lon:139.792,lat:35.700,k:"stay"},{n:"Asakusa",lon:139.797,lat:35.715,k:"see"},
+       {n:"Yanaka",lon:139.765,lat:35.727,k:"see"},{n:"Ginza",lon:139.764,lat:35.672,k:"shop"},
+       {n:"Shinjuku",lon:139.700,lat:35.690,k:"shop"},{n:"Nakano",lon:139.666,lat:35.706,k:"shop"},
+       {n:"Aoyama / Harajuku",lon:139.708,lat:35.670,k:"shop"},{n:"Gaien ginkgo",lon:139.717,lat:35.676,k:"see"},
+       {n:"Shibuya",lon:139.702,lat:35.659,k:"night"},{n:"Ebisu",lon:139.710,lat:35.647,k:"night"},
+       {n:"Nakameguro",lon:139.699,lat:35.644,k:"shop"},{n:"Shimokitazawa",lon:139.668,lat:35.661,k:"shop"},
+       {n:"Sangenjaya",lon:139.671,lat:35.643,k:"eat"}],
+  green:[[[139.694,35.679],[139.706,35.681],[139.708,35.669],[139.695,35.667]],[[139.769,35.711],[139.778,35.718],[139.775,35.723],[139.766,35.716]]],
+  water:[[[139.744,35.689],[139.758,35.691],[139.761,35.682],[139.750,35.677],[139.742,35.682]]],
+  rivers:[[[139.801,35.740],[139.804,35.720],[139.797,35.705],[139.790,35.695],[139.788,35.680],[139.781,35.668],[139.774,35.655]],[[139.708,35.654],[139.699,35.644],[139.690,35.634]]],
+  geo:"Sumida river down the east side, Meguro river through Nakameguro, the palace moat in the middle and the Meiji Shrine forest between Harajuku and Shibuya.",
+  off:[["Kamakura","southwest","1 h"],["Haneda","south","30 min"],["Kawaguchiko","west","2 h"]],
+  routes:[{lbl:"Day 3 \u00b7 cameras and clothes",c:"#b93a26",p:["Shinjuku","Nakano","Aoyama / Harajuku","Shinjuku"]},
+          {lbl:"Day 4 \u00b7 flea market, Yanaka, Shibuya",c:"#2c4a7c",p:["Yanaka","Sangenjaya","Gaien ginkgo","Shibuya"]},
+          {lbl:"Day 5 \u00b7 slow west",c:"#3f7d6a",p:["Nakameguro","Shimokitazawa","Ebisu"]}]},
+ {id:"fuji",name:"Kawaguchiko",sub:"The lake sits north of the mountain, which is why every reflection shot faces south. Chureito is east, over the ridge in Fujiyoshida.",
+  pts:[{n:"Kawaguchiko stn",lon:138.762,lat:35.501,k:"stay"},{n:"The Lawson",lon:138.7565,lat:35.5045,k:"see"},
+       {n:"Mt Tenjo ropeway",lon:138.766,lat:35.494,k:"see"},{n:"Ubuyagasaki",lon:138.752,lat:35.525,k:"see"},
+       {n:"Oishi Park",lon:138.742,lat:35.535,k:"see"},{n:"Chureito Pagoda",lon:138.801,lat:35.500,k:"see"},
+       {n:"Honcho street",lon:138.793,lat:35.487,k:"see"},{n:"Oshino Hakkai",lon:138.833,lat:35.460,k:"see"},
+       {n:"Lake Yamanaka",lon:138.868,lat:35.416,k:"see"},{n:"Mt Fuji",lon:138.727,lat:35.361,k:"peak"}],
+  water:[[[138.726,35.523],[138.744,35.537],[138.763,35.534],[138.777,35.522],[138.769,35.507],[138.751,35.502],[138.734,35.510]],[[138.852,35.429],[138.881,35.426],[138.886,35.407],[138.861,35.402],[138.847,35.414]]],
+  contour:{lon:138.7275,lat:35.3606,rings:[0.022,0.045,0.072,0.10]},
+  geo:"Lake Kawaguchi sits north of the mountain, which is why every reflection faces south. The rings are rough elevation bands around the cone. Chureito is east, over the ridge in Fujiyoshida.",
+  off:[["Mishima, for the Shinkansen","south","1 h 45 by bus"],["Shinjuku","east","2 h"]],
+  routes:[{lbl:"Day 6 \u00b7 arrival afternoon",c:"#b93a26",p:["Kawaguchiko stn","Chureito Pagoda","Honcho street","The Lawson"]},
+          {lbl:"Day 7 \u00b7 the full day",c:"#2c4a7c",p:["The Lawson","Ubuyagasaki","Oishi Park","Oshino Hakkai","Lake Yamanaka","Mt Tenjo ropeway"]}]},
+ {id:"kyoto",name:"Kyoto",sub:"Everything splits into three strips: the eastern hills, the northwest temples, and the Inari ridge to the south. Each day below stays inside one strip, which is what keeps the pace down.",
+  pts:[{n:"Kawaramachi",lon:135.769,lat:35.004,k:"stay"},{n:"Kyoto stn",lon:135.758,lat:34.985,k:"stay"},
+       {n:"Nishiki",lon:135.765,lat:35.006,k:"eat"},{n:"Gion / Yasaka",lon:135.778,lat:35.003,k:"night"},
+       {n:"Kodai-ji",lon:135.780,lat:34.999,k:"see"},{n:"Kiyomizu-dera",lon:135.785,lat:34.995,k:"night"},
+       {n:"Nijo Castle",lon:135.748,lat:35.014,k:"see"},{n:"Kinkaku-ji",lon:135.729,lat:35.039,k:"see"},
+       {n:"Ryoan-ji",lon:135.718,lat:35.034,k:"see"},{n:"Ginkaku-ji",lon:135.798,lat:35.027,k:"see"},
+       {n:"Eikan-do",lon:135.795,lat:35.015,k:"night"},{n:"Nanzen-ji",lon:135.794,lat:35.011,k:"see"},
+       {n:"Demachiyanagi",lon:135.771,lat:35.030,k:"see"},{n:"Ichijoji",lon:135.789,lat:35.048,k:"eat"},
+       {n:"Tofuku-ji",lon:135.774,lat:34.977,k:"see"},{n:"Fushimi Inari",lon:135.772,lat:34.967,k:"night"}],
+  green:[[[135.788,35.052],[135.812,35.052],[135.812,34.962],[135.794,34.962],[135.785,34.994],[135.797,35.020],[135.788,35.041]],[[135.700,35.046],[135.812,35.052],[135.812,35.062],[135.700,35.062]],[[135.700,35.046],[135.716,35.041],[135.713,34.988],[135.700,34.982]],[[135.757,35.031],[135.769,35.031],[135.769,35.015],[135.757,35.015]]],
+  rivers:[[[135.769,35.062],[135.771,35.040],[135.770,35.020],[135.766,35.000],[135.760,34.985],[135.754,34.968]],[[135.788,35.048],[135.778,35.036],[135.771,35.030]]],
+  geo:"The city is a grid on a valley floor with mountains on three sides. The Kamo river runs straight down the middle; the Takano joins it at Demachiyanagi, which is where the Eizan line starts climbing north. The green wall on the right is the Higashiyama ridge — everything on day 9 and day 12 hugs its base.",
+  off:[["Kurama and Kibune","north","30 min on the Eizan line"],["Uji","south","17 min"],["Osaka","southwest","30 min"]],
+  routes:[{lbl:"Day 9 \u00b7 Eizan north",c:"#6b4a7c",p:["Demachiyanagi","Ichijoji"]},{lbl:"Day 10 \u00b7 Uji, then Inari at night",c:"#3f7d6a",p:["Kyoto stn","Fushimi Inari"]},{lbl:"Day 11 \u00b7 slow Sunday, Kiyomizu at night",c:"#8a6d3b",p:["Nijo Castle","Nishiki","Kiyomizu-dera"]},{lbl:"Day 12 \u00b7 Tofuku-ji, Higashiyama, Eikan-do lit",c:"#b93a26",p:["Tofuku-ji","Kodai-ji","Gion / Yasaka","Eikan-do"]},{lbl:"Day 13 \u00b7 northwest, then the eastern path",c:"#2c4a7c",p:["Kinkaku-ji","Ryoan-ji","Ginkaku-ji","Nanzen-ji"]}]},
+ {id:"osaka",name:"Osaka",sub:"Namba is the southern half and Umeda the northern; they are eight minutes apart on the subway. You are staying in the south, which is the better half for eating and drinking.",
+  pts:[{n:"Namba / Nipponbashi",lon:135.506,lat:34.664,k:"stay"},{n:"Dotonbori",lon:135.501,lat:34.669,k:"night"},
+       {n:"Den Den Town",lon:135.508,lat:34.657,k:"shop"},{n:"Kuromon Market",lon:135.506,lat:34.665,k:"eat"},
+       {n:"Shinsekai",lon:135.506,lat:34.652,k:"night"},{n:"Ura-Namba",lon:135.503,lat:34.667,k:"night"},
+       {n:"Umeda",lon:135.498,lat:34.702,k:"shop"},{n:"Osaka Castle",lon:135.526,lat:34.687,k:"see"},
+       {n:"Shin-Osaka",lon:135.500,lat:34.734,k:"stay"}],
+  green:[[[135.519,34.693],[135.535,34.693],[135.535,34.680],[135.519,34.680]]],
+  rivers:[[[135.470,34.719],[135.500,34.723],[135.528,34.716],[135.552,34.706]],[[135.488,34.694],[135.508,34.696],[135.528,34.693]],[[135.493,34.6683],[135.506,34.6690],[135.516,34.6682]]],
+  geo:"Flat, and cut by water. The Yodo runs across the top, the Dotonbori canal through the middle of the nightlife, and the castle park is the only real green in the frame.",
+  off:[["Minoh Falls","north","30 min from Umeda"],["Nara","east","45 min"],["Himeji","west","1 h"],["Kansai airport","southwest","40 min"],["Kyoto","northeast","30 min"]],
+  routes:[{lbl:"Day 14 \u00b7 arrival afternoon and evening",c:"#b93a26",p:["Shin-Osaka","Namba / Nipponbashi","Den Den Town","Kuromon Market","Shinsekai","Dotonbori"]},{lbl:"Day 16 \u00b7 Minoh, then the last night",c:"#3f7d6a",p:["Umeda","Namba / Nipponbashi","Ura-Namba"]}]}
+];
+var FLIGHTS={
+ shape:"One ticket, two different airports: into Haneda on 18\u201319 November, out of Kansai on Saturday 5 December. Book it as a single multi-city fare, not two one-ways \u2014 an open jaw is usually priced close to a straight return, and two separate tickets are not.",
+ rows:[
+  ["Singapore Airlines","BLR\u2013SIN\u2013HND out, KIX\u2013SIN\u2013BLR back","15\u201317 h","The best-run connection of the four. Singapore to Haneda is an overnight that lands early, so you get a full first day. Usually the most expensive of this group."],
+  ["Thai Airways","BLR\u2013BKK\u2013HND / KIX\u2013BKK\u2013BLR","15\u201318 h","Bangkok is the easiest transit in Asia and connection windows are generous. Often the sweet spot on price against comfort."],
+  ["Cathay Pacific","BLR\u2013HKG\u2013HND / KIX\u2013HKG\u2013BLR","15\u201318 h","Frequently the cheapest full-service option on this pair. Hong Kong transit is quick if the connection is tight."],
+  ["Malaysia Airlines","BLR\u2013KUL\u2013HND / KIX\u2013KUL\u2013BLR","16\u201319 h","Usually the lowest full-service fare. Layovers can be long; check before you commit."],
+  ["Air India","BLR\u2013DEL\u2013HND","14\u201316 h","Single carrier, domestic connection at Delhi T3. Outbound only \u2014 no Kansai service, so it does not fit the open jaw unless you fly home from Tokyo instead."],
+  ["Self-transfer on budget carriers","IndiGo to SIN, KUL or BKK, then Scoot or AirAsia X","18\u201324 h","The cheapest way there and the wrong one for this trip. Two separate tickets means no protection if the first leg slips, bags must be re-collected and re-checked, and you are carrying lenses home. Skip it."]],
+ tips:[
+  ["Fly into Haneda, not Narita","Haneda to Kuramae is about 30 minutes. Narita is 60 to 90 and costs more. Worth paying a little extra for."],
+  ["Late-morning out of Kansai, not afternoon","To land in Bengaluru on Saturday evening you need to leave KIX around 10:00\u201312:00, so out of Namba by about 08:00. Later and you arrive home in the small hours of Sunday. The one morning where the alarm earns its keep."],
+  ["Book around June to August 2026","Three to five months out is usually the sweet spot on this route. You are clear of the late-December spike, but fares firm up from September."],
+  ["Hold, don't buy, until the visa lands","The consulate accepts a confirmed reservation. Do not pay for a non-refundable ticket before approval."],
+  ["Buy extra baggage online","You are coming home with lenses and clothes. Pre-purchased allowance is far cheaper than airport rates. Full-service carriers usually give 25\u201330 kg on Indian routes; confirm yours."],
+  ["Lenses and batteries in the cabin","Lithium batteries must fly in the cabin, not the hold. Cabin allowance is typically 7 kg and camera bags do get weighed, so wear the heavy coat and pack accordingly."]],
+ caveat:"As far as I know there was no non-stop between Bengaluru and Japan as of mid-2026, though a Tokyo\u2013Bengaluru route has been talked about for years. Check before you assume a connection is required. All fares and routings here are indicative and move constantly.",
+ links:[
+  ["Google Flights, outbound","https://www.google.com/travel/flights?q=Flights%20from%20BLR%20to%20HND%20on%202026-11-18"],
+  ["Google Flights, return","https://www.google.com/travel/flights?q=Flights%20from%20KIX%20to%20BLR%20on%202026-12-05"],
+  ["Skyscanner, multi-city","https://www.skyscanner.co.in/"]]
+};
+var BUD={
+ fx:0.57, cap:5000, flights:65000, foodDay:5500,
+ nightly:{tokyo:4200,fuji:5500,kyoto:6000,osaka:4000},
+ transport:[
+  ["Haneda to Kuramae, Keikyu and Asakusa line",610,"Day 1"],
+  ["Tokyo subway and JR, five days",3000,"Days 1\u20135"],
+  ["Kamakura round trip, JR Yokosuka line",1940,"Day 2"],
+  ["Enoden line, Kamakura to Hase to Koh\u014dmae",800,"Day 2"],
+  ["Fuji Excursion, Shinjuku to Kawaguchiko, reserved",4130,"Day 6"],
+  ["Kawaguchiko area bus pass, two days",1500,"Days 6\u20138"],
+  ["Kawaguchiko to Mishima, highway bus",2300,"Day 8"],
+  ["Mishima to Kyoto, Shinkansen reserved",10540,"Day 8"],
+  ["Fuji Dream Bridge detour, Shizuoka and taxis",3400,"Day 8, optional"],
+  ["Kyoto bus and subway, five days",3500,"Days 8\u201313"],
+  ["Kyoto to Uji, back via Inari, JR Nara line",720,"Day 10"],
+  ["Eizan Railway one-day pass",1200,"Day 11"],
+  ["Kyoto to Osaka, JR",580,"Day 13"],
+  ["Osaka subway, four days",2600,"Days 13\u201317"],
+  ["Osaka to Nara round trip, Kintetsu",1320,"Day 14"],
+  ["Umeda to Minoo round trip, Hankyu",580,"Day 15"],
+  ["Osaka to Himeji round trip, JR special rapid",3040,"Day 16"],
+  ["Namba to Kansai airport, Nankai",1010,"Day 17"]],
+ entries:[
+  ["Kamakura temples: Engaku-ji, Meigetsu-in, Hasedera, Kotoku-in",1650,"Day 2"],
+  ["Hokoku-ji bamboo garden with matcha",1000,"Day 2"],
+  ["Tokyo Saryo tea course",2000,"Day 4"],
+  ["Shibuya Sky, advance sunset slot",2500,"Day 4"],
+  ["Kachi Kachi ropeway, return",1000,"Day 7"],
+  ["Day-use onsen with a Fuji view",1300,"Day 7"],
+  ["Kiyomizu-dera, autumn night opening",500,"Day 9"],
+  ["K\u014ddai-ji",600,"Day 9"],
+  ["Ippodo Kaboku tearoom",1500,"Day 9"],
+  ["Kinkaku-ji and Ry\u014dan-ji",1100,"Day 12"],
+  ["Nij\u014d Castle",1300,"Day 12"],
+  ["Eikan-d\u014d, autumn illumination",1000,"Day 12"],
+  ["T\u014dfuku-ji, autumn rate",1000,"Day 9"],
+  ["By\u014dd\u014d-in and the Phoenix Hall interior",1000,"Day 10"],
+  ["Uji stone-mill matcha grinding",1500,"Day 10"],
+  ["Taih\u014d-an tea ceremony",1000,"Day 10"],
+  ["Kurama-dera",500,"Day 11"],
+  ["Shisen-d\u014d and Enk\u014d-ji",1400,"Day 11"],
+  ["Himeji Castle and Koko-en garden",1410,"Day 14"],
+  ["Engyo-ji and Mount Shosha ropeway",1100,"Day 14"],
+  ["T\u014ddai-ji and Kasuga Taisha",1500,"Day 15"],
+  ["Himeji Castle and K\u014dko-en, combined ticket",1050,"Day 16"],
+  ["Lockers, small shrine fees, contingency",3000,"throughout"]],
+ flightRows:[
+  ["Return fare, BLR to Haneda and Kansai to BLR, one stop each way",65000],
+  ["Extra checked baggage, bought online in advance",6000],
+  ["Seat selection on the two long legs",3000]],
+ misc:[
+  ["Japan visa fee and application centre charge",3000],
+  ["Travel insurance, seventeen days",2800],
+  ["eSIM",1200],
+  ["Photos, printing, bank statement fee",800]],
+ free:"Free, and among the best of the trip: Fushimi Inari at night, Chureito Pagoda, the Lawson, Oshino Hakkai, Meiji Shrine and the Gaien ginkgo, Yanaka, Tsurugaoka Hachimang\u016b, Nanzen-ji's aqueduct, the Philosopher's Path, Kifune Shrine, Nigatsu-d\u014d's terrace, Minoh Falls, and every yokoch\u014d you drink in."
+};
+var KINDS={stay:["#14203a","Base / station"],see:["#2c4a7c","Sights"],shop:["#8a6d3b","Shopping"],eat:["#48704f","Food"],night:["#b93a26","After dark"],peak:["#9a968c","Mountain"]};
+var STAYS=[
+ {base:"tokyo",dates:"19\u201324 Nov, 5 nights",
+  note:"Kuramae and Nihonbashi put you on the quiet river side, twenty minutes from Shibuya and ten from Asakusa. Cheaper and far more pleasant than staying in Shinjuku.",
+  opts:[
+   ["Nui. Hostel & Bar Lounge, Kuramae","Shared dorm","\u00a53,500\u20135,000","The ground-floor bar is the single easiest place in Tokyo to end up in conversation. First choice for a solo traveller."],
+   ["Nui. Hostel, Kuramae","Private single or twin","\u00a59,000\u201313,000","Same bar, your own door."],
+   ["CITAN, Nihonbashi","Shared dorm","\u00a53,000\u20134,500","Basement bar, good coffee, slightly calmer than Nui."],
+   ["The Millennials Shibuya","Smart capsule","\u00a55,000\u20138,000","If you want privacy without hotel money and don't mind Shibuya noise."],
+   ["Hotel Graphy Nezu","Private single","\u00a58,000\u201312,000","Near Yanaka, quiet, good for the old-Tokyo day."]],
+  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Kuramae%2C+Tokyo&checkin=2026-11-19&checkout=2026-11-24&group_adults=1&no_rooms=1"],["Hostelworld, Tokyo","https://www.hostelworld.com/search?search_keywords=Tokyo%2C%20Japan"]]},
+ {base:"fuji",dates:"24\u201326 Nov, 2 nights",
+  note:"Your \u20b95,000 ceiling settles this one. A proper Fuji-view ryokan runs \u00a520,000\u201390,000 for a solo occupant with meals, which is three to ten times over. Take the hostel both nights and buy the experience separately: a day-use onsen with the mountain from the outdoor bath costs about \u00a51,000, and the ryokan kaiseki can be replaced by one good dinner in town. You lose the private bath and keep the budget.",
+  opts:[
+   ["K's House Mt Fuji","Shared dorm","\u00a53,500\u20135,000","The traveller hostel here. Common room, Fuji from the terrace, people to talk to. Inside the ceiling."],
+   ["Kagelow Mt Fuji Hostel","Shared dorm","\u00a53,000\u20134,500","Cheaper, smaller, closer to the lake."],
+   ["K's House Mt Fuji","Private twin","\u00a58,000\u201312,000","Own room. The top of this band is right on your \u20b95,000 line, so check the rate before booking."],
+   ["Day-use onsen, separately","Bath only","\u00a51,000\u20131,500","Yurari or Benifuji-no-Yu, Fuji from the outdoor bath. This is how you get the ryokan feeling without the ryokan price."],
+   ["Ryokan, for reference","Half board, per person","\u00a520,000\u201390,000","What you are choosing not to do. Three to ten times over your nightly ceiling, and many refuse single occupancy anyway."]],
+  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Fujikawaguchiko&checkin=2026-11-24&checkout=2026-11-26&group_adults=1&no_rooms=1"],["Japanican, ryokan specialists","https://www.japanican.com/en/"],["Rakuten Travel","https://travel.rakuten.com/"]]},
+ {base:"kyoto",dates:"26 Nov \u2013 1 Dec, 5 nights",
+  note:"Peak maple week, and two of your five nights are a Saturday and a Sunday. Kyoto sells out months ahead at roughly double its normal rate. Book this one first, before the flights if you have to. Stay around Kawaramachi or Sanjo so you can walk home from dinner.",
+  opts:[
+   ["Len Kyoto Kawaramachi","Shared dorm","\u00a53,500\u20135,500","Bar downstairs that locals also drink in. Central, social, the obvious solo pick."],
+   ["Piece Hostel Sanjo","Shared dorm","\u00a53,500\u20135,000","Cleaner and quieter than Len, still sociable."],
+   ["Piece Hostel Sanjo","Private single","\u00a59,000\u201314,000","Small private rooms, very well reviewed."],
+   ["Machiya townhouse guesthouse","Private room","\u00a512,000\u201320,000","A converted wooden townhouse. Worth one or two of the five nights."],
+   ["Mustard Hotel Kyoto","Private double","\u00a514,000\u201322,000","If you want a proper hotel for the back half."]],
+  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Kyoto&checkin=2026-11-26&checkout=2026-12-01&group_adults=1&no_rooms=1"],["Hostelworld, Kyoto","https://www.hostelworld.com/search?search_keywords=Kyoto%2C%20Japan"]]},
+ {base:"osaka",dates:"1\u20135 Dec, 4 nights",
+  note:"Namba and Nipponbashi, as you asked. Den Den Town is underneath you and Ura-Namba is a five-minute walk. Four nights now, and it spans a Friday and a Saturday, so hold something refundable early.",
+  opts:[
+   ["Hostel Mitsuwaya Osaka","Shared dorm","\u00a53,000\u20135,000","Nipponbashi, runs guest events most evenings. Built for solo travellers."],
+   ["Hostel Mitsuwaya Osaka","Private twin","\u00a58,000\u201312,000","Same place, own room."],
+   ["J-Hoppers Osaka / Hostel 64","Shared dorm","\u00a52,800\u20134,500","Cheaper, quieter, slightly further out."],
+   ["First Cabin Namba","Cabin","\u00a55,000\u20137,500","Business-class cabin with a real bed and a big shared bath."],
+   ["Hotel Chuo Selene","Private single","\u00a56,000\u201310,000","Plain business hotel, excellent location, cheap."]],
+  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Namba%2C+Osaka&checkin=2026-12-01&checkout=2026-12-05&group_adults=1&no_rooms=1"],["Hostelworld, Osaka","https://www.hostelworld.com/search?search_keywords=Osaka%2C%20Japan"]]}
+];
+var BOOKLINKS=[
+ ["Shibuya Sky \u2014 book the sunset slot","https://www.shibuya-scramble-square.com/sky/","Slots open roughly a month ahead and sunset goes first"],
+ ["Eizan Railway","https://eizandensha.co.jp/","Timetables and the Kirara observation car"],
+ ["Ruriko-in","https://rurikoin.komyoji.com/","Check whether the autumn opening reaches December"],
+ ["Byodoin, Uji","https://www.byodoin.or.jp/","Phoenix Hall interior needs a separate timed ticket"],
+ ["Fuji Excursion reservations, JR East","https://www.eki-net.com/en/jreast-shinkansen-reservation/","Reserve the Shinjuku\u2013Kawaguchiko train"]
+];
+
+/* ---------- visa documents ---------- */
+var SECTIONS=[
+ {id:"A",name:"Identity & passport",blurb:"Who you are. Every copy in colour, flat, glare-free."},
+ {id:"B",name:"Forms & letters",blurb:"What you are asking for. These must agree with section C to the day."},
+ {id:"C",name:"Travel proof",blurb:"Where you will be each night. Free-cancellation bookings only."},
+ {id:"D",name:"Money",blurb:"That you can fund the trip and will return to your income."},
+ {id:"E",name:"Employment",blurb:"Your tie to India — the strongest part of a salaried application."},
+ {id:"F",name:"Supporting extras",blurb:"Optional, but they quietly raise confidence in the file."},
+ {id:"G",name:"After approval",blurb:"Not for the consulate. For you, before you fly."}
+];
+var DOCS=[
+ {id:"A1",s:"A",t:"Passport (original)",slug:"Passport-Original",req:1,fmt:"Original",spec:"Valid at least 6 months beyond your return, 2 blank facing pages, signed in ink.",why:"An unsigned passport or thin validity is an instant counter rejection."},
+ {id:"A2",s:"A",t:"Passport data page + address page",slug:"Passport-Scan",req:1,fmt:"PDF",spec:"Colour scan of the photo page and the last page showing address and parent details. One PDF, A4.",why:"Your address page decides which consulate has jurisdiction over you."},
+ {id:"A3",s:"A",t:"Old / cancelled passports",slug:"Old-Passports",req:0,fmt:"PDF",spec:"Data page plus any pages with earlier visas or entry stamps.",why:"Prior clean travel history is the cheapest credibility you can buy."},
+ {id:"A4",s:"A",t:"Photograph, 45 × 45 mm",slug:"Photo-45x45",req:1,fmt:"JPEG + 2 prints",spec:"White or near-white plain background, taken within 6 months, head about 27 mm. Name and date of birth on the reverse of the print.",why:"Japan's spec is squarer than Schengen. A recycled Schengen photo gets refused."},
+ {id:"A5",s:"A",t:"PAN card copy",slug:"PAN",req:1,fmt:"PDF",spec:"Colour copy, both sides.",why:"Ties your ITR to your identity."},
+ {id:"A6",s:"A",t:"Aadhaar copy",slug:"Aadhaar",req:1,fmt:"PDF",spec:"Colour copy, both sides, address matching the passport address page.",why:"Address proof for jurisdiction."},
+ {id:"B1",s:"B",t:"Visa application form",slug:"Application-Form",req:1,fmt:"Printed + signed",spec:"The MOFA form, printed single sided, block capitals, signed exactly as in your passport. The eVisa route replaces this with an online form.",why:"A signature that doesn't match the passport is the commonest hand-back."},
+ {id:"B2",s:"B",t:"Schedule of stay",slug:"Schedule-Of-Stay",req:1,fmt:"PDF, 1–2 pages",spec:"Date, city, activity, accommodation name, address and phone for every single night. Generate it on the letter tab.",why:"It is cross-checked line by line against your bookings. Any mismatch reads as fabrication."},
+ {id:"B3",s:"B",t:"Cover letter",slug:"Cover-Letter",req:1,fmt:"PDF, 1 page",spec:"One page to the Visa Section. Purpose, dates, who pays, your job, and a plain statement that you resume work on a named date. Generate it on the letter tab.",why:"It frames the file. Factual and short; not a travel essay."},
+ {id:"C1",s:"C",t:"Flight reservation, return",slug:"Flight-Reservation",req:1,fmt:"PDF",spec:"Confirmed round-trip reservation, Bengaluru out and back, PNR and name matching the passport.",why:"A reservation is enough. Do not buy non-refundable tickets before approval."},
+ {id:"C2",s:"C",t:"Accommodation bookings",slug:"Hotel-Bookings",req:1,fmt:"PDF, date order",spec:"One confirmation per property covering all sixteen nights with no gaps — name, address, phone, your name, exact dates.",why:"Gaps between bookings are the fastest way to trigger questions."},
+ {id:"C3",s:"C",t:"Domestic travel plan",slug:"Domestic-Transport",req:0,fmt:"PDF",spec:"Shinkansen and bus legs with dates, plus any rail pass voucher already bought.",why:"Shows the itinerary is physically possible, especially the Hiroshima day."},
+ {id:"C4",s:"C",t:"Travel insurance",slug:"Travel-Insurance",req:0,fmt:"PDF",spec:"Medical cover of at least ₹25 lakh across the full window, both travel days included.",why:"Not compulsory for Japan, but medical costs there are brutal."},
+ {id:"D1",s:"D",t:"Income tax returns, 3 years",slug:"ITR-3-Years",req:1,fmt:"PDF, newest first",spec:"ITR-V acknowledgement plus computation for the last three assessment years, downloaded fresh so the barcode is legible.",why:"The backbone of a salaried Indian application. Three filed years beats a fat balance."},
+ {id:"D2",s:"D",t:"Bank statement, 6 months",slug:"Bank-Statement-6M",req:1,fmt:"PDF, stamped",spec:"Six months on bank letterhead, stamped and signed by the branch, salary credits visible.",why:"An unstamped net-banking printout is often refused. Get the seal."},
+ {id:"D3",s:"D",t:"Salary slips, 3 months",slug:"Salary-Slips",req:1,fmt:"PDF",spec:"Most recent three, amounts matching the bank credits.",why:"Consistency between slips and statement is what is actually checked."},
+ {id:"D4",s:"D",t:"Form 16",slug:"Form-16",req:0,fmt:"PDF",spec:"Latest two financial years.",why:"Corroborates the ITR for no extra effort."},
+ {id:"D5",s:"D",t:"Investments / fixed deposits",slug:"Investment-Proof",req:0,fmt:"PDF",spec:"FD receipts, mutual fund or demat statement, recent, in your name.",why:"Only useful if the savings balance looks thin against the trip cost."},
+ {id:"E1",s:"E",t:"Employment certificate",slug:"Employment-Certificate",req:1,fmt:"PDF, signed",spec:"On letterhead: designation, joining date, gross annual salary, the approved leave dates, and confirmation you resume duty on a stated date.",why:"This is your return guarantee. Leave dates must match the itinerary exactly."},
+ {id:"E2",s:"E",t:"Leave approval",slug:"Leave-Approval",req:1,fmt:"PDF",spec:"Manager or HR approval. An email print works if it shows names and dates.",why:"Backs up the certificate."},
+ {id:"E3",s:"E",t:"Employee ID / business card",slug:"Employee-ID",req:0,fmt:"PDF",spec:"Copy of the ID card, or a business card in the file.",why:"Small, but it makes the employment claim concrete."},
+ {id:"F1",s:"F",t:"Previous visas",slug:"Previous-Visas",req:0,fmt:"PDF",spec:"Any Schengen, US, UK, Australia or Japan visas with matching entry and exit stamps.",why:"Prior compliance with a strict regime is the best predictor an officer has."},
+ {id:"F2",s:"F",t:"Marriage / birth certificate",slug:"Family-Certificate",req:0,fmt:"PDF",spec:"Only if travelling with family on the same file.",why:"Establishes the relationship."},
+ {id:"F3",s:"F",t:"Sponsorship documents",slug:"Sponsorship",req:0,fmt:"PDF",spec:"Only if someone else funds the trip: guarantee letter, their ITR and bank statement, relationship proof.",why:"Skip entirely if self-funding. Adding it needlessly invites questions."},
+ {id:"G1",s:"G",t:"Visit Japan Web registration",slug:"Visit-Japan-Web",req:1,fmt:"Screenshots",spec:"Generate the immigration and customs QR codes and screenshot them. Airport wifi is unreliable.",why:"Saves twenty minutes in the Haneda arrivals queue."},
+ {id:"G2",s:"G",t:"Visa or eVisa, saved offline",slug:"Visa-Copy",req:1,fmt:"PDF + print",spec:"An eVisa is checked by the airline at Bengaluru boarding. Save offline and print.",why:"An eVisa that only exists in your inbox is a problem when wifi drops."},
+ {id:"G3",s:"G",t:"Cash and cards",slug:"Forex",req:0,fmt:"Note",spec:"Carry ¥50,000–70,000 cash for fifteen nights. Notify your card issuer.",why:"Many of the best counters on this itinerary are cash or ticket-machine only."},
+ {id:"G4",s:"G",t:"eSIM",slug:"eSIM",req:0,fmt:"Note",spec:"Buy before you fly, install while still on wifi.",why:"Cheaper than airport pocket wifi and nothing to return."},
+ {id:"G5",s:"G",t:"International Driving Permit",slug:"IDP",req:0,fmt:"Original booklet",spec:"RTO-issued under the 1949 Geneva Convention, carried with your Indian licence. Allow three weeks.",why:"Needed for the Lake Tanuki drive. Japan does not accept the Indian licence alone."},
+ {id:"G6",s:"G",t:"Emergency sheet",slug:"Emergency-Sheet",req:0,fmt:"Print",spec:"One page: insurance number, Indian Embassy Tokyo, accommodation phone numbers, blood group.",why:"The one document you hope stays in the bag."}
+];
+var STEPS=[
+ [1,"Confirm your route","Two doors into the same visa: online through Japan eVisa, or a paper file at the Japan Visa Application Centre in Bengaluru. Check which is currently open to you, because the eVisa route has no paper file at all."],
+ [2,"Lock the trip on paper","Book free-cancellation accommodation for all fifteen nights and hold a return flight reservation. Then generate the schedule of stay from those bookings."],
+ [3,"Pull the financial set","Order the stamped six-month bank statement from your branch first, it is the slowest item. Download three years of ITR while you wait."],
+ [4,"Get the letters signed","Employment certificate and leave approval from HR, with exact leave dates printed, not just 'approved leave'."],
+ [5,"Assemble and check","Order the file the way this checklist is ordered. Read the schedule of stay against the bookings line by line once more."],
+ [6,"Submit","Five to six weeks before departure. Not more than three months ahead, since the visa expires three months after issue. Minimum four working days, realistically seven to ten in winter."],
+ [7,"Collect and prepare","Then work through section G before you fly."]
+];
+var LINKS=[
+ ["Japan eVisa portal","https://www.evisa.mofa.go.jp/","Online application, if open to you"],
+ ["Ministry of Foreign Affairs, visa pages","https://www.mofa.go.jp/j_info/visit/visa/","Forms and the schedule of stay template"],
+ ["Embassy of Japan in India","https://www.in.emb-japan.go.jp/","Jurisdiction and current requirements"],
+ ["Visit Japan Web","https://services.digital.go.jp/en/visit-japan-web/","Arrival QR codes"],
+ ["Income tax e-filing portal","https://www.incometax.gov.in/","ITR-V download"]
+];
+var LFIELDS=[
+ ["passport","Passport number","",'text'],["dob","Date of birth","e.g. 14 March 1991",'text'],
+ ["addr","Residential address","Street, city, PIN",'text'],["phone","Phone","+91…",'text'],["email","Email","",'text'],
+ ["employer","Employer","",'text'],["designation","Designation","",'text'],
+ ["joined","Joined on","e.g. June 2018",'text'],
+ ["ctyCount","Countries visited so far","e.g. 9",'text'],
+ ["countries","Which countries","Singapore, Thailand, UAE, …",'text'],
+ ["leaveFrom","Approved leave from","20 Nov 2026",'text'],["leaveTo","Resuming work on","9 Dec 2026",'text'],
+ ["funding","Who funds the trip","",'select'],["consulate","Consulate","",'select']
+];
+
+/* ---------- helpers ---------- */
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var esc=function(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]})};
+var baseOf=function(id){for(var i=0;i<BASES.length;i++)if(BASES[i].id===id)return BASES[i];return null};
+var dayOf=function(ds){for(var i=0;i<DAYS.length;i++)if(DAYS[i].date===ds)return DAYS[i];return null};
+var fmtDate=function(ds){var d=new Date(ds+"T00:00:00");return d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"})};
+var shortDate=function(ds){var d=new Date(ds+"T00:00:00");return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"})};
+var lastName=function(){var n=(D.name||"APPLICANT").trim().split(/\s+/).pop();return (n||"APPLICANT").toUpperCase().replace(/[^A-Z]/g,"")||"APPLICANT"};
+var toast=function(m){var t=$("#toast");t.textContent=m;t.classList.remove("hide");clearTimeout(toast._i);toast._i=setTimeout(function(){t.classList.add("hide")},2200)};
+var save=function(){clearTimeout(save._i);save._i=setTimeout(function(){store.set(KEY,JSON.stringify(D))},400)};
+function dl(name,content,mime){var b=new Blob([content],{type:mime||"text/plain;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000)}
+function docFile(name,html){dl(name,'<html xmlns:w="urn:schemas-microsoft-com:office:word"><meta charset="utf-8"><body style="font-family:Calibri,Arial;font-size:11pt;line-height:1.5">'+html+'</body></html>',"application/msword")}
+
+/* ---------- tabs ---------- */
+var TABS=[["route","Route"],["cal","Calendar"],["budget","Budget"],["stays","Flights & stays"],["visa","Visa file"],["letter","Cover letter"]];
+function buildTabs(){
+  $("#tabs").innerHTML=TABS.map(function(t,i){return '<button class="tab'+(i===0?" on":"")+'" data-p="'+t[0]+'">'+t[1]+'</button>'}).join("");
+  $$("#tabs .tab").forEach(function(b){b.onclick=function(){
+    $$("#tabs .tab").forEach(function(x){x.classList.remove("on")});b.classList.add("on");
+    $$(".tabpane").forEach(function(p){p.classList.add("hide")});
+    $("#p_"+b.dataset.p).classList.remove("hide");
+  }});
+}
+
+/* ---------- route map ---------- */
+var anim={raf:null,leg:0,t:0,playing:false,sel:null,legs:[]};
+function poly(pts,close){
+  var d="M"+pts.map(function(p){return px(p[0]).toFixed(1)+","+py(p[1]).toFixed(1)}).join(" L");
+  return close===false?d:d+" Z";
+}
+function nodeById(id){for(var i=0;i<NODES.length;i++)if(NODES[i].id===id)return NODES[i];return null}
+function curve(f,t,bend){
+  var x1=px(f.lon),y1=py(f.lat),x2=px(t.lon),y2=py(t.lat);
+  var mx=(x1+x2)/2,my=(y1+y2)/2,dx=x2-x1,dy=y2-y1;
+  var k=(bend==null?0.10:bend);
+  return "M"+x1.toFixed(1)+","+y1.toFixed(1)+" Q"+(mx-dy*k).toFixed(1)+","+(my+dx*k).toFixed(1)+" "+x2.toFixed(1)+","+y2.toFixed(1);
+}
+function buildMap(){
+  var tk=nodeById("tokyo"),kx=nodeById("kix");
+  anim.legs=[{id:"in",air:1,d:"M-60,470 Q200,430 "+px(tk.lon).toFixed(1)+","+py(tk.lat).toFixed(1),
+              to:"tokyo",mode:"Flight from Bengaluru, one connection",dur:"\u224811\u201313 h",
+              note:"BLR to Haneda via Singapore, Bangkok, Hong Kong or Delhi. No non-stop exists."}]
+    .concat(LEGS.map(function(l){var f=nodeById(l.from),t=nodeById(l.to);
+      return {id:l.from+">"+l.to,d:curve(f,t),to:l.to,mode:l.mode,dur:l.dur,note:l.note}}))
+    .concat([{id:"out",air:1,d:"M"+px(kx.lon).toFixed(1)+","+py(kx.lat).toFixed(1)+" Q120,470 -60,500",
+              to:null,mode:"Flight home from Kansai",dur:"\u224811\u201313 h",
+              note:"KIX back to Bengaluru, same ticket as the outbound."}]);
+
+  var s='';
+  // land
+  s+='<path class="land" d="'+poly(COAST.honshu)+'"></path>';
+  s+='<path class="land" d="'+poly(COAST.shikoku)+'"></path>';
+  s+='<path class="land" d="'+poly(COAST.kyushu)+'"></path>';
+  s+='<path class="land" d="'+poly(COAST.awaji)+'"></path>';
+  s+='<text class="seaLbl" x="150" y="300">Seto Inland Sea</text>';
+  s+='<text class="seaLbl" x="470" y="400">Pacific</text>';
+  // day-trip spurs
+  SPURS.forEach(function(sp){
+    var f=nodeById(sp[0]),t=nodeById(sp[1]);if(!f||!t)return;
+    s+='<path class="spur" d="'+curve(f,t,0.16)+'"></path>';
+    s+='<text class="spurLbl" x="'+((px(f.lon)+px(t.lon))/2+14).toFixed(0)+'" y="'+((py(f.lat)+py(t.lat))/2-4).toFixed(0)+'">'+esc(sp[2])+'</text>';
+  });
+  // travel legs
+  anim.legs.forEach(function(l){s+='<path class="edge'+(l.air?' air':'')+'" d="'+l.d+'"></path>'});
+  anim.legs.forEach(function(l,i){s+='<path class="prog" id="prog'+i+'" d="'+l.d+'" stroke-dasharray="0 99999"></path>'});
+  s+='<text class="legLbl" x="40" y="452">from Bengaluru</text>';
+  // Kansai inset
+  s+=inset();
+  // nodes
+  NODES.forEach(function(n){
+    var x=px(n.lon),y=py(n.lat),b=n.base?baseOf(n.base):null;
+    if(n.peak){
+      s+='<g class="node peak" data-n="'+n.id+'"><path d="M'+(x-8)+','+(y+11)+' L'+x+','+(y-3)+' L'+(x+8)+','+(y+11)+' Z"></path>'
+        +'<text class="lbl" x="'+(x+n.dx)+'" y="'+(y+n.dy)+'" text-anchor="middle">'+esc(n.label)+'</text></g>';
+      return;
+    }
+    var cls="node"+(b?" base":" sat")+(n.opt?" opt":"");
+    s+='<g class="'+cls+'" data-n="'+n.id+'" tabindex="0" role="button" aria-label="'+esc(n.label)+'">';
+    if(Math.abs(n.dx)>18||Math.abs(n.dy)>18)
+      s+='<line class="leader" x1="'+x+'" y1="'+y+'" x2="'+(x+n.dx*0.8)+'" y2="'+(y+n.dy*0.8)+'"></line>';
+    s+='<circle cx="'+x+'" cy="'+y+'" r="'+n.r+'"></circle>';
+    var anchor=n.dx<-4?"end":n.dx>4?"start":"middle";
+    s+='<text class="lbl" x="'+(x+n.dx)+'" y="'+(y+n.dy)+'" text-anchor="'+anchor+'">'+esc(n.label)+'</text>';
+    if(b)s+='<text class="nights" x="'+(x+n.dx)+'" y="'+(y+n.dy+13)+'" text-anchor="'+anchor+'">'+b.nights+' nights</text>';
+    s+='</g>';
+  });
+  s+='<circle class="mover" id="mover" r="5.5" cx="-60" cy="470" opacity="0"></circle>';
+  $("#svg").innerHTML=s;
+  $$("#svg .node").forEach(function(g){
+    if(g.classList.contains("peak"))return;
+    var f=function(){selectNode(g.dataset.n)};
+    g.addEventListener("click",f);
+    g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}});
+  });
+  anim.legs.forEach(function(l,i){l._el=$("#prog"+i);l._len=l._el.getTotalLength()});
+  resetRoute();
+}
+function inset(){
+  var rows=[["Kyoto, base",0],["Uji, from Kyoto","17 min"],["Osaka, from Kyoto","30 min"],["Nara, from Osaka","45 min"],["Himeji, from Osaka","1 h"],["Kansai airport, from Namba","40 min"]];
+  var x0=6,y0=72,w=250,h=170,s='';
+  s+='<rect class="insetBox" x="'+x0+'" y="'+y0+'" width="'+w+'" height="'+h+'" rx="2"></rect>';
+  s+='<text class="insetTitle" x="'+(x0+12)+'" y="'+(y0+20)+'">Kansai, expanded</text>';
+  s+='<text class="insetSub" x="'+(x0+12)+'" y="'+(y0+35)+'">Kansai is small. Every line below is a day trip you come back from.</text>';
+  rows.forEach(function(r,i){
+    var cy=y0+56+i*20;
+    s+='<circle class="insetDot" cx="'+(x0+20)+'" cy="'+cy+'" r="3.5"></circle>';
+    if(i<rows.length-1)s+='<line class="insetLine" x1="'+(x0+20)+'" y1="'+(cy+4)+'" x2="'+(x0+20)+'" y2="'+(cy+16)+'"></line>';
+    s+='<text class="insetTxt" x="'+(x0+33)+'" y="'+(cy+4)+'">'+esc(r[0])+'</text>';
+    if(r[1])s+='<text class="insetTime" x="'+(x0+w-12)+'" y="'+(cy+4)+'" text-anchor="end">'+esc(r[1])+'</text>';
+  });
+  return s;
+}
+function resetRoute(){
+  cancelAnimationFrame(anim.raf);anim.playing=false;anim.leg=0;anim.t=0;anim._last=0;
+  anim.legs.forEach(function(l){l._el.setAttribute("stroke-dasharray","0 "+(l._len+10))});
+  $$("#svg .node").forEach(function(g){g.classList.remove("visited")});
+  $("#mover").setAttribute("opacity","0");
+  $("#play").textContent="Play route";
+  $("#readout").innerHTML="Four bases, three moves on the ground. The grey outline is Honshu at true scale \u2014 note how little of Japan this trip actually covers.";
+}
+function stepAnim(ts){
+  var l=anim.legs[anim.leg];
+  if(!anim._last)anim._last=ts;
+  var dt=Math.min(60,ts-anim._last);anim._last=ts;
+  anim.t+=dt*(l.air?0.00030:0.00055);
+  if(anim.t>1)anim.t=1;
+  l._el.setAttribute("stroke-dasharray",(l._len*anim.t)+" "+(l._len+10));
+  var p=l._el.getPointAtLength(l._len*anim.t);
+  var m=$("#mover");m.setAttribute("cx",p.x);m.setAttribute("cy",p.y);m.setAttribute("opacity","1");
+  $("#readout").innerHTML="<b>"+esc(l.mode)+"</b>, "+esc(l.dur)+". "+esc(l.note);
+  if(anim.t>=1){
+    if(l.to){var g=$('#svg .node[data-n="'+l.to+'"]');if(g)g.classList.add("visited")}
+    anim.leg++;anim.t=0;anim._last=0;
+    if(anim.leg>=anim.legs.length){
+      anim.playing=false;$("#play").textContent="Play again";$("#mover").setAttribute("opacity","0");
+      $("#readout").innerHTML="<b>Fifteen nights, four beds.</b> Dotted lines are day trips you make and come back from the same evening.";
+      return;
+    }
+  }
+  if(anim.playing)anim.raf=requestAnimationFrame(stepAnim);
+}
+function playRoute(){
+  if(anim.playing){anim.playing=false;cancelAnimationFrame(anim.raf);$("#play").textContent="Resume";anim._last=0;return}
+  if(anim.leg>=anim.legs.length)resetRoute();
+  anim.playing=true;anim._last=0;$("#play").textContent="Pause";
+  anim.raf=requestAnimationFrame(stepAnim);
+}
+function selectNode(id){
+  anim.sel=id;
+  $$("#svg .node").forEach(function(g){g.classList.toggle("sel",g.dataset.n===id)});
+  var n=nodeById(id),b=n.base?baseOf(n.base):null;
+  var h='';
+  if(b){
+    var ds=DAYS.filter(function(d){return d.base===n.base});
+    var inLeg=null,outLeg=null;
+    anim.legs.forEach(function(l){if(l.to===id)inLeg=l});
+    LEGS.forEach(function(l){if(l.from===id)outLeg=l});
+    h+='<div class="phead"><h2>'+esc(n.label)+'</h2><p>'+b.nights+' nights, '+esc(shortDate(ds[0].date))+' to '+esc(shortDate(ds[ds.length-1].date))+' \u00b7 '+esc(b.area)+'</p></div>';
+    h+='<div style="padding:13px 18px 4px;font-size:13px">';
+    if(inLeg)h+='<div><b>Arriving:</b> '+esc(inLeg.mode)+', '+esc(inLeg.dur)+'. '+esc(inLeg.note)+'</div>';
+    if(outLeg)h+='<div style="margin-top:5px"><b>Leaving:</b> '+esc(outLeg.mode)+', '+esc(outLeg.dur)+'. '+esc(outLeg.note)+'</div>';
+    h+='<div style="margin-top:5px"><b>Sleeping:</b> '+esc(D.bookings[b.id]||b.stay)+'</div></div>';
+    h+=cityMapFor(n.base);
+    ds.forEach(function(d){
+      var i=DAYS.indexOf(d);
+      h+='<div class="day"><div class="dayhead"><h3>Day '+(i+1)+' \u00b7 '+esc(d.title)+'</h3><span class="daymeta">'+esc(fmtDate(d.date))+'</span></div>';
+      if(d.flag)h+='<p style="margin:0 0 8px;font-size:12.5px;color:var(--shu)">'+esc(d.flag)+'</p>';
+      h+=d.items.map(function(it){return '<div class="line"><span class="tm mono">'+esc(it[0])+'</span><span>'+esc(it[1])+'</span></div>'}).join("");
+      h+='</div>';
+    });
+  } else {
+    var host=n.sat?nodeById(n.sat):null;
+    var sp=null;SPURS.forEach(function(x){if(x[1]===id)sp=x});
+    h+='<div class="phead"><h2>'+esc(n.label)+'</h2><p>'+(n.sat?'Day trip from '+esc(host.label)+(sp?', '+esc(sp[2])+' each way':''):'Transit point')+'</p></div>';
+    var dd=null;
+    if(id==="kamakura")dd=dayOf("2026-11-20");
+    if(id==="uji")dd=dayOf("2026-11-28");
+    if(id==="nara")dd=dayOf("2026-12-02");
+    if(id==="himeji")dd=dayOf("2026-12-04");
+    if(dd){
+      h+='<div class="day" style="border-top:none"><div class="dayhead"><h3>Day '+(DAYS.indexOf(dd)+1)+' \u00b7 '+esc(dd.title)+'</h3><span class="daymeta">'+esc(fmtDate(dd.date))+'</span></div>';
+      h+=dd.items.map(function(it){return '<div class="line"><span class="tm mono">'+esc(it[0])+'</span><span>'+esc(it[1])+'</span></div>'}).join("")+'</div>';
+    } else if(id==="shizuoka"){
+      h+='<div style="padding:14px 18px;font-size:13.5px">The road bridge where Fuji lines up at the end of the carriageway. It sits in Shizuoka city, about 45 km from the mountain, so Fuji reads smaller than at Kawaguchiko \u2014 the appeal is the alignment, not the scale.<br><br><b>How it fits:</b> an optional stop-off on 29 November. Kodama from Mishima to Shizuoka is 25 minutes, then a taxi each way. Budget two hours door to door. Shoot from the pedestrian path, not the road.<br><br><b>Verdict:</b> worth it only if that morning is clear and you already have the Lawson shot in the bag. Otherwise skip it and get to Kyoto early.</div>';
+    } else {
+      h+='<div style="padding:14px 18px;font-size:13.5px">Departure point on the last day. Nankai Rapi:t or JR Haruka from Namba, 40 to 75 minutes.</div>';
+    }
+  }
+  $("#nodeInfo").innerHTML=h;
+}
+
+/* ---------- calendar ---------- */
+var selDay=DAYS[0].date;
+function buildCal(){
+  var months=[[2026,10],[2026,11]];
+  $("#cals").innerHTML=months.map(function(m){
+    var y=m[0],mo=m[1];
+    var first=new Date(y,mo,1),start=first.getDay(),n=new Date(y,mo+1,0).getDate();
+    var name=first.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
+    var cells='';
+    ["S","M","T","W","T","F","S"].forEach(function(d){cells+='<div class="dow">'+d+'</div>'});
+    for(var i=0;i<start;i++)cells+='<div class="cell" style="border-color:transparent;background:transparent"></div>';
+    for(var d=1;d<=n;d++){
+      var ds=y+"-"+String(mo+1).padStart(2,"0")+"-"+String(d).padStart(2,"0");
+      var day=dayOf(ds);
+      if(day){
+        var b=day.base?baseOf(day.base):null;
+        var col=b?b.colour:"#6d7480";
+        cells+='<div class="cell trip'+(ds===selDay?" sel":"")+'" data-d="'+ds+'" style="background:'+col+'" tabindex="0" role="button" aria-label="'+esc(fmtDate(ds))+', '+esc(day.title)+'">'+d+'<small>'+esc(b?b.name:"Fly")+'</small></div>';
+      } else cells+='<div class="cell">'+d+'</div>';
+    }
+    return '<div class="cal"><h3>'+name+'</h3><div class="cgrid">'+cells+'</div></div>';
+  }).join("");
+  $$(".cell.trip").forEach(function(c){
+    var f=function(){selDay=c.dataset.d;buildCal();renderDay();document.getElementById("dayDetail").scrollIntoView({block:"nearest",behavior:"smooth"})};
+    c.addEventListener("click",f);
+    c.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}});
+  });
+  $("#legend").innerHTML=BASES.map(function(b){return '<span><i class="sw" style="background:'+b.colour+'"></i>'+esc(b.name)+'</span>'}).join("")+'<span><i class="sw" style="background:#6d7480"></i>Travel day</span>';
+}
+function renderDay(){
+  var d=dayOf(selDay),b=d.base?baseOf(d.base):null;
+  var idx=DAYS.indexOf(d);
+  var leg=null;
+  if(idx>0){var prev=DAYS[idx-1];if(prev.base!==d.base){LEGS.forEach(function(l){if(l.to===(d.base||"kix"))leg=l})}}
+  var wk=d.wake?'<span class="wake '+d.wake+'">'+(d.wake==='EARLY'?'early start':d.wake==='mid'?'09:00-ish':d.wake==='optional'?'alarm optional':d.wake==='none'?'no alarm':'late start')+'</span>':'';
+  var h='<div class="dayhead"><h3>Day '+(idx+1)+' · '+esc(d.title)+wk+'</h3><span class="daymeta">'+esc(fmtDate(d.date))+(b?' · sleeping in '+esc(b.name):' · flying home')+'</span></div>';
+  if(d.flag)h+='<p style="margin:0 0 10px;font-size:13px;color:var(--shu)">'+esc(d.flag)+'</p>';
+  if(leg)h+='<p style="margin:0 0 10px;font-size:13px"><b>Getting there:</b> '+esc(leg.mode)+', '+esc(leg.dur)+'. '+esc(leg.note)+'</p>';
+  if(b)h+='<p style="margin:0 0 10px;font-size:13px"><b>Stay:</b> '+esc(D.bookings[b.id]||b.stay)+' — '+esc(b.area)+'</p>';
+  h+=d.items.map(function(it){return '<div class="line"><span class="tm mono">'+esc(it[0])+'</span><span>'+esc(it[1])+'</span></div>'}).join("");
+  $("#dayDetail").innerHTML=h;
+}
+
+/* ---------- visa checklist ---------- */
+var curSec="A",openDoc="A1";
+function rec(id){return D.docs[id]||{status:"todo",note:"",file:null}}
+function patch(id,p){var r=rec(id);for(var k in p)r[k]=p[k];D.docs[id]=r;save();renderVisa();renderSeal()}
+function renamed(doc,orig){var ext=(orig||"").indexOf(".")>-1?orig.split(".").pop().toLowerCase():"pdf";return doc.id+"_"+doc.slug+"_"+lastName()+"."+ext}
+function renderSeal(){
+  var req=DOCS.filter(function(d){return d.req&&d.s!=="G"});
+  var done=req.filter(function(d){return rec(d.id).status==="done"}).length;
+  var pct=Math.round(done/req.length*100);
+  $("#sealPct").textContent=pct+"%";$("#sealTxt").textContent=done+" / "+req.length;
+  $("#seal").classList.toggle("on",pct===100);$("#bar").style.width=pct+"%";
+}
+function renderVisa(){
+  $("#secnav").innerHTML=SECTIONS.map(function(s){
+    var list=DOCS.filter(function(d){return d.s===s.id});
+    var done=list.filter(function(d){return rec(d.id).status==="done"}).length;
+    return '<button class="nb'+(curSec===s.id?" sel":"")+'" data-s="'+s.id+'"><span><span class="nid mono">'+s.id+'</span>'+esc(s.name)+'</span><span class="cnt mono'+(done===list.length?" full":"")+'">'+done+'/'+list.length+'</span></button>';
+  }).join("");
+  $$("#secnav .nb").forEach(function(b){b.onclick=function(){curSec=b.dataset.s;renderVisa()}});
+  var s=SECTIONS.filter(function(x){return x.id===curSec})[0];
+  var h='<div class="phead"><h2>'+esc(s.name)+'</h2><p>'+esc(s.blurb)+'</p></div>';
+  DOCS.filter(function(d){return d.s===curSec}).forEach(function(doc){
+    var r=rec(doc.id),op=openDoc===doc.id;
+    h+='<div class="row"><div class="rhead" data-open="'+doc.id+'">';
+    h+='<button class="tick'+(r.status==="done"?" on":r.status==="skip"?" skip":"")+'" data-tick="'+doc.id+'" aria-label="Mark '+doc.id+'">'+(r.status==="done"?"✓":r.status==="skip"?"–":"")+'</button>';
+    h+='<span class="rid mono">'+doc.id+'</span><span class="rt">'+esc(doc.t)+'</span>'+(doc.req?"":'<span class="opt">optional</span>')+'</div>';
+    if(op){
+      h+='<div class="body"><div class="spec">'+esc(doc.spec)+'</div><div class="why">'+esc(doc.why)+'</div>';
+      h+='<div class="tools"><label class="btn">'+(r.file?"Replace file":"Attach file")+'<input type="file" style="display:none" data-file="'+doc.id+'"></label>';
+      if(r.file)h+='<button class="btn q" data-dl="'+doc.id+'">Download renamed</button>';
+      h+='<button class="btn q" data-skip="'+doc.id+'">'+(r.status==="skip"?"Bring back":"Not applicable")+'</button>';
+      h+='<span class="mono" style="font-size:11.5px;color:var(--mute)">'+esc(doc.fmt)+'</span></div>';
+      if(r.file)h+='<div class="file mono">'+esc(r.file.orig)+' → '+esc(renamed(doc,r.file.orig))+' · '+(r.file.size/1048576).toFixed(2)+' MB</div>';
+      h+='<textarea data-note="'+doc.id+'" placeholder="Notes: branch visit date, HR follow-up, reference number…">'+esc(r.note)+'</textarea></div>';
+    }
+    h+='</div>';
+  });
+  $("#docpanel").innerHTML=h;
+  $$("#docpanel .rhead").forEach(function(e){e.onclick=function(ev){
+    if(ev.target.dataset.tick)return;
+    openDoc=openDoc===e.dataset.open?"":e.dataset.open;renderVisa();
+  }});
+  $$("#docpanel [data-tick]").forEach(function(e){e.onclick=function(ev){ev.stopPropagation();var r=rec(e.dataset.tick);patch(e.dataset.tick,{status:r.status==="done"?"todo":"done"})}});
+  $$("#docpanel [data-skip]").forEach(function(e){e.onclick=function(){var r=rec(e.dataset.skip);patch(e.dataset.skip,{status:r.status==="skip"?"todo":"skip"})}});
+  $$("#docpanel [data-note]").forEach(function(e){e.oninput=function(){D.docs[e.dataset.note]=Object.assign(rec(e.dataset.note),{note:e.value});save()}});
+  $$("#docpanel [data-file]").forEach(function(e){e.onchange=function(){
+    var f=e.files&&e.files[0];if(!f)return;
+    var id=e.dataset.file;
+    if(blobs[id])URL.revokeObjectURL(blobs[id]);
+    blobs[id]=URL.createObjectURL(f);
+    var doc=DOCS.filter(function(d){return d.id===id})[0];
+    patch(id,{file:{orig:f.name,size:f.size,at:Date.now()},status:"done"});
+    toast(id+" staged as "+renamed(doc,f.name));
+  }});
+  $$("#docpanel [data-dl]").forEach(function(e){e.onclick=function(){
+    var id=e.dataset.dl,doc=DOCS.filter(function(d){return d.id===id})[0];
+    if(!blobs[id]){toast("Re-attach this file — the browser drops it on reload");return}
+    var a=document.createElement("a");a.href=blobs[id];a.download=renamed(doc,rec(id).file.orig);a.click();
+  }});
+  $("#tree").textContent=tree();
+}
+function tree(){
+  var out="JAPAN-VISA-"+lastName()+"-2026/\n";
+  SECTIONS.forEach(function(s,i){
+    out+="  "+String(i+1).padStart(2,"0")+"_"+s.name.replace(/[^A-Za-z ]/g,"").trim().replace(/\s+/g,"-")+"/\n";
+    DOCS.filter(function(d){return d.s===s.id}).forEach(function(d){
+      out+="      "+d.id+"_"+d.slug+"_"+lastName()+".pdf"+(d.req?"":"   (optional)")+"\n";
+    });
+  });
+  return out;
+}
+
+/* ---------- cover letter ---------- */
+function buildLForm(){
+  $("#lform").innerHTML=LFIELDS.map(function(f){
+    var v=D.letter[f[0]]||"";
+    if(f[3]==="select"){
+      var opts=f[0]==="funding"?["I am funding the trip myself","The trip is sponsored"]:["Consulate-General of Japan, Bengaluru","Embassy of Japan, New Delhi","Consulate-General of Japan, Mumbai","Consulate-General of Japan, Chennai"];
+      return '<div><label for="l_'+f[0]+'">'+esc(f[1])+'</label><select id="l_'+f[0]+'" data-l="'+f[0]+'">'+opts.map(function(o){return '<option'+(v===o?" selected":"")+'>'+esc(o)+'</option>'}).join("")+'</select></div>';
+    }
+    return '<div><label for="l_'+f[0]+'">'+esc(f[1])+'</label><input id="l_'+f[0]+'" data-l="'+f[0]+'" value="'+esc(v)+'" placeholder="'+esc(f[2])+'"></div>';
+  }).join("")+'<div style="border-top:1px solid var(--rule);padding-top:11px"><label>Confirmed accommodation, once booked</label>'+
+  BASES.map(function(b){return '<input style="margin-top:6px" data-bk="'+b.id+'" value="'+esc(D.bookings[b.id]||"")+'" placeholder="'+esc(b.name)+' — name, phone">'}).join("")+'</div>';
+  $$("#lform [data-l]").forEach(function(e){e.oninput=e.onchange=function(){D.letter[e.dataset.l]=e.value;save();renderLetter()}});
+  $$("#lform [data-bk]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk]=e.value;save();renderDay()}});
+}
+function letterText(){
+  var L=D.letter,g=function(k,f){return L[k]||f};
+  var start=shortDate(DAYS[0].date),end=shortDate(DAYS[DAYS.length-1].date);
+  var cities=BASES.map(function(b){return b.name}).join(", ");
+  return [
+    (D.name||"[Your name]"),
+    g("addr","[Residential address]"),
+    g("phone","[Phone]")+"  ·  "+g("email","[Email]"),
+    "",
+    "Date: ____________",
+    "",
+    "The Visa Section",
+    g("consulate","Consulate-General of Japan, Bengaluru"),
+    "",
+    "Subject: Application for a short-stay tourist visa, "+start+" to "+end,
+    "",
+    "Dear Sir or Madam,",
+    "",
+    "I am applying for a single-entry short-stay tourist visa to visit Japan from "+start+" to "+end+", a total of "+DAYS.length+" days and "+(DAYS.length-1)+" nights.",
+    "",
+    "I hold Indian passport number "+g("passport","[passport number]")+" and was born on "+g("dob","[date of birth]")+". I am employed as "+g("designation","[designation]")+" at "+g("employer","[employer]")+", where I have worked since "+g("joined","[joining date]")+". My leave has been approved from "+g("leaveFrom","[leave start]")+" and I resume duty on "+g("leaveTo","[return date]")+". An employment certificate and leave approval are enclosed.",
+    "",
+    "I have travelled abroad on "+g("ctyCount","[number]")+" occasions to date, to "+g("countries","[list of countries]")+". On every occasion I returned to India within the permitted period and complied fully with the conditions of the visa. Copies of the relevant visas and entry stamps are enclosed.",
+    "",
+    g("funding","I am funding the trip myself")+". Three years of income tax returns, six months of bank statements and my most recent salary slips are enclosed in support.",
+    "",
+    "The purpose of my visit is tourism and photography. I will travel to "+cities+", staying in booked accommodation for every night of the trip. A day-by-day schedule of stay is enclosed, together with confirmed return flight reservations from Bengaluru and back to Bengaluru.",
+    "",
+    "I have strong ties to India through my employment, my family and my residence, and I will return well within the permitted period of stay. I confirm that I will comply fully with the conditions of the visa and will not engage in any paid activity while in Japan.",
+    "",
+    "I would be grateful for your consideration. Please let me know if any further document is required.",
+    "",
+    "Yours faithfully,",
+    "",
+    "",
+    "____________________",
+    (D.name||"[Your name]"),
+    "Passport no. "+g("passport","[passport number]"),
+    "",
+    "Enclosures: visa application form · passport and copies · photograph · schedule of stay · flight reservation · accommodation bookings · income tax returns (3 years) · bank statement (6 months) · salary slips (3 months) · employment certificate · leave approval"
+  ].join("\n");
+}
+function renderLetter(){$("#letterOut").textContent=letterText()}
+function schedHTML(){
+  var rows=DAYS.map(function(d,i){
+    var b=d.base?baseOf(d.base):null;
+    var stay=b?(D.bookings[b.id]||b.stay+" — address and phone to be confirmed"):"Departing Japan";
+    var acts=d.items.map(function(x){return x[1]}).slice(0,3).join(" ");
+    return '<tr><td>'+(i+1)+'</td><td>'+esc(shortDate(d.date))+'</td><td>'+esc(b?b.name:"Kansai / departure")+'</td><td>'+esc(d.title)+'. '+esc(acts)+'</td><td>'+esc(stay)+'</td></tr>';
+  }).join("");
+  return '<h2 style="font-size:14pt">Schedule of stay in Japan</h2><p>'+esc(D.name||"[Your name]")+' · passport '+esc(D.letter.passport||"[number]")+' · '+esc(shortDate(DAYS[0].date))+' to '+esc(shortDate(DAYS[DAYS.length-1].date))+'</p>'+
+  '<table border="1" cellspacing="0" cellpadding="5" style="border-collapse:collapse;font-size:10pt;width:100%"><tr style="background:#eee"><th>Day</th><th>Date</th><th>City</th><th>Activity</th><th>Accommodation</th></tr>'+rows+'</table>'+
+  '<p style="font-size:9pt;color:#555">Replace each accommodation line with the confirmed property name, full address and telephone number before submitting.</p>';
+}
+
+/* ---------- city maps ---------- */
+function cityMapFor(id){
+  for(var i=0;i<CITYMAPS.length;i++)if(CITYMAPS[i].id===id)return cityCard(CITYMAPS[i]);
+  return "";
+}
+function cityCard(c){
+  var W=880,H=420,PAD=58;
+  var lons=c.pts.map(function(p){return p.lon}),lats=c.pts.map(function(p){return p.lat});
+  var l0=Math.min.apply(null,lons),l1=Math.max.apply(null,lons);
+  var a0=Math.min.apply(null,lats),a1=Math.max.apply(null,lats);
+  var cl=Math.cos((a0+a1)/2*Math.PI/180);
+  var dw=Math.max((l1-l0)*cl,1e-5),dh=Math.max(a1-a0,1e-5);
+  var s=Math.min((W-2*PAD)/dw,(H-2*PAD)/dh);
+  var ox=(W-dw*s)/2,oy=(H-dh*s)/2;
+  var X=function(lon){return ox+(lon-l0)*cl*s},Y=function(lat){return oy+(a1-lat)*s};
+  var at={};c.pts.forEach(function(p){at[p.n]=[X(p.lon),Y(p.lat)]});
+  var g='';
+  var shape=function(ring){return "M"+ring.map(function(q){return X(q[0]).toFixed(1)+","+Y(q[1]).toFixed(1)}).join(" L")+" Z"};
+  var line=function(ring){return "M"+ring.map(function(q){return X(q[0]).toFixed(1)+","+Y(q[1]).toFixed(1)}).join(" L")};
+  (c.green||[]).forEach(function(r){g+='<path class="cgreen" d="'+shape(r)+'"></path>'});
+  (c.water||[]).forEach(function(r){g+='<path class="cwater" d="'+shape(r)+'"></path>'});
+  (c.rivers||[]).forEach(function(r){g+='<path class="criver" d="'+line(r)+'"></path>'});
+  if(c.contour){
+    var cx=X(c.contour.lon),cy=Y(c.contour.lat);
+    c.contour.rings.slice().reverse().forEach(function(rr){
+      g+='<ellipse class="ccont" cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" rx="'+(rr*cl*s).toFixed(1)+'" ry="'+(rr*s).toFixed(1)+'"></ellipse>';
+    });
+  }
+  // routes first, under the dots
+  c.routes.forEach(function(r){
+    var pts=r.p.filter(function(n){return at[n]});
+    if(pts.length<2)return;
+    g+='<path class="croute" stroke="'+r.c+'" d="M'+pts.map(function(n){return at[n][0].toFixed(1)+","+at[n][1].toFixed(1)}).join(" L")+'"></path>';
+  });
+  // points
+  c.pts.forEach(function(p){
+    var x=at[p.n][0],y=at[p.n][1],k=KINDS[p.k]||KINDS.see;
+    if(p.k==="peak"){
+      g+='<path class="cpt peak" fill="'+k[0]+'" d="M'+(x-9)+','+(y+7)+' L'+x+','+(y-8)+' L'+(x+9)+','+(y+7)+' Z"></path>';
+      g+='<text class="clbl dim" x="'+x+'" y="'+(y+21)+'" text-anchor="middle">'+esc(p.n)+'</text>';
+      return;
+    }
+    var big=p.k==="stay";
+    g+='<circle class="cpt" cx="'+x+'" cy="'+y+'" r="'+(big?7:5)+'" fill="'+k[0]+'"></circle>';
+    var right=x<W/2;
+    g+='<text class="clbl'+(big?"":" dim")+'" x="'+(x+(right?10:-10))+'" y="'+(y+4)+'" text-anchor="'+(right?"start":"end")+'"'+(big?' style="font-weight:600"':'')+'>'+esc(p.n)+'</text>';
+  });
+  // off-map chips
+  var dirY={north:26,northeast:26,east:H/2,southeast:H-16,south:H-16,southwest:H-16,west:H/2,northwest:26};
+  var dirX={north:W/2,northeast:W-8,east:W-8,southeast:W-8,south:W/2,southwest:8,west:8,northwest:8};
+  var used={};
+  c.off.forEach(function(o){
+    var d=o[1],x=dirX[d]||W/2,y=dirY[d]||H-16;
+    var key=d;used[key]=(used[key]||0)+1;y+=(used[key]-1)*15;
+    var anchor=x<W/3?"start":x>W*0.66?"end":"middle";
+    g+='<text class="coff" x="'+x+'" y="'+y+'" text-anchor="'+anchor+'">'+esc(o[0])+' \u2192 '+esc(o[2])+'</text>';
+  });
+  // scale bar: 1 km
+  var kmpx=(1/111.32)*s;
+  if(kmpx>18&&kmpx<W/2){
+    var bx=18,by=H-24;
+    g+='<line class="cscale" x1="'+bx+'" y1="'+by+'" x2="'+(bx+kmpx)+'" y2="'+by+'"></line>';
+    g+='<line class="cscale" x1="'+bx+'" y1="'+(by-4)+'" x2="'+bx+'" y2="'+(by+4)+'"></line>';
+    g+='<line class="cscale" x1="'+(bx+kmpx)+'" y1="'+(by-4)+'" x2="'+(bx+kmpx)+'" y2="'+(by+4)+'"></line>';
+    g+='<text class="cscaleTxt" x="'+(bx+kmpx/2)+'" y="'+(by-8)+'" text-anchor="middle">1 km</text>';
+  }
+  var kinds={};c.pts.forEach(function(p){kinds[p.k]=1});
+  var key=Object.keys(kinds).map(function(k){
+    return '<span><i class="sw" style="background:'+KINDS[k][0]+'"></i>'+esc(KINDS[k][1])+'</span>'}).join("");
+  var rk=c.routes.map(function(r){return '<span><i style="background:'+r.c+'"></i>'+esc(r.lbl)+'</span>'}).join("");
+  return '<div class="city"><p class="sub2">'+esc(c.sub)+'</p>'
+    +'<svg class="cmap" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Map of '+esc(c.name)+'">'+g+'</svg>'
+    +'<p class="geoNote">'+esc(c.geo||"")+' Coastlines, rivers and ridges are simplified outlines, not survey data.</p>'
+    +'<div class="ckey">'+key+'</div><div class="rkey">'+rk+'</div></div>';
+}
+
+/* ---------- budget ---------- */
+function bud(){var b=D.budget||{};return {
+  fx:+(b.fx!=null?b.fx:BUD.fx), cap:+(b.cap!=null?b.cap:BUD.cap),
+  foodDay:+(b.foodDay!=null?b.foodDay:BUD.foodDay),
+  nightly:Object.assign({},BUD.nightly,b.nightly||{}),
+  amt:b.amt||{}, off:b.off||{}, shopLens:+(b.shopLens||0), shopClothes:+(b.shopClothes||0)}}
+function bset(k,v){D.budget=Object.assign({},D.budget||{});D.budget[k]=v;save();renderBudget()}
+function yen(n){return "\u00a5"+Math.round(n).toLocaleString("en-US")}
+function inr(n){return "\u20b9"+Math.round(n).toLocaleString("en-IN")}
+function rowVal(pfx,i,def){var b=bud();var k=pfx+i;return b.amt[k]!=null?+b.amt[k]:def}
+function rowOn(pfx,i){var b=bud();return !b.off[pfx+i]}
+function budTotals(){
+  var b=bud(),y=0,acc=0;
+  BASES.forEach(function(x){acc+=(b.nightly[x.id]||0)*x.nights});
+  var food=b.foodDay*DAYS.length;
+  var tr=0;BUD.transport.forEach(function(r,i){if(rowOn("t",i))tr+=rowVal("t",i,r[1])});
+  var en=0;BUD.entries.forEach(function(r,i){if(rowOn("e",i))en+=rowVal("e",i,r[1])});
+  y=acc+food+tr+en;
+  var mi=0;BUD.misc.forEach(function(r,i){if(rowOn("m",i))mi+=rowVal("m",i,r[1])});
+  var fl=0;BUD.flightRows.forEach(function(r,i){if(rowOn("f",i))fl+=rowVal("f",i,r[1])});
+  b.flights=fl;
+  var shop=b.shopLens+b.shopClothes;
+  var yInr=y*b.fx;
+  return {b:b,acc:acc,food:food,tr:tr,en:en,mi:mi,fl:fl,shop:shop,yen:y,yInr:yInr,
+          core:yInr+fl+mi, all:yInr+fl+mi+shop};
+}
+function renderBudget(){
+  var T=budTotals(),b=T.b;
+  var capYen=b.cap/b.fx;
+  var h='<div class="bsum">';
+  h+='<div class="bcell"><small>On the ground, in yen</small><b class="mono">'+yen(T.yen)+'</b></div>';
+  h+='<div class="bcell"><small>Trip cost, no shopping</small><b class="mono">'+inr(T.core)+'</b></div>';
+  h+='<div class="bcell tot"><small>Everything, with shopping</small><b class="mono">'+inr(T.all)+'</b></div>';
+  h+='<div class="bcell"><small>Per day, on the ground</small><b class="mono">'+inr(T.yInr/DAYS.length)+'</b></div>';
+  h+='</div>';
+  h+='<div class="fxrow">'
+    +'<div><label for="b_fx">Rupees per yen</label><input id="b_fx" type="number" step="0.001" value="'+b.fx+'"></div>'
+    +'<div><label for="b_cap">Nightly ceiling, rupees</label><input id="b_cap" type="number" step="100" value="'+b.cap+'"></div>'
+    +'<div style="font-size:12px;color:var(--mute);padding-bottom:4px">Your ceiling works out at <b class="mono">'+yen(capYen)+'</b> a night.</div></div>';
+
+  h+='<div class="bsec"><h3>Flights</h3><p class="bnote">An open jaw, Bengaluru to Haneda and Kansai back to Bengaluru, priced as one multi-city ticket. Paid in rupees before you go.</p>';
+  BUD.flightRows.forEach(function(r,i){
+    var on=rowOn("f",i),v=rowVal("f",i,r[1]);
+    h+='<div class="brow'+(on?'':' off')+'"><span><input type="checkbox" data-ck="f'+i+'"'+(on?' checked':'')+'></span>'
+      +'<span class="lb">'+esc(r[0])+'</span><span class="wn">rupees</span>'
+      +'<span><input type="number" step="1000" data-am="f'+i+'" value="'+v+'"></span>'
+      +'<span class="inr">'+inr(v)+'</span></div>';
+  });
+  h+='<div class="bsub"><span>Flights</span><span class="mono">'+inr(T.fl)+'</span></div></div>';
+
+  // accommodation
+  var over=[];
+  BASES.forEach(function(x){if((b.nightly[x.id]||0)*b.fx>b.cap)over.push(x.name)});
+  h+='<div class="bsec"><h3>Where you sleep</h3>'
+    +'<p class="bnote">Sixteen nights across four bases. Rates are per night for one person and are indicative, not quotes.</p>';
+  h+='<div class="capbar'+(over.length?' over':'')+'"><span>'+(over.length
+      ? 'Over your '+inr(b.cap)+' ceiling in: <b>'+over.join(", ")+'</b>'
+      : 'Every night is inside your '+inr(b.cap)+' ceiling.')+'</span>'
+    +'<span class="mono">'+yen(T.acc)+' \u00b7 '+inr(T.acc*b.fx)+'</span></div>';
+  BASES.forEach(function(x){
+    var v=b.nightly[x.id]||0, per=v*b.fx, bad=per>b.cap;
+    h+='<div class="brow"><span></span><span class="lb"><b>'+esc(x.name)+'</b> <span class="wn">'+x.nights+' nights</span></span>'
+      +'<span class="wn">'+esc(x.area)+'</span>'
+      +'<span><input type="number" step="100" data-nb="'+x.id+'" value="'+v+'"></span>'
+      +'<span class="inr" style="'+(bad?'color:var(--shu);font-weight:700':'')+'">'+inr(per)+'/night</span></div>';
+  });
+  h+='<div class="bsub"><span>Accommodation, 15 nights</span><span class="mono">'+inr(T.acc*b.fx)+'</span></div></div>';
+
+  // food
+  h+='<div class="bsec"><h3>Eating</h3>'
+    +'<p class="bnote">A konbini breakfast, a counter lunch and a proper dinner runs around \u00a55,000\u20137,000 a day. The ramen and tea on this itinerary are cheap; the desserts and the ryokan-style dinners are not.</p>'
+    +'<div class="brow"><span></span><span class="lb">Food and drink, per day</span><span class="wn">\u00d7 '+DAYS.length+' days</span>'
+    +'<span><input type="number" step="250" id="b_food" value="'+b.foodDay+'"></span>'
+    +'<span class="inr">'+inr(b.foodDay*b.fx)+'/day</span></div>'
+    +'<div class="bsub"><span>Food across the trip</span><span class="mono">'+inr(T.food*b.fx)+'</span></div></div>';
+
+  // transport
+  h+='<div class="bsec"><h3>Getting around</h3><p class="bnote">Every leg in the plan, priced individually. Neither the nationwide JR Pass nor the Kansai\u2013Hiroshima pass pays for itself on this route, which is why there is no pass line here.</p>';
+  BUD.transport.forEach(function(r,i){
+    var on=rowOn("t",i),v=rowVal("t",i,r[1]);
+    h+='<div class="brow'+(on?'':' off')+'"><span><input type="checkbox" data-ck="t'+i+'"'+(on?' checked':'')+'></span>'
+      +'<span class="lb">'+esc(r[0])+'</span><span class="wn">'+esc(r[2])+'</span>'
+      +'<span><input type="number" step="10" data-am="t'+i+'" value="'+v+'"></span>'
+      +'<span class="inr">'+inr(v*b.fx)+'</span></div>';
+  });
+  h+='<div class="bsub"><span>Transport inside Japan</span><span class="mono">'+inr(T.tr*b.fx)+'</span></div></div>';
+
+  // entries
+  h+='<div class="bsec"><h3>Tickets and entries</h3><p class="bnote">'+esc(BUD.free)+'</p>';
+  BUD.entries.forEach(function(r,i){
+    var on=rowOn("e",i),v=rowVal("e",i,r[1]);
+    h+='<div class="brow'+(on?'':' off')+'"><span><input type="checkbox" data-ck="e'+i+'"'+(on?' checked':'')+'></span>'
+      +'<span class="lb">'+esc(r[0])+'</span><span class="wn">'+esc(r[2])+'</span>'
+      +'<span><input type="number" step="50" data-am="e'+i+'" value="'+v+'"></span>'
+      +'<span class="inr">'+inr(v*b.fx)+'</span></div>';
+  });
+  h+='<div class="bsub"><span>Tickets and entries</span><span class="mono">'+inr(T.en*b.fx)+'</span></div></div>';
+
+  // misc in rupees
+  h+='<div class="bsec"><h3>Before you leave</h3><p class="bnote">Paid in India, in rupees.</p>';
+  BUD.misc.forEach(function(r,i){
+    var on=rowOn("m",i),v=rowVal("m",i,r[1]);
+    h+='<div class="brow'+(on?'':' off')+'"><span><input type="checkbox" data-ck="m'+i+'"'+(on?' checked':'')+'></span>'
+      +'<span class="lb">'+esc(r[0])+'</span><span class="wn">rupees</span>'
+      +'<span><input type="number" step="100" data-am="m'+i+'" value="'+v+'"></span>'
+      +'<span class="inr">'+inr(v)+'</span></div>';
+  });
+  h+='<div class="bsub"><span>Pre-departure costs</span><span class="mono">'+inr(T.mi)+'</span></div></div>';
+
+  // shopping
+  h+='<div class="bsec"><h3>Shopping</h3>'
+    +'<p class="bnote">Kept out of the trip total, because it is a decision rather than a cost. Watch the Indian customs allowance: \u20b950,000 of goods on arrival, and roughly 38% duty above that. If you carry expensive gear out of India, file an export certificate at Bengaluru first so you are not taxed on your own lens coming home.</p>'
+    +'<div class="brow"><span></span><span class="lb">Lenses and camera gear</span><span class="wn">rupees</span>'
+    +'<span><input type="number" step="5000" id="b_lens" value="'+b.shopLens+'"></span><span class="inr">'+inr(b.shopLens)+'</span></div>'
+    +'<div class="brow"><span></span><span class="lb">Clothes</span><span class="wn">rupees</span>'
+    +'<span><input type="number" step="2000" id="b_cloth" value="'+b.shopClothes+'"></span><span class="inr">'+inr(b.shopClothes)+'</span></div>';
+  var head=50000-T.shop;
+  h+='<div class="bsub"><span>Shopping</span><span class="mono">'+inr(T.shop)+'</span></div>';
+  h+='<p class="bnote" style="margin-top:8px'+(head<0?';color:var(--shu)':'')+'">'
+    +(head<0?'You are '+inr(-head)+' over the duty-free allowance. Expect roughly '+inr(-head*0.385)+' in duty at Bengaluru.'
+            :inr(head)+' of allowance left before duty starts.')+'</p></div>';
+
+  // grand
+  h+='<div class="bsec"><h3>The whole thing</h3>'
+    +'<div class="brow"><span></span><span class="lb">Flights, Bengaluru to Haneda and Kansai to Bengaluru</span><span class="wn">rupees</span><span></span><span class="inr">'+inr(T.fl)+'</span></div>'
+    +'<div class="brow"><span></span><span class="lb">On the ground in Japan</span><span class="wn">'+yen(T.yen)+'</span><span></span><span class="inr">'+inr(T.yInr)+'</span></div>'
+    +'<div class="brow"><span></span><span class="lb">Pre-departure</span><span class="wn">rupees</span><span></span><span class="inr">'+inr(T.mi)+'</span></div>'
+    +'<div class="bsub"><span>Trip cost, excluding shopping</span><span class="mono">'+inr(T.core)+'</span></div>'
+    +'<div class="bsub" style="border-top:none"><span>With shopping</span><span class="mono">'+inr(T.all)+'</span></div></div>';
+
+  $("#budgetBody").innerHTML=h;
+  var bind=function(sel,key){var e=$(sel);if(e)e.onchange=function(){bset(key,+e.value)}};
+  bind("#b_fx","fx");bind("#b_cap","cap");bind("#b_food","foodDay");
+  bind("#b_lens","shopLens");bind("#b_cloth","shopClothes");
+  $$("#budgetBody [data-nb]").forEach(function(e){e.onchange=function(){
+    var n=Object.assign({},bud().nightly);n[e.dataset.nb]=+e.value;bset("nightly",n)}});
+  $$("#budgetBody [data-am]").forEach(function(e){e.onchange=function(){
+    var a=Object.assign({},bud().amt);a[e.dataset.am]=+e.value;bset("amt",a)}});
+  $$("#budgetBody [data-ck]").forEach(function(e){e.onchange=function(){
+    var o=Object.assign({},bud().off);if(e.checked)delete o[e.dataset.ck];else o[e.dataset.ck]=1;bset("off",o)}});
+}
+
+/* ---------- stays ---------- */
+function renderFlights(){
+  var h='<div class="phead"><h2>Flights</h2><p>'+esc(FLIGHTS.shape)+'</p></div>';
+  h+='<div class="stay" style="border-bottom:1px solid var(--rule)">';
+  FLIGHTS.rows.forEach(function(r){
+    h+='<div class="optrow"><span class="nm">'+esc(r[0])+'</span><span class="ty">'+esc(r[1])+'</span><span class="pr">'+esc(r[2])+'</span><span class="wy">'+esc(r[3])+'</span></div>';
+  });
+  h+='</div><div class="stay">';
+  FLIGHTS.tips.forEach(function(t){
+    h+='<div class="optrow" style="grid-template-columns:1.25fr 3fr"><span class="nm">'+esc(t[0])+'</span><span class="wy">'+esc(t[1])+'</span></div>';
+  });
+  h+='<p class="bnote" style="margin-top:12px;border-left:2px solid var(--shu);padding-left:11px">'+esc(FLIGHTS.caveat)+'</p>';
+  h+='<div class="tools" style="margin-top:12px">'+FLIGHTS.links.map(function(l){
+    return '<a class="btn" href="'+l[1]+'" target="_blank" rel="noreferrer" style="text-decoration:none">'+esc(l[0])+'</a>'}).join("")+'</div>';
+  h+='</div>';
+  $("#flightPanel").innerHTML=h;
+}
+function renderStays(){
+  var h='<div class="phead"><h2>Where you sleep</h2><p>Four beds in fifteen nights. Each block below lists a dorm, a private room and an upgrade, so you can mix depending on how social you feel that week.</p></div>';
+  STAYS.forEach(function(s){
+    var b=baseOf(s.base);
+    h+='<div class="stay"><h3><span style="display:inline-block;width:10px;height:10px;background:'+b.colour+';margin-right:8px"></span>'+esc(b.name)+'</h3>';
+    h+='<p class="when">'+esc(s.dates)+'</p><p class="note">'+esc(s.note)+'</p>';
+    s.opts.forEach(function(o){
+      h+='<div class="optrow"><span class="nm">'+esc(o[0])+'</span><span class="ty">'+esc(o[1])+'</span><span class="pr">'+esc(o[2])+' / night</span><span class="wy">'+esc(o[3])+'</span></div>';
+    });
+    h+='<div class="tools" style="margin-top:12px">'+s.links.map(function(l){
+      return '<a class="btn" href="'+l[1]+'" target="_blank" rel="noreferrer" style="text-decoration:none">'+esc(l[0])+'</a>'}).join("")+'</div>';
+    h+='<div style="margin-top:10px"><input class="txt" data-bk2="'+s.base+'" value="'+esc(D.bookings[s.base]||"")+'" placeholder="Once booked: property name and phone \u2014 feeds the schedule of stay"></div>';
+    h+='</div>';
+  });
+  $("#staysPanel").innerHTML=h;
+  $$("#staysPanel [data-bk2]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk2]=e.value;save();renderDay();buildLForm()}});
+  $("#bookLinks").innerHTML=BOOKLINKS.map(function(l){
+    return '<a class="lk" href="'+l[1]+'" target="_blank" rel="noreferrer">'+esc(l[0])+'<small>'+esc(l[2])+'</small></a>'}).join("");
+}
+
+/* ---------- misc panels ---------- */
+function renderStatic(){
+  $("#steps").innerHTML=STEPS.map(function(s){return '<div class="step"><b class="mono">'+s[0]+'</b><span><strong>'+esc(s[1])+'.</strong> '+esc(s[2])+'</span></div>'}).join("");
+  $("#links").innerHTML=LINKS.map(function(l){return '<a class="lk" href="'+l[1]+'" target="_blank" rel="noreferrer">'+esc(l[0])+'<small>'+esc(l[2])+'</small></a>'}).join("");
+}
+function renderDrive(){
+  $("#driveLink").innerHTML=D.drive?'<a href="'+esc(D.drive)+'" target="_blank" rel="noreferrer" style="font-size:13px">Open your visa folder</a>':'';
+}
+
+/* ---------- boot ---------- */
+(async function(){
+  var raw=await store.get(KEY);
+  if(raw){try{var p=JSON.parse(raw);for(var k in p)D[k]=p[k];}catch(e){}}
+  D.docs=D.docs||{};D.letter=D.letter||{};D.bookings=D.bookings||{};D.budget=D.budget||{};
+  $$("[data-k]").forEach(function(e){
+    e.value=D[e.dataset.k]||"";
+    e.oninput=function(){D[e.dataset.k]=e.value;save();renderVisa();renderSeal();renderLetter();renderDrive()};
+  });
+  buildTabs();buildMap();buildCal();renderDay();renderVisa();renderSeal();renderStatic();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();
+  selectNode("tokyo");
+  $("#play").onclick=playRoute;
+  $("#reset").onclick=resetRoute;
+  $("#copyTree").onclick=function(){navigator.clipboard.writeText(tree()).then(function(){toast("Folder structure copied")},function(){toast("Copy blocked — use the download button")})};
+  $("#saveTree").onclick=function(){dl("JAPAN-VISA-"+lastName()+"-folder-structure.txt",tree())};
+  $("#copyLetter").onclick=function(){navigator.clipboard.writeText(letterText()).then(function(){toast("Letter copied")},function(){toast("Copy blocked — use the download button")})};
+  $("#wordLetter").onclick=function(){docFile("Cover-Letter_"+lastName()+".doc","<pre style='font-family:Calibri;font-size:11pt;white-space:pre-wrap'>"+esc(letterText())+"</pre>")};
+  $("#wordSched").onclick=function(){docFile("Schedule-Of-Stay_"+lastName()+".doc",schedHTML())};
+  var renderAll=function(){
+    $$("[data-k]").forEach(function(e){e.value=D[e.dataset.k]||""});
+    buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();
+    if(anim.sel)selectNode(anim.sel);
+  };
+  $("#dExport").onclick=function(){
+    dl("japan-2026-data.json",JSON.stringify(D,null,2),"application/json");
+    toast("Saved a copy of everything you have entered");
+  };
+  $("#dImport").onchange=function(e){
+    var f=e.target.files&&e.target.files[0];if(!f)return;
+    var r=new FileReader();
+    r.onload=function(){
+      try{
+        var p=JSON.parse(r.result);
+        if(!p||typeof p!=="object")throw 0;
+        for(var k in p)D[k]=p[k];
+        D.docs=D.docs||{};D.letter=D.letter||{};D.bookings=D.bookings||{};D.budget=D.budget||{};
+        save();renderAll();toast("Imported");
+      }catch(err){toast("That file could not be read")}
+    };
+    r.readAsText(f);e.target.value="";
+  };
+  $("#dReset").onclick=function(){
+    if(!window.confirm("Clear everything you have entered on this device? Export first if you want a copy."))return;
+    D={name:"",trip:"19 Nov \u2013 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{},budget:{}};
+    blobs={};save();renderAll();toast("Cleared");
+  };
+  if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
+    navigator.serviceWorker.register("sw.js").then(function(){
+      $("#dataMsg").textContent="Saved in this browser only, and cached for offline use. Nothing is uploaded.";
+    }).catch(function(){});
+  }
+  if(!window.matchMedia||!window.matchMedia("(prefers-reduced-motion: reduce)").matches){setTimeout(playRoute,700)}
+})();
+</script>
