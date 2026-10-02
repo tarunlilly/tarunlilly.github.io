@@ -45,6 +45,8 @@ h1{font-size:27px;letter-spacing:-.02em;margin:0 0 4px;font-weight:700}
 .btn:hover{background:var(--sumi);color:var(--card)}
 .btn.q{border-color:var(--rule);color:var(--mute)}
 .btn.q:hover{background:var(--rule);color:var(--sumi)}
+.btn.danger{border-color:#e0c4bd;color:var(--shu)}
+.btn.danger:hover{background:var(--shu);border-color:var(--shu);color:var(--card)}
 .tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
 .hide{display:none}
 /* map */
@@ -1032,6 +1034,7 @@ function renderVisa(){
       h+='<div class="body"><div class="spec">'+esc(doc.spec)+'</div><div class="why">'+esc(doc.why)+'</div>';
       h+='<div class="tools"><label class="btn">'+(r.file?"Replace file":"Attach file")+'<input type="file" style="display:none" data-file="'+doc.id+'"></label>';
       if(r.file)h+='<button class="btn q" data-dl="'+doc.id+'">Download renamed</button>';
+      if(r.file)h+='<button class="btn q danger" data-rm="'+doc.id+'">Remove file</button>';
       h+='<button class="btn q" data-skip="'+doc.id+'">'+(r.status==="skip"?"Bring back":"Not applicable")+'</button>';
       h+='<span class="mono" style="font-size:11.5px;color:var(--mute)">'+esc(doc.fmt)+'</span></div>';
       if(r.file)h+='<div class="file mono">'+esc(r.file.orig)+' → '+esc(renamed(doc,r.file.orig))+' · '+(r.file.size/1048576).toFixed(2)+' MB</div>';
@@ -1047,8 +1050,16 @@ function renderVisa(){
   $$("#docpanel [data-tick]").forEach(function(e){e.onclick=function(ev){ev.stopPropagation();var r=rec(e.dataset.tick);patch(e.dataset.tick,{status:r.status==="done"?"todo":"done"})}});
   $$("#docpanel [data-skip]").forEach(function(e){e.onclick=function(){var r=rec(e.dataset.skip);patch(e.dataset.skip,{status:r.status==="skip"?"todo":"skip"})}});
   $$("#docpanel [data-note]").forEach(function(e){e.oninput=function(){D.docs[e.dataset.note]=Object.assign(rec(e.dataset.note),{note:e.value});save()}});
+  $$("#docpanel [data-rm]").forEach(function(e){e.onclick=function(){
+    var id=e.dataset.rm,r=rec(id);
+    if(blobs[id]){URL.revokeObjectURL(blobs[id]);delete blobs[id]}
+    patch(id,{file:null,status:r.status==="done"?"todo":r.status});
+    toast(id+" file removed");
+  }});
   $$("#docpanel [data-file]").forEach(function(e){e.onchange=function(){
-    var f=e.files&&e.files[0];if(!f)return;
+    var f=e.files&&e.files[0];
+    e.value="";
+    if(!f)return;
     var id=e.dataset.file;
     if(blobs[id])URL.revokeObjectURL(blobs[id]);
     blobs[id]=URL.createObjectURL(f);
