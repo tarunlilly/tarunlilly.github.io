@@ -1,9 +1,12 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Japan 2026 — trip and visa file</title>
+<title>Japan 2026 — Your travel workspace</title>
 <meta name="description" content="Route, day calendar, city maps, budget, visa file and consulate letter for a 16-night trip to Japan, 19 November to 5 December 2026.">
-<meta name="theme-color" content="#14203a">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#22334f">
+<meta name="color-scheme" content="light dark">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -45,8 +48,6 @@ h1{font-size:27px;letter-spacing:-.02em;margin:0 0 4px;font-weight:700}
 .btn:hover{background:var(--sumi);color:var(--card)}
 .btn.q{border-color:var(--rule);color:var(--mute)}
 .btn.q:hover{background:var(--rule);color:var(--sumi)}
-.btn.danger{border-color:#e0c4bd;color:var(--shu)}
-.btn.danger:hover{background:var(--shu);border-color:var(--shu);color:var(--card)}
 .tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
 .hide{display:none}
 /* map */
@@ -221,36 +222,272 @@ svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px soli
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{.tabs,.btn,.mapfoot,.tools{display:none}}
 </style>
+<style>
+/* Travel workspace theme. The original maps and detailed planning tools remain below. */
+:root{--sumi:#202c45;--indigo:#314c77;--paper:#f5f3ee;--card:#fffefa;--rule:#dfdfd9;--shu:#ae4438;--moss:#39634d;--mute:#69717d;--soft:#efede6;--hero:#22334f;--hero-ink:#fffaf0;--hero-mute:#cbd3df;--hero-line:#4d5e78;--accent-soft:#f5e9e3;--success-soft:#eaf0e9;--focus:#be5a42;--shadow:0 10px 32px #202c4508;--white:#fff;--map-land:#e5e3dd;--map-line:#ccc9c2;--water:#cbdbe5;--green:#d7dfd0}
+@media(prefers-color-scheme:dark){:root{--sumi:#e5e9ef;--indigo:#b2c9ec;--paper:#171e29;--card:#202b3b;--rule:#3e4858;--shu:#f1a28d;--moss:#a4c6a9;--mute:#b1bccb;--soft:#293345;--hero:#243755;--accent-soft:#3a3033;--success-soft:#283c34;--focus:#f9b19b;--shadow:0 10px 32px #0002;--map-land:#384454;--map-line:#647181;--water:#354c64;--green:#3a514b}}
+html{scroll-behavior:smooth;scroll-padding-block-start:28px}
+body{padding:0;font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.6}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea,summary{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+button:disabled{cursor:wait;opacity:.6}
+:focus-visible{outline:3px solid var(--focus)!important;outline-offset:3px}
+[hidden],.hide{display:none!important}
+a{text-underline-offset:3px}
+.skip-link{position:fixed;inset-block-start:-80px;inset-inline-start:20px;z-index:100;background:var(--card);padding:12px 20px;border:2px solid var(--indigo);border-radius:9px}
+.skip-link:focus{inset-block-start:12px}
+.workspace{display:grid;grid-template-columns:236px minmax(0,1fr);min-height:100dvh}
+.sidebar{position:sticky;inset-block-start:0;height:100dvh;display:flex;flex-direction:column;border-inline-end:1px solid var(--rule);padding:30px 18px;background:var(--card)}
+.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--sumi);padding-inline:10px}
+.brand-mark{inline-size:38px;block-size:38px;border:1px solid var(--rule);border-radius:12px;display:grid;place-items:center;color:var(--shu);font-size:24px;font-family:Georgia,serif}
+.brand-mark svg{inline-size:23px;block-size:23px}
+.brand b{display:block;font-size:17px;letter-spacing:-.04em}
+.brand small{display:block;color:var(--mute);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.nav-caption{margin:38px 12px 12px;color:var(--mute);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.tabs{display:flex;flex-direction:column;flex-wrap:nowrap;gap:5px;border:0;margin:0}
+.tab{display:flex;align-items:center;gap:13px;text-align:start;min-height:46px;padding:11px 14px;margin:0;border:0;border-radius:9px;color:var(--mute);font-size:13px;font-weight:500}
+.tab svg{inline-size:19px;block-size:19px;flex:none}
+.tab:hover{background:var(--soft)}
+.tab.on{color:var(--hero-ink);background:var(--hero);font-weight:600}
+.sidebar-bottom{margin-block-start:auto;padding:28px 10px 0}
+.sidebar-bottom .btn{inline-size:100%;justify-content:flex-start}
+.local-note{font-size:11px;line-height:1.7;color:var(--mute);margin:16px 0 0}
+.local-note b{display:block;color:var(--sumi);font-weight:600}
+.workspace-main{min-width:0;padding:0 38px 32px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;border-block-end:1px solid var(--rule);min-height:84px;max-width:1160px;margin-inline:auto}
+.breadcrumb{color:var(--mute);font-size:12px}
+.breadcrumb span{color:var(--sumi);margin-inline-start:9px}
+.save-indicator{font-size:11px;color:var(--moss);display:flex;align-items:center;gap:7px}
+.save-indicator::before{content:"";inline-size:6px;block-size:6px;border-radius:50%;background:currentColor}
+.save-indicator.error{color:var(--shu)}
+.shell{max-width:1160px;padding-block-start:30px}
+.section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-block-end:22px}
+.section-heading h1{font-size:25px;font-weight:650;letter-spacing:-.045em;margin:0}
+.section-heading p{color:var(--mute);font-size:12px;margin:4px 0 0}
+.eyebrow{font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;color:var(--mute)}
+.btn{min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--card);color:var(--sumi);font-size:12px;font-weight:600;line-height:1.4;text-decoration:none}
+.btn:hover{background:var(--soft);color:var(--sumi);border-color:var(--mute)}
+.btn.primary{background:var(--hero);border-color:var(--hero);color:var(--hero-ink)}
+.btn.primary:hover{filter:brightness(1.15)}
+.btn.danger{color:var(--shu);border-color:var(--shu)}
+.btn.q{color:var(--mute)}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--hero);color:var(--hero-ink);border-radius:16px;padding:34px 36px;min-height:248px}
+.hero .eyebrow{color:var(--hero-mute);display:flex;align-items:center;gap:9px}
+.hero .eyebrow::before{content:"";inline-size:6px;block-size:6px;background:var(--hero-ink);border-radius:50%}
+.hero h2{font-family:Georgia,"Times New Roman",serif;font-size:42px;line-height:1.13;font-weight:400;letter-spacing:-.045em;margin:17px 0 16px;max-width:13ch}
+.hero p{color:var(--hero-mute);font-size:12px;margin:0}
+.hero-art{position:absolute;z-index:-1;inset-inline-end:-6px;inset-block-end:0;inline-size:48%;block-size:100%;min-width:285px;opacity:.95}
+.hero-art .sun{fill:var(--shu)}.hero-art .mountain{fill:var(--hero-line)}.hero-art .snow{fill:var(--hero-mute)}.hero-art .terrain{fill:var(--hero);stroke:var(--hero-line);stroke-width:1}.hero-art .sky{stroke:var(--hero-line);fill:none}
+.hero-badge{position:absolute;inset-inline-end:28px;inset-block-start:28px;border:1px solid var(--hero-line);border-radius:20px;color:var(--hero-mute);font-size:10px;padding:5px 12px;letter-spacing:.08em}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-block:20px 28px}
+.metric{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:19px 20px;box-shadow:var(--shadow)}
+.metric .metric-label{font-size:11px;color:var(--mute)}
+.metric b{display:block;font-size:25px;letter-spacing:-.04em;font-weight:650;line-height:1.4;margin-block:7px 3px}
+.metric small{color:var(--mute);font-size:10px}
+.metric a{font-size:10px;color:var(--indigo);display:block}
+.dashboard-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr);gap:20px}
+.panel{border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.phead{padding:20px 22px}
+.phead h2{font-size:17px;letter-spacing:-.025em;margin-block-end:4px}
+.phead p{font-size:12px;line-height:1.65}
+.panel-top{display:flex;justify-content:space-between;gap:14px;align-items:center}
+.panel-top a{font-size:11px;white-space:nowrap}
+.route-stops{padding:5px 22px 16px}
+.route-stop{display:grid;grid-template-columns:27px 1fr auto;gap:13px;align-items:center;position:relative;padding-block:15px;border-block-end:1px solid var(--rule)}
+.route-stop:last-child{border:0}
+.route-number{inline-size:26px;block-size:26px;border-radius:50%;background:var(--soft);font-size:10px;display:grid;place-items:center;color:var(--indigo)}
+.route-stop b{display:block;font-weight:600;font-size:13px}
+.route-stop small{font-size:10px;color:var(--mute)}
+.night-pill,.pill{border:1px solid var(--rule);border-radius:20px;padding:4px 9px;font-size:10px;color:var(--mute);white-space:nowrap}
+.next-actions{padding:6px 22px 18px}
+.next-action{display:flex;align-items:flex-start;gap:10px;padding:13px 0;text-decoration:none;color:var(--sumi);border-block-end:1px solid var(--rule)}
+.next-action:last-child{border:0}
+.next-action .action-dot{inline-size:21px;block-size:21px;flex:none;border:1px solid var(--rule);border-radius:6px;color:var(--shu);display:grid;place-items:center;font-size:11px}
+.next-action b{display:block;font-size:12px;font-weight:600}
+.next-action small{font-size:10px;color:var(--mute);line-height:1.6;display:block;margin-block-start:3px}
+.next-action .arrow{margin-inline-start:auto;color:var(--mute)}
+.ready-track{height:5px;background:var(--soft);border-radius:5px;margin-block:10px;overflow:hidden}.ready-track i{display:block;height:100%;background:var(--moss)}
+.trip-settings{margin-block-start:20px;background:var(--card);border:1px solid var(--rule);border-radius:12px}
+.trip-settings summary{padding:17px 22px;cursor:pointer;font-weight:600;font-size:12px;min-height:48px}
+.trip-settings .fields{padding:0 10px 12px;gap:0}
+.fld{border:0;padding:10px 12px}
+.fld input{border:1px solid var(--rule);border-radius:7px;padding:10px;background:var(--paper);min-height:42px;font-size:13px}
+.fld label{font-size:11px}
+.privacy-banner{display:flex;align-items:flex-start;gap:12px;font-size:11px;color:var(--mute);border:1px solid var(--rule);background:var(--soft);border-radius:10px;padding:14px 18px;margin-block:20px 0}
+.privacy-banner p{margin:0;flex:1}
+.footer-note{font-size:10px;color:var(--mute);border-block-start:1px solid var(--rule);padding-block-start:18px;margin-block:30px 0}
+.cover,.datastrip{display:none}
+.warn{border:1px solid var(--rule);border-inline-start:3px solid var(--shu);background:var(--accent-soft);color:var(--sumi);border-radius:9px;padding:14px 18px;font-size:12px}
+.grid2{grid-template-columns:230px minmax(0,1fr);gap:18px}
+.nb{border-inline-start:3px solid transparent;border-left:0;border-radius:7px;font-size:12px;padding:14px 12px;min-height:48px}
+.nb.sel{border-inline-start-color:var(--shu)}
+.rhead{padding:16px 20px;gap:10px;cursor:default}
+.tick{inline-size:32px;block-size:32px;border-radius:7px;flex:none}
+.doc-expand{background:none;border:0;color:var(--sumi);text-align:start;display:flex;align-items:center;gap:9px;flex:1;padding:4px;min-height:36px;cursor:pointer}
+.doc-expand .rt{font-size:13px;line-height:1.45}
+.rid{font-size:10px;width:auto}
+.body{padding:0 22px 20px 62px}
+.spec,.why{font-size:12px}
+.status-badge{font-size:9px;border-radius:12px;padding:3px 8px;background:var(--soft);color:var(--mute);white-space:nowrap}
+.status-badge.done{background:var(--success-soft);color:var(--moss)}
+.txt,textarea,.lf input,.lf select{border-radius:7px;min-height:42px;font-size:12px;padding:10px 12px}
+textarea{min-height:92px}
+label.field-label{display:block;font-size:11px;color:var(--mute);font-weight:600;margin-block-end:5px}
+.filterbar{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;padding:18px 22px;border-block-end:1px solid var(--rule)}
+.filterbar .search-field{flex:1;min-width:170px}
+.filterbar .filter-field{min-width:160px}
+.filterbar input,.filterbar select{width:100%;background:var(--paper);border:1px solid var(--rule);border-radius:7px;color:var(--sumi);min-height:42px;padding:9px 12px;font-size:12px}
+.filterbar p{margin:0;font-size:11px;color:var(--mute)}
+.itinerary-layout{display:grid;grid-template-columns:235px minmax(0,1fr)}
+.day-list{max-height:760px;overflow:auto;border-inline-end:1px solid var(--rule);padding:12px}
+.day-pick{width:100%;padding:12px;text-align:start;display:block;background:none;border:1px solid transparent;border-radius:8px;color:var(--sumi);cursor:pointer;margin-block-end:5px}
+.day-pick small{display:block;font-size:10px;color:var(--mute)}
+.day-pick b{display:block;font-size:12px;font-weight:600;margin-block:3px}
+.day-pick.on{background:var(--soft);border-color:var(--rule)}
+.day-pick.on small:first-child{color:var(--shu)}
+.day{border:0;padding:24px;min-width:0}
+.dayhead h3{font-size:20px;line-height:1.35;letter-spacing:-.025em}
+.dayhead{margin-block-end:20px}
+.daymeta{font-size:11px}
+.line{padding-block:13px;font-size:12px;line-height:1.75}
+.line .tm{width:67px;font-size:10px}
+.day-nav{display:flex;justify-content:space-between;gap:12px;margin-block-end:20px}
+.day-note{margin-block-start:24px;padding-block-start:18px;border-block-start:1px solid var(--rule)}
+.calendar-disclosure{border-block-start:1px solid var(--rule)}
+.calendar-disclosure summary{padding:15px 22px;font-size:12px;cursor:pointer;color:var(--indigo)}
+.cals{max-width:760px;margin-inline:auto}
+.cell{border-radius:5px;min-height:35px}
+.cgrid{gap:4px}
+.upload-area{padding:24px;border-block-end:1px solid var(--rule);background:var(--soft)}
+.upload-area h3{font-size:15px;margin:0 0 5px}
+.upload-area p{font-size:12px;color:var(--mute);margin:0 0 16px;max-width:75ch}
+.upload-controls{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.upload-controls select{min-width:180px}
+.file-input{position:absolute;inline-size:1px;block-size:1px;opacity:0;overflow:hidden}
+.empty-state{padding:48px 22px;text-align:center}
+.empty-state .empty-icon{font-size:28px;color:var(--indigo);margin-block-end:8px}
+.empty-state h3{font-size:16px;margin:5px 0}
+.empty-state p{max-width:52ch;margin:5px auto 18px;font-size:12px;color:var(--mute)}
+.document-list{padding:0 22px}
+.document-row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:13px;padding-block:18px;border-block-end:1px solid var(--rule)}
+.document-row:last-child{border:0}
+.file-icon{inline-size:38px;block-size:44px;display:grid;place-items:center;border:1px solid var(--rule);border-radius:7px;background:var(--soft);font-size:9px;color:var(--indigo);font-weight:700}
+.document-row h3{font-size:12px;font-weight:600;margin:0;overflow-wrap:anywhere}
+.document-row p{font-size:10px;color:var(--mute);margin:5px 0 0}
+.document-row .tools{gap:6px}
+.document-row .btn{font-size:10px;min-height:40px;padding:8px 10px}
+.backup-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.backup-card{padding:24px}
+.backup-card h2{font-size:18px;margin:0 0 8px}
+.backup-card p{font-size:12px;color:var(--mute);margin:0 0 18px}
+.backup-card .btn{margin-block:4px}
+.bsum{grid-template-columns:repeat(4,minmax(0,1fr));background:var(--soft)}
+.bcell{padding:18px}
+.bcell b{font-size:21px}
+.bcell small{font-size:10px}
+.bsec{padding:22px}
+.bsec h3{font-size:16px}
+.bsec .bnote{font-size:12px}
+.brow{padding-block:10px;font-size:12px;grid-template-columns:24px minmax(0,1fr) 95px 96px 82px}
+.brow input[type=number]{min-height:39px;border-radius:6px;font-size:12px}
+input[type=checkbox]{accent-color:var(--indigo);inline-size:19px;block-size:19px}
+.fxrow input{min-height:40px;font-size:14px}
+.fxrow{padding:18px 22px;background:var(--card)}
+.bsub{border-color:var(--rule);font-size:12px}
+.stay,.city{padding:24px}
+.optrow{font-size:12px}
+.lgrid{grid-template-columns:300px minmax(0,1fr)}
+.lform{gap:14px;padding:22px}
+.lf label{font-size:11px}
+.letter{padding:22px;min-width:0}
+pre.out{background:var(--paper);color:var(--sumi);border-radius:8px;font-size:12px;padding:20px}
+.mapwrap{padding:18px}
+.mapfoot{padding:18px 22px}
+.readout{font-size:12px}
+.land{fill:var(--map-land);stroke:var(--map-line)}
+.insetBox,.coffBox{fill:var(--card)}
+svg.cmap{background:var(--paper)}
+.cgreen{fill:var(--green)}
+.cwater{fill:var(--water)}
+.toast{inset-inline-start:50%;inset-block-end:22px;left:auto;bottom:auto;max-width:calc(100vw - 32px);border-radius:10px;box-shadow:var(--shadow);font-size:12px;line-height:1.5;min-width:240px;text-align:center;padding:13px 19px}
+.muted{color:var(--mute)}
+.inset-section{padding:22px}
+.loading-note{font-size:12px;color:var(--mute);padding:24px}
+.sr-only{position:absolute;inline-size:1px;block-size:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.bar{border-radius:5px;overflow:hidden;height:5px}
+@media(min-width:1500px){.workspace-main{padding-inline:55px}.hero{min-height:270px}.hero h2{font-size:48px}}
+@media(max-width:1150px){.workspace{grid-template-columns:200px minmax(0,1fr)}.workspace-main{padding-inline:24px}.sidebar{padding-inline:12px}.metrics{gap:10px}.metric{padding:15px}.metric b{font-size:22px}.dashboard-grid{grid-template-columns:1fr 1fr}.brow{grid-template-columns:22px minmax(0,1fr) 75px 86px 70px;gap:7px}.lgrid{grid-template-columns:1fr}.lform{border-inline-end:0;border-block-end:1px solid var(--rule);grid-template-columns:1fr 1fr}.grid2{grid-template-columns:190px minmax(0,1fr)}}
+@media(max-width:900px){.workspace{display:block}.sidebar{position:sticky;inset-block-start:0;height:auto;padding:12px 20px 0;z-index:30;box-shadow:var(--shadow);border-inline-end:0;border-block-end:1px solid var(--rule)}.brand{padding:0;margin-block-end:12px}.brand-mark{inline-size:31px;block-size:31px;border-radius:8px;font-size:20px}.brand b{font-size:15px}.brand small{font-size:8px}.nav-caption,.sidebar-bottom .local-note{display:none}.sidebar-bottom{position:absolute;inset-inline-end:20px;inset-block-start:10px;padding:0}.sidebar-bottom .btn{min-height:35px;font-size:10px;padding:7px 10px}.tabs{flex-direction:row;overflow:auto;gap:5px;padding-block-end:10px;scrollbar-width:thin}.tab{flex:none;padding:8px 11px;min-height:39px;font-size:11px;gap:7px}.tab svg{inline-size:15px;block-size:15px}.workspace-main{padding-inline:22px}.topbar{min-height:55px}.shell{padding-block-start:22px}.metrics{grid-template-columns:repeat(4,1fr)}.grid2{grid-template-columns:1fr}#secnav{display:flex;overflow:auto;gap:6px}#secnav .nb{flex:none;width:auto;border:1px solid var(--rule);gap:10px}.itinerary-layout{grid-template-columns:210px minmax(0,1fr)}.brow{grid-template-columns:22px minmax(0,1fr) 95px 100px 90px}.foot2{grid-template-columns:1fr}.hero{padding:30px}.hero h2{font-size:39px}.cals{gap:20px}}
+@media(max-width:620px){.workspace-main{padding-inline:16px}.sidebar{padding-inline:16px}.sidebar-bottom{inset-inline-end:16px}.section-heading{align-items:flex-start;margin-block-end:17px}.section-heading h1{font-size:23px}.section-heading .btn{font-size:10px;min-height:38px;padding:8px 10px}.hero{padding:26px 24px;min-height:254px}.hero h2{font-size:37px;max-width:12ch}.hero-art{inline-size:70%;opacity:.36;inset-inline-end:-85px}.hero-badge{display:none}.hero p{font-size:11px;max-width:25ch}.metrics{grid-template-columns:1fr 1fr;gap:10px;margin-block:14px 20px}.metric{padding:16px}.metric b{font-size:24px}.dashboard-grid,.backup-grid{grid-template-columns:1fr;gap:16px}.phead{padding:18px}.topbar .breadcrumb{font-size:10px}.save-indicator{font-size:10px;max-width:52%;text-align:end}.trip-settings .fields{grid-template-columns:1fr}.privacy-banner{font-size:10px;padding:13px}.privacy-banner .btn{font-size:10px;padding:7px 10px;min-height:35px}.phead h2{font-size:16px}.itinerary-layout{display:block}.day-list{display:flex;overflow:auto;max-height:none;border-inline-end:0;border-block-end:1px solid var(--rule);gap:7px;padding:12px}.day-pick{min-width:162px;width:162px;flex:none;margin:0}.day-pick b{white-space:normal}.day{padding:20px 17px}.filterbar{padding:16px;gap:10px}.filterbar .filter-field{min-width:130px;flex:1}.filterbar .search-field{flex:1 0 100%}.dayhead h3{font-size:18px}.line{gap:9px}.line .tm{width:61px}.wake{margin-inline-start:0;margin-block-start:7px;display:table}.brow{grid-template-columns:23px minmax(0,1fr) 90px}.brow .wn,.brow .inr{display:none}.brow .lb .wn{display:inline}.bsum{grid-template-columns:1fr 1fr}.bcell{border-block-end:1px solid var(--rule);padding:15px}.bcell b{font-size:20px}.bsec{padding:20px 17px}.fxrow{padding:16px}.body{padding:0 17px 20px}.rhead{padding:14px 15px;gap:7px}.rhead .status-badge{display:none}.doc-expand{gap:8px}.doc-expand .rt{font-size:12px}.lform{grid-template-columns:1fr;padding:18px}.letter{padding:18px}.stay,.city{padding:19px}.document-row{grid-template-columns:35px minmax(0,1fr);gap:11px}.document-row .tools{grid-column:2}.document-list{padding-inline:17px}.upload-area{padding:19px}.upload-controls>div{width:100%}.upload-controls select{width:100%}.document-row .btn{font-size:11px;min-height:42px}.optrow[style]{grid-template-columns:1fr!important}.mapfoot .readout{min-width:100%}.toast{inset-block-end:15px}.footer-note{font-size:10px}.warn{font-size:11px}.cals{padding:16px;gap:24px}.day-nav .btn{font-size:10px}.backup-card{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:620px){.line{font-size:13px}.daymeta{font-size:12px}.phead p{font-size:13px}.sidebar .tabs{flex-wrap:nowrap}.sidebar{scroll-margin-block-start:0}}
+@media print{.sidebar,.topbar,.section-heading>.btn,.privacy-banner,.footer-note,.day-list,.filterbar,.upload-area,.day-nav{display:none!important}.workspace{display:block}.workspace-main{padding:0}.shell{padding:0}.hero,.panel,.metric{break-inside:avoid;box-shadow:none}.itinerary-layout{display:block}:root{--sumi:#111;--paper:#fff;--card:#fff;--mute:#555;--rule:#bbb}.tabpane.hide{display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to workspace</a>
+<div class="workspace">
+<aside class="sidebar" aria-label="Workspace navigation">
+  <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="14" cy="10" r="4" fill="currentColor" stroke="none"/><path d="M4 21h20M6 18h16M9 15h10"/></svg></span><span><b>Japan, 2026</b><small>A travel workspace</small></span></a>
+  <p class="nav-caption">Your journey</p>
+  <nav class="tabs" id="tabs" aria-label="Planner sections"></nav>
+  <div class="sidebar-bottom"><button class="btn q" id="openBackups">↥ &nbsp; Backups & storage</button><p class="local-note"><b>On this device, for this trip.</b>No account. No cloud sync.<br>Make a backup before you go.</p></div>
+</aside>
+<main class="workspace-main" id="main" tabindex="-1">
+  <header class="topbar"><div class="breadcrumb">Japan 2026 <span aria-hidden="true">/</span><span id="crumb">Overview</span></div><span id="saveStatus" class="save-indicator" role="status">Opening your workspace…</span></header>
 
 <div class="shell">
-  <div class="cover">
-    <div class="coverTop">
-      <div>
-        <h1>Japan 2026</h1>
-        <p class="sub">Sixteen nights, 19 November to 5 December. Route, day calendar, visa file and consulate letter in one place. Everything you type is saved on this device.</p>
-      </div>
-      <div class="seal" id="seal"><div class="sealPct" id="sealPct">0%</div><div class="sealTxt mono" id="sealTxt">0 / 0</div></div>
+  <div class="section-heading"><div><h1 id="pageTitle" tabindex="-1">Your trip, all together.</h1><p id="pageSubtitle">Less searching. More looking forward.</p></div><button class="btn" id="quickBackup">↥ &nbsp; Back up trip</button></div>
+  <section id="p_overview" class="tabpane" aria-label="Trip overview">
+    <span id="overview"></span>
+    <div class="hero">
+      <div class="eyebrow">The next adventure</div>
+      <h2>A little planning.<br>A lot of Japan.</h2>
+      <p id="heroDates"></p><span class="hero-badge">AUTUMN · 2026</span>
+      <svg class="hero-art" viewBox="0 0 470 265" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle class="sun" cx="325" cy="91" r="47"/><path class="sky" d="M40 69h163M90 80h57M378 145h70M352 156h39M17 181h109"/><path class="mountain" d="M0 265 221 76 455 265Z"/><path class="snow" d="m170 120 51-44 61 50-39-11-17 11-18-17-21 15Z"/><path class="terrain" d="M0 246q90-44 192 3t278-20v36H0Z"/><path class="sky" d="M0 256q110-35 235 0t235-11"/></svg>
     </div>
+    <div class="metrics" id="overviewMetrics"></div>
+    <div class="dashboard-grid">
+      <div class="panel"><div class="phead panel-top"><div><h2>Four bases. One great journey.</h2><p>East to west, at your own pace.</p></div><a href="#route">See route ↗</a></div><div id="overviewRoute" class="route-stops"></div></div>
+      <div class="panel"><div class="phead"><h2>A little closer to ready</h2><p>Your next steps, based on this workspace.</p></div><div class="next-actions" id="nextActions"></div></div>
+    </div>
+    <details class="trip-settings" id="tripSettings"><summary>Your trip details <span class="muted">· applicant & submission target</span></summary>
     <div class="fields">
-      <div class="fld"><label for="f_name">Applicant, as in passport</label><input id="f_name" data-k="name" placeholder="Full name"></div>
-      <div class="fld"><label for="f_trip">Travel window</label><input id="f_trip" data-k="trip"></div>
-      <div class="fld"><label for="f_sub">Target submission date</label><input id="f_sub" data-k="submit" placeholder="approx. 12 Oct 2026"></div>
+      <div class="fld"><label for="f_name">Applicant, as in passport</label><input id="f_name" data-k="name" placeholder="Add your full name" autocomplete="name"></div>
+      <div class="fld"><label for="f_trip">Travel window note (does not change itinerary)</label><input id="f_trip" data-k="trip"></div>
+      <div class="fld"><label for="f_sub">Target visa submission date</label><input id="f_sub" data-k="submit" placeholder="Add a date or reminder"></div>
     </div>
-    <div class="bar"><i id="bar" style="width:0%"></i></div>
-  </div>
+    </details>
+    <div class="privacy-banner"><p><b>Your workspace stays in this browser.</b> Notes and documents are not cloud-synced or encrypted. Browser cleanup can erase them. Keep a complete backup somewhere you trust.</p><button class="btn q" id="storageInfo">Manage</button></div>
+  </section>
 
-  <div class="tabs" id="tabs"></div>
-  <div class="datastrip">
-    <span id="dataMsg">Everything you type is saved in this browser only. Nothing is uploaded.</span>
-    <span class="dtools">
-      <button class="btn q" id="dExport">Export data</button>
-      <label class="btn q">Import<input type="file" accept="application/json" id="dImport" style="display:none"></label>
-      <button class="btn q" id="dReset">Reset</button>
-    </span>
-  </div>
+  <section id="p_documents" class="tabpane hide" aria-label="Document library">
+    <span id="documents"></span>
+    <div class="warn">Stored only in this browser on this device, not in a secure cloud vault. Files survive normal reloads, but browser data removal or eviction can delete them. Keep originals and regular backups.</div>
+    <div class="panel">
+      <div class="upload-area"><h2 class="sr-only">Document library</h2><h3>Everything you need, easy to find.</h3><p>Keep tickets, confirmations, visa paperwork and travel essentials together. Files are saved to this browser; nothing is uploaded to a server. Up to 20 MB per file, 50 MB total.</p>
+        <div class="upload-controls"><div><label class="field-label" for="uploadCategory">Category for new files</label><select class="txt" id="uploadCategory"><option>Travel</option><option>Flights</option><option>Accommodation</option><option>Visa</option><option>Identity</option><option>Insurance</option><option>Other</option></select></div><button class="btn primary" id="addDocuments">＋ Add documents</button><input id="libraryFiles" type="file" multiple hidden></div><p id="uploadMessage" role="status"></p>
+      </div>
+      <div class="filterbar"><div class="search-field"><label class="field-label" for="docSearch">Find a document</label><input id="docSearch" type="search" placeholder="Search by filename or visa reference…"></div><div class="filter-field"><label class="field-label" for="docCategory">Category</label><select id="docCategory"><option value="">All categories</option><option>Travel</option><option>Flights</option><option>Accommodation</option><option>Visa</option><option>Identity</option><option>Insurance</option><option>Other</option></select></div><p id="docCount" role="status"></p></div>
+      <div id="documentList"><p class="loading-note">Opening your document library…</p></div>
+    </div>
+  </section>
+
+  <section id="p_backups" class="tabpane hide" aria-label="Backups and storage">
+    <span id="backups"></span>
+    <div class="warn">This is browser/device-only storage, not encrypted storage or cloud sync. Backups include personal data and are not encrypted. Store them privately. Changing browser, device or website origin requires a manual backup and restore.</div>
+    <div class="backup-grid">
+      <div class="panel backup-card"><h2>Take your workspace with you.</h2><p><b>Complete backup</b> includes planner entries and every available saved file. <b>Planner-only export</b> includes notes, budget, checklist and document metadata, but no file contents.</p><div class="tools"><button class="btn primary" id="fullExport">Download complete backup</button><button class="btn" id="dExport">Planner-only export</button></div><p id="backupStatus" role="status"></p></div>
+      <div class="panel backup-card"><h2>Restore a backup</h2><p>Import a complete backup or a legacy planner JSON. You will be asked before existing planner entries are replaced. Complete restores replace saved files; planner-only imports keep existing files.</p><button class="btn" id="importButton">Choose backup file</button><button class="btn" id="recoveryExport" hidden>Download unreadable saved data</button><input type="file" accept=".json,application/json" id="dImport" hidden><p id="importStatus" role="status"></p></div>
+      <div class="panel backup-card"><h2>Storage on this device</h2><p id="storageDetails">Checking browser storage…</p><p id="dataMsg">No account, automatic sync or encryption. Private browsing and browser cleanup can remove your data. External links open their own websites.</p><button class="btn" id="requestPersistence">Ask browser to retain files</button></div>
+      <div class="panel backup-card"><h2>Start over</h2><p>Clear your applicant details, notes, checklist, budget changes and all saved documents from this browser. The original itinerary and recommendations remain. Download a complete backup first.</p><button class="btn danger" id="dReset">Reset this workspace…</button></div>
+    </div>
+  </section>
 
   <!-- ROUTE -->
-  <section id="p_route" class="tabpane">
+  <section id="p_route" class="tabpane hide">
+    <span id="route"></span>
     <div class="panel">
       <div class="phead"><h2>The route</h2><p>Honshu at true scale, greyed out, so you can see how little of Japan this covers. Solid lines are moves with luggage; dotted lines are day trips you come back from. Press play to walk the journey, or tap any stop for its hour-by-hour plan.</p></div>
       <div class="mapwrap">
@@ -267,6 +504,8 @@ svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px soli
 
   <!-- BUDGET -->
   <section id="p_budget" class="tabpane hide">
+    <span id="budget"></span>
+    <div class="warn">Planning estimate, not live pricing or actual spending. The exchange rate is manual; original fare, visa-fee and customs assumptions are unverified. Check current prices and <a href="#visa">official sources</a> before relying on them.</div>
     <div class="panel"><div class="phead"><h2>Budget</h2><p>Every line below comes from the itinerary rather than a guess at a daily average. Edit any figure, untick anything you would skip, and the totals move. Saved on this device.</p></div>
       <div id="budgetBody"></div>
     </div>
@@ -274,28 +513,31 @@ svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px soli
 
   <!-- CALENDAR -->
   <section id="p_cal" class="tabpane hide">
+    <span id="cal"></span>
     <div class="panel">
-      <div class="phead"><h2>Day calendar</h2><p>Each coloured square is a night of the trip. Click a day for flights, times, where you sleep and how you get to the next place.</p></div>
-      <div class="cals" id="cals"></div>
-      <div class="legend" id="legend"></div>
-      <div class="day" id="dayDetail"></div>
+      <div class="phead"><h2>Your days in Japan</h2><p>Browse the original day-by-day plan, find a place, and keep your own notes. Accommodation suggestions are not bookings.</p></div>
+      <div class="filterbar"><div class="search-field"><label class="field-label" for="daySearch">Search your itinerary</label><input id="daySearch" type="search" placeholder="Try “ramen”, “Fuji” or “Shinkansen”…"></div><div class="filter-field"><label class="field-label" for="cityFilter">Base city</label><select id="cityFilter"><option value="">All cities & travel days</option></select></div><p id="dayCount" role="status"></p></div>
+      <div class="itinerary-layout"><nav id="dayList" class="day-list" aria-label="Itinerary days"></nav><div class="day" id="dayDetail"></div></div>
+      <details class="calendar-disclosure"><summary>Open the month calendar</summary><div class="cals" id="cals"></div><div class="legend" id="legend"></div></details>
     </div>
   </section>
 
   <!-- VISA -->
   <section id="p_visa" class="tabpane hide">
+    <span id="visa"></span>
+    <div class="panel" style="margin-block-end:18px"><div class="phead panel-top"><div><h2>Document readiness <span id="sealPct">0%</span></h2><p><span id="sealTxt">0 / 0</span> required checklist items marked ready. This is your checklist, not visa approval.</p></div><div id="seal" aria-hidden="true"></div></div><div class="bar"><i id="bar" style="width:0%"></i></div><div class="filterbar"><div class="search-field"><label class="field-label" for="visaSearch">Find a checklist item (all sections)</label><input id="visaSearch" type="search" placeholder="Search passport, bank statement…"></div><div class="filter-field"><label class="field-label" for="visaFilter">Status</label><select id="visaFilter"><option value="">All items in section</option><option value="todo">To do · all sections</option><option value="done">Ready · all sections</option><option value="skip">Not applicable · all sections</option></select></div></div></div>
     <div class="warn">Visa rules for Indian nationals changed more than once recently, including the arrival of the online eVisa route. Confirm the current requirement and fee on the Embassy of Japan in India site before you submit. This is the assembly plan, not the legal source.</div>
     <div class="grid2">
-      <nav id="secnav"></nav>
+      <nav id="secnav" aria-label="Visa checklist categories"></nav>
       <div class="panel" id="docpanel"></div>
     </div>
     <div class="foot2">
       <div class="panel"><div class="phead"><h2>Order of work</h2><p>Start with the slowest item, not the easiest one.</p></div><div id="steps"></div></div>
       <div>
         <div class="panel" style="margin-bottom:22px">
-          <div class="phead"><h2>Your Drive folder</h2><p>Create this structure in Drive, then paste the shared link so it lives with the checklist.</p></div>
+          <div class="phead"><h2>Your external folder</h2><p>Optional: keep a link to your own Drive or other folder. This does not upload or sync any documents.</p></div>
           <div style="padding:15px 18px;display:grid;gap:9px">
-            <input class="txt" id="drive" data-k="drive" placeholder="https://drive.google.com/drive/folders/…">
+            <label class="field-label" for="drive">Folder link (https or http only)</label><input class="txt" id="drive" data-k="drive" type="url" placeholder="https://drive.google.com/drive/folders/…">
             <div id="driveLink"></div>
             <pre class="tree" id="tree"></pre>
             <div class="tools"><button class="btn" id="copyTree">Copy structure</button><button class="btn q" id="saveTree">Download as .txt</button></div>
@@ -308,6 +550,7 @@ svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px soli
 
   <!-- STAYS -->
   <section id="p_stays" class="tabpane hide">
+    <span id="stays"></span>
     <div class="warn">Prices are indicative bands for a solo traveller, not quotes. Japanese rates move a long way with season and day of week, and late November to early December is the most expensive fortnight of the Kyoto year. Check the live rate before you count on any number here.</div>
     <div class="panel" id="flightPanel" style="margin-bottom:22px"></div>
     <div class="panel" id="staysPanel"></div>
@@ -316,8 +559,10 @@ svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px soli
 
   <!-- LETTER -->
   <section id="p_letter" class="tabpane hide">
+    <span id="letter"></span>
+    <div class="warn"><b>Drafts, not verified applications.</b> Review every personal detail, declaration and enclosure before submitting. Booking notes do not prove reservations, and checklist completion does not prove visa or leave approval. Downloads are editable Word-compatible .doc files; replace all bracketed prompts.</div>
     <div class="panel">
-      <div class="phead"><h2>Cover letter and schedule of stay</h2><p>Fill the left column once. The letter and the day-by-day schedule build themselves from your itinerary, so the two documents can't contradict each other.</p></div>
+      <div class="phead"><h2>Cover letter and schedule of stay</h2><p>Add your details once. The drafts use the fixed itinerary dates; the overview's travel-window note does not change them. Review the downloaded drafts against your actual bookings and documents.</p></div>
       <div class="lgrid">
         <div class="lform lf" id="lform"></div>
         <div class="letter">
@@ -331,25 +576,22 @@ svg.cmap{width:100%;height:auto;display:block;background:#f4f2ec;border:1px soli
       </div>
     </div>
   </section>
+  <footer class="footer-note">Made for the journey, not the rush. &nbsp;·&nbsp; Original itinerary, prices, visa and customs notes are unverified planning guidance. Check current requirements, schedules and prices with official sources before booking or applying. <a href="#visa">Official links →</a></footer>
 </div>
-<div class="toast hide" id="toast"></div>
+</main>
+</div>
+<div class="toast hide" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 "use strict";
-/* ---------- storage: Claude artifact storage if present, otherwise this device ---------- */
+/* ---------- local planner storage ---------- */
 var store={
-  async get(k){
-    if(window.storage&&window.storage.get){try{var r=await window.storage.get(k);return r&&r.value||null}catch(e){return null}}
-    try{return window.localStorage.getItem(k)}catch(e){return null}
-  },
-  async set(k,v){
-    if(window.storage&&window.storage.set){try{await window.storage.set(k,v);return}catch(e){}}
-    try{window.localStorage.setItem(k,v)}catch(e){}
-  }
+  async get(k){return window.localStorage.getItem(k)},
+  async set(k,v){window.localStorage.setItem(k,v)}
 };
 var KEY="japan-2026-planner-v1";
-var D={name:"",trip:"19 Nov – 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{}};
-var blobs={};
+function emptyData(){return {name:"",trip:"19 Nov – 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{},budget:{},dayNotes:{},library:[],flightNotes:""}}
+var D=emptyData();
 
 /* ---------- itinerary data ---------- */
 var PROJ={lon0:129.8,lat0:38.6,kx:62,ky:76};
@@ -738,14 +980,14 @@ var DOCS=[
  {id:"F3",s:"F",t:"Sponsorship documents",slug:"Sponsorship",req:0,fmt:"PDF",spec:"Only if someone else funds the trip: guarantee letter, their ITR and bank statement, relationship proof.",why:"Skip entirely if self-funding. Adding it needlessly invites questions."},
  {id:"G1",s:"G",t:"Visit Japan Web registration",slug:"Visit-Japan-Web",req:1,fmt:"Screenshots",spec:"Generate the immigration and customs QR codes and screenshot them. Airport wifi is unreliable.",why:"Saves twenty minutes in the Haneda arrivals queue."},
  {id:"G2",s:"G",t:"Visa or eVisa, saved offline",slug:"Visa-Copy",req:1,fmt:"PDF + print",spec:"An eVisa is checked by the airline at Bengaluru boarding. Save offline and print.",why:"An eVisa that only exists in your inbox is a problem when wifi drops."},
- {id:"G3",s:"G",t:"Cash and cards",slug:"Forex",req:0,fmt:"Note",spec:"Carry ¥50,000–70,000 cash for fifteen nights. Notify your card issuer.",why:"Many of the best counters on this itinerary are cash or ticket-machine only."},
+ {id:"G3",s:"G",t:"Cash and cards",slug:"Forex",req:0,fmt:"Note",spec:"Carry ¥50,000–70,000 cash for the trip (original planning estimate). Notify your card issuer.",why:"Many of the best counters on this itinerary are cash or ticket-machine only."},
  {id:"G4",s:"G",t:"eSIM",slug:"eSIM",req:0,fmt:"Note",spec:"Buy before you fly, install while still on wifi.",why:"Cheaper than airport pocket wifi and nothing to return."},
  {id:"G5",s:"G",t:"International Driving Permit",slug:"IDP",req:0,fmt:"Original booklet",spec:"RTO-issued under the 1949 Geneva Convention, carried with your Indian licence. Allow three weeks.",why:"Needed for the Lake Tanuki drive. Japan does not accept the Indian licence alone."},
  {id:"G6",s:"G",t:"Emergency sheet",slug:"Emergency-Sheet",req:0,fmt:"Print",spec:"One page: insurance number, Indian Embassy Tokyo, accommodation phone numbers, blood group.",why:"The one document you hope stays in the bag."}
 ];
 var STEPS=[
  [1,"Confirm your route","Two doors into the same visa: online through Japan eVisa, or a paper file at the Japan Visa Application Centre in Bengaluru. Check which is currently open to you, because the eVisa route has no paper file at all."],
- [2,"Lock the trip on paper","Book free-cancellation accommodation for all fifteen nights and hold a return flight reservation. Then generate the schedule of stay from those bookings."],
+ [2,"Lock the trip on paper","Book free-cancellation accommodation covering every night of the itinerary and hold a return flight reservation. Then generate the schedule of stay from those bookings."],
  [3,"Pull the financial set","Order the stamped six-month bank statement from your branch first, it is the slowest item. Download three years of ITR while you wait."],
  [4,"Get the letters signed","Employment certificate and leave approval from HR, with exact leave dates printed, not just 'approved leave'."],
  [5,"Assemble and check","Order the file the way this checklist is ordered. Read the schedule of stay against the bookings line by line once more."],
@@ -778,20 +1020,63 @@ var dayOf=function(ds){for(var i=0;i<DAYS.length;i++)if(DAYS[i].date===ds)return
 var fmtDate=function(ds){var d=new Date(ds+"T00:00:00");return d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"})};
 var shortDate=function(ds){var d=new Date(ds+"T00:00:00");return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"})};
 var lastName=function(){var n=(D.name||"APPLICANT").trim().split(/\s+/).pop();return (n||"APPLICANT").toUpperCase().replace(/[^A-Z]/g,"")||"APPLICANT"};
-var toast=function(m){var t=$("#toast");t.textContent=m;t.classList.remove("hide");clearTimeout(toast._i);toast._i=setTimeout(function(){t.classList.add("hide")},2200)};
-var save=function(){clearTimeout(save._i);save._i=setTimeout(function(){store.set(KEY,JSON.stringify(D))},400)};
+var toast=function(m){var t=$("#toast");t.textContent=m;t.classList.remove("hide");clearTimeout(toast._i);toast._i=setTimeout(function(){t.classList.add("hide")},6500)};
+var dirty=false,storageBlocked=false;
+function saveStatus(message,error){$("#saveStatus").textContent=message;$("#saveStatus").classList.toggle("error",!!error)}
+function persistNow(){
+  clearTimeout(save._i);
+  if(storageBlocked)throw Error("Existing saved data could not be loaded. Export or restore it before saving new changes.");
+  try{localStorage.setItem(KEY,JSON.stringify(D));dirty=false;saveStatus("Saved in this browser");return true}
+  catch(e){dirty=true;saveStatus("Not saved — download a backup",true);throw e}
+}
+var save=function(){dirty=true;saveStatus("Saving…");clearTimeout(save._i);save._i=setTimeout(function(){try{persistNow();renderOverview()}catch(e){toast("Changes are not saved. Browser storage is unavailable or full. Download a backup now.")}},350)};
 function dl(name,content,mime){var b=new Blob([content],{type:mime||"text/plain;charset=utf-8"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000)}
 function docFile(name,html){dl(name,'<html xmlns:w="urn:schemas-microsoft-com:office:word"><meta charset="utf-8"><body style="font-family:Calibri,Arial;font-size:11pt;line-height:1.5">'+html+'</body></html>',"application/msword")}
 
 /* ---------- tabs ---------- */
-var TABS=[["route","Route"],["cal","Calendar"],["budget","Budget"],["stays","Flights & stays"],["visa","Visa file"],["letter","Cover letter"]];
+var TABS=[["overview","Overview"],["cal","Itinerary"],["route","Route & maps"],["budget","Budget"],["stays","Flights & stays"],["documents","Documents"],["visa","Visa checklist"],["letter","Letters"]];
+var ICONS={
+  overview:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+  cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/>',
+  route:'<path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Zm6-2v16m6-14v16"/>',
+  budget:'<rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 8h18m-5 5h5v4h-5zM6 5V3h12v2"/>',
+  stays:'<path d="m3 12 7 2 4 7 2-1-1-7 5-5c2-3-1-5-3-3l-5 5-7-1ZM5 17l-2 4 4-2"/>',
+  documents:'<path d="M4 4h6l2 3h8v13H4Z"/><path d="M4 10h16"/>',
+  visa:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2m-6 9 2 2 4-5"/>',
+  letter:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>'
+};
+var PAGE_INFO={
+  overview:["Your trip, all together.","Less searching. More looking forward."],
+  cal:["The itinerary","Seventeen days. Room for a little spontaneity."],
+  route:["A journey across Honshu","Your bases, connections and city maps."],
+  budget:["Make room for the memories.","One editable estimate. Every cost in view."],
+  stays:["The way there. A place to stay.","Compare recommendations and record your own bookings."],
+  documents:["Your travel essentials","Tickets, paperwork and confirmations, in one place."],
+  visa:["One step closer to Japan.","Organise the paperwork. Verify the official requirements."],
+  letter:["Paperwork, without the repetition.","Draft a cover letter and a schedule from your trip."],
+  backups:["Keep a copy. Travel lighter.","Your browser is not a backup."]
+};
+var activePage="overview";
+function showPage(id,focus){
+  if(!PAGE_INFO[id])id="overview";
+  if(activePage==="route"&&id!=="route"&&anim.playing)playRoute();
+  activePage=id;
+  $$("#tabs .tab").forEach(function(b){var on=b.dataset.p===id;b.classList.toggle("on",on);if(on)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+  var activeTab=$('#tabs [data-p="'+id+'"]');if(activeTab&&window.innerWidth<=900)activeTab.scrollIntoView({block:"nearest",inline:"nearest",behavior:"instant"});
+  $$(".tabpane").forEach(function(p){p.classList.toggle("hide",p.id!=="p_"+id)});
+  $("#crumb").textContent=(TABS.find(function(t){return t[0]===id})||["","Backups & storage"])[1];
+  $("#pageTitle").textContent=PAGE_INFO[id][0];$("#pageSubtitle").textContent=PAGE_INFO[id][1];
+  document.title=$("#crumb").textContent+" · Japan 2026";
+  if(id==="overview")renderOverview();
+  if(id==="documents")renderLibrary();
+  if(id==="cal")renderDayList();
+  if(id==="backups")renderStorage();
+  if(focus){$("#pageTitle").focus({preventScroll:true});window.scrollTo({top:0,behavior:"instant"})}
+}
+function go(id){if(location.hash==="#"+id)showPage(id,true);else location.hash=id}
 function buildTabs(){
-  $("#tabs").innerHTML=TABS.map(function(t,i){return '<button class="tab'+(i===0?" on":"")+'" data-p="'+t[0]+'">'+t[1]+'</button>'}).join("");
-  $$("#tabs .tab").forEach(function(b){b.onclick=function(){
-    $$("#tabs .tab").forEach(function(x){x.classList.remove("on")});b.classList.add("on");
-    $$(".tabpane").forEach(function(p){p.classList.add("hide")});
-    $("#p_"+b.dataset.p).classList.remove("hide");
-  }});
+  $("#tabs").innerHTML=TABS.map(function(t){return '<button class="tab" data-p="'+t[0]+'" aria-controls="p_'+t[0]+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">'+ICONS[t[0]]+'</svg>'+t[1]+'</button>'}).join("");
+  $$("#tabs .tab").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.p)})});
 }
 
 /* ---------- route map ---------- */
@@ -984,7 +1269,7 @@ function buildCal(){
     return '<div class="cal"><h3>'+name+'</h3><div class="cgrid">'+cells+'</div></div>';
   }).join("");
   $$(".cell.trip").forEach(function(c){
-    var f=function(){selDay=c.dataset.d;buildCal();renderDay();document.getElementById("dayDetail").scrollIntoView({block:"nearest",behavior:"smooth"})};
+    var f=function(){chooseDay(c.dataset.d,true)};
     c.addEventListener("click",f);
     c.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}});
   });
@@ -996,18 +1281,23 @@ function renderDay(){
   var leg=null;
   if(idx>0){var prev=DAYS[idx-1];if(prev.base!==d.base){LEGS.forEach(function(l){if(l.to===(d.base||"kix"))leg=l})}}
   var wk=d.wake?'<span class="wake '+d.wake+'">'+(d.wake==='EARLY'?'early start':d.wake==='mid'?'09:00-ish':d.wake==='optional'?'alarm optional':d.wake==='none'?'no alarm':'late start')+'</span>':'';
-  var h='<div class="dayhead"><h3>Day '+(idx+1)+' · '+esc(d.title)+wk+'</h3><span class="daymeta">'+esc(fmtDate(d.date))+(b?' · sleeping in '+esc(b.name):' · flying home')+'</span></div>';
+  var h='<div class="day-nav"><button class="btn q" id="prevDay"'+(idx===0?' disabled':'')+'>← Previous day</button><button class="btn q" id="nextDay"'+(idx===DAYS.length-1?' disabled':'')+'>Next day →</button></div><div class="dayhead"><h3 id="dayTitle" tabindex="-1">Day '+(idx+1)+' · '+esc(d.title)+wk+'</h3><span class="daymeta">'+esc(fmtDate(d.date))+(b?' · overnight in '+esc(b.name):' · flying home')+'</span></div>';
   if(d.flag)h+='<p style="margin:0 0 10px;font-size:13px;color:var(--shu)">'+esc(d.flag)+'</p>';
   if(leg)h+='<p style="margin:0 0 10px;font-size:13px"><b>Getting there:</b> '+esc(leg.mode)+', '+esc(leg.dur)+'. '+esc(leg.note)+'</p>';
-  if(b)h+='<p style="margin:0 0 10px;font-size:13px"><b>Stay:</b> '+esc(D.bookings[b.id]||b.stay)+' — '+esc(b.area)+'</p>';
+  if(b)h+='<p style="margin:0 0 10px;font-size:12px"><b>'+(D.bookings[b.id]?'Your accommodation note:':'Suggested stay (not booked):')+'</b> '+esc(D.bookings[b.id]||b.stay)+' — '+esc(b.area)+'</p>';
   h+=d.items.map(function(it){return '<div class="line"><span class="tm mono">'+esc(it[0])+'</span><span>'+esc(it[1])+'</span></div>'}).join("");
+  h+='<div class="day-note"><label class="field-label" for="dayNote">Your notes for this day</label><textarea id="dayNote" placeholder="A place to try, a reservation, something to remember…">'+esc(D.dayNotes[d.date]||"")+'</textarea><small class="muted">Saved in this browser. Included in your planner backup.</small></div>';
   $("#dayDetail").innerHTML=h;
+  $("#prevDay").addEventListener("click",function(){if(idx>0)chooseDay(DAYS[idx-1].date,true)});
+  $("#nextDay").addEventListener("click",function(){if(idx<DAYS.length-1)chooseDay(DAYS[idx+1].date,true)});
+  $("#dayNote").addEventListener("input",function(e){D.dayNotes[d.date]=e.target.value;save()});
+  renderDayList();
 }
 
 /* ---------- visa checklist ---------- */
 var curSec="A",openDoc="A1";
 function rec(id){return D.docs[id]||{status:"todo",note:"",file:null}}
-function patch(id,p){var r=rec(id);for(var k in p)r[k]=p[k];D.docs[id]=r;save();renderVisa();renderSeal()}
+function patch(id,p){var r=rec(id);for(var k in p)r[k]=p[k];D.docs[id]=r;save();renderVisa();renderSeal();renderOverview()}
 function renamed(doc,orig){var ext=(orig||"").indexOf(".")>-1?orig.split(".").pop().toLowerCase():"pdf";return doc.id+"_"+doc.slug+"_"+lastName()+"."+ext}
 function renderSeal(){
   var req=DOCS.filter(function(d){return d.req&&d.s!=="G"});
@@ -1022,55 +1312,46 @@ function renderVisa(){
     var done=list.filter(function(d){return rec(d.id).status==="done"}).length;
     return '<button class="nb'+(curSec===s.id?" sel":"")+'" data-s="'+s.id+'"><span><span class="nid mono">'+s.id+'</span>'+esc(s.name)+'</span><span class="cnt mono'+(done===list.length?" full":"")+'">'+done+'/'+list.length+'</span></button>';
   }).join("");
-  $$("#secnav .nb").forEach(function(b){b.onclick=function(){curSec=b.dataset.s;renderVisa()}});
+  $$("#secnav .nb").forEach(function(b){b.onclick=function(){curSec=b.dataset.s;$("#visaSearch").value="";$("#visaFilter").value="";renderVisa();$('#secnav [data-s="'+curSec+'"]').focus()}});
   var s=SECTIONS.filter(function(x){return x.id===curSec})[0];
-  var h='<div class="phead"><h2>'+esc(s.name)+'</h2><p>'+esc(s.blurb)+'</p></div>';
-  DOCS.filter(function(d){return d.s===curSec}).forEach(function(doc){
+  var query=$("#visaSearch").value.toLowerCase().trim(),filter=$("#visaFilter").value;
+  var list=DOCS.filter(function(d){return (query||filter||d.s===curSec)&&(!query||(d.id+" "+d.t+" "+d.spec).toLowerCase().includes(query))&&(!filter||rec(d.id).status===filter)});
+  var h='<div class="phead"><h2>'+esc(query||filter?"Filtered checklist":s.name)+'</h2><p>'+esc(query||filter?list.length+" matching items across all visa sections.":s.blurb)+'</p></div>';
+  if(!list.length)h+='<div class="empty-state"><h3>No matching checklist items</h3><p>Try another search or change the status filter.</p></div>';
+  list.forEach(function(doc){
     var r=rec(doc.id),op=openDoc===doc.id;
-    h+='<div class="row"><div class="rhead" data-open="'+doc.id+'">';
-    h+='<button class="tick'+(r.status==="done"?" on":r.status==="skip"?" skip":"")+'" data-tick="'+doc.id+'" aria-label="Mark '+doc.id+'">'+(r.status==="done"?"✓":r.status==="skip"?"–":"")+'</button>';
-    h+='<span class="rid mono">'+doc.id+'</span><span class="rt">'+esc(doc.t)+'</span>'+(doc.req?"":'<span class="opt">optional</span>')+'</div>';
+    h+='<div class="row"><div class="rhead">';
+    h+='<button class="tick'+(r.status==="done"?" on":r.status==="skip"?" skip":"")+'" data-tick="'+doc.id+'" aria-pressed="'+(r.status==="done")+'" aria-label="'+esc((r.status==="done"?"Mark as to do: ":"Mark as ready: ")+doc.t)+'">'+(r.status==="done"?"✓":r.status==="skip"?"–":"")+'</button>';
+    h+='<button class="doc-expand" data-open="'+doc.id+'" aria-expanded="'+op+'"><span class="rid mono">'+doc.id+'</span><span class="rt">'+esc(doc.t)+(doc.req?'':' <span class="opt">optional</span>')+'</span><span aria-hidden="true">'+(op?'−':'+')+'</span></button><span class="status-badge '+r.status+'">'+(r.status==="done"?"Ready":r.status==="skip"?"N/A":"To do")+'</span></div>';
     if(op){
       h+='<div class="body"><div class="spec">'+esc(doc.spec)+'</div><div class="why">'+esc(doc.why)+'</div>';
-      h+='<div class="tools"><label class="btn">'+(r.file?"Replace file":"Attach file")+'<input type="file" style="display:none" data-file="'+doc.id+'"></label>';
+      h+='<div class="tools"><button class="btn" data-attach="'+doc.id+'">'+(r.file?"Replace file":"Attach file")+'</button><input type="file" hidden data-file="'+doc.id+'">';
       if(r.file)h+='<button class="btn q" data-dl="'+doc.id+'">Download renamed</button>';
-      if(r.file)h+='<button class="btn q danger" data-rm="'+doc.id+'">Remove file</button>';
       h+='<button class="btn q" data-skip="'+doc.id+'">'+(r.status==="skip"?"Bring back":"Not applicable")+'</button>';
       h+='<span class="mono" style="font-size:11.5px;color:var(--mute)">'+esc(doc.fmt)+'</span></div>';
-      if(r.file)h+='<div class="file mono">'+esc(r.file.orig)+' → '+esc(renamed(doc,r.file.orig))+' · '+(r.file.size/1048576).toFixed(2)+' MB</div>';
-      h+='<textarea data-note="'+doc.id+'" placeholder="Notes: branch visit date, HR follow-up, reference number…">'+esc(r.note)+'</textarea></div>';
+      if(r.file)h+='<div class="file mono">'+esc(r.file.orig)+' → '+esc(renamed(doc,r.file.orig))+' · '+(r.file.size/1048576).toFixed(2)+' MB'+(r.file.libraryId&&availableFiles.has(r.file.libraryId)?' · Saved in Documents':' · File missing: reattach the original')+'</div>';
+      h+='<label class="field-label" for="note_'+doc.id+'">Notes for '+esc(doc.t)+'</label><textarea id="note_'+doc.id+'" data-note="'+doc.id+'" placeholder="Branch visit date, HR follow-up, reference number…">'+esc(r.note)+'</textarea></div>';
     }
     h+='</div>';
   });
   $("#docpanel").innerHTML=h;
-  $$("#docpanel .rhead").forEach(function(e){e.onclick=function(ev){
-    if(ev.target.dataset.tick)return;
-    openDoc=openDoc===e.dataset.open?"":e.dataset.open;renderVisa();
+  $$("#docpanel [data-open]").forEach(function(e){e.onclick=function(){
+    var id=e.dataset.open;openDoc=openDoc===id?"":id;renderVisa();$('#docpanel [data-open="'+id+'"]').focus();
   }});
-  $$("#docpanel [data-tick]").forEach(function(e){e.onclick=function(ev){ev.stopPropagation();var r=rec(e.dataset.tick);patch(e.dataset.tick,{status:r.status==="done"?"todo":"done"})}});
+  $$("#docpanel [data-tick]").forEach(function(e){e.onclick=function(){var id=e.dataset.tick,r=rec(id);patch(id,{status:r.status==="done"?"todo":"done"});var next=$('#docpanel [data-tick="'+id+'"]');if(next)next.focus()}});
   $$("#docpanel [data-skip]").forEach(function(e){e.onclick=function(){var r=rec(e.dataset.skip);patch(e.dataset.skip,{status:r.status==="skip"?"todo":"skip"})}});
   $$("#docpanel [data-note]").forEach(function(e){e.oninput=function(){D.docs[e.dataset.note]=Object.assign(rec(e.dataset.note),{note:e.value});save()}});
-  $$("#docpanel [data-rm]").forEach(function(e){e.onclick=function(){
-    var id=e.dataset.rm,r=rec(id);
-    if(blobs[id]){URL.revokeObjectURL(blobs[id]);delete blobs[id]}
-    patch(id,{file:null,status:r.status==="done"?"todo":r.status});
-    toast(id+" file removed");
-  }});
-  $$("#docpanel [data-file]").forEach(function(e){e.onchange=function(){
-    var f=e.files&&e.files[0];
-    e.value="";
-    if(!f)return;
+  $$("#docpanel [data-attach]").forEach(function(e){e.addEventListener("click",function(){$('#docpanel [data-file="'+e.dataset.attach+'"]').click()})});
+  $$("#docpanel [data-file]").forEach(function(e){e.onchange=async function(){
+    var f=e.files&&e.files[0];if(!f)return;
     var id=e.dataset.file;
-    if(blobs[id])URL.revokeObjectURL(blobs[id]);
-    blobs[id]=URL.createObjectURL(f);
-    var doc=DOCS.filter(function(d){return d.id===id})[0];
-    patch(id,{file:{orig:f.name,size:f.size,at:Date.now()},status:"done"});
-    toast(id+" staged as "+renamed(doc,f.name));
+    if(rec(id).file&&!confirm("Replace the attachment for "+id+"? The earlier file will stay in Documents."))return;
+    try{await addFiles([f],"Visa",id);renderVisa();renderSeal();renderOverview();toast("Attachment saved. Review it, then mark this checklist item ready.")}catch(err){reportError(err)}
   }});
   $$("#docpanel [data-dl]").forEach(function(e){e.onclick=function(){
     var id=e.dataset.dl,doc=DOCS.filter(function(d){return d.id===id})[0];
-    if(!blobs[id]){toast("Re-attach this file — the browser drops it on reload");return}
-    var a=document.createElement("a");a.href=blobs[id];a.download=renamed(doc,rec(id).file.orig);a.click();
+    if(!rec(id).file.libraryId){toast("This legacy file was not saved by the old planner. Reattach the original.");return}
+    downloadFile(rec(id).file.libraryId,renamed(doc,rec(id).file.orig)).catch(reportError);
   }});
   $("#tree").textContent=tree();
 }
@@ -1095,9 +1376,9 @@ function buildLForm(){
     }
     return '<div><label for="l_'+f[0]+'">'+esc(f[1])+'</label><input id="l_'+f[0]+'" data-l="'+f[0]+'" value="'+esc(v)+'" placeholder="'+esc(f[2])+'"></div>';
   }).join("")+'<div style="border-top:1px solid var(--rule);padding-top:11px"><label>Confirmed accommodation, once booked</label>'+
-  BASES.map(function(b){return '<input style="margin-top:6px" data-bk="'+b.id+'" value="'+esc(D.bookings[b.id]||"")+'" placeholder="'+esc(b.name)+' — name, phone">'}).join("")+'</div>';
+  BASES.map(function(b){return '<label for="booking_'+b.id+'">'+esc(b.name)+' accommodation note</label><input id="booking_'+b.id+'" style="margin-top:6px" data-bk="'+b.id+'" value="'+esc(D.bookings[b.id]||"")+'" placeholder="'+esc(b.name)+' — name, phone">'}).join("")+'</div>';
   $$("#lform [data-l]").forEach(function(e){e.oninput=e.onchange=function(){D.letter[e.dataset.l]=e.value;save();renderLetter()}});
-  $$("#lform [data-bk]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk]=e.value;save();renderDay()}});
+  $$("#lform [data-bk]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk]=e.value;save();renderDay();renderStays();renderLetter()}});
 }
 function letterText(){
   var L=D.letter,g=function(k,f){return L[k]||f};
@@ -1117,17 +1398,17 @@ function letterText(){
     "",
     "Dear Sir or Madam,",
     "",
-    "I am applying for a single-entry short-stay tourist visa to visit Japan from "+start+" to "+end+", a total of "+DAYS.length+" days and "+(DAYS.length-1)+" nights.",
+    "I am applying for a single-entry short-stay tourist visa to visit Japan from "+start+" to "+end+", a total of "+DAYS.length+" days and "+nightCount()+" nights.",
     "",
-    "I hold Indian passport number "+g("passport","[passport number]")+" and was born on "+g("dob","[date of birth]")+". I am employed as "+g("designation","[designation]")+" at "+g("employer","[employer]")+", where I have worked since "+g("joined","[joining date]")+". My leave has been approved from "+g("leaveFrom","[leave start]")+" and I resume duty on "+g("leaveTo","[return date]")+". An employment certificate and leave approval are enclosed.",
+    "I hold Indian passport number "+g("passport","[passport number]")+" and was born on "+g("dob","[date of birth]")+". I am employed as "+g("designation","[designation]")+" at "+g("employer","[employer]")+", where I have worked since "+g("joined","[joining date]")+". My planned leave begins on "+g("leaveFrom","[leave start]")+" and my planned return to duty is "+g("leaveTo","[return date]")+". [Confirm your approved leave and the employment documents actually enclosed.]",
     "",
-    "I have travelled abroad on "+g("ctyCount","[number]")+" occasions to date, to "+g("countries","[list of countries]")+". On every occasion I returned to India within the permitted period and complied fully with the conditions of the visa. Copies of the relevant visas and entry stamps are enclosed.",
+    "I have travelled abroad on "+g("ctyCount","[number]")+" occasions to date, to "+g("countries","[list of countries]")+". [Verify your travel history and visa compliance; list relevant supporting copies, if required.]",
     "",
-    g("funding","I am funding the trip myself")+". Three years of income tax returns, six months of bank statements and my most recent salary slips are enclosed in support.",
+    g("funding","I am funding the trip myself")+". [List the financial evidence you are actually enclosing and verify current requirements.]",
     "",
-    "The purpose of my visit is tourism and photography. I will travel to "+cities+", staying in booked accommodation for every night of the trip. A day-by-day schedule of stay is enclosed, together with confirmed return flight reservations from Bengaluru and back to Bengaluru.",
+    "The purpose of my visit is tourism and photography. My intended route covers "+cities+", with travel from Bengaluru and a return to Bengaluru. [Confirm the flight reservation details, accommodation for every night, and the enclosed schedule of stay before submission.]",
     "",
-    "I have strong ties to India through my employment, my family and my residence, and I will return well within the permitted period of stay. I confirm that I will comply fully with the conditions of the visa and will not engage in any paid activity while in Japan.",
+    "[Describe your actual ties to India and confirm your intention to return within the permitted stay. Review and include the following declaration only if accurate:] I will comply fully with the conditions of the visa and will not engage in any paid activity while in Japan.",
     "",
     "I would be grateful for your consideration. Please let me know if any further document is required.",
     "",
@@ -1138,14 +1419,14 @@ function letterText(){
     (D.name||"[Your name]"),
     "Passport no. "+g("passport","[passport number]"),
     "",
-    "Enclosures: visa application form · passport and copies · photograph · schedule of stay · flight reservation · accommodation bookings · income tax returns (3 years) · bank statement (6 months) · salary slips (3 months) · employment certificate · leave approval"
+    "Enclosures: [List only the documents actually included; verify the current official requirements.]"
   ].join("\n");
 }
 function renderLetter(){$("#letterOut").textContent=letterText()}
 function schedHTML(){
   var rows=DAYS.map(function(d,i){
     var b=d.base?baseOf(d.base):null;
-    var stay=b?(D.bookings[b.id]||b.stay+" — address and phone to be confirmed"):"Departing Japan";
+    var stay=b?(D.bookings[b.id]||"UNCONFIRMED SUGGESTION: "+b.stay+" — replace with confirmed name, address and phone"):"Departing Japan";
     var acts=d.items.map(function(x){return x[1]}).slice(0,3).join(" ");
     return '<tr><td>'+(i+1)+'</td><td>'+esc(shortDate(d.date))+'</td><td>'+esc(b?b.name:"Kansai / departure")+'</td><td>'+esc(d.title)+'. '+esc(acts)+'</td><td>'+esc(stay)+'</td></tr>';
   }).join("");
@@ -1236,7 +1517,12 @@ function bud(){var b=D.budget||{};return {
   foodDay:+(b.foodDay!=null?b.foodDay:BUD.foodDay),
   nightly:Object.assign({},BUD.nightly,b.nightly||{}),
   amt:b.amt||{}, off:b.off||{}, shopLens:+(b.shopLens||0), shopClothes:+(b.shopClothes||0)}}
-function bset(k,v){D.budget=Object.assign({},D.budget||{});D.budget[k]=v;save();renderBudget()}
+function bset(k,v){
+  var a=document.activeElement,selector=a&&a.id?"#"+a.id:a&&a.dataset.nb?'[data-nb="'+a.dataset.nb+'"]':a&&a.dataset.am?'[data-am="'+a.dataset.am+'"]':a&&a.dataset.ck?'[data-ck="'+a.dataset.ck+'"]':null;
+  if(typeof v==="number"&&(!Number.isFinite(v)||v<0||v>100000000||(k==="fx"&&v<=0))){toast("Enter a valid non-negative amount; the exchange rate must be above zero.");renderBudget();return}
+  if(v&&typeof v==="object"&&Object.values(v).some(function(n){return !Number.isFinite(n)||n<0||n>100000000})){toast("Enter a valid non-negative amount.");renderBudget();return}
+  D.budget=Object.assign({},D.budget||{});D.budget[k]=v;save();renderBudget();renderOverview();if(selector&&$(selector))$(selector).focus({preventScroll:true});
+}
 function yen(n){return "\u00a5"+Math.round(n).toLocaleString("en-US")}
 function inr(n){return "\u20b9"+Math.round(n).toLocaleString("en-IN")}
 function rowVal(pfx,i,def){var b=bud();var k=pfx+i;return b.amt[k]!=null?+b.amt[k]:def}
@@ -1284,7 +1570,7 @@ function renderBudget(){
   var over=[];
   BASES.forEach(function(x){if((b.nightly[x.id]||0)*b.fx>b.cap)over.push(x.name)});
   h+='<div class="bsec"><h3>Where you sleep</h3>'
-    +'<p class="bnote">Sixteen nights across four bases. Rates are per night for one person and are indicative, not quotes.</p>';
+    +'<p class="bnote">'+nightCount()+' nights across '+BASES.length+' bases. Rates are per night for one person and are indicative, not quotes. Nightly inputs below are in JPY.</p>';
   h+='<div class="capbar'+(over.length?' over':'')+'"><span>'+(over.length
       ? 'Over your '+inr(b.cap)+' ceiling in: <b>'+over.join(", ")+'</b>'
       : 'Every night is inside your '+inr(b.cap)+' ceiling.')+'</span>'
@@ -1296,7 +1582,7 @@ function renderBudget(){
       +'<span><input type="number" step="100" data-nb="'+x.id+'" value="'+v+'"></span>'
       +'<span class="inr" style="'+(bad?'color:var(--shu);font-weight:700':'')+'">'+inr(per)+'/night</span></div>';
   });
-  h+='<div class="bsub"><span>Accommodation, 15 nights</span><span class="mono">'+inr(T.acc*b.fx)+'</span></div></div>';
+  h+='<div class="bsub"><span>Accommodation, '+nightCount()+' nights</span><span class="mono">'+inr(T.acc*b.fx)+'</span></div></div>';
 
   // food
   h+='<div class="bsec"><h3>Eating</h3>'
@@ -1361,6 +1647,11 @@ function renderBudget(){
     +'<div class="bsub" style="border-top:none"><span>With shopping</span><span class="mono">'+inr(T.all)+'</span></div></div>';
 
   $("#budgetBody").innerHTML=h;
+  $$("#budgetBody input").forEach(function(e){
+    if(e.type==="number"){e.min=e.id==="b_fx"?"0.001":"0";e.max="100000000"}
+    var row=e.closest(".brow"),label=row&&row.querySelector(".lb");
+    if(label)e.setAttribute("aria-label",(e.type==="checkbox"?"Include ":"Amount for ")+label.textContent+(e.type==="number"?" ("+(e.dataset.am&&/^[fm]/.test(e.dataset.am)||e.id==="b_lens"||e.id==="b_cloth"?"INR":"JPY")+")":""));
+  });
   var bind=function(sel,key){var e=$(sel);if(e)e.onchange=function(){bset(key,+e.value)}};
   bind("#b_fx","fx");bind("#b_cap","cap");bind("#b_food","foodDay");
   bind("#b_lens","shopLens");bind("#b_cloth","shopClothes");
@@ -1386,11 +1677,12 @@ function renderFlights(){
   h+='<p class="bnote" style="margin-top:12px;border-left:2px solid var(--shu);padding-left:11px">'+esc(FLIGHTS.caveat)+'</p>';
   h+='<div class="tools" style="margin-top:12px">'+FLIGHTS.links.map(function(l){
     return '<a class="btn" href="'+l[1]+'" target="_blank" rel="noreferrer" style="text-decoration:none">'+esc(l[0])+'</a>'}).join("")+'</div>';
-  h+='</div>';
+  h+='<div class="day-note"><label class="field-label" for="flightNotes">Your flight booking notes</label><textarea id="flightNotes" placeholder="Airline, dates, reservation reference and things to check…">'+esc(D.flightNotes)+'</textarea><small class="muted">A note is not a confirmed ticket. Keep confirmations in Documents.</small></div></div>';
   $("#flightPanel").innerHTML=h;
+  $("#flightNotes").addEventListener("input",function(e){D.flightNotes=e.target.value;save()});
 }
 function renderStays(){
-  var h='<div class="phead"><h2>Where you sleep</h2><p>Four beds in fifteen nights. Each block below lists a dorm, a private room and an upgrade, so you can mix depending on how social you feel that week.</p></div>';
+  var h='<div class="phead"><h2>Where you sleep</h2><p>'+BASES.length+' bases across '+nightCount()+' nights. Original recommendations, not bookings. Compare a dorm, private room and upgrade, then record your own accommodation details.</p></div>';
   STAYS.forEach(function(s){
     var b=baseOf(s.base);
     h+='<div class="stay"><h3><span style="display:inline-block;width:10px;height:10px;background:'+b.colour+';margin-right:8px"></span>'+esc(b.name)+'</h3>';
@@ -1400,11 +1692,11 @@ function renderStays(){
     });
     h+='<div class="tools" style="margin-top:12px">'+s.links.map(function(l){
       return '<a class="btn" href="'+l[1]+'" target="_blank" rel="noreferrer" style="text-decoration:none">'+esc(l[0])+'</a>'}).join("")+'</div>';
-    h+='<div style="margin-top:10px"><input class="txt" data-bk2="'+s.base+'" value="'+esc(D.bookings[s.base]||"")+'" placeholder="Once booked: property name and phone \u2014 feeds the schedule of stay"></div>';
+    h+='<div style="margin-top:16px"><label class="field-label" for="stay_'+s.base+'">Your '+esc(b.name)+' accommodation note</label><input class="txt" id="stay_'+s.base+'" data-bk2="'+s.base+'" value="'+esc(D.bookings[s.base]||"")+'" placeholder="Once booked: property name and phone — feeds your schedule"></div>';
     h+='</div>';
   });
   $("#staysPanel").innerHTML=h;
-  $$("#staysPanel [data-bk2]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk2]=e.value;save();renderDay();buildLForm()}});
+  $$("#staysPanel [data-bk2]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk2]=e.value;save();renderDay();buildLForm();renderLetter()}});
   $("#bookLinks").innerHTML=BOOKLINKS.map(function(l){
     return '<a class="lk" href="'+l[1]+'" target="_blank" rel="noreferrer">'+esc(l[0])+'<small>'+esc(l[2])+'</small></a>'}).join("");
 }
@@ -1415,60 +1707,375 @@ function renderStatic(){
   $("#links").innerHTML=LINKS.map(function(l){return '<a class="lk" href="'+l[1]+'" target="_blank" rel="noreferrer">'+esc(l[0])+'<small>'+esc(l[2])+'</small></a>'}).join("");
 }
 function renderDrive(){
-  $("#driveLink").innerHTML=D.drive?'<a href="'+esc(D.drive)+'" target="_blank" rel="noreferrer" style="font-size:13px">Open your visa folder</a>':'';
+  var url=safeWebURL(D.drive);
+  $("#driveLink").innerHTML=url?'<a href="'+esc(url)+'" target="_blank" rel="noreferrer noopener" style="font-size:13px">Open your external folder ↗</a>':D.drive?'<span role="status" class="muted">Enter a complete https:// or http:// link. Other link types are not allowed.</span>':'';
+}
+
+/* ---------- overview, navigation and daily notes ---------- */
+function nightCount(){return BASES.reduce(function(n,b){return n+b.nights},0)}
+function readiness(){var required=DOCS.filter(function(d){return d.req&&d.s!=="G"});return {total:required.length,done:required.filter(function(d){return rec(d.id).status==="done"}).length}}
+function renderOverview(){
+  var T=budTotals(),R=readiness(),files=D.library.filter(function(f){return availableFiles.has(f.id)}).length;
+  $("#heroDates").textContent=shortDate(DAYS[0].date)+" — "+shortDate(DAYS[DAYS.length-1].date)+" · "+nightCount()+" nights";
+  $("#overviewMetrics").innerHTML=
+    '<div class="metric"><span class="metric-label">The journey</span><b>'+DAYS.length+' days</b><small>'+nightCount()+' nights · '+BASES.length+' bases</small><a href="#cal">Explore itinerary →</a></div>'+
+    '<div class="metric"><span class="metric-label">Estimated total</span><b>'+inr(T.all)+'</b><small>Includes flights & shopping · not spend</small><a href="#budget">Review budget →</a></div>'+
+    '<div class="metric"><span class="metric-label">Visa document readiness</span><b>'+R.done+' <span class="muted">/ '+R.total+'</span></b><small>Required items ready · not approval</small><a href="#visa">Continue checklist →</a></div>'+
+    '<div class="metric"><span class="metric-label">Saved documents</span><b>'+files+' '+(files===1?'file':'files')+'</b><small>'+(D.library.length>files?(D.library.length-files)+' missing files to reattach':'Available in this browser')+'</small><a href="#documents">Open library →</a></div>';
+  $("#overviewRoute").innerHTML=BASES.map(function(b,i){
+    var days=DAYS.filter(function(d){return d.base===b.id}),first=days[0],last=days[days.length-1],next=DAYS[DAYS.indexOf(last)+1];
+    return '<div class="route-stop"><span class="route-number">'+String(i+1).padStart(2,"0")+'</span><div><b>'+esc(b.name)+'</b><small>'+esc(shortDate(first.date).replace(" 2026",""))+' — '+esc(shortDate((next||last).date).replace(" 2026",""))+' · '+esc(b.area)+'</small></div><span class="night-pill">'+b.nights+' nights</span></div>';
+  }).join("");
+  var todo=DOCS.find(function(d){return d.req&&d.s!=="G"&&rec(d.id).status!=="done"}),missingStay=BASES.find(function(b){return !(D.bookings[b.id]||"").trim()});
+  var actions=[];
+  if(!D.name.trim())actions.push({id:"details",title:"Make this trip yours",text:"Add your passport name and submission target.",url:"#overview"});
+  if(todo)actions.push({id:"visa",title:"Next: "+todo.t,text:todo.id+" · Review the guidance and gather the document.",url:"#visa"});
+  else actions.push({title:"Review the official requirements",text:"All required items are marked ready. Check the current rules before submitting.",url:"#visa"});
+  if(missingStay)actions.push({title:"Record your "+missingStay.name+" stay",text:"Suggestions are not reservations. Add details once booked.",url:"#stays"});
+  else actions.push({title:"Review your schedule of stay",text:"All bases have accommodation notes. Check them against confirmations.",url:"#letter"});
+  if(actions.length<3)actions.push({title:"Keep an independent backup",text:"Include saved documents before switching device or browser.",url:"#backups"});
+  $("#nextActions").innerHTML=actions.slice(0,3).map(function(a,i){return '<a class="next-action" href="'+a.url+'"'+(a.id?' data-next="'+a.id+'"':'')+'><span class="action-dot">'+(i+1)+'</span><span><b>'+esc(a.title)+'</b><small>'+esc(a.text)+'</small></span><span class="arrow" aria-hidden="true">↗</span></a>'}).join("");
+  var details=$('[data-next="details"]');if(details)details.addEventListener("click",function(e){e.preventDefault();$("#tripSettings").open=true;$("#f_name").focus();$("#tripSettings").scrollIntoView({block:"center"})});
+  var visa=$('[data-next="visa"]');if(visa)visa.addEventListener("click",function(){curSec=todo.s;openDoc=todo.id;$("#visaSearch").value="";$("#visaFilter").value="";renderVisa()});
+}
+function dayMatches(d){
+  var q=$("#daySearch").value.trim().toLowerCase(),city=$("#cityFilter").value,b=baseOf(d.base);
+  return (!city||(d.base||"transit")===city)&&(!q||(d.title+" "+d.date+" "+(b?b.name:"flying home")+" "+d.items.flat().join(" ")).toLowerCase().includes(q));
+}
+function renderDayList(){
+  if(!$("#dayList"))return;
+  var list=DAYS.filter(dayMatches);
+  $("#dayCount").textContent=list.length+" of "+DAYS.length+" days";
+  $("#dayList").innerHTML=list.length?list.map(function(d){var b=baseOf(d.base);return '<button class="day-pick'+(d.date===selDay?' on':'')+'" data-day="'+d.date+'"'+(d.date===selDay?' aria-current="date"':'')+'><small>DAY '+(DAYS.indexOf(d)+1)+' · '+esc(shortDate(d.date).replace(" 2026",""))+'</small><b>'+esc(d.title)+'</b><small>'+esc(b?b.name:"Travel day")+'</small></button>'}).join(""):'<div class="empty-state"><h3>No matching days</h3><p>Try a different place or clear the city filter. Your selected day remains open.</p></div>';
+  $$("#dayList [data-day]").forEach(function(e){e.addEventListener("click",function(){chooseDay(e.dataset.day,true)})});
+}
+function chooseDay(date,focus){
+  if(!dayOf(date))return;
+  selDay=date;buildCal();renderDay();
+  if(focus)$("#dayTitle").focus({preventScroll:true});
+}
+function safeWebURL(value){
+  try{var u=new URL(value);return ["https:","http:"].includes(u.protocol)&&!u.username&&!u.password?u.href:""}catch(e){return ""}
+}
+
+/* ---------- persistent document library ---------- */
+var DB_NAME="japan-2026-documents",DB_VERSION=1,dbPromise=null,dbReady=false,availableFiles=new Set();
+var CATEGORIES=["Travel","Flights","Accommodation","Visa","Identity","Insurance","Other"];
+var MAX_FILE=20*1024*1024,MAX_TOTAL=50*1024*1024,MAX_FILES=200,taskBusy=false;
+function reportError(e){var message=e&&e.message||"That action could not be completed.";toast(message);return message}
+function openDB(){
+  if(dbPromise)return dbPromise;
+  dbPromise=new Promise(function(resolve,reject){
+    if(!window.indexedDB){reject(Error("Document storage is unavailable in this browser. Use a normal browser window and keep your original files."));return}
+    var r=indexedDB.open(DB_NAME,DB_VERSION);
+    r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains("files"))r.result.createObjectStore("files",{keyPath:"id"})};
+    r.onsuccess=function(){var db=r.result;db.onversionchange=function(){db.close();dbPromise=null;dbReady=false};dbReady=true;resolve(db)};
+    r.onerror=function(){dbPromise=null;reject(Error("Unable to open document storage. Browser permissions or private browsing may block it."))};
+    r.onblocked=function(){reject(Error("Close other copies of this planner and try again."))};
+  });return dbPromise;
+}
+async function readFiles(){var db=await openDB();return new Promise(function(resolve,reject){var r=db.transaction("files").objectStore("files").getAll();r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(Error("Could not read saved documents."))}})}
+async function writeFiles(records,removeIds,replace){
+  var db=await openDB();
+  return new Promise(function(resolve,reject){
+    var tx=db.transaction("files","readwrite"),store=tx.objectStore("files");
+    if(replace)store.clear();
+    (removeIds||[]).forEach(function(id){store.delete(id)});
+    records.forEach(function(record){store.put(record)});
+    tx.oncomplete=function(){resolve()};
+    tx.onerror=tx.onabort=function(){reject(Error("Document storage failed. Storage may be full or unavailable; no file changes were committed."))};
+  });
+}
+async function getFile(id){var db=await openDB();return new Promise(function(resolve,reject){var r=db.transaction("files").objectStore("files").get(id);r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(Error("Could not read this document."))}})}
+async function runTask(task){
+  if(taskBusy)throw Error("Please wait for the current file operation to finish.");
+  taskBusy=true;
+  var controls=$$("#addDocuments,#fullExport,#dExport,#importButton,#dReset,#quickBackup,[data-attach],[data-remove]");
+  controls.forEach(function(e){e.disabled=true});
+  try{return await task()}finally{taskBusy=false;controls.forEach(function(e){e.disabled=false})}
+}
+function fileSize(n){return n>=1048576?(n/1048576).toFixed(1)+" MB":Math.max(1,Math.round(n/1024))+" KB"}
+function fileID(){return "f_"+(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+"_"+Math.random().toString(36).slice(2))}
+function migrateLegacyFiles(data){
+  Object.keys(data.docs).forEach(function(id){
+    var f=data.docs[id].file;
+    if(f&&!f.libraryId){
+      f.libraryId="legacy_"+id;
+      if(!data.library.some(function(x){return x.id===f.libraryId}))data.library.push({id:f.libraryId,name:f.orig,size:f.size,type:"",category:"Visa",at:f.at||0,visaId:id});
+    }
+  });
+  return data;
+}
+async function addFiles(files,category,visaId){
+  return runTask(async function(){
+    if(storageBlocked)throw Error("Restore or export the unreadable planner data before attaching documents.");
+    var total=D.library.filter(function(x){return availableFiles.has(x.id)}).reduce(function(n,f){return n+f.size},0);
+    if(D.library.length+files.length>MAX_FILES)throw Error("This workspace can hold up to 200 document entries. Remove unused entries first.");
+    files.forEach(function(f){if(f.size>MAX_FILE)throw Error(f.name+" exceeds the 20 MB file limit.");total+=f.size});
+    if(total>MAX_TOTAL)throw Error("These files exceed the 50 MB library limit. Back up and remove unused files first.");
+    var entries=files.map(function(f){return {id:fileID(),name:f.name,size:f.size,type:f.type||"",category:category,at:Date.now(),visaId:visaId||""}});
+    var records=entries.map(function(meta,i){return {id:meta.id,blob:files[i],meta:meta}});
+    var previous=JSON.stringify(D);
+    await writeFiles(records);
+    D.library=D.library.concat(entries);
+    if(visaId){var m=entries[0],r=rec(visaId);D.docs[visaId]=Object.assign({},r,{file:{orig:m.name,size:m.size,at:m.at,libraryId:m.id}})}
+    try{persistNow()}catch(e){D=JSON.parse(previous);try{await writeFiles([],entries.map(function(x){return x.id}))}catch(rollback){toast("The files may still be in browser storage. Reload before retrying.")}throw Error("The planner could not save document metadata. Free browser storage and retry.")}
+    entries.forEach(function(x){availableFiles.add(x.id)});
+    renderLibrary();renderOverview();renderStorage();
+  });
+}
+async function downloadFile(id,name){
+  var record=await getFile(id);
+  if(!record||!record.blob){availableFiles.delete(id);renderLibrary();throw Error("The file is missing from browser storage. Reattach its original, or restore a complete backup.")}
+  var meta=D.library.find(function(x){return x.id===id}),a=document.createElement("a"),url=URL.createObjectURL(record.blob);
+  a.href=url;a.download=(name||meta&&meta.name||"document").replace(/[/\\]/g,"_");document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},15000);
+}
+async function removeFile(id){
+  var meta=D.library.find(function(x){return x.id===id});if(!meta)return;
+  if(!confirm("Remove “"+meta.name+"” from this browser? Keep an original or backup first. A linked visa checklist item will return to To do."))return;
+  return runTask(async function(){
+    var prior=JSON.stringify(D),old=await getFile(id);
+    await writeFiles([],[id]);
+    D.library=D.library.filter(function(x){return x.id!==id});
+    Object.keys(D.docs).forEach(function(k){if(D.docs[k].file&&D.docs[k].file.libraryId===id){D.docs[k].file=null;D.docs[k].status="todo"}});
+    try{persistNow()}catch(e){D=JSON.parse(prior);if(old)await writeFiles([old]);throw Error("The removal could not be saved. Your previous planner entries were restored.")}
+    availableFiles.delete(id);renderLibrary();renderVisa();renderSeal();renderOverview();renderStorage();toast("Document removed from this browser.");$("#docSearch").focus();
+  });
+}
+function renderLibrary(){
+  var q=$("#docSearch").value.trim().toLowerCase(),category=$("#docCategory").value;
+  var list=D.library.filter(function(f){return (!category||f.category===category)&&(!q||(f.name+" "+f.category+" "+(f.visaId||"")).toLowerCase().includes(q))}).slice().sort(function(a,b){return b.at-a.at});
+  $("#docCount").textContent=list.length+" of "+D.library.length+" documents";
+  if(!list.length){
+    $("#documentList").innerHTML='<div class="empty-state"><div class="empty-icon" aria-hidden="true">▤</div><h3>'+(D.library.length?'No documents match your search':'A place for every travel essential.')+'</h3><p>'+(D.library.length?'Try a different filename or category.':'Start with a flight confirmation, a hotel booking or your visa paperwork. Original checklist attachments can live here too.')+'</p>'+(D.library.length?'':'<button class="btn" id="emptyUpload">Add your first document</button>')+'</div>';
+    if($("#emptyUpload"))$("#emptyUpload").addEventListener("click",function(){$("#libraryFiles").click()});return;
+  }
+  $("#documentList").innerHTML='<div class="document-list">'+list.map(function(f){
+    var has=availableFiles.has(f.id),ext=f.name.includes(".")?f.name.split(".").pop().slice(0,5).toUpperCase():"FILE";
+    return '<article class="document-row"><div class="file-icon" aria-hidden="true">'+esc(ext)+'</div><div><h3>'+esc(f.name)+'</h3><p>'+esc(f.category)+' · '+fileSize(f.size)+(f.visaId?' · '+esc(f.visaId):'')+(f.at?' · '+new Date(f.at).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}):'')+'</p><p>'+(has?'Saved in this browser':'File unavailable · restore a backup or reattach the original')+'</p></div><div class="tools">'+(has?'<button class="btn" data-download="'+f.id+'" aria-label="Download '+esc(f.name)+'">Download ↓</button>':'')+(f.visaId?'<button class="btn q" data-checklist="'+f.visaId+'">Checklist ↗</button>':'')+'<button class="btn q" data-remove="'+f.id+'" aria-label="Remove '+esc(f.name)+'">Remove</button></div></article>';
+  }).join("")+'</div>';
+  $$("[data-download]").forEach(function(e){e.addEventListener("click",function(){downloadFile(e.dataset.download).catch(reportError)})});
+  $$("[data-remove]").forEach(function(e){e.addEventListener("click",function(){removeFile(e.dataset.remove).catch(reportError)})});
+  $$("[data-checklist]").forEach(function(e){e.addEventListener("click",function(){var doc=DOCS.find(function(x){return x.id===e.dataset.checklist});curSec=doc.s;openDoc=doc.id;$("#visaSearch").value="";$("#visaFilter").value="";renderVisa();go("visa")})});
+}
+async function renderStorage(){
+  var total=D.library.filter(function(f){return availableFiles.has(f.id)}).reduce(function(n,f){return n+f.size},0);
+  $("#storageDetails").textContent=availableFiles.size+" files available · "+fileSize(total)+" of the 50 MB document limit. "+(dbReady?"Documents use IndexedDB; planner entries use local storage.":"Document storage has not opened. Files cannot be guaranteed available.");
+}
+
+/* ---------- validated planner and complete-file backups ---------- */
+function plain(value){return !!value&&typeof value==="object"&&!Array.isArray(value)&&Object.getPrototypeOf(value)===Object.prototype}
+function assert(condition,message){if(!condition)throw Error(message)}
+function cleanText(value,limit){assert(typeof value==="string"&&value.length<=(limit||20000),"Backup contains an invalid or oversized text field.");return value}
+function validNumber(value,max,min){assert(typeof value==="number"&&Number.isFinite(value)&&value>=(min||0)&&value<=(max||100000000),"Backup contains an invalid numeric value.");return value}
+function safeObject(value){assert(plain(value),"Backup contains an invalid object.");Object.keys(value).forEach(function(k){assert(!["__proto__","constructor","prototype"].includes(k),"Unsafe property in backup.")});return value}
+function validateData(input){
+  var p=safeObject(input),out=emptyData(),known=Object.keys(out);
+  assert(known.some(function(k){return Object.prototype.hasOwnProperty.call(p,k)}),"This is not a recognised planner backup.");
+  Object.keys(p).forEach(function(k){assert(known.includes(k),"Unknown planner field: "+k)});
+  ["name","trip","submit","drive","flightNotes"].forEach(function(k){if(k in p)out[k]=cleanText(p[k],k==="flightNotes"?20000:2000)});
+  if(p.docs){
+    Object.keys(safeObject(p.docs)).forEach(function(id){
+      assert(DOCS.some(function(d){return d.id===id}),"Unknown visa document in backup.");
+      var r=safeObject(p.docs[id]);assert(["todo","done","skip"].includes(r.status||"todo"),"Invalid checklist status.");
+      var item={status:r.status||"todo",note:cleanText(r.note||""),file:null};
+      if(r.file){var f=safeObject(r.file);item.file={orig:cleanText(f.orig,512),size:validNumber(f.size,10000000000),at:validNumber(f.at||0,8640000000000000)};if(f.libraryId){assert(/^[A-Za-z0-9_-]{1,100}$/.test(f.libraryId),"Invalid document identifier.");item.file.libraryId=f.libraryId}}
+      out.docs[id]=item;
+    });
+  }
+  [["letter",LFIELDS.map(function(f){return f[0]})],["bookings",BASES.map(function(b){return b.id})],["dayNotes",DAYS.map(function(d){return d.date})]].forEach(function(pair){
+    if(!p[pair[0]])return;
+    Object.keys(safeObject(p[pair[0]])).forEach(function(k){assert(pair[1].includes(k),"Unknown "+pair[0]+" field.");out[pair[0]][k]=cleanText(p[pair[0]][k])});
+  });
+  if(p.budget){
+    var b=safeObject(p.budget),budgetKeys=["fx","cap","foodDay","nightly","amt","off","shopLens","shopClothes"];
+    Object.keys(b).forEach(function(k){assert(budgetKeys.includes(k),"Unknown budget field.");if(!["nightly","amt","off"].includes(k))out.budget[k]=validNumber(b[k],100000000,k==="fx"?0.001:0)});
+    ["nightly","amt","off"].forEach(function(key){
+      if(!b[key])return;
+      out.budget[key]={};
+      Object.keys(safeObject(b[key])).forEach(function(k){
+        var valid=key==="nightly"?BASES.some(function(x){return x.id===k}):/^[temf]\d+$/.test(k)&&Number(k.slice(1))<({t:BUD.transport,e:BUD.entries,m:BUD.misc,f:BUD.flightRows}[k[0]]||[]).length;
+        assert(valid,"Unknown budget line.");var val=b[key][k];if(key==="off"){assert([0,1,true,false].includes(val),"Invalid budget selection.");out.budget[key][k]=val?1:0}else out.budget[key][k]=validNumber(val);
+      });
+    });
+  }
+  if(p.library){
+    assert(Array.isArray(p.library)&&p.library.length<=MAX_FILES,"Invalid document library.");
+    var ids=new Set();
+    out.library=p.library.map(function(item){
+      var f=safeObject(item);assert(typeof f.id==="string"&&/^[A-Za-z0-9_-]{1,100}$/.test(f.id)&&!ids.has(f.id),"Invalid or duplicate file identifier.");ids.add(f.id);
+      assert(CATEGORIES.includes(f.category),"Invalid document category.");
+      var v=f.visaId||"";assert(v===""||DOCS.some(function(d){return d.id===v}),"Unknown linked visa item.");
+      return {id:f.id,name:cleanText(f.name,512),size:validNumber(f.size,10000000000),type:cleanText(f.type||"",200),category:f.category,at:validNumber(f.at||0,8640000000000000),visaId:v};
+    });
+  }
+  BASES.forEach(function(b){if(!(b.id in out.bookings))out.bookings[b.id]=""});
+  migrateLegacyFiles(out);
+  Object.keys(out.docs).forEach(function(id){var f=out.docs[id].file;if(f&&f.libraryId){assert(out.library.some(function(m){return m.id===f.libraryId}),"A checklist attachment has no document metadata.")}});
+  return out;
+}
+function dataURL(blob){return new Promise(function(resolve,reject){var r=new FileReader();r.onload=function(){resolve(String(r.result).split(",")[1])};r.onerror=function(){reject(Error("Could not read a saved document for backup."))};r.readAsDataURL(blob)})}
+async function completeBackup(){
+  return runTask(async function(){
+    $("#backupStatus").textContent="Reading saved files…";
+    var snapshot=JSON.parse(JSON.stringify(D)),records=await readFiles(),map=new Map(records.map(function(r){return [r.id,r]})),missing=snapshot.library.filter(function(m){return !map.has(m.id)}).map(function(m){return m.id});
+    if(missing.length&&!confirm(missing.length+" document file(s) are unavailable. Their metadata will be backed up, but their file contents cannot be included. Continue?")){$("#backupStatus").textContent="Backup cancelled.";return}
+    var files=[];
+    for(var meta of snapshot.library){var r=map.get(meta.id);if(r){files.push({id:meta.id,base64:await dataURL(r.blob)});$("#backupStatus").textContent="Preparing file "+files.length+"…"}}
+    var payload={format:"japan-planner-backup",version:2,createdAt:new Date().toISOString(),filesIncluded:true,data:snapshot,files:files,missingFileIds:missing};
+    dl("japan-2026-complete-backup-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify(payload),"application/json");
+    $("#backupStatus").textContent="Backup download started: "+files.length+" files included"+(missing.length?", "+missing.length+" unavailable":"")+". Keep this unencrypted file private.";
+    toast("Backup download started. Check your downloads; keep the file private.");
+  });
+}
+function plannerBackup(){
+  var payload={format:"japan-planner-backup",version:2,createdAt:new Date().toISOString(),filesIncluded:false,data:D};
+  dl("japan-2026-planner-only-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify(payload,null,2),"application/json");
+  toast("Planner-only export started. It includes metadata, not document file contents.");
+}
+async function parseBackup(file){
+  assert(file.size<=75*1024*1024,"Backup exceeds the 75 MB import limit.");
+  var p;try{p=JSON.parse(await file.text())}catch(e){throw Error("That file is not valid JSON. No data was changed.")}
+  safeObject(p);
+  var envelope=p.format==="japan-planner-backup";
+  if(envelope)assert(p.version===2&&typeof p.filesIncluded==="boolean","Unsupported backup version.");
+  var data=validateData(envelope?p.data:p),full=envelope&&p.filesIncluded,records=[];
+  if(full){
+    assert(Array.isArray(p.files)&&p.files.length<=MAX_FILES&&Array.isArray(p.missingFileIds),"Backup has an invalid file list.");
+    var ids=new Set(),missing=new Set(),total=0,metadata=new Map(data.library.map(function(m){return [m.id,m]}));
+    p.missingFileIds.forEach(function(id){assert(typeof id==="string"&&metadata.has(id)&&!missing.has(id),"Invalid missing-file entry.");missing.add(id)});
+    p.files.forEach(function(f){
+      safeObject(f);assert(typeof f.id==="string"&&metadata.has(f.id)&&!ids.has(f.id)&&!missing.has(f.id),"Duplicate or unknown file in backup.");ids.add(f.id);
+      var m=metadata.get(f.id);assert(typeof f.base64==="string"&&f.base64.length<=Math.ceil(MAX_FILE/3)*4&&f.base64.length%4===0&&!/[^A-Za-z0-9+/=]/.test(f.base64),"Invalid file encoding.");
+      var padding=f.base64.indexOf("=");assert(padding===-1||(padding>=f.base64.length-2&&/^={1,2}$/.test(f.base64.slice(padding))),"Invalid base64 padding.");
+      var binary=atob(f.base64);assert(binary.length===m.size,"A document's size does not match its backup.");total+=binary.length;assert(total<=MAX_TOTAL,"Documents exceed the 50 MB library limit.");
+      var bytes=new Uint8Array(binary.length);for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+      records.push({id:f.id,meta:m,blob:new Blob([bytes],{type:m.type})});
+    });
+    assert(data.library.every(function(m){return ids.has(m.id)||missing.has(m.id)}),"Backup is missing file contents without declaring them.");
+  }
+  return {data:data,full:full,records:records};
+}
+async function importBackup(file){
+  return runTask(async function(){
+    $("#importStatus").textContent="Validating backup…";
+    var parsed=await parseBackup(file);
+    var message=parsed.full?"Replace planner entries AND saved documents with this complete backup? Files not in the backup will be removed. Export a complete backup first if needed.":"Replace planner entries with this planner-only backup? Existing saved files will be kept. File contents from another device are not included.";
+    if(!confirm(message)){$("#importStatus").textContent="Import cancelled. Nothing changed.";return}
+    clearTimeout(save._i);
+    var oldData=D,oldBlocked=storageBlocked,previousRaw=localStorage.getItem(KEY),oldRecords=parsed.full?await readFiles():[];
+    if(!parsed.full){
+      D.library.forEach(function(m){if(!parsed.data.library.some(function(x){return x.id===m.id}))parsed.data.library.push(m)});
+      assert(parsed.data.library.length<=MAX_FILES,"Keeping existing documents would exceed 200 entries. No changes were made.");
+    }
+    try{
+      if(parsed.full)await writeFiles(parsed.records,[],true);
+      D=parsed.data;storageBlocked=false;persistNow();
+    }catch(e){
+      D=oldData;storageBlocked=oldBlocked;
+      if(parsed.full)await writeFiles(oldRecords,[],true);
+      if(previousRaw!==null)localStorage.setItem(KEY,previousRaw);else localStorage.removeItem(KEY);
+      throw Error("Import could not be saved. The previous workspace was restored. Check browser storage and retry.");
+    }
+    if(parsed.full)availableFiles=new Set(parsed.records.map(function(r){return r.id}));
+    renderAll();$("#recoveryExport").hidden=true;$("#importStatus").textContent="Restored successfully. "+(parsed.full?parsed.records.length+" document files restored.":"Planner entries replaced; existing document files kept.");
+    toast("Backup restored. Review the document library for unavailable files.");
+  });
+}
+async function resetWorkspace(){
+  if(!confirm("Permanently clear your planner entries AND all saved document files from this browser? Download a complete backup first. This cannot be undone."))return;
+  return runTask(async function(){
+    clearTimeout(save._i);
+    var oldData=D,oldBlocked=storageBlocked,oldRaw=localStorage.getItem(KEY),oldRecords=await readFiles();
+    try{await writeFiles([],[],true);D=emptyData();BASES.forEach(function(b){D.bookings[b.id]=""});storageBlocked=false;persistNow()}
+    catch(e){D=oldData;storageBlocked=oldBlocked;await writeFiles(oldRecords,[],true);if(oldRaw!==null)localStorage.setItem(KEY,oldRaw);throw Error("Reset failed; the previous workspace was restored.")}
+    availableFiles.clear();$("#docSearch").value="";$("#docCategory").value="";$("#visaSearch").value="";$("#visaFilter").value="";selDay=DAYS[0].date;curSec="A";openDoc="A1";
+    renderAll();$("#recoveryExport").hidden=true;go("overview");toast("Workspace reset. The original itinerary is unchanged.");
+  });
+}
+function renderAll(){
+  $$("[data-k]").forEach(function(e){e.value=D[e.dataset.k]||""});
+  buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();renderOverview();renderLibrary();renderStorage();
+  if(anim.sel)selectNode(anim.sel);
+}
+async function copyText(text,success){
+  try{if(!navigator.clipboard)throw Error();await navigator.clipboard.writeText(text);toast(success)}catch(e){toast("Clipboard unavailable. Use the download button instead.")}
 }
 
 /* ---------- boot ---------- */
 (async function(){
-  var raw=await store.get(KEY);
-  if(raw){try{var p=JSON.parse(raw);for(var k in p)D[k]=p[k];}catch(e){}}
-  D.docs=D.docs||{};D.letter=D.letter||{};D.bookings=D.bookings||{};D.budget=D.budget||{};
+  var bootError="";
+  try{
+    var raw=await store.get(KEY);
+    if(raw)D=validateData(JSON.parse(raw));
+    saveStatus(raw?"Saved data loaded":"Ready · browser-only storage");
+  }catch(e){storageBlocked=true;bootError="Saved planner data could not be loaded. It has not been overwritten. Open Backups & storage to download the unreadable data before restoring or resetting.";saveStatus("Saved data unavailable",true);
+    if(raw){$("#recoveryExport").hidden=false;$("#recoveryExport").addEventListener("click",function(){dl("japan-2026-unreadable-data.json",raw,"application/json")})}
+    $("#importStatus").textContent=bootError;
+  }
+  BASES.forEach(function(b){D.bookings[b.id]=D.bookings[b.id]||""});
+  try{
+    var records=await readFiles();availableFiles=new Set(records.map(function(r){return r.id}));
+    records.forEach(function(r){if(r.meta&&!D.library.some(function(m){return m.id===r.id}))D.library.push(r.meta)});
+  }catch(e){$("#uploadMessage").textContent=e.message}
+  PAGE_INFO.cal[1]=DAYS.length+" days. Room for a little spontaneity.";
   $$("[data-k]").forEach(function(e){
     e.value=D[e.dataset.k]||"";
     e.oninput=function(){D[e.dataset.k]=e.value;save();renderVisa();renderSeal();renderLetter();renderDrive()};
   });
-  buildTabs();buildMap();buildCal();renderDay();renderVisa();renderSeal();renderStatic();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();
+  $("#cityFilter").insertAdjacentHTML("beforeend",BASES.map(function(b){return '<option value="'+b.id+'">'+esc(b.name)+'</option>'}).join("")+'<option value="transit">Travel day</option>');
+  buildTabs();renderAll();renderStatic();
   selectNode("tokyo");
+  showPage(location.hash.slice(1),false);
+  window.addEventListener("hashchange",function(){if(PAGE_INFO[location.hash.slice(1)])showPage(location.hash.slice(1),true)});
+  $("#daySearch").addEventListener("input",renderDayList);
+  $("#cityFilter").addEventListener("change",renderDayList);
+  $("#visaSearch").addEventListener("input",renderVisa);
+  $("#visaFilter").addEventListener("change",renderVisa);
+  $("#docSearch").addEventListener("input",renderLibrary);
+  $("#docCategory").addEventListener("change",renderLibrary);
+  ["openBackups","storageInfo"].forEach(function(id){$("#"+id).addEventListener("click",function(){go("backups")})});
+  $("#quickBackup").addEventListener("click",function(){go("backups")});
+  $("#addDocuments").addEventListener("click",function(){$("#libraryFiles").click()});
+  $("#libraryFiles").addEventListener("change",async function(e){
+    var files=Array.from(e.target.files||[]);e.target.value="";if(!files.length)return;
+    $("#uploadMessage").textContent="Saving "+files.length+" document(s)…";
+    try{await addFiles(files,$("#uploadCategory").value);$("#uploadMessage").textContent=files.length+" document(s) saved in this browser.";toast(files.length+" document(s) saved. Include them in your next complete backup.")}
+    catch(err){$("#uploadMessage").textContent=reportError(err)}
+  });
+  $("#requestPersistence").addEventListener("click",async function(){
+    try{if(!navigator.storage||!navigator.storage.persist)throw Error("This browser does not support persistence requests.");var ok=await navigator.storage.persist();toast(ok?"Browser persistence granted. Browser cleanup can still delete data; keep backups.":"The browser did not grant persistent storage. Keep regular backups.");$("#storageDetails").textContent+=" Persistence request: "+(ok?"granted":"not granted")+"."}catch(e){reportError(e)}
+  });
   $("#play").onclick=playRoute;
   $("#reset").onclick=resetRoute;
-  $("#copyTree").onclick=function(){navigator.clipboard.writeText(tree()).then(function(){toast("Folder structure copied")},function(){toast("Copy blocked — use the download button")})};
+  $("#copyTree").onclick=function(){copyText(tree(),"Folder structure copied")};
   $("#saveTree").onclick=function(){dl("JAPAN-VISA-"+lastName()+"-folder-structure.txt",tree())};
-  $("#copyLetter").onclick=function(){navigator.clipboard.writeText(letterText()).then(function(){toast("Letter copied")},function(){toast("Copy blocked — use the download button")})};
+  $("#copyLetter").onclick=function(){copyText(letterText(),"Letter copied")};
   $("#wordLetter").onclick=function(){docFile("Cover-Letter_"+lastName()+".doc","<pre style='font-family:Calibri;font-size:11pt;white-space:pre-wrap'>"+esc(letterText())+"</pre>")};
   $("#wordSched").onclick=function(){docFile("Schedule-Of-Stay_"+lastName()+".doc",schedHTML())};
-  var renderAll=function(){
-    $$("[data-k]").forEach(function(e){e.value=D[e.dataset.k]||""});
-    buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();
-    if(anim.sel)selectNode(anim.sel);
-  };
-  $("#dExport").onclick=function(){
-    dl("japan-2026-data.json",JSON.stringify(D,null,2),"application/json");
-    toast("Saved a copy of everything you have entered");
-  };
-  $("#dImport").onchange=function(e){
+  $("#dExport").addEventListener("click",plannerBackup);
+  $("#fullExport").addEventListener("click",function(){completeBackup().catch(function(e){$("#backupStatus").textContent=reportError(e)})});
+  $("#importButton").addEventListener("click",function(){$("#dImport").click()});
+  $("#dImport").onchange=async function(e){
     var f=e.target.files&&e.target.files[0];if(!f)return;
-    var r=new FileReader();
-    r.onload=function(){
-      try{
-        var p=JSON.parse(r.result);
-        if(!p||typeof p!=="object")throw 0;
-        for(var k in p)D[k]=p[k];
-        D.docs=D.docs||{};D.letter=D.letter||{};D.bookings=D.bookings||{};D.budget=D.budget||{};
-        save();renderAll();toast("Imported");
-      }catch(err){toast("That file could not be read")}
-    };
-    r.readAsText(f);e.target.value="";
+    e.target.value="";
+    try{await importBackup(f)}catch(err){$("#importStatus").textContent=reportError(err)}
   };
-  $("#dReset").onclick=function(){
-    if(!window.confirm("Clear everything you have entered on this device? Export first if you want a copy."))return;
-    D={name:"",trip:"19 Nov \u2013 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{},budget:{}};
-    blobs={};save();renderAll();toast("Cleared");
-  };
+  $("#dReset").onclick=function(){resetWorkspace().catch(reportError)};
+  window.addEventListener("pagehide",function(){if(dirty){try{persistNow()}catch(e){}}});
+  window.addEventListener("beforeunload",function(e){if(dirty){try{persistNow()}catch(err){e.preventDefault();e.returnValue=""}}});
+  window.addEventListener("storage",function(e){if(e.key===KEY){storageBlocked=true;saveStatus("Changed in another tab — reload",true);toast("This workspace changed in another tab. Reload before editing to avoid overwriting changes.")}});
   if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
-    navigator.serviceWorker.register("sw.js").then(function(){
-      $("#dataMsg").textContent="Saved in this browser only, and cached for offline use. Nothing is uploaded.";
-    }).catch(function(){});
+    navigator.serviceWorker.register("sw.js").then(async function(){
+      await navigator.serviceWorker.ready;
+      $("#dataMsg").textContent="The planner interface is cached for offline use. Test it offline before travelling. External links still need internet. Browser storage is not encrypted or cloud-synced.";
+    }).catch(function(){$("#dataMsg").textContent="Offline caching is unavailable. Serve this folder over HTTPS or localhost for service-worker support. Keep backups."});
+  }else{
+    $("#dataMsg").textContent="Opened as a local file: offline caching and storage reliability vary by browser. For reliable document storage, use this folder through localhost or HTTPS. No automatic cloud sync.";
   }
-  if(!window.matchMedia||!window.matchMedia("(prefers-reduced-motion: reduce)").matches){setTimeout(playRoute,700)}
+  if(bootError)toast(bootError);
+  window.plannerReady=true;
 })();
 </script>
+</body>
+</html>
