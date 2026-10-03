@@ -1,15 +1,25 @@
 {
   "name": "Japan 2026 — travel workspace",
   "short_name": "Japan 2026",
-  "description": "Your itinerary, budget, documents and visa checklist together. Browser-only travel planning for 19 November to 5 December 2026.",
-  "start_url": ".",
+  "description": "Your Japan itinerary home, budget, documents and visa planning notebook.",
+  "start_url": "./",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#f5f3ee",
-  "theme_color": "#22334f",
+  "background_color": "#ebe1ce",
+  "theme_color": "#ed3c1f",
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }

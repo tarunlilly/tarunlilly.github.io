@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Japan 2026 — Your travel workspace</title>
 <meta name="description" content="Route, day calendar, city maps, budget, visa file and consulate letter for a 16-night trip to Japan, 19 November to 5 December 2026.">
-<meta name="theme-color" content="#22334f">
+<meta name="theme-color" content="#ed3c1f">
 <meta name="color-scheme" content="light dark">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png" sizes="192x192">
@@ -424,22 +424,48 @@ svg.cmap{background:var(--paper)}
 @media(max-width:620px){.line{font-size:13px}.daymeta{font-size:12px}.phead p{font-size:13px}.sidebar .tabs{flex-wrap:nowrap}.sidebar{scroll-margin-block-start:0}}
 @media print{.sidebar,.topbar,.section-heading>.btn,.privacy-banner,.footer-note,.day-list,.filterbar,.upload-area,.day-nav{display:none!important}.workspace{display:block}.workspace-main{padding:0}.shell{padding:0}.hero,.panel,.metric{break-inside:avoid;box-shadow:none}.itinerary-layout{display:block}:root{--sumi:#111;--paper:#fff;--card:#fff;--mute:#555;--rule:#bbb}.tabpane.hide{display:none!important}}
 </style>
+<style>
+/* Reference-inspired vermilion, parchment and charcoal travel notebook. */
+:root{--vermilion:#ed3c1f;--parchment:#ebe1ce;--charcoal:#282621;--sumi:#282621;--indigo:#9b2919;--paper:#ebe1ce;--card:#f5eddd;--rule:#cabc9f;--shu:#b12e1b;--moss:#365c3c;--mute:#635b4d;--soft:#e3d6bd;--hero:#282621;--hero-ink:#fff6e4;--hero-mute:#e8d9be;--hero-line:#a59980;--accent-soft:#f0dac7;--success-soft:#dce4d3;--focus:#7f2416;--shadow:0 5px 0 #2826210a;--white:#fff;--map-land:#d8cbb2;--map-line:#998c72;--water:#cbd7d7;--green:#cdd4b9;--action:#b82e19;--frame:#ebe1ce;--outline:#282621;--preview:#fffaf0;--preview-ink:#282621;--letter-rule:#dfd2b9}
+body{background:var(--vermilion);padding:clamp(18px,3.7vw,58px);color:var(--sumi);font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
+.workspace{display:block;min-height:calc(100dvh - 116px);max-inline-size:1400px;margin-inline:auto;background:var(--paper);border-radius:20px;position:relative;border:1px solid var(--frame);box-shadow:none}
+.workspace::before{content:"";position:absolute;inset:-11px;border:1px solid var(--frame);border-radius:29px;pointer-events:none}
+.sidebar{position:relative;inset-block-start:auto;block-size:auto;display:grid;grid-template-columns:166px minmax(0,1fr) auto;align-items:center;gap:20px;padding:28px 36px;background:transparent;border:0;border-radius:20px 20px 0 0;box-shadow:none}
+.brand{padding:0;gap:10px;margin:0}.brand-mark{border:1px solid var(--sumi);border-radius:2px;inline-size:41px;block-size:47px;box-shadow:2px 2px 0 var(--soft);color:var(--shu)}.brand b{font-size:16px;letter-spacing:-.04em}.brand small{font-size:8px;letter-spacing:.12em}
+.nav-caption,.local-note{display:none}.tabs{flex-direction:row;justify-content:center;flex-wrap:wrap;gap:1px;border:0;padding:0;overflow:visible}.tab{color:var(--sumi);font-size:12px;min-height:44px;padding:10px 11px;border-radius:0;gap:6px;position:relative;white-space:nowrap}.tab svg{display:none}.tab.on{background:transparent;color:var(--shu);font-weight:700}.tab.on::after{content:"";position:absolute;inset-block-end:4px;inset-inline-start:11px;inline-size:20px;block-size:2px;background:var(--sumi)}.tab:hover{background:var(--soft);color:var(--sumi)}
+.sidebar-bottom{position:static;padding:0;margin:0}.sidebar-bottom .btn{font-size:10px;min-height:38px;padding:8px 10px;background:transparent;border-color:var(--rule);box-shadow:none}
+.workspace-main{padding:0 38px 28px}.topbar{min-height:46px;max-width:none;border-block:1px solid var(--rule);font-size:11px}.breadcrumb,.save-indicator{font-size:10px}.shell{max-width:none;padding-block-start:22px}.section-heading{margin-block-end:16px}.section-heading h1{font-size:22px;font-weight:750;letter-spacing:-.045em}.section-heading p{font-size:11px}.section-heading>.btn{font-size:10px;min-height:37px;padding:8px 12px}
+.btn{border-radius:4px;border-color:var(--rule);background:var(--card);font-weight:650;min-height:44px;color:var(--sumi)}.btn:hover{background:var(--soft);border-color:var(--sumi)}.btn.primary{background:var(--action);border-color:var(--action);color:var(--hero-ink);box-shadow:-4px 4px 0 var(--paper),-5px 5px 0 var(--sumi);border-radius:3px}.btn.primary:hover{filter:none;background:var(--sumi);border-color:var(--sumi)}.btn.danger{color:var(--shu);border-color:var(--shu);background:transparent}.btn.danger:hover{background:var(--accent-soft)}
+.panel,.metric,.trip-settings{border-radius:10px;border-color:var(--rule);box-shadow:none}.phead{padding:20px 22px}.phead h2{font-size:18px;font-weight:750}.phead p{font-size:12px}.field-label,.fld label,.lf label{color:var(--mute)}.txt,textarea,.lf input,.lf select,.filterbar input,.filterbar select,.fld input{background:var(--preview);color:var(--preview-ink);border-color:var(--rule);border-radius:4px;font-size:13px}.eyebrow{font-size:10px;letter-spacing:.17em;color:var(--shu)}
+.journey-hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:54px;align-items:center;padding:24px 8px 34px}.journey-copy{padding-block:8px}.journey-copy .eyebrow{font-size:12px;font-weight:750;color:var(--shu)}.wave-rule{font-size:24px;letter-spacing:-4px;line-height:1;inline-size:100px;overflow:hidden;margin-block:19px 24px;color:var(--sumi)}.journey-copy h2{font-size:clamp(29px,3.3vw,50px);line-height:1.08;letter-spacing:-.055em;font-weight:850;margin:0 0 24px}.journey-copy h2 em{font-style:normal;color:var(--vermilion)}.journey-copy p{font-size:14px;max-inline-size:45ch;line-height:1.6;margin:0 0 25px}.journey-buttons{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.journey-buttons .btn{padding:13px 21px;font-size:13px;gap:20px}.text-link{font-size:12px;font-weight:650;text-decoration:none;color:var(--sumi)}.text-link:hover{text-decoration:underline}
+.journey-ticket{border:1px solid var(--outline);padding:20px 25px;background:var(--paper);box-shadow:6px 6px 0 var(--soft);transform:rotate(-2deg);max-inline-size:420px;inline-size:100%;justify-self:end;position:relative}.journey-ticket::after{content:"";position:absolute;inset:5px;border:1px solid var(--rule);pointer-events:none}.ticket-top,.ticket-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:9px;letter-spacing:.12em;font-weight:700}.ticket-top{border-block-end:1px solid var(--sumi);padding-block-end:12px}.ticket-top>span:last-child{font-size:27px;color:var(--shu);line-height:1}.ticket-number{font-size:89px;font-weight:850;letter-spacing:-.085em;line-height:1;display:flex;align-items:center;gap:21px;margin-block:19px 16px;color:var(--vermilion)}.ticket-number span{font-size:12px;line-height:1.5;letter-spacing:.11em;color:var(--sumi);max-inline-size:10ch}.ticket-dates{border-block:1px solid var(--rule);padding-block:12px;font-size:12px;font-weight:650}.ticket-route{padding-block:9px}.ticket-route>div{display:grid;grid-template-columns:23px 1fr auto;gap:8px;align-items:center;padding-block:7px}.ticket-route span{font-size:10px;color:var(--shu)}.ticket-route b{font-size:13px;font-weight:700}.ticket-route small{font-size:10px;color:var(--mute)}.ticket-bottom{border-block-start:1px solid var(--sumi);padding-block-start:14px;letter-spacing:.07em}.ticket-bottom a{font-size:10px;letter-spacing:0;color:var(--shu)}
+.journey-meta{display:flex;justify-content:space-between;gap:14px;border-block:1px solid var(--shu);padding-block:13px;margin-block:8px 26px;font-size:11px;color:var(--mute)}.journey-meta>span:first-child{text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--shu)}.journey-meta a{color:var(--shu)}.itinerary-panel{scroll-margin-block-start:20px}.itinerary-panel>.phead{background:var(--card)}.itinerary-layout{grid-template-columns:242px minmax(0,1fr)}.day-list{padding:11px;background:var(--paper);max-height:800px}.day-pick{padding:14px 13px;border-radius:4px;border:1px solid transparent;min-height:90px}.day-pick.on{background:var(--card);border-color:var(--sumi);box-shadow:3px 3px 0 var(--soft)}.day-pick.on small:first-child{color:var(--shu);font-weight:700}.day-pick b{font-size:13px}.day-pick small{font-size:11px}.day{padding:26px}.dayhead h3{font-size:24px;font-weight:750;letter-spacing:-.035em}.line{font-size:13px;padding-block:15px}.line .tm{font-size:11px;color:var(--shu)}.filterbar{background:var(--card)}.calendar-disclosure{background:var(--paper)}.calendar-disclosure summary{min-height:48px;color:var(--sumi)}
+.hero{background:var(--sumi);border-radius:9px}.hero h2{font-family:inherit;font-weight:800;font-size:40px;line-height:1.08;letter-spacing:-.055em}.hero .eyebrow{color:var(--hero-mute)}.metric b{font-weight:800}.metric{background:var(--card)}.ready-track{background:var(--soft)}.warn{background:var(--accent-soft);font-size:12px}.privacy-banner{background:var(--soft)}.nb.sel{background:var(--card);border-inline-start-color:var(--shu)}.tick.on{background:var(--moss)}.status-badge{font-size:10px}.file{overflow-wrap:anywhere}.rhead .rt{font-size:14px}.body .tools{gap:8px}.body .btn{font-size:12px}
+.lgrid{grid-template-columns:330px minmax(0,1fr);align-items:start}.lform{padding:0;display:block;border:0;border-inline-end:1px solid var(--rule);background:var(--paper)}.letter-form-heading{padding:22px}.letter-form-heading p{font-size:12px;line-height:1.6;margin-block:8px 0;color:var(--mute)}.letter-group{border-block-start:1px solid var(--rule)}.letter-group summary{font-size:12px;font-weight:750;cursor:pointer;padding:17px 20px;min-height:52px}.letter-group[open] summary{color:var(--shu)}.letter-group-fields{display:grid;gap:14px;padding:0 20px 22px}.letter-group textarea{width:100%;min-height:115px;font-size:12px;line-height:1.7}.letter-group textarea#l_enclosures{min-height:310px}.letter-group input,.letter-group select{width:100%;min-height:44px}.form-help{margin:0;font-size:11px;color:var(--mute)}.letter{padding:24px;background:var(--soft)}.letter .tools{gap:7px}.letter .tools .btn{font-size:11px}.letter-review{font-size:11px;color:var(--sumi);padding:11px 12px;border-inline-start:3px solid var(--shu);background:var(--card);margin:0 0 18px}.letter-paper-label{display:flex;justify-content:space-between;gap:12px;font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--mute);margin-block:0 10px}pre.out{font-family:Georgia,"Times New Roman",serif;font-size:14px;line-height:1.85;background:var(--preview);color:var(--preview-ink);border:1px solid var(--letter-rule);border-radius:1px;padding:32px;max-height:1100px;overflow-wrap:anywhere;box-shadow:3px 3px 0 var(--rule);margin:0}.footer-note{font-size:10px;border-color:var(--shu);padding-block-start:16px}.toast{background:var(--sumi);color:var(--card)}
+@media(prefers-color-scheme:dark){:root{--sumi:#f4e6ca;--indigo:#ffae91;--paper:#282621;--card:#333027;--rule:#706451;--shu:#ffae91;--moss:#bad2a5;--mute:#d0c0a5;--soft:#3c362b;--hero:#1b1a17;--hero-ink:#fff6e4;--hero-mute:#e8d9be;--hero-line:#80715c;--accent-soft:#48332a;--success-soft:#364631;--focus:#ffb395;--shadow:none;--map-land:#4d4639;--map-line:#a99b7e;--water:#354948;--green:#444e38;--action:#ae2b17;--outline:#e7d8bb;--preview:#f7efdF;--preview-ink:#282621;--letter-rule:#b6a585}.journey-copy h2 em,.ticket-number{color:var(--shu)}.hero{background:var(--hero)}.journey-ticket{background:var(--card)}.tick.on{color:var(--paper)}}
+@media(min-width:1600px){.workspace-main{padding-inline:52px}.sidebar{padding-inline:50px}.journey-hero{padding-block:35px 40px}.journey-copy h2{font-size:54px}}
+@media(max-width:1190px){.sidebar{grid-template-columns:155px minmax(0,1fr);padding:24px 28px 18px;gap:13px}.sidebar-bottom{grid-column:2;justify-self:end}.sidebar-bottom .btn{min-height:32px}.tabs{justify-content:flex-end;gap:0}.tab{padding-inline:9px}.workspace-main{padding-inline:28px}.journey-hero{gap:35px}.lgrid{grid-template-columns:290px minmax(0,1fr)}.lform{display:block;border-inline-end:1px solid var(--rule)}.letter{padding:18px}pre.out{padding:24px;font-size:13px}}
+@media(max-width:900px){body{padding:24px}.sidebar{position:relative;display:grid;grid-template-columns:1fr auto;gap:18px;padding:23px 24px 13px}.brand{margin:0}.brand small{font-size:8px}.tabs{grid-column:1/-1;grid-row:2;flex-wrap:nowrap;justify-content:flex-start;overflow:auto;max-inline-size:100%;padding-block-end:7px;scrollbar-width:thin}.tab{font-size:12px;min-height:44px;flex:none;padding:10px 13px}.sidebar-bottom{grid-column:2;grid-row:1;position:static;inset:auto}.sidebar-bottom .btn{font-size:10px;min-height:36px}.workspace-main{padding-inline:24px}.topbar{min-height:44px}.shell{padding-block-start:20px}.journey-hero{gap:26px;padding-block:15px 30px}.journey-copy h2{font-size:32px}.journey-copy p{font-size:12px}.journey-ticket{padding:18px;transform:rotate(-1deg)}.ticket-number{font-size:73px;gap:15px}.ticket-dates{font-size:10px}.ticket-route b{font-size:12px}.ticket-bottom{font-size:8px}.ticket-bottom a{font-size:9px}.journey-buttons{gap:17px}.journey-buttons .btn{font-size:12px;padding:11px 15px}.lgrid{grid-template-columns:1fr}.lform{border-inline-end:0;border-block-end:1px solid var(--rule)}.letter-group-fields{grid-template-columns:1fr 1fr}.letter-group-fields>.form-help{grid-column:1/-1}.letter-group-fields .letter-field:has(textarea){grid-column:1/-1}.itinerary-layout{grid-template-columns:205px minmax(0,1fr)}.day{padding:22px}.dayhead h3{font-size:21px}.grid2{grid-template-columns:1fr}.journey-meta{font-size:10px}}
+@media(max-width:620px){body{padding:15px}.workspace{border-radius:13px;min-height:calc(100dvh - 30px)}.workspace::before{inset:-7px;border-radius:19px}.sidebar{padding:20px 17px 8px;gap:18px}.brand b{font-size:15px}.brand-mark{inline-size:34px;block-size:40px}.brand small{font-size:7px}.sidebar-bottom .btn{font-size:9px;padding:8px;max-inline-size:109px;white-space:normal}.tabs{gap:0}.tab{font-size:12px;padding-inline:12px}.workspace-main{padding:0 17px 20px}.topbar{min-height:44px;gap:8px}.topbar .breadcrumb{font-size:9px}.save-indicator{font-size:9px;max-width:51%}.section-heading h1{font-size:21px}.section-heading p{font-size:10px}.section-heading>.btn{display:none}.journey-hero{display:flex;flex-direction:column;gap:27px;padding:17px 2px 24px}.journey-copy{inline-size:100%;padding:0}.journey-copy .eyebrow{font-size:10px}.wave-rule{margin-block:16px 18px;font-size:21px}.journey-copy h2{font-size:clamp(28px,7.9vw,43px);line-height:1.08;margin-block-end:18px}.journey-copy p{font-size:13px;max-inline-size:40ch;margin-block-end:22px}.journey-buttons .btn{font-size:12px;padding:11px 17px}.journey-buttons{gap:20px}.journey-ticket{max-inline-size:none;padding:18px 20px;transform:none;box-shadow:4px 4px 0 var(--soft)}.ticket-number{font-size:68px;margin-block:14px;gap:22px}.ticket-number span{font-size:12px;max-inline-size:none}.ticket-top{font-size:9px}.ticket-top>span:last-child{font-size:22px}.ticket-dates{font-size:12px}.ticket-route{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding-block:10px}.ticket-route>div{grid-template-columns:18px 1fr;gap:4px;padding-block:6px}.ticket-route b{font-size:12px}.ticket-route small{grid-column:2;font-size:10px}.ticket-bottom{font-size:9px;padding-block-start:12px}.ticket-bottom a{font-size:10px}.journey-meta{flex-direction:column;gap:6px;margin-block:10px 20px;font-size:10px}.itinerary-layout{display:block}.day-list{display:flex;gap:7px;padding:12px;max-height:none;border-inline-end:0}.day-pick{min-width:155px;width:155px;min-height:98px;padding:12px}.day-pick b{font-size:12px}.day-pick small{font-size:10px}.day{padding:19px 15px}.dayhead h3{font-size:20px}.day-nav .btn{font-size:11px;min-height:44px}.line{font-size:13px;gap:10px}.line .tm{width:53px;font-size:10px}.phead{padding:18px 16px}.phead h2{font-size:17px}.phead p{font-size:12px}.filterbar{padding:15px}.filterbar .search-field{min-width:0}.filterbar .filter-field{min-width:0}.filterbar input{font-size:12px}.letter{padding:15px}.letter-form-heading{padding:19px}.letter-group-fields{grid-template-columns:1fr;padding:0 18px 20px}.letter-group summary{padding:16px 18px}.letter .tools .btn{font-size:11px;flex:1 1 auto}.letter-review{font-size:11px}pre.out{padding:20px 15px;font-size:13px;max-height:1100px}.letter-paper-label{font-size:8px}.body .btn{font-size:11px}.rhead .rt{font-size:13px}.metric{padding:14px}.metric b{font-size:22px}.hero h2{font-size:34px}.document-list{padding-inline:14px}.warn{font-size:11px}.backup-card{padding:18px}.backup-card h2{font-size:17px}.upload-controls>div{min-width:0}.upload-controls select{min-width:0}.privacy-banner{flex-wrap:wrap}}
+@media print{body{padding:0;background:var(--white)}.workspace{border:0;max-inline-size:none}.workspace::before{display:none}.journey-hero,.journey-meta,.letter-form-heading,.lform,.letter-review,.letter-paper-label,.letter .tools,.warn{display:none!important}.workspace-main,.letter{padding:0}.lgrid{display:block}.letter{background:var(--white)}pre.out{max-height:none;overflow:visible;border:0;box-shadow:none;background:var(--white);color:var(--charcoal);font-size:11pt}.workspace{background:var(--white)}}
+
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to workspace</a>
 <div class="workspace">
 <aside class="sidebar" aria-label="Workspace navigation">
-  <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="14" cy="10" r="4" fill="currentColor" stroke="none"/><path d="M4 21h20M6 18h16M9 15h10"/></svg></span><span><b>Japan, 2026</b><small>A travel workspace</small></span></a>
+  <a class="brand" href="#cal" aria-label="Japan 2026 itinerary home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="14" cy="10" r="4" fill="currentColor" stroke="none"/><path d="M4 21h20M6 18h16M9 15h10"/></svg></span><span><b>Japan, 2026</b><small>Your travel notebook</small></span></a>
   <p class="nav-caption">Your journey</p>
   <nav class="tabs" id="tabs" aria-label="Planner sections"></nav>
   <div class="sidebar-bottom"><button class="btn q" id="openBackups">↥ &nbsp; Backups & storage</button><p class="local-note"><b>On this device, for this trip.</b>No account. No cloud sync.<br>Make a backup before you go.</p></div>
 </aside>
 <main class="workspace-main" id="main" tabindex="-1">
-  <header class="topbar"><div class="breadcrumb">Japan 2026 <span aria-hidden="true">/</span><span id="crumb">Overview</span></div><span id="saveStatus" class="save-indicator" role="status">Opening your workspace…</span></header>
+  <header class="topbar"><div class="breadcrumb">Japan 2026 <span aria-hidden="true">/</span><span id="crumb">Itinerary</span></div><span id="saveStatus" class="save-indicator" role="status">Opening your workspace…</span></header>
 
 <div class="shell">
-  <div class="section-heading"><div><h1 id="pageTitle" tabindex="-1">Your trip, all together.</h1><p id="pageSubtitle">Less searching. More looking forward.</p></div><button class="btn" id="quickBackup">↥ &nbsp; Back up trip</button></div>
-  <section id="p_overview" class="tabpane" aria-label="Trip overview">
+  <div class="section-heading"><div><h1 id="pageTitle" tabindex="-1">Your days in Japan.</h1><p id="pageSubtitle">One journey. Every detail, together.</p></div><button class="btn" id="quickBackup">↥ &nbsp; Back up trip</button></div>
+  <section id="p_overview" class="tabpane hide" aria-label="Trip overview">
     <span id="overview"></span>
     <div class="hero">
       <div class="eyebrow">The next adventure</div>
@@ -512,9 +538,14 @@ svg.cmap{background:var(--paper)}
   </section>
 
   <!-- CALENDAR -->
-  <section id="p_cal" class="tabpane hide">
+  <section id="p_cal" class="tabpane">
     <span id="cal"></span>
-    <div class="panel">
+    <div class="journey-hero">
+      <div class="journey-copy"><span class="eyebrow">JAPAN / AUTUMN 2026</span><div class="wave-rule" aria-hidden="true">∿∿∿∿∿∿</div><h2>LESS SEARCHING.<br><em>MORE JAPAN.</em><br>ONE DAY AT A TIME.</h2><p>Your route, your plans, your own little discoveries. Everything for the journey, in one place.</p><div class="journey-buttons"><a class="btn primary" href="#dayPlanner">Explore your days <span aria-hidden="true">↘</span></a><a class="text-link" href="#route">See the route ↗</a></div></div>
+      <div class="journey-ticket" aria-label="Trip at a glance"><div class="ticket-top"><span>THE JAPAN EDIT</span><span aria-hidden="true">JP</span></div><div class="ticket-number" id="homeDayTotal">17<span>DAYS OF DISCOVERY</span></div><div class="ticket-dates" id="homeTripDates"></div><div class="ticket-route" id="homeTripRoute"></div><div class="ticket-bottom"><span>YOUR ITINERARY</span><a href="#documents">Travel documents ↗</a></div></div>
+    </div>
+    <div class="journey-meta"><span id="homeTripCount"></span><span>Plans are saved in this browser. <a href="#backups">Keep a backup ↗</a></span></div>
+    <div class="panel itinerary-panel" id="dayPlanner" tabindex="-1">
       <div class="phead"><h2>Your days in Japan</h2><p>Browse the original day-by-day plan, find a place, and keep your own notes. Accommodation suggestions are not bookings.</p></div>
       <div class="filterbar"><div class="search-field"><label class="field-label" for="daySearch">Search your itinerary</label><input id="daySearch" type="search" placeholder="Try “ramen”, “Fuji” or “Shinkansen”…"></div><div class="filter-field"><label class="field-label" for="cityFilter">Base city</label><select id="cityFilter"><option value="">All cities & travel days</option></select></div><p id="dayCount" role="status"></p></div>
       <div class="itinerary-layout"><nav id="dayList" class="day-list" aria-label="Itinerary days"></nav><div class="day" id="dayDetail"></div></div>
@@ -562,7 +593,7 @@ svg.cmap{background:var(--paper)}
     <span id="letter"></span>
     <div class="warn"><b>Drafts, not verified applications.</b> Review every personal detail, declaration and enclosure before submitting. Booking notes do not prove reservations, and checklist completion does not prove visa or leave approval. Downloads are editable Word-compatible .doc files; replace all bracketed prompts.</div>
     <div class="panel">
-      <div class="phead"><h2>Cover letter and schedule of stay</h2><p>Add your details once. The drafts use the fixed itinerary dates; the overview's travel-window note does not change them. Review the downloaded drafts against your actual bookings and documents.</p></div>
+      <div class="phead"><h2>Your Japan visa cover letter</h2><p>Your supplied letter structure, adapted to Japan and your itinerary dates. Personal declarations remain editable; nothing is inferred from an upload.</p></div>
       <div class="lgrid">
         <div class="lform lf" id="lform"></div>
         <div class="letter">
@@ -571,6 +602,7 @@ svg.cmap{background:var(--paper)}
             <button class="btn q" id="wordLetter">Download letter (.doc)</button>
             <button class="btn q" id="wordSched">Download schedule of stay (.doc)</button>
           </div>
+          <p class="letter-review" id="letterReviewStatus" role="status"></p><div class="letter-paper-label"><span>LETTER PREVIEW</span><span>JAPAN · TOURISM</span></div>
           <pre class="out" id="letterOut"></pre>
         </div>
       </div>
@@ -1009,8 +1041,18 @@ var LFIELDS=[
  ["ctyCount","Countries visited so far","e.g. 9",'text'],
  ["countries","Which countries","Singapore, Thailand, UAE, …",'text'],
  ["leaveFrom","Approved leave from","20 Nov 2026",'text'],["leaveTo","Resuming work on","9 Dec 2026",'text'],
- ["funding","Who funds the trip","",'select'],["consulate","Consulate","",'select']
+ ["funding","Who funds the trip","",'select'],["consulate","Consulate","",'select'],
+ ["letterDate","Letter date","",'date'],
+ ["leaveStatement","Leave confirmation","State your approved leave, or leave this blank until confirmed.",'textarea'],
+ ["routeStatement","Journey description (optional override)","Leave blank to use the Japan route and dates from your itinerary.",'textarea'],
+ ["travelHistory","Travel history and visa compliance","Describe your previous travel and compliance accurately.",'textarea'],
+ ["tiesStatement","Family, personal and professional ties","Describe the reasons you will return to India.",'textarea'],
+ ["bankStatement","Salary and savings account explanation","Explain your accounts and which statements you are enclosing. Do not enter account numbers.",'textarea'],
+ ["financialStatement","Funding and financial evidence","Explain how the trip is funded and the evidence enclosed.",'textarea'],
+ ["enclosures","Enclosures — one document per line","Edit this list to match the documents you are actually submitting.",'textarea'],
+ ["enclosuresConfirmed","Have you checked the enclosure list?","",'select']
 ];
+var LETTER_ENCLOSURES=["Visa Application Form","Photographs as per specifications","Two copies of my current passport","Day-wise Itinerary","Flight tickets","Income Tax Returns","Bank Statements (salary and savings accounts)","Mutual Fund Statement","Stay Bookings","Travel Insurance","Salary Slips","Leave Letter from my organisation"].join("\n");
 
 /* ---------- helpers ---------- */
 var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
@@ -1034,7 +1076,7 @@ function dl(name,content,mime){var b=new Blob([content],{type:mime||"text/plain;
 function docFile(name,html){dl(name,'<html xmlns:w="urn:schemas-microsoft-com:office:word"><meta charset="utf-8"><body style="font-family:Calibri,Arial;font-size:11pt;line-height:1.5">'+html+'</body></html>',"application/msword")}
 
 /* ---------- tabs ---------- */
-var TABS=[["overview","Overview"],["cal","Itinerary"],["route","Route & maps"],["budget","Budget"],["stays","Flights & stays"],["documents","Documents"],["visa","Visa checklist"],["letter","Letters"]];
+var TABS=[["cal","Itinerary"],["overview","Overview"],["route","Route & maps"],["budget","Budget"],["stays","Flights & stays"],["documents","Documents"],["visa","Visa checklist"],["letter","Letters"]];
 var ICONS={
   overview:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
   cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/>',
@@ -1047,7 +1089,7 @@ var ICONS={
 };
 var PAGE_INFO={
   overview:["Your trip, all together.","Less searching. More looking forward."],
-  cal:["The itinerary","Seventeen days. Room for a little spontaneity."],
+  cal:["Your days in Japan.","One journey. Every detail, together."],
   route:["A journey across Honshu","Your bases, connections and city maps."],
   budget:["Make room for the memories.","One editable estimate. Every cost in view."],
   stays:["The way there. A place to stay.","Compare recommendations and record your own bookings."],
@@ -1056,9 +1098,9 @@ var PAGE_INFO={
   letter:["Paperwork, without the repetition.","Draft a cover letter and a schedule from your trip."],
   backups:["Keep a copy. Travel lighter.","Your browser is not a backup."]
 };
-var activePage="overview";
+var activePage="cal";
 function showPage(id,focus){
-  if(!PAGE_INFO[id])id="overview";
+  if(!PAGE_INFO[id])id="cal";
   if(activePage==="route"&&id!=="route"&&anim.playing)playRoute();
   activePage=id;
   $$("#tabs .tab").forEach(function(b){var on=b.dataset.p===id;b.classList.toggle("on",on);if(on)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
@@ -1069,7 +1111,7 @@ function showPage(id,focus){
   document.title=$("#crumb").textContent+" · Japan 2026";
   if(id==="overview")renderOverview();
   if(id==="documents")renderLibrary();
-  if(id==="cal")renderDayList();
+  if(id==="cal"){renderDayList();renderItineraryHome()}
   if(id==="backups")renderStorage();
   if(focus){$("#pageTitle").focus({preventScroll:true});window.scrollTo({top:0,behavior:"instant"})}
 }
@@ -1326,7 +1368,7 @@ function renderVisa(){
     if(op){
       h+='<div class="body"><div class="spec">'+esc(doc.spec)+'</div><div class="why">'+esc(doc.why)+'</div>';
       h+='<div class="tools"><button class="btn" data-attach="'+doc.id+'">'+(r.file?"Replace file":"Attach file")+'</button><input type="file" hidden data-file="'+doc.id+'">';
-      if(r.file)h+='<button class="btn q" data-dl="'+doc.id+'">Download renamed</button>';
+      if(r.file)h+='<button class="btn q" data-dl="'+doc.id+'">Download renamed</button><button class="btn danger" data-delete-attachment="'+doc.id+'" aria-label="Delete attachment for '+esc(doc.t)+'">Delete file</button>';
       h+='<button class="btn q" data-skip="'+doc.id+'">'+(r.status==="skip"?"Bring back":"Not applicable")+'</button>';
       h+='<span class="mono" style="font-size:11.5px;color:var(--mute)">'+esc(doc.fmt)+'</span></div>';
       if(r.file)h+='<div class="file mono">'+esc(r.file.orig)+' → '+esc(renamed(doc,r.file.orig))+' · '+(r.file.size/1048576).toFixed(2)+' MB'+(r.file.libraryId&&availableFiles.has(r.file.libraryId)?' · Saved in Documents':' · File missing: reattach the original')+'</div>';
@@ -1353,6 +1395,11 @@ function renderVisa(){
     if(!rec(id).file.libraryId){toast("This legacy file was not saved by the old planner. Reattach the original.");return}
     downloadFile(rec(id).file.libraryId,renamed(doc,rec(id).file.orig)).catch(reportError);
   }});
+  $$("#docpanel [data-delete-attachment]").forEach(function(e){e.addEventListener("click",async function(){
+    var id=e.dataset.deleteAttachment,file=rec(id).file;
+    if(!file)return;
+    try{await removeFile(file.libraryId,id)}catch(err){reportError(err)}
+  })});
   $("#tree").textContent=tree();
 }
 function tree(){
@@ -1368,61 +1415,62 @@ function tree(){
 
 /* ---------- cover letter ---------- */
 function buildLForm(){
-  $("#lform").innerHTML=LFIELDS.map(function(f){
-    var v=D.letter[f[0]]||"";
+  function field(key){
+    var f=LFIELDS.find(function(x){return x[0]===key}),v=D.letter[key]||"";
+    if(key==="enclosures"&&!Object.prototype.hasOwnProperty.call(D.letter,key))v=LETTER_ENCLOSURES;
+    var label='<label for="l_'+key+'">'+esc(f[1])+'</label>',control;
     if(f[3]==="select"){
-      var opts=f[0]==="funding"?["I am funding the trip myself","The trip is sponsored"]:["Consulate-General of Japan, Bengaluru","Embassy of Japan, New Delhi","Consulate-General of Japan, Mumbai","Consulate-General of Japan, Chennai"];
-      return '<div><label for="l_'+f[0]+'">'+esc(f[1])+'</label><select id="l_'+f[0]+'" data-l="'+f[0]+'">'+opts.map(function(o){return '<option'+(v===o?" selected":"")+'>'+esc(o)+'</option>'}).join("")+'</select></div>';
-    }
-    return '<div><label for="l_'+f[0]+'">'+esc(f[1])+'</label><input id="l_'+f[0]+'" data-l="'+f[0]+'" value="'+esc(v)+'" placeholder="'+esc(f[2])+'"></div>';
-  }).join("")+'<div style="border-top:1px solid var(--rule);padding-top:11px"><label>Confirmed accommodation, once booked</label>'+
-  BASES.map(function(b){return '<label for="booking_'+b.id+'">'+esc(b.name)+' accommodation note</label><input id="booking_'+b.id+'" style="margin-top:6px" data-bk="'+b.id+'" value="'+esc(D.bookings[b.id]||"")+'" placeholder="'+esc(b.name)+' — name, phone">'}).join("")+'</div>';
-  $$("#lform [data-l]").forEach(function(e){e.oninput=e.onchange=function(){D.letter[e.dataset.l]=e.value;save();renderLetter()}});
+      var opts=key==="funding"?["I am funding the trip myself","The trip is sponsored"]:key==="enclosuresConfirmed"?["Draft — not yet checked","I confirm the listed documents are enclosed"]:["Consulate-General of Japan, Bengaluru","Embassy of Japan, New Delhi","Consulate-General of Japan, Mumbai","Consulate-General of Japan, Chennai"];
+      control='<select id="l_'+key+'" data-l="'+key+'">'+opts.map(function(o){return '<option'+(v===o?' selected':'')+'>'+esc(o)+'</option>'}).join("")+'</select>';
+    }else if(f[3]==="textarea")control='<textarea id="l_'+key+'" data-l="'+key+'" rows="'+(key==="enclosures"?12:4)+'" placeholder="'+esc(f[2])+'">'+esc(v)+'</textarea>';
+    else control='<input id="l_'+key+'" data-l="'+key+'" type="'+(f[3]==="date"?'date':key==="email"?'email':'text')+'" value="'+esc(v)+'" placeholder="'+esc(f[2])+'">';
+    return '<div class="letter-field">'+label+control+'</div>';
+  }
+  function group(title,keys,open,extra){return '<details class="letter-group"'+(open?' open':'')+'><summary>'+title+'</summary><div class="letter-group-fields">'+(extra||'')+keys.map(field).join('')+'</div></details>'}
+  var name='<div class="letter-field"><label for="letterApplicant">Applicant name, as in passport</label><input id="letterApplicant" value="'+esc(D.name||'')+'" placeholder="Your full name" autocomplete="name"></div>';
+  $("#lform").innerHTML='<div class="letter-form-heading"><span class="eyebrow">YOUR LETTER, YOUR DETAILS</span><p>Your format, adapted for Japan. Complete the fields; the preview updates as you type.</p></div>'+
+    group('01 / Applicant & addressee',["passport","addr","phone","email","letterDate","consulate"],true,name)+
+    group('02 / Employment & leave',["employer","designation","leaveStatement","leaveFrom","leaveTo"],false)+
+    group('03 / Journey & return',["routeStatement","travelHistory","tiesStatement"],false,'<p class="form-help">The default route and return date come from your Japan itinerary. An override replaces the route paragraph only; check it against the fixed dates.</p>')+
+    group('04 / Accounts & funding',["bankStatement","funding","financialStatement"],false)+
+    group('05 / Enclosures',["enclosures","enclosuresConfirmed"],false,'<p class="form-help">This is the 12-item list from your example, not an official checklist or proof of attachment. Remove anything you are not enclosing, then confirm the list.</p>')+
+    group('06 / Other saved details',["dob","joined","ctyCount","countries"],false,'<p class="form-help">Preserved from the previous version. These fields do not automatically add declarations to your letter.</p>')+
+    '<details class="letter-group"><summary>07 / Accommodation for the schedule</summary><div class="letter-group-fields">'+BASES.map(function(b){return '<div class="letter-field"><label for="booking_'+b.id+'">'+esc(b.name)+' confirmed accommodation</label><input id="booking_'+b.id+'" data-bk="'+b.id+'" value="'+esc(D.bookings[b.id]||'')+'" placeholder="Name, address and phone"></div>'}).join('')+'</div></details>';
+  $("#letterApplicant").addEventListener("input",function(){D.name=this.value;$("#f_name").value=this.value;save();renderLetter();renderVisa()});
+  $$("#lform [data-l]").forEach(function(e){e.oninput=e.onchange=function(){D.letter[e.dataset.l]=e.value;if(e.dataset.l==="enclosures"){D.letter.enclosuresConfirmed="Draft — not yet checked";$("#l_enclosuresConfirmed").value=D.letter.enclosuresConfirmed}save();renderLetter()}});
   $$("#lform [data-bk]").forEach(function(e){e.oninput=function(){D.bookings[e.dataset.bk]=e.value;save();renderDay();renderStays();renderLetter()}});
 }
 function letterText(){
-  var L=D.letter,g=function(k,f){return L[k]||f};
-  var start=shortDate(DAYS[0].date),end=shortDate(DAYS[DAYS.length-1].date);
-  var cities=BASES.map(function(b){return b.name}).join(", ");
-  return [
-    (D.name||"[Your name]"),
-    g("addr","[Residential address]"),
-    g("phone","[Phone]")+"  ·  "+g("email","[Email]"),
-    "",
-    "Date: ____________",
-    "",
-    "The Visa Section",
-    g("consulate","Consulate-General of Japan, Bengaluru"),
-    "",
-    "Subject: Application for a short-stay tourist visa, "+start+" to "+end,
-    "",
-    "Dear Sir or Madam,",
-    "",
-    "I am applying for a single-entry short-stay tourist visa to visit Japan from "+start+" to "+end+", a total of "+DAYS.length+" days and "+nightCount()+" nights.",
-    "",
-    "I hold Indian passport number "+g("passport","[passport number]")+" and was born on "+g("dob","[date of birth]")+". I am employed as "+g("designation","[designation]")+" at "+g("employer","[employer]")+", where I have worked since "+g("joined","[joining date]")+". My planned leave begins on "+g("leaveFrom","[leave start]")+" and my planned return to duty is "+g("leaveTo","[return date]")+". [Confirm your approved leave and the employment documents actually enclosed.]",
-    "",
-    "I have travelled abroad on "+g("ctyCount","[number]")+" occasions to date, to "+g("countries","[list of countries]")+". [Verify your travel history and visa compliance; list relevant supporting copies, if required.]",
-    "",
-    g("funding","I am funding the trip myself")+". [List the financial evidence you are actually enclosing and verify current requirements.]",
-    "",
-    "The purpose of my visit is tourism and photography. My intended route covers "+cities+", with travel from Bengaluru and a return to Bengaluru. [Confirm the flight reservation details, accommodation for every night, and the enclosed schedule of stay before submission.]",
-    "",
-    "[Describe your actual ties to India and confirm your intention to return within the permitted stay. Review and include the following declaration only if accurate:] I will comply fully with the conditions of the visa and will not engage in any paid activity while in Japan.",
-    "",
-    "I would be grateful for your consideration. Please let me know if any further document is required.",
-    "",
-    "Yours faithfully,",
-    "",
-    "",
-    "____________________",
-    (D.name||"[Your name]"),
-    "Passport no. "+g("passport","[passport number]"),
-    "",
-    "Enclosures: [List only the documents actually included; verify the current official requirements.]"
+  var L=D.letter,g=function(k,f){return (L[k]||"").trim()||f},name=D.name||"[Your name]";
+  function numericDate(ds){var bits=ds.split("-");return bits[2]+"."+bits[1]+"."+bits[0]}
+  var start=numericDate(DAYS[0].date),end=numericDate(DAYS[DAYS.length-1].date);
+  var returnDate=new Date(DAYS[DAYS.length-1].date+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+  var cities=BASES.map(function(b){return b.name}),joined=cities.slice(0,-1).join(", ")+" and "+cities[cities.length-1];
+  var route="I have planned this Japan trip to explore "+joined+". I will begin my journey in "+cities[0]+" before proceeding to "+cities.slice(1,-1).join(" and ")+" and finally "+cities[cities.length-1]+". Throughout the trip, I intend to explore local attractions and undertake day excursions. I plan to return to India on "+returnDate+".";
+  var leave=g("leaveStatement","[Confirm your approved leave from your organisation.]");
+  if(L.leaveFrom&&L.leaveTo)leave+=" My leave begins on "+L.leaveFrom+", and I will resume work on "+L.leaveTo+".";
+  var funding=g("financialStatement",L.funding==="The trip is sponsored"?"[Describe your sponsor, the expenses covered and the supporting financial evidence enclosed.]":"I intend to finance the expenses for this trip. [Confirm the financial evidence enclosed to demonstrate that you can cover your stay.]");
+  var enclosureText=Object.prototype.hasOwnProperty.call(L,"enclosures")?L.enclosures:LETTER_ENCLOSURES;
+  var enclosures=enclosureText.split(/\r?\n/).map(function(line){return line.trim().replace(/^\d+[.)]\s*/,"")}).filter(Boolean).map(function(line,i){return (i+1)+". "+line}).join("\n");
+  var confirmed=L.enclosuresConfirmed==="I confirm the listed documents are enclosed";
+  return [name,g("addr","[Residential address]"),g("phone","[Phone]")+"  ·  "+g("email","[Email]"),"",
+    "Date: "+(L.letterDate?numericDate(L.letterDate):"____________"),"","The Visa officer",g("consulate","Consulate-General of Japan, Bengaluru"),"",
+    "Dear Sir/Madam,","","Re: Request for Tourist Visa for Japan / "+name+" / Passport No: "+g("passport","[Passport number]"),"",
+    "I would like to apply for a tourist visa for Japan as I intend to travel from "+start+" to "+end+" for tourism. I look forward to visiting the magnificent sights across "+joined+".","",
+    "I am working with "+g("employer","[Employer]")+" in the position of "+g("designation","[Designation]")+". "+leave,"",
+    g("routeStatement",route),"",
+    "I would like to assure you that I have a strong commitment to my responsibilities in India. "+g("travelHistory","[Describe your previous travel and confirm your compliance with visa conditions.]")+" "+g("tiesStatement","[Describe your family, personal and professional ties to India and the reasons for your return.]"),"",
+    g("bankStatement","[Explain your salary and savings accounts and confirm which statements are enclosed. Do not include account numbers.]"),"",funding,"",
+    (confirmed?"I have enclosed the following documents for your reference:":"[Proposed enclosures — verify and confirm the documents actually enclosed:]")+"\n"+(enclosures||"[List the documents enclosed.]"),"",
+    "I will be available to come to the Visa Office / Consulate in case any clarification is required regarding my application.","",
+    "I request you to consider my application and grant me a tourist visa for Japan.","","Thanking you,","","","Yours sincerely,","",name
   ].join("\n");
 }
-function renderLetter(){$("#letterOut").textContent=letterText()}
+function renderLetter(){
+  var text=letterText();$("#letterOut").textContent=text;
+  var missing=(text.match(/\[[^\]]+\]/g)||[]).length;
+  $("#letterReviewStatus").textContent=missing?missing+" review prompt"+(missing===1?"":"s")+" remain. Complete the fields before submitting.":"No bracketed prompts remain. Review every statement, date and enclosure before submitting.";
+}
 function schedHTML(){
   var rows=DAYS.map(function(d,i){
     var b=d.base?baseOf(d.base):null;
@@ -1712,6 +1760,12 @@ function renderDrive(){
 }
 
 /* ---------- overview, navigation and daily notes ---------- */
+function renderItineraryHome(){
+  $("#homeDayTotal").innerHTML=DAYS.length+'<span>DAYS OF DISCOVERY</span>';
+  $("#homeTripDates").textContent=shortDate(DAYS[0].date)+" — "+shortDate(DAYS[DAYS.length-1].date);
+  $("#homeTripRoute").innerHTML=BASES.map(function(b,i){return '<div><span>'+String(i+1).padStart(2,"0")+'</span><b>'+esc(b.name)+'</b><small>'+b.nights+' nights</small></div>'}).join("");
+  $("#homeTripCount").textContent=BASES.length+" bases / "+DAYS.length+" days / "+nightCount()+" nights";
+}
 function nightCount(){return BASES.reduce(function(n,b){return n+b.nights},0)}
 function readiness(){var required=DOCS.filter(function(d){return d.req&&d.s!=="G"});return {total:required.length,done:required.filter(function(d){return rec(d.id).status==="done"}).length}}
 function renderOverview(){
@@ -1790,7 +1844,7 @@ async function getFile(id){var db=await openDB();return new Promise(function(res
 async function runTask(task){
   if(taskBusy)throw Error("Please wait for the current file operation to finish.");
   taskBusy=true;
-  var controls=$$("#addDocuments,#fullExport,#dExport,#importButton,#dReset,#quickBackup,[data-attach],[data-remove]");
+  var controls=$$("#addDocuments,#fullExport,#dExport,#importButton,#dReset,#quickBackup,[data-attach],[data-remove],[data-delete-attachment]");
   controls.forEach(function(e){e.disabled=true});
   try{return await task()}finally{taskBusy=false;controls.forEach(function(e){e.disabled=false})}
 }
@@ -1830,7 +1884,7 @@ async function downloadFile(id,name){
   var meta=D.library.find(function(x){return x.id===id}),a=document.createElement("a"),url=URL.createObjectURL(record.blob);
   a.href=url;a.download=(name||meta&&meta.name||"document").replace(/[/\\]/g,"_");document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},15000);
 }
-async function removeFile(id){
+async function removeFile(id,checklistId){
   var meta=D.library.find(function(x){return x.id===id});if(!meta)return;
   if(!confirm("Remove “"+meta.name+"” from this browser? Keep an original or backup first. A linked visa checklist item will return to To do."))return;
   return runTask(async function(){
@@ -1839,7 +1893,9 @@ async function removeFile(id){
     D.library=D.library.filter(function(x){return x.id!==id});
     Object.keys(D.docs).forEach(function(k){if(D.docs[k].file&&D.docs[k].file.libraryId===id){D.docs[k].file=null;D.docs[k].status="todo"}});
     try{persistNow()}catch(e){D=JSON.parse(prior);if(old)await writeFiles([old]);throw Error("The removal could not be saved. Your previous planner entries were restored.")}
-    availableFiles.delete(id);renderLibrary();renderVisa();renderSeal();renderOverview();renderStorage();toast("Document removed from this browser.");$("#docSearch").focus();
+    availableFiles.delete(id);renderLibrary();renderVisa();renderSeal();renderOverview();renderStorage();toast("Document deleted from this browser. Linked checklist items are back to To do.");
+    var focusTarget=checklistId?$('#docpanel [data-attach="'+checklistId+'"]'):$("#docSearch");
+    if(focusTarget)focusTarget.focus();
   });
 }
 function renderLibrary(){
@@ -1995,7 +2051,7 @@ async function resetWorkspace(){
 }
 function renderAll(){
   $$("[data-k]").forEach(function(e){e.value=D[e.dataset.k]||""});
-  buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();renderOverview();renderLibrary();renderStorage();
+  buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();renderOverview();renderLibrary();renderStorage();renderItineraryHome();
   if(anim.sel)selectNode(anim.sel);
 }
 async function copyText(text,success){
@@ -2018,7 +2074,7 @@ async function copyText(text,success){
     var records=await readFiles();availableFiles=new Set(records.map(function(r){return r.id}));
     records.forEach(function(r){if(r.meta&&!D.library.some(function(m){return m.id===r.id}))D.library.push(r.meta)});
   }catch(e){$("#uploadMessage").textContent=e.message}
-  PAGE_INFO.cal[1]=DAYS.length+" days. Room for a little spontaneity.";
+  PAGE_INFO.cal[1]=DAYS.length+" days · "+nightCount()+" nights · Your itinerary is home.";
   $$("[data-k]").forEach(function(e){
     e.value=D[e.dataset.k]||"";
     e.oninput=function(){D[e.dataset.k]=e.value;save();renderVisa();renderSeal();renderLetter();renderDrive()};
@@ -2027,7 +2083,11 @@ async function copyText(text,success){
   buildTabs();renderAll();renderStatic();
   selectNode("tokyo");
   showPage(location.hash.slice(1),false);
-  window.addEventListener("hashchange",function(){if(PAGE_INFO[location.hash.slice(1)])showPage(location.hash.slice(1),true)});
+  window.addEventListener("hashchange",function(){
+    var destination=location.hash.slice(1);
+    if(destination==="dayPlanner"){showPage("cal",false);$("#dayPlanner").scrollIntoView({block:"start",behavior:"instant"});$("#dayPlanner").focus({preventScroll:true})}
+    else showPage(destination,true);
+  });
   $("#daySearch").addEventListener("input",renderDayList);
   $("#cityFilter").addEventListener("change",renderDayList);
   $("#visaSearch").addEventListener("input",renderVisa);

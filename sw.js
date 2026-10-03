@@ -1,7 +1,7 @@
 /* Offline cache for the Japan 2026 planner.
    Bump CACHE when you upload a new index.html, or the old one keeps being served. */
 const PREFIX = "japan-2026-workspace-" + self.registration.scope;
-const CACHE = PREFIX + "-v3";
+const CACHE = PREFIX + "-v4";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest",
                 "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 

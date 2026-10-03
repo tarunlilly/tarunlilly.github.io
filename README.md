@@ -1,6 +1,16 @@
-# Japan 2026 — your travel workspace
+# Japan 2026 — your travel notebook (revision 2)
 
-A redesigned, dependency-free version of the existing Japan planner. Vanilla HTML, CSS and JavaScript: no account, build step, package installation or backend.
+A reference-inspired, dependency-free version of the existing Japan planner. Vanilla HTML, CSS and JavaScript: no account, build step, package installation or backend.
+
+## Changes in this revision
+
+- Red, cream and charcoal styling inspired by your supplied reference, with a framed canvas, top navigation, bold headings and a travel-ticket summary. No third-party artwork is bundled.
+- **Itinerary is home:** opening the site without a section link lands on the itinerary. The brand returns there; existing section links still work. “Explore your days” jumps directly to the day planner.
+- **Delete from the checklist:** expand an item with an attachment and select **Delete file**. Confirmation explains that this deletes that file from the browser's document library and returns the linked item to **To do**. Notes are retained. Cancelling leaves the file and status unchanged. Other, older attachments are not removed.
+- **Cover-letter format:** follows your supplied address block, date, Visa officer/addressee, salutation, subject, employment, itinerary, travel history/ties, account explanation, funding, numbered enclosures and closing. Schengen/Europe references and old sample dates are replaced with Japan and the current itinerary dates.
+- Personal declarations, employment, approved leave, account explanation and evidence are editable fields, not automatically asserted from a file upload. Supplied personal details are not hard-coded into the public website files. Existing saved personal fields are retained.
+- The 12 proposed enclosure labels follow your example. Edit them to match your submission and confirm the list; editing it again clears the confirmation. These are template labels, not verified official visa requirements.
+- The letter has a live preview, a review-prompt indicator, copy and editable Word-compatible download. A blank letter date remains blank until filled in.
 
 ## Start here
 
@@ -29,15 +39,15 @@ To use an existing static host, replace the site's assets with this folder's con
 ## What's included
 
 - **Overview:** the actual 19 November–5 December 2026 itinerary, 17 days, 16 nights and four bases; a live estimate from the existing budget; checklist readiness; available files; useful next steps.
-- **Itinerary:** searchable day plans, base-city filter, previous/next day navigation, a month calendar and a saved note for each day.
+- **Itinerary (home):** searchable day plans, base-city filter, previous/next day navigation, a month calendar and a saved note for each day.
 - **Route & maps:** the original route map, city maps, travel legs and day-trip details. Route animation is opt-in, not automatic, and pauses when you leave its section.
 - **Budget:** the original JPY/INR model, editable exchange rate, nightly rates, food, flights, transport, entries, pre-departure costs and shopping. Negative amounts and zero exchange rates are rejected. Totals are estimates, not tracked spending or live quotes.
 - **Flights & stays:** preserved recommendations and source links, accommodation notes shared with the schedule, plus flight booking notes. Suggestions and notes do not establish a reservation.
 - **Documents:** choose multiple files, categorise them, search filenames/categories/visa references, download or remove files. Up to 20 MB per file, 50 MB of available files and 200 entries per workspace.
-- **Visa checklist:** preserved sections and guidance, accessible expandable rows, search and status filters, notes, readiness tracking, optional/N/A status and persistent attachments. Attaching a file does **not** automatically mark it ready.
+- **Visa checklist:** preserved sections and guidance, accessible expandable rows, search and status filters, notes, readiness tracking, optional/N/A status and persistent attachments with a direct delete action. Attaching a file does **not** automatically mark it ready.
 - **Letters:** editable traveller fields, draft cover-letter and schedule downloads, plus folder-structure downloads. The `.doc` downloads are Word-compatible HTML documents, not native `.docx` files. Review the drafts and replace every bracketed prompt before use.
 - **Backups & storage:** complete file backups, lighter planner-only exports, validated import, browser-persistence requests, and a confirmed reset.
-- Responsive sidebar/compact scrollable mobile navigation, keyboard focus, labelled controls, reduced-motion support, light/dark themes and print styling.
+- Responsive top navigation/compact scrollable mobile navigation, keyboard focus, labelled controls, reduced-motion support, light/dark themes and print styling.
 
 The original travel data, recommendations and external links are retained. Incorrect “15 nights” summary text was corrected or replaced with counts derived from the itinerary. The overview's editable travel-window note does **not** change the fixed itinerary dates.
 
@@ -112,17 +122,20 @@ Readiness counts required checklist items outside the pre-departure section; it 
 
 ## Checks performed on this revision
 
-29 automated checks passed using installed headless Chromium and local validation tools, without installing dependencies:
+41 automated checks passed using installed headless Chromium and local validation tools, without installing dependencies:
 
+- reference-matched palette, top navigation, itinerary home and home jump-link navigation;
 - all eight primary sections, desktop and 390/320 px phone widths;
 - itinerary search/filter and daily-note persistence;
 - budget updates and invalid exchange-rate rejection;
 - checklist controls, status filtering and keyboard expansion;
 - document upload, category search and byte-identical download after reload;
-- persistent visa attachments and readiness independent of attachment;
+- persistent visa attachments, direct checklist deletion, cancellation, missing-file removal, retained notes and readiness independent of attachment;
 - complete backup, cancelled reset, actual reset and file restoration;
 - malformed import rejection and unsafe external-folder URL rejection;
 - accommodation/letter integration and schedule download;
+- supplied letter structure with Japan dates, all editable paragraphs, enclosure confirmation, copy/download equivalence and new-field backup restoration;
+- expanded letter form at 320, 390, 768, 1024 and 1440 px widths;
 - labelled visible controls, offline reload and absence of runtime console errors/off-host asset requests.
 - exact preservation of the original structured itinerary, recommendations, maps and links;
 - legacy saved-data migration, planner-only imports retaining files, and missing-file messages;
