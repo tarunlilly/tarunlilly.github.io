@@ -449,6 +449,36 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
 @media(max-width:620px){body{padding:15px}.workspace{border-radius:13px;min-height:calc(100dvh - 30px)}.workspace::before{inset:-7px;border-radius:19px}.sidebar{padding:20px 17px 8px;gap:18px}.brand b{font-size:15px}.brand-mark{inline-size:34px;block-size:40px}.brand small{font-size:7px}.sidebar-bottom .btn{font-size:9px;padding:8px;max-inline-size:109px;white-space:normal}.tabs{gap:0}.tab{font-size:12px;padding-inline:12px}.workspace-main{padding:0 17px 20px}.topbar{min-height:44px;gap:8px}.topbar .breadcrumb{font-size:9px}.save-indicator{font-size:9px;max-width:51%}.section-heading h1{font-size:21px}.section-heading p{font-size:10px}.section-heading>.btn{display:none}.journey-hero{display:flex;flex-direction:column;gap:27px;padding:17px 2px 24px}.journey-copy{inline-size:100%;padding:0}.journey-copy .eyebrow{font-size:10px}.wave-rule{margin-block:16px 18px;font-size:21px}.journey-copy h2{font-size:clamp(28px,7.9vw,43px);line-height:1.08;margin-block-end:18px}.journey-copy p{font-size:13px;max-inline-size:40ch;margin-block-end:22px}.journey-buttons .btn{font-size:12px;padding:11px 17px}.journey-buttons{gap:20px}.journey-ticket{max-inline-size:none;padding:18px 20px;transform:none;box-shadow:4px 4px 0 var(--soft)}.ticket-number{font-size:68px;margin-block:14px;gap:22px}.ticket-number span{font-size:12px;max-inline-size:none}.ticket-top{font-size:9px}.ticket-top>span:last-child{font-size:22px}.ticket-dates{font-size:12px}.ticket-route{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding-block:10px}.ticket-route>div{grid-template-columns:18px 1fr;gap:4px;padding-block:6px}.ticket-route b{font-size:12px}.ticket-route small{grid-column:2;font-size:10px}.ticket-bottom{font-size:9px;padding-block-start:12px}.ticket-bottom a{font-size:10px}.journey-meta{flex-direction:column;gap:6px;margin-block:10px 20px;font-size:10px}.itinerary-layout{display:block}.day-list{display:flex;gap:7px;padding:12px;max-height:none;border-inline-end:0}.day-pick{min-width:155px;width:155px;min-height:98px;padding:12px}.day-pick b{font-size:12px}.day-pick small{font-size:10px}.day{padding:19px 15px}.dayhead h3{font-size:20px}.day-nav .btn{font-size:11px;min-height:44px}.line{font-size:13px;gap:10px}.line .tm{width:53px;font-size:10px}.phead{padding:18px 16px}.phead h2{font-size:17px}.phead p{font-size:12px}.filterbar{padding:15px}.filterbar .search-field{min-width:0}.filterbar .filter-field{min-width:0}.filterbar input{font-size:12px}.letter{padding:15px}.letter-form-heading{padding:19px}.letter-group-fields{grid-template-columns:1fr;padding:0 18px 20px}.letter-group summary{padding:16px 18px}.letter .tools .btn{font-size:11px;flex:1 1 auto}.letter-review{font-size:11px}pre.out{padding:20px 15px;font-size:13px;max-height:1100px}.letter-paper-label{font-size:8px}.body .btn{font-size:11px}.rhead .rt{font-size:13px}.metric{padding:14px}.metric b{font-size:22px}.hero h2{font-size:34px}.document-list{padding-inline:14px}.warn{font-size:11px}.backup-card{padding:18px}.backup-card h2{font-size:17px}.upload-controls>div{min-width:0}.upload-controls select{min-width:0}.privacy-banner{flex-wrap:wrap}}
 @media print{body{padding:0;background:var(--white)}.workspace{border:0;max-inline-size:none}.workspace::before{display:none}.journey-hero,.journey-meta,.letter-form-heading,.lform,.letter-review,.letter-paper-label,.letter .tools,.warn{display:none!important}.workspace-main,.letter{padding:0}.lgrid{display:block}.letter{background:var(--white)}pre.out{max-height:none;overflow:visible;border:0;box-shadow:none;background:var(--white);color:var(--charcoal);font-size:11pt}.workspace{background:var(--white)}}
 
+
+.daytabs{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;margin:0 0 12px;scrollbar-width:thin}
+.daytab{flex:none;border:1px solid var(--rule,#d6d8dd);background:transparent;border-radius:999px;padding:5px 12px;font:inherit;font-size:12px;cursor:pointer;color:inherit;white-space:nowrap}
+.daytab.on{background:var(--sumi,#14203a);border-color:var(--sumi,#14203a);color:var(--paper,#fff)}
+.booked{font-size:12.5px;margin:0 0 12px;padding:9px 12px;border:1px solid var(--rule,#d6d8dd);border-radius:8px;line-height:1.5}
+.booked-tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:1px 7px;border-radius:999px;background:#2f7a52;color:#fff;margin-right:8px}
+.stops{margin:4px 0 6px}
+.stop{display:grid;grid-template-columns:78px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule,#d6d8dd)}
+.stop .tm{font-size:12.5px;font-weight:600;color:var(--indigo,#2c4a7c);padding-top:2px}
+.stop-body b{font-size:15px}
+.stop-body p{margin:3px 0 0;font-size:13.5px;line-height:1.5;opacity:.78}
+.stop-body p.solo{margin:0;opacity:1}
+.maplink{font-size:12px;margin-left:9px;white-space:nowrap}
+.hop{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:5px 0 5px 90px;font-size:12px;opacity:.75}
+@media(max-width:600px){.stop{grid-template-columns:58px 1fr}.hop{padding-left:70px}}
+.g-jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.g-jump a{font-size:12.5px;padding:5px 12px;border:1px solid var(--rule,#d6d8dd);border-radius:999px;text-decoration:none;color:inherit}
+.g-sec{margin:0 0 18px;scroll-margin-top:90px}
+.g-bar{height:5px;background:var(--rule,#d6d8dd);margin:0 18px}
+.g-bar i{display:block;height:100%;background:#2f7a52;transition:width .3s}
+.g-list{list-style:none;margin:0;padding:6px 18px 14px}
+.g-list li{border-bottom:1px solid var(--rule,#d6d8dd)}
+.g-list label{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:10px 0;cursor:pointer}
+.g-list input{margin-top:3px;width:16px;height:16px}
+.g-list b{display:block;font-size:14px}
+.g-list small{display:block;font-size:12.5px;opacity:.75;margin-top:2px;line-height:1.45}
+.g-steps{margin:0;padding:8px 18px 16px 40px}
+.g-steps li{padding:8px 0;border-bottom:1px solid var(--rule,#d6d8dd)}
+.g-steps b{display:block;font-size:14px}
+.g-steps span{display:block;font-size:13.5px;line-height:1.55;opacity:.82;margin-top:2px}
 </style>
 </head>
 <body>
@@ -488,7 +518,7 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
     <div class="privacy-banner"><p><b>Your workspace stays in this browser.</b> Notes and documents are not cloud-synced or encrypted. Browser cleanup can erase them. Keep a complete backup somewhere you trust.</p><button class="btn q" id="storageInfo">Manage</button></div>
   </section>
 
-  <section id="p_documents" class="tabpane hide" aria-label="Document library">
+  <div hidden aria-hidden="true" class="retired"><section id="p_documents" class="tabpane hide" aria-label="Document library">
     <span id="documents"></span>
     <div class="warn">Stored only in this browser on this device, not in a secure cloud vault. Files survive normal reloads, but browser data removal or eviction can delete them. Keep originals and regular backups.</div>
     <div class="panel">
@@ -498,7 +528,7 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
       <div class="filterbar"><div class="search-field"><label class="field-label" for="docSearch">Find a document</label><input id="docSearch" type="search" placeholder="Search by filename or visa reference…"></div><div class="filter-field"><label class="field-label" for="docCategory">Category</label><select id="docCategory"><option value="">All categories</option><option>Travel</option><option>Flights</option><option>Accommodation</option><option>Visa</option><option>Identity</option><option>Insurance</option><option>Other</option></select></div><p id="docCount" role="status"></p></div>
       <div id="documentList"><p class="loading-note">Opening your document library…</p></div>
     </div>
-  </section>
+  </section></div>
 
   <section id="p_backups" class="tabpane hide" aria-label="Backups and storage">
     <span id="backups"></span>
@@ -531,10 +561,15 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
   <!-- BUDGET -->
   <section id="p_budget" class="tabpane hide">
     <span id="budget"></span>
-    <div class="warn">Planning estimate, not live pricing or actual spending. The exchange rate is manual; original fare, visa-fee and customs assumptions are unverified. Check current prices and <a href="#visa">official sources</a> before relying on them.</div>
+    <div class="warn">Planning estimate, not live pricing or actual spending. The exchange rate is manual; original fare, visa-fee and customs assumptions are unverified. Check current prices before relying on them. Accommodation and flight figures are your actual bookings.</div>
     <div class="panel"><div class="phead"><h2>Budget</h2><p>Every line below comes from the itinerary rather than a guess at a daily average. Edit any figure, untick anything you would skip, and the totals move. Saved on this device.</p></div>
       <div id="budgetBody"></div>
     </div>
+  </section>
+
+  <section id="p_guide" class="tabpane hide" aria-label="Japan guide">
+    <span id="guide"></span>
+    <div id="guideBody"></div>
   </section>
 
   <!-- CALENDAR -->
@@ -542,11 +577,11 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
     <span id="cal"></span>
     <div class="journey-hero">
       <div class="journey-copy"><span class="eyebrow">JAPAN / AUTUMN 2026</span><div class="wave-rule" aria-hidden="true">∿∿∿∿∿∿</div><h2>LESS SEARCHING.<br><em>MORE JAPAN.</em><br>ONE DAY AT A TIME.</h2><p>Your route, your plans, your own little discoveries. Everything for the journey, in one place.</p><div class="journey-buttons"><a class="btn primary" href="#dayPlanner">Explore your days <span aria-hidden="true">↘</span></a><a class="text-link" href="#route">See the route ↗</a></div></div>
-      <div class="journey-ticket" aria-label="Trip at a glance"><div class="ticket-top"><span>THE JAPAN EDIT</span><span aria-hidden="true">JP</span></div><div class="ticket-number" id="homeDayTotal">17<span>DAYS OF DISCOVERY</span></div><div class="ticket-dates" id="homeTripDates"></div><div class="ticket-route" id="homeTripRoute"></div><div class="ticket-bottom"><span>YOUR ITINERARY</span><a href="#documents">Travel documents ↗</a></div></div>
+      <div class="journey-ticket" aria-label="Trip at a glance"><div class="ticket-top"><span>THE JAPAN EDIT</span><span aria-hidden="true">JP</span></div><div class="ticket-number" id="homeDayTotal">17<span>DAYS OF DISCOVERY</span></div><div class="ticket-dates" id="homeTripDates"></div><div class="ticket-route" id="homeTripRoute"></div><div class="ticket-bottom"><span>YOUR ITINERARY</span><a href="#guide">Japan guide ↗</a></div></div>
     </div>
     <div class="journey-meta"><span id="homeTripCount"></span><span>Plans are saved in this browser. <a href="#backups">Keep a backup ↗</a></span></div>
     <div class="panel itinerary-panel" id="dayPlanner" tabindex="-1">
-      <div class="phead"><h2>Your days in Japan</h2><p>Browse the original day-by-day plan, find a place, and keep your own notes. Accommodation suggestions are not bookings.</p></div>
+      <div class="phead"><h2>Your days in Japan</h2><p>Browse the original day-by-day plan, find a place, and keep your own notes. Every stop links to Google Maps, with travel time to the next.</p></div>
       <div class="filterbar"><div class="search-field"><label class="field-label" for="daySearch">Search your itinerary</label><input id="daySearch" type="search" placeholder="Try “ramen”, “Fuji” or “Shinkansen”…"></div><div class="filter-field"><label class="field-label" for="cityFilter">Base city</label><select id="cityFilter"><option value="">All cities & travel days</option></select></div><p id="dayCount" role="status"></p></div>
       <div class="itinerary-layout"><nav id="dayList" class="day-list" aria-label="Itinerary days"></nav><div class="day" id="dayDetail"></div></div>
       <details class="calendar-disclosure"><summary>Open the month calendar</summary><div class="cals" id="cals"></div><div class="legend" id="legend"></div></details>
@@ -554,7 +589,7 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
   </section>
 
   <!-- VISA -->
-  <section id="p_visa" class="tabpane hide">
+  <div hidden aria-hidden="true" class="retired"><section id="p_visa" class="tabpane hide">
     <span id="visa"></span>
     <div class="panel" style="margin-block-end:18px"><div class="phead panel-top"><div><h2>Document readiness <span id="sealPct">0%</span></h2><p><span id="sealTxt">0 / 0</span> required checklist items marked ready. This is your checklist, not visa approval.</p></div><div id="seal" aria-hidden="true"></div></div><div class="bar"><i id="bar" style="width:0%"></i></div><div class="filterbar"><div class="search-field"><label class="field-label" for="visaSearch">Find a checklist item (all sections)</label><input id="visaSearch" type="search" placeholder="Search passport, bank statement…"></div><div class="filter-field"><label class="field-label" for="visaFilter">Status</label><select id="visaFilter"><option value="">All items in section</option><option value="todo">To do · all sections</option><option value="done">Ready · all sections</option><option value="skip">Not applicable · all sections</option></select></div></div></div>
     <div class="warn">Visa rules for Indian nationals changed more than once recently, including the arrival of the online eVisa route. Confirm the current requirement and fee on the Embassy of Japan in India site before you submit. This is the assembly plan, not the legal source.</div>
@@ -577,7 +612,7 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
         <div class="panel"><div class="phead"><h2>Official links</h2><p>Verify everything here before you rely on it.</p></div><div id="links"></div></div>
       </div>
     </div>
-  </section>
+  </section></div>
 
   <!-- STAYS -->
   <section id="p_stays" class="tabpane hide">
@@ -589,7 +624,7 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
   </section>
 
   <!-- LETTER -->
-  <section id="p_letter" class="tabpane hide">
+  <div hidden aria-hidden="true" class="retired"><section id="p_letter" class="tabpane hide">
     <span id="letter"></span>
     <div class="warn"><b>Drafts, not verified applications.</b> Review every personal detail, declaration and enclosure before submitting. Booking notes do not prove reservations, and checklist completion does not prove visa or leave approval. Downloads are editable Word-compatible .doc files; replace all bracketed prompts.</div>
     <div class="panel">
@@ -607,8 +642,8 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
         </div>
       </div>
     </div>
-  </section>
-  <footer class="footer-note">Made for the journey, not the rush. &nbsp;·&nbsp; Original itinerary, prices, visa and customs notes are unverified planning guidance. Check current requirements, schedules and prices with official sources before booking or applying. <a href="#visa">Official links →</a></footer>
+  </section></div>
+  <footer class="footer-note">Made for the journey, not the rush. &nbsp;·&nbsp; Original itinerary, prices, visa and customs notes are unverified planning guidance. Check current requirements, schedules and prices with official sources before booking or applying. <a href="#guide">Japan guide →</a></footer>
 </div>
 </main>
 </div>
@@ -622,7 +657,7 @@ var store={
   async set(k,v){window.localStorage.setItem(k,v)}
 };
 var KEY="japan-2026-planner-v1";
-function emptyData(){return {name:"",trip:"19 Nov – 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{},budget:{},dayNotes:{},library:[],flightNotes:""}}
+function emptyData(){return {name:"",trip:"19 Nov – 05 Dec 2026",submit:"",drive:"",docs:{},letter:{},bookings:{},budget:{},dayNotes:{},library:[],flightNotes:"",guide:{}}}
 var D=emptyData();
 
 /* ---------- itinerary data ---------- */
@@ -636,7 +671,7 @@ var COAST={
  awaji:[[134.75,34.58],[135.0,34.40],[134.95,34.22],[134.62,34.25],[134.55,34.45]]
 };
 var BASES=[
-  {id:"tokyo", name:"Tokyo",       colour:"#2c4a7c", nights:5, stay:"Nui. Hostel & Bar Lounge, Kuramae", area:"Taito, Tokyo"},
+  {id:"tokyo", name:"Tokyo",       colour:"#2c4a7c", nights:5, stay:"Fukudaya Shinkan Rakuyo", area:"Higashi-Asakusa, near Minami-Senju"},
   {id:"fuji",  name:"Kawaguchiko", colour:"#3f7d6a", nights:2, stay:"K's House Mt Fuji, by the station", area:"Fujikawaguchiko, Yamanashi"},
   {id:"kyoto", name:"Kyoto",       colour:"#b93a26", nights:5, stay:"Len Kyoto Kawaramachi", area:"Shimogyo, Kyoto"},
   {id:"osaka", name:"Osaka",       colour:"#6b4a7c", nights:4, stay:"Hostel Mitsuwaya Osaka", area:"Nipponbashi, Osaka"}
@@ -655,149 +690,22 @@ var NODES=[
   {id:"kix",   label:"Kansai airport", lon:135.23,lat:34.43, r:7, dx:-30, dy:22}
 ];
 var LEGS=[
-  {from:"tokyo",to:"fuji", mode:"Fuji Excursion limited express", dur:"2 h 00", note:"Direct from Shinjuku. Reserve ahead."},
-  {from:"fuji",to:"kyoto", mode:"Bus, then Shinkansen", dur:"3 h 45", note:"Bus to Mishima 1 h 45, Shinkansen on to Kyoto. Sit right side, seats D or E, for Fuji."},
+  {from:"tokyo",to:"fuji", mode:"Highway bus from Busta Shinjuku", dur:"≈ 2 h", note:"Noon departure, tickets on the day or online."},
+  {from:"fuji",to:"kyoto", mode:"Bus to Mishima, then Shinkansen HIKARI 717", dur:"≈ 4 h 30", note:"Mishima 15:46 → Kyoto 17:37, booked. Right-hand side, seats D/E, for Fuji."},
   {from:"kyoto",to:"osaka", mode:"JR or Hankyu", dur:"30 min", note:"The shortest move of the trip. Barely counts as travelling."},
   {from:"osaka",to:"kix", mode:"Nankai or JR Haruka", dur:"40\u201375 min", note:"From Namba. Rapi:t is the fast one."}
 ];
 var SPURS=[["tokyo","kamakura","1 h"],["fuji","shizuoka","1 h"],["kyoto","uji","17 min"],["osaka","nara","45 min"],["osaka","himeji","1 h"]];
-var DAYS=[
- {date:"2026-11-19",base:"tokyo",title:"Arrive Tokyo",wake:"none",items:[
-   ["\u2014","No alarm, no plan. Whatever time you land, today is for nothing in particular."],
-   ["on arrival","Haneda. Visit Japan Web QR at immigration, Suica into Apple Wallet before you leave the plane. Haneda to Kuramae is one through-train, about 35 minutes."],
-   ["afternoon","Drop bags, walk the river. Dandelion Chocolate's factory caf\u00e9 is on the corner."],
-   ["21:00","Senso-ji lit up with nobody in it. Completely different place after nine."],
-   ["konbini","Your first 7-Eleven run. Egg sando, and the pudding."]]},
- {date:"2026-11-20",base:"tokyo",title:"Kamakura",wake:"mid",items:[
-   ["\u2014","Friday, and the only clean weekday in the Tokyo block \u2014 which is exactly why Kamakura goes here rather than on the holiday weekend."],
-   ["09:00","JR Yokosuka line to Kita-Kamakura, about an hour."],
-   ["10:15","Engaku-ji and Meigetsu-in off the platform, then the wooded path south into Kamakura proper."],
-   ["11:45","Tsurugaoka Hachimangu, up the wide approach through its torii."],
-   ["12:45","Komachi-dori for lunch on your feet \u2014 shirasu rice bowls, croquettes, purple sweet potato soft serve."],
-   ["14:00","Hokoku-ji: a small bamboo grove where you sit at the back with a bowl of matcha. Quieter than anything in Arashiyama, which is part of why you can skip Arashiyama."],
-   ["15:15","Enoden two stops to Hase. Hasedera, and the Great Buddha ten minutes away. The Hasedera illumination may only just be starting this early in the season."],
-   ["16:20","Enoden to Kamakura-Koh\u014dmae. Sunset over the sea, and on a clear evening Fuji sits on the horizon across the bay."],
-   ["19:30","Back in Tokyo. Nothing planned."]]},
- {date:"2026-11-21",base:"tokyo",title:"Cameras, then clothes",wake:"late",items:[
-   ["10:30","Map Camera, Shinjuku, at opening. Five floors, the deepest used inventory in Japan, graded honestly, tax-free with your passport. Used floors first."],
-   ["11:45","Kitamura, Alps Camera, Lemon-sha and Chuko Camera Box, all within the same blocks. Prices differ on identical glass, so this is where you compare."],
-   ["13:30","Nakano: Fujiya Camera and its used annex, then Nakano Broadway. Older manual glass is priced better here."],
-   ["15:30","Clothes. Aoyama and Ura-Harajuku: PUBLIC TOKYO for urban minimal, then Graphpaper, Auralee, Comoli, Lemaire, stein, Nanamica."],
-   ["17:30","Second-hand designer at Ragtag and Kindal, Harajuku. This is where the value is."],
-   ["19:30","Kikanbo in Kanda, spicy miso. Pork and chicken base."],
-   ["21:30","Omoide Yokocho, then Golden Gai. Albatross and Bar Araku take walk-ins and are used to foreigners. Cover \u00a5500\u20131,500; ask before you sit. Last trains around 00:30."]],
-   flag:"Saturday, and the first day of a three-day national holiday. Tokyo handles it better than anywhere \u2014 it is where everyone leaves from."},
- {date:"2026-11-22",base:"tokyo",title:"Flea market, Yanaka, tea, Shibuya at sunset",wake:"late",items:[
-   ["09:30","Sunday. Tomioka Hachimangu's antique flea market in Monzen-nakacho, fifteen minutes from Kuramae. Small, local, and the only market on this trip whose date actually lines up."],
-   ["11:30","Yanaka. Wooden houses, cats, the cemetery avenue in late colour. Yanaka Ginza for a menchi-katsu on the street."],
-   ["13:30","Tea, the non-viral kind: Tokyo Saryo in Sangenjaya, single-origin sencha hand-dripped at a nine-seat counter. Reserve well ahead \u2014 it is a Sunday."],
-   ["16:00","Shibuya Sky for sunset, around 16:25 at this point in November. Holiday-weekend sunset slots vanish the day they release, so book about a month out."],
-   ["17:30","If it sold out: Tokyu Plaza 17F rooftop, Sakura Stage terrace, Hikarie 11F, or the crossing from the Starbucks in Q-Front. All free, all good."],
-   ["19:30","Nonbei Yokocho, behind Shibuya station. Six-seat bars where you cannot avoid talking to whoever is next to you."]]},
- {date:"2026-11-23",base:"tokyo",title:"Slow west Tokyo",wake:"late",items:[
-   ["\u2014","Holiday Monday. Deliberately light, and deliberately not a day trip \u2014 everywhere outside the city is full today."],
-   ["11:00","Nakameguro and Daikanyama: 1LDK, Okura for indigo, Nanamica. I'm donut? before noon or the good flavours are gone."],
-   ["14:00","Shimokitazawa for vintage: New York Joe Exchange, Flamingo, Toyo Hyakkaten. Or Koenji, scruffier and cheaper."],
-   ["16:00","Meiji Jingu Gaien ginkgo avenue. Two weeks early for full gold, so expect green tipping to yellow rather than the postcard. Meiji Shrine through the forest afterwards."],
-   ["19:00","Ebisu Yokocho: communal tables, loud, the fastest way in Tokyo to end up drinking with strangers."],
-   ["23:00","The SG Club in Shibuya if you want one proper cocktail bar. Sleep in tomorrow; you are only moving as far as a mountain."]]},
- {date:"2026-11-24",base:"fuji",title:"Tokyo to Kawaguchiko",wake:"late",items:[
-   ["\u2014","Tuesday. The holiday crowds went home last night, which is the single best thing about these dates."],
-   ["10:00","Check out. Fuji Excursion from Shinjuku, two hours, reserved."],
-   ["12:00","Drop bags. Walk the town and scout the Lawson angle in daylight so you know exactly where to stand tomorrow at dawn \u2014 it is five minutes from the station."],
-   ["12:45","Hire an e-bike today, not tomorrow. Rental shops open around 08:30 and the sightseeing buses do not start until nine, so a bike collected this afternoon on a 24-hour rate is the only way to be mobile at dawn. \u00a51,500\u20132,500 for the electric; take it over the city bike \u2014 the lake throws a real headwind and you will be carrying glass. Ask the hostel first, several lend to guests."],
-   ["13:30","A short shore spin to find tomorrow's spots in daylight: Ubuyagasaki is about fifteen minutes west, Oishi Park twenty-five."],
-   ["15:00","Fujikyu train two stops to Shimoyoshida for Chureito Pagoda \u2014 400 steps up. On a Tuesday in late November you may have the platform close to yourself."],
-   ["16:20","Honcho street in Fujiyoshida on the way down: Fuji framed at the end of a sloping shopping street. Also your fallback if the Lawson view is screened."],
-   ["17:00","The lake maples are at their tail end around now \u2014 the Momiji Corridor on the north shore is worth ten minutes if you pass it."],
-   ["18:30","The Lawson after dark. Sign lit, mountain behind, nobody there. The better version of that photograph."],
-   ["20:00","Dinner, bath, early night. This is the one you set an alarm for."]]},
- {date:"2026-11-25",base:"fuji",title:"Fuji, all day",wake:"EARLY",items:[
-   ["06:20","The Lawson at first light, five minutes on foot from the station. The one genuinely early morning of the trip, and the reason you came. Fuji grows its own cap cloud as the ground warms, so this hour decides everything. Stand on the legal side; there are wardens."],
-   ["07:00","On the bike, west along the north shore. Ubuyagasaki in about fifteen minutes, Oishi Park in twenty-five, for the inverted reflection \u2014 the water is stillest just after sunrise and no bus is running yet."],
-   ["09:00","East to Oshino Hakkai, roughly 12 km and 40 minutes on the electric. Eight spring-fed ponds with the mountain behind, and you arrive before the coaches rather than with them."],
-   ["12:00","Ride back for a long lunch in town."],
-   ["13:30","Lake Yamanaka is the one leg the bike loses \u2014 20 km east, uphill, into the afternoon headwind. Take the Retro Bus, or skip it: you will already have three better versions of lake-and-Fuji by now."],
-   ["14:30","Mt Tenjo by the Kachi Kachi ropeway, which is a few minutes from the station, then walk down through the woods."],
-   ["17:00","Onsen. Yurari or Benifuji-no-Yu give you Fuji from the outdoor bath for about \u00a51,000 \u2014 which is how you get the ryokan feeling inside your budget. Both are a ride away, and the bike has lights; they are legally required after dark here and the police do check."],
-   ["gear","Backpack, both straps, nothing loose in the front basket \u2014 the vibration on these roads is worse than it looks, and a sling bag swings into the top tube on every turn. Tripod strapped vertically. At 830 m a dawn here is 0\u20132\u00b0C before wind chill, so proper gloves, and keep a spare battery against your body."]]},
- {date:"2026-11-26",base:"kyoto",title:"Optional second dawn, then Kyoto",wake:"optional",items:[
-   ["06:20","Only if yesterday clouded over. Insurance, not obligation \u2014 if the shot is in the bag, sleep until nine."],
-   ["11:00","Bus Kawaguchiko to Mishima, 1 h 45."],
-   ["optional","Fuji Dream Bridge detour: Kodama from Mishima to Shizuoka is 25 min, then a taxi each way. Two hours door to door, and only on a clear morning."],
-   ["13:40","Shinkansen to Kyoto. Right-hand side, seats D or E \u2014 Fuji fills the window for the first ten minutes out of Mishima."],
-   ["16:30","Check in. Nothing demanding today."],
-   ["19:00","Nishiki Market as it closes, then Pontocho alley for dinner."]]},
- {date:"2026-11-27",base:"kyoto",title:"The Eizan line into the northern mountains",wake:"late",items:[
-   ["\u2014","Friday, and first in the Kyoto block on purpose: northern Kyoto colours a week or two ahead of the city, so this day is best taken early and on a weekday."],
-   ["10:30","Demachiyanagi and the Eizan railway."],
-   ["10:50","Take the Kirara observation car if one comes \u2014 side-facing windows. Between Ichihara and Ninose the line runs through the momiji tunnel, where the train slows right down inside a canopy of maples."],
-   ["11:30","Kurama. The temple climb through exposed cedar roots to the summit, then over the ridge and down into Kibune \u2014 about an hour of walking, and the best hour of the Kyoto week."],
-   ["14:00","Kifune Shrine and its stone lantern staircase. Lunch in Kibune."],
-   ["15:30","Eizan back. If Rurikoin's autumn opening is running, change for the Yase branch \u2014 these dates give it a real chance where the old ones did not. Timed tickets, book ahead."],
-   ["17:00","Otherwise stop at Ichijoji for Shisen-do and Enko-ji, two small quiet temples with very good late colour."],
-   ["19:00","Ichijoji ramen street. Menya Gokkei for thick chicken paitan. Students, not tourists."]]},
- {date:"2026-11-28",base:"kyoto",title:"Uji all day, Fushimi Inari at night",wake:"late",items:[
-   ["\u2014","Saturday in peak season. Uji absorbs a weekend far better than central Kyoto does, and Inari after dark has no crowd at all \u2014 so today sidesteps the worst day of the week."],
-   ["10:30","JR south to Uji, twenty-five minutes from Kyoto station."],
-   ["11:15","Byodoin and the Phoenix Hall on its pond; the interior needs a separate timed ticket. Then Byodoin Omotesando for lunch: matcha soba, matcha everything."],
-   ["14:00","Matcha culture, hands on: grind your own tea in a stone mill at Fukujuen's Ujicha Kobo or the Chazuna tea museum. Then compare houses \u2014 Nakamura Tokichi for the famous parfait, Marukyu Koyamaen and Itoh Kyuemon for the serious leaf."],
-   ["16:00","Taiho-an, the municipal tea house. A formal ceremony for about \u00a5500, unhurried, nearly always empty. The one you will actually remember."],
-   ["17:15","The Uji river at dusk, then the JR Nara line back \u2014 Inari station is twelve minutes up."],
-   ["18:45","Fushimi Inari at night. The shrine never closes and never charges, and after dark the senbon torii are lit from within while the crowd is simply gone. Go as far as Yotsutsuji for the city below, take a torch, and turn back there \u2014 above that the path is genuinely dark and the boar signs are not decorative."],
-   ["21:30","Ramen on the way home."]]},
- {date:"2026-11-29",base:"kyoto",title:"Kinkaku-ji, Nijo, and Kiyomizu after dark",wake:"late",items:[
-   ["\u2014","Sunday in peak koyo. Today deliberately favours big sites that swallow a crowd over narrow ones that choke on it."],
-   ["10:30","Kinkaku-ji, the golden pavilion. Twenty minutes is enough \u2014 it is one view on a one-way loop, which keeps moving even when busy."],
-   ["11:30","Ryoan-ji's rock garden, fifteen minutes away, then Ninna-ji if you are enjoying yourself."],
-   ["14:00","Nijo Castle. Ninomaru Palace and the nightingale floors, which squeak deliberately underfoot. A big site on a big plot, so Sunday barely registers. Last entry around 16:00."],
-   ["16:30","Bus east. Coffee somewhere around Gion before the light goes."],
-   ["18:00","Kiyomizu-dera's autumn night opening. Lit hillside, the beam of light thrown into the sky, the whole veranda after dark. Verify the dates; these ones sit comfortably inside the usual window."],
-   ["21:00","Pontocho or Kiyamachi afterwards. You are twelve minutes' walk from your bed."]]},
- {date:"2026-11-30",base:"kyoto",title:"Tofuku-ji, Higashiyama, Eikan-do lit",wake:"late",items:[
-   ["10:00","Tofuku-ji on a Monday. The Tsutenkyo bridge over a valley of maples, exactly in its week and without the weekend crush \u2014 which is precisely why it sits here and not yesterday."],
-   ["12:00","North to Kodai-ji and its bamboo path, then Yasaka Shrine and Maruyama Park."],
-   ["14:00","Matcha, properly: Ippodo's Kaboku tearoom on Teramachi, brewed in front of you with the water temperature explained. Founded 1717 and still not a queue attraction."],
-   ["15:45","Gion \u2014 Hanamikoji, then Shirakawa lane along the canal, which is the prettier half and takes a fraction of the traffic."],
-   ["17:00","The Philosopher's Path at dusk and the Nanzen-ji aqueduct. Both outdoors and open when the halls have shut."],
-   ["18:00","Eikan-do's autumn illumination. The hillside lit and reflected in the pond \u2014 the best night photograph in Kyoto, and your last night here."],
-   ["20:30","Late dinner on Kiyamachi."]]},
- {date:"2026-12-01",base:"osaka",title:"Slow morning, then Osaka",wake:"late",items:[
-   ["\u2014","Nothing booked before eleven. Sixth day in Kyoto, thirteenth of the trip."],
-   ["11:00","A last coffee, or anything you missed. Kyoto station is fifteen minutes away whenever you decide to move."],
-   ["13:00","Train to Osaka. Thirty minutes. Barely counts as travelling."],
-   ["14:30","Check in at Nipponbashi."],
-   ["15:00","Den Den Town, directly below you. Second-hand electronics and camera gear, sometimes under Tokyo prices on older lenses. Kuromon Market next door."],
-   ["18:00","Shinsekai and Tsutenkaku, better after dark than in daylight. Kushikatsu in Janjan Yokocho \u2014 one dip in the communal sauce, no second dip, they will tell you."],
-   ["20:30","Dotonbori for the neon, briefly, then the smaller streets behind it."]]},
- {date:"2026-12-02",base:"osaka",title:"Himeji",wake:"mid",items:[
-   ["09:30","JR Special Rapid from Osaka, about an hour, \u00a51,520 each way and no Shinkansen surcharge. A Wednesday, which matters \u2014 the castle is a different place midweek."],
-   ["10:45","Out of the station and straight down the avenue. The castle sits at the end of it, framed, about fifteen minutes' walk. That approach is the photograph."],
-   ["11:00","Himeji Castle. The only great Japanese castle never burned, bombed or rebuilt in concrete \u2014 everything you climb through is original timber. The keep is six storeys of steep wooden stairs, so soft shoes."],
-   ["13:00","Koko-en next door: nine walled Edo gardens, very good late colour, and a tea house where you can sit with matcha looking at the moat."],
-   ["14:30","Bus to the Mount Shosha ropeway for Engyo-ji \u2014 wooden halls on a cedar ridge above the city, where The Last Samurai was filmed. Quiet, atmospheric, and the best of the day if the weather holds."],
-   ["17:00","Down and back to the station."],
-   ["18:45","Osaka. Dinner in Namba."]]},
- {date:"2026-12-03",base:"osaka",title:"Nara",wake:"mid",items:[
-   ["09:30","Forty-five minutes out, on a Thursday. Not dawn, but ahead of the coaches and without a weekend."],
-   ["10:30","Todai-ji and the Great Buddha, the largest wooden building you will ever stand inside."],
-   ["12:00","Kasuga Taisha's stone lantern paths through the forest."],
-   ["13:30","Nigatsu-do's terrace \u2014 free, open, and hardly anyone climbs to it. The whole valley from above."],
-   ["15:00","Nara Park holds its colour into December and the deer are genuinely everywhere. The most relaxed photography of the trip."],
-   ["18:00","Back to Osaka. Okonomiyaki, karaoke in Namba."]]},
- {date:"2026-12-04",base:"osaka",title:"Minoh Falls, then the last night",wake:"late",items:[
-   ["10:30","Hankyu from Umeda to Minoo, about thirty minutes. Out of the city and into a forested gorge in under an hour, on a Friday rather than a Sunday, which matters here \u2014 this is an Osaka local favourite."],
-   ["11:15","The walk up the valley is 2.7 km on a paved riverside path, about 45 minutes each way, uphill but gentle. The first week of December is exactly when this gorge peaks."],
-   ["12:15","Minoh Falls itself, 33 metres straight down into the pool."],
-   ["13:00","Momiji tempura on the way back \u2014 maple leaves salted, battered and fried, sold from stalls along the path. A local thing, not a tourist thing."],
-   ["15:00","Back in Namba. Desserts: Rikuro Ojisan cheesecake eaten warm, Gram Caf\u00e9 pancakes if you want the queue."],
-   ["18:30","Jinrui Mina Menrui in Esaka, or Menya Joroku."],
-   ["20:30","Ura-Namba on a Friday night, which is the best it gets. Standing bars and people who start conversations unprompted \u2014 your last and best night for making friends."]]},
- {date:"2026-12-05",base:null,title:"Fly home",wake:"mid",items:[
-   ["11:00","Nankai Rapi:t or JR Haruka from Namba to Kansai, 40\u201375 min. This assumes an afternoon departure; a 09:00 flight would mean leaving Namba at six."],
-   ["3 h before","Tax-free purchases can be inspected. Keep receipts sealed until past Japanese customs."],
-   ["","Fly KIX to Bengaluru, landing late on Saturday night. Sunday to recover. Declare honestly on arrival \u2014 the allowance is \u20b950,000 of goods."]]}
-];
+var PLACES={"haneda": {"n": "Haneda Airport Terminal 3", "lat": 35.545, "lng": 139.7686, "pid": "", "q": "Haneda Airport Terminal 3"}, "fukudaya": {"n": "Fukudaya Shinkan Rakuyo", "lat": 35.725687, "lng": 139.800843, "pid": "ChIJXXqJUu6OGGARQnz-c5IIfVs", "q": "Fukudaya Shinkan Rakuyo"}, "minamisenju": {"n": "Minami-Senju Station", "lat": 35.733, "lng": 139.799, "pid": "", "q": "Minami-Senju Station Tokyo"}, "ikuta": {"n": "Ikuta-an", "lat": 35.7125794, "lng": 139.797992, "pid": "ChIJGbvLMo2PGGAR3XQc7s5c35U", "q": "Ikuta-an"}, "hatoya_asa": {"n": "Hatoya Asakusa", "lat": 35.7145375, "lng": 139.8014641, "pid": "ChIJnXCWIE2NGGARgRGu9pKd8qM", "q": "Hatoya Asakusa"}, "matchamon": {"n": "MATCHAMON", "lat": 35.7152415, "lng": 139.7940924, "pid": "ChIJsZSdttWPGGARwVRXQdpIEd0", "q": "MATCHAMON"}, "maikoya": {"n": "MAIKOYA kimono tea ceremony", "lat": 35.711912, "lng": 139.792789, "pid": "ChIJXSg6T06NGGARsLq_Vmf8tnI", "q": "MAIKOYA kimono tea ceremony"}, "sabo": {"n": "SABO TOKYO", "lat": 35.6983838, "lng": 139.7840451, "pid": "ChIJw9usUZ6PGGAR7QFItf8tHw8", "q": "SABO TOKYO"}, "yodobashi": {"n": "Yodobashi Camera Shinjuku West", "lat": 35.6898832, "lng": 139.6979532, "pid": "ChIJh9EUPNGMGGAR1Q9xRKA2-TA", "q": "Yodobashi Camera Shinjuku West"}, "mapcam": {"n": "Map Camera", "lat": 35.6894431, "lng": 139.6972617, "pid": "ChIJ50R7W9GMGGAR4GZfxnwj2Qg", "q": "Map Camera"}, "uogashi_s": {"n": "Uogashi Nihon-Ichi Shinjuku", "lat": 35.6899828, "lng": 139.6972998, "pid": "ChIJ5-LVSdGMGGARO2nfNb18X8c", "q": "Uogashi Nihon-Ichi Shinjuku"}, "nakano": {"n": "Nakano Broadway", "lat": 35.7092475, "lng": 139.6656524, "pid": "ChIJg-7dspDyGGARvvDv4E5-tuE", "q": "Nakano Broadway"}, "shaka": {"n": "SHAKA SHAKA MATCHA", "lat": 35.664685, "lng": 139.7153047, "pid": "ChIJUSuKOX-LGGARVuXA1reZU3U", "q": "SHAKA SHAKA MATCHA"}, "gaien": {"n": "Gaien ginkgo avenue", "lat": 35.6727172, "lng": 139.7205745, "pid": "ChIJ_XxY_JqMGGARACDk4sraoN8", "q": "Gaien ginkgo avenue"}, "harajuku": {"n": "Aoyama & Ura-Harajuku", "lat": 35.669, "lng": 139.706, "pid": "", "q": "Ura-Harajuku Tokyo"}, "omoide": {"n": "Omoide Yokochō", "lat": 35.6927037, "lng": 139.6995778, "pid": "ChIJP9eKBdeMGGAR0zzBXJNVj5A", "q": "Omoide Yokochō"}, "tomioka": {"n": "Tomioka Hachiman-gū", "lat": 35.6717809, "lng": 139.799519, "pid": "ChIJK11I4BGJGGAR5mZswigcu58", "q": "Tomioka Hachiman-gū"}, "nakameguro": {"n": "Nakameguro & Daikanyama", "lat": 35.644, "lng": 139.6987, "pid": "", "q": "Nakameguro Station"}, "hatoya_sh": {"n": "Hatoya Shibuya", "lat": 35.6656199, "lng": 139.6925832, "pid": "ChIJvawMNhSNGGARbnFOONr4rLg", "q": "Hatoya Shibuya"}, "parco": {"n": "Shibuya Parco Rooftop Park", "lat": 35.6621425, "lng": 139.6984964, "pid": "ChIJs53qh1CNGGARKG56mOFIRC0", "q": "Shibuya Parco Rooftop Park"}, "shibuniwa": {"n": "Shibu Niwa, Tokyu Plaza 17F", "lat": 35.6575904, "lng": 139.7001518, "pid": "ChIJ6_D_mFeLGGARngYYFtoxW70", "q": "Shibu Niwa, Tokyu Plaza 17F"}, "midori": {"n": "Sushi no Midori Shibuya", "lat": 35.6583453, "lng": 139.6989875, "pid": "ChIJu9W4zVeLGGARXn0xCjGINF8", "q": "Sushi no Midori Shibuya"}, "nonbei": {"n": "Nonbei Yokochō", "lat": 35.6599499, "lng": 139.701533, "pid": "", "q": "Nonbei Yokocho Shibuya"}, "celavi": {"n": "CÉ LA VI Tokyo", "lat": 35.657427, "lng": 139.7001263, "pid": "ChIJgzpnLVCLGGARSJNqhxqG27U", "q": "CÉ LA VI Tokyo"}, "cloud": {"n": "Cloud Club Matcha", "lat": 35.6702824, "lng": 139.7697951, "pid": "ChIJd1OtenGLGGARP0elPg7hhXc", "q": "Cloud Club Matcha"}, "yamachan": {"n": "Yamachan", "lat": 35.6704227, "lng": 139.7684283, "pid": "ChIJLWCH2uCLGGARUkuU3LNTbSA", "q": "Yamachan"}, "gs": {"n": "Grand Seiko Flagship, Wakō", "lat": 35.6716709, "lng": 139.7650083, "pid": "ChIJu_gDf-aLGGARAhM3PUORTO8", "q": "Grand Seiko Flagship, Wakō"}, "age3": {"n": "Age.3 Ginza", "lat": 35.6727584, "lng": 139.7712945, "pid": "ChIJ57Hp_52LGGARvt4ghJExG_g", "q": "Age.3 Ginza"}, "hiiragi": {"n": "HIIRAGI Ginza", "lat": 35.669256, "lng": 139.7646987, "pid": "ChIJP8EnWgCLGGARS2qVyfDcHmE", "q": "HIIRAGI Ginza"}, "bicyura": {"n": "Bic Camera Yūrakuchō", "lat": 35.6753814, "lng": 139.7629088, "pid": "ChIJ0dtyq_qLGGARUzYbCCXz1Ic", "q": "Bic Camera Yūrakuchō"}, "suga": {"n": "Suga Shrine stairs", "lat": 35.684975, "lng": 139.72326, "pid": "ChIJFZmQijCNGGARTGdM5ATq-aw", "q": "Suga Shrine stairs"}, "nemuro": {"n": "Nemuro Hanamaru standing bar", "lat": 35.6837191, "lng": 139.766444, "pid": "ChIJfZGEvY-LGGAR4gLVhB82HzA", "q": "Nemuro Hanamaru standing bar"}, "busta": {"n": "Busta Shinjuku", "lat": 35.6884586, "lng": 139.7007051, "pid": "ChIJ94ZOcEyNGGARmtjvWVPSgsg", "q": "Busta Shinjuku"}, "tsurugaoka": {"n": "Tsurugaoka Hachiman-gū", "lat": 35.3259, "lng": 139.5564, "pid": "", "q": "Tsurugaoka Hachiman-gū"}, "komachi": {"n": "Komachi-dōri", "lat": 35.3215, "lng": 139.5513, "pid": "", "q": "Komachi-dori Kamakura"}, "hokokuji": {"n": "Hokoku-ji", "lat": 35.3197, "lng": 139.5683, "pid": "", "q": "Hokokuji Kamakura"}, "hasedera": {"n": "Hasedera", "lat": 35.3128, "lng": 139.5332, "pid": "", "q": "Hasedera Kamakura"}, "daibutsu": {"n": "Great Buddha, Kōtoku-in", "lat": 35.3167, "lng": 139.5357, "pid": "", "q": "Kotoku-in Kamakura"}, "kokomae": {"n": "Kamakura-Kōkōmae", "lat": 35.3062, "lng": 139.5004, "pid": "", "q": "Kamakura-Kokomae Station"}, "minatomirai": {"n": "Minato Mirai", "lat": 35.4555, "lng": 139.6366, "pid": "", "q": "Minato Mirai Yokohama"}, "osanbashi": {"n": "Ōsanbashi Pier", "lat": 35.4517, "lng": 139.6475, "pid": "", "q": "Osanbashi Pier Yokohama"}, "chinatown": {"n": "Yokohama Chinatown", "lat": 35.4437, "lng": 139.6455, "pid": "", "q": "Yokohama Chinatown"}, "ao": {"n": "Fuji Guest House Ao", "lat": 35.4954754, "lng": 138.766936, "pid": "ChIJP3-Fpi1hGWARUmz4VgNruX0", "q": "Fuji Guest House Ao"}, "lawson": {"n": "The Lawson", "lat": 35.4986175, "lng": 138.7671672, "pid": "ChIJv4lqKSheGWARVsvI_s4YHGE", "q": "The Lawson"}, "kawaguchikostn": {"n": "Kawaguchiko Station", "lat": 35.4985, "lng": 138.769, "pid": "", "q": "Kawaguchiko Station"}, "chureito": {"n": "Chureito Pagoda", "lat": 35.5011, "lng": 138.8013, "pid": "", "q": "Chureito Pagoda"}, "honcho": {"n": "Honcho street, Fujiyoshida", "lat": 35.4873, "lng": 138.8035, "pid": "", "q": "Honcho Street Fujiyoshida"}, "ubuyagasaki": {"n": "Ubuyagasaki & Oishi Park", "lat": 35.5251, "lng": 138.7438, "pid": "", "q": "Oishi Park Kawaguchiko"}, "oshino": {"n": "Oshino Hakkai", "lat": 35.4604, "lng": 138.8327, "pid": "", "q": "Oshino Hakkai"}, "kachikachi": {"n": "Kachi Kachi Ropeway", "lat": 35.4989, "lng": 138.7645, "pid": "", "q": "Mt. Fuji Panoramic Ropeway"}, "mishima": {"n": "Mishima Station", "lat": 35.1263, "lng": 138.911, "pid": "", "q": "Mishima Station"}, "kyotostn": {"n": "Kyoto Station", "lat": 34.9858, "lng": 135.7588, "pid": "", "q": "Kyoto Station"}, "hisaya": {"n": "Hisaya Shirakawa", "lat": 35.0062, "lng": 135.7745, "pid": "", "q": "Hisaya Shirakawa, 555-3 Karatohanacho, Higashiyama-ku, Kyoto"}, "pontocho": {"n": "Pontochō", "lat": 35.0055, "lng": 135.771, "pid": "", "q": "Pontocho Kyoto"}, "demachi": {"n": "Demachiyanagi Station", "lat": 35.0302, "lng": 135.7726, "pid": "", "q": "Demachiyanagi Station"}, "kurama": {"n": "Kurama-dera", "lat": 35.118, "lng": 135.7714, "pid": "", "q": "Kurama-dera"}, "kifune": {"n": "Kifune Shrine", "lat": 35.1215, "lng": 135.763, "pid": "", "q": "Kifune Shrine"}, "shisendo": {"n": "Shisen-dō, Ichijōji", "lat": 35.045, "lng": 135.7963, "pid": "", "q": "Shisendo Kyoto"}, "uji": {"n": "Uji Station", "lat": 34.8895, "lng": 135.8001, "pid": "", "q": "Uji Station Kyoto"}, "byodoin": {"n": "Byōdō-in", "lat": 34.8893, "lng": 135.8077, "pid": "", "q": "Byodoin Uji"}, "taihoan": {"n": "Taihō-an tea house", "lat": 34.8917, "lng": 135.8083, "pid": "", "q": "Taiho-an Uji"}, "inari": {"n": "Fushimi Inari Taisha", "lat": 34.9671, "lng": 135.7727, "pid": "", "q": "Fushimi Inari Taisha"}, "kinkakuji": {"n": "Kinkaku-ji", "lat": 35.0394, "lng": 135.7292, "pid": "", "q": "Kinkaku-ji"}, "ryoanji": {"n": "Ryōan-ji", "lat": 35.0345, "lng": 135.7182, "pid": "", "q": "Ryoanji Kyoto"}, "nijo": {"n": "Nijō Castle", "lat": 35.0142, "lng": 135.7481, "pid": "", "q": "Nijo Castle"}, "kiyomizu": {"n": "Kiyomizu-dera", "lat": 34.9949, "lng": 135.785, "pid": "", "q": "Kiyomizu-dera"}, "tofukuji": {"n": "Tōfuku-ji", "lat": 34.9765, "lng": 135.7737, "pid": "", "q": "Tofukuji Kyoto"}, "kodaiji": {"n": "Kōdai-ji", "lat": 35.0006, "lng": 135.7811, "pid": "", "q": "Kodaiji Kyoto"}, "ippodo": {"n": "Ippodo Tea, Teramachi", "lat": 35.0127, "lng": 135.7671, "pid": "", "q": "Ippodo Tea Kyoto Main Store"}, "shirakawa": {"n": "Gion Shirakawa", "lat": 35.0062, "lng": 135.7745, "pid": "", "q": "Gion Shirakawa"}, "nanzenji": {"n": "Nanzen-ji", "lat": 35.0112, "lng": 135.7934, "pid": "", "q": "Nanzenji Kyoto"}, "eikando": {"n": "Eikan-dō", "lat": 35.0149, "lng": 135.7943, "pid": "", "q": "Eikando Kyoto"}, "kiyamachi": {"n": "Kiyamachi-dōri", "lat": 35.006, "lng": 135.7708, "pid": "", "q": "Kiyamachi-dori Kyoto"}, "weeklygreen": {"n": "Weekly Green In Namba", "lat": 34.65695, "lng": 135.495967, "pid": "", "q": "Weekly Green In Namba, 2-7-23 Shikitsunishi, Naniwa-ku, Osaka"}, "dendentown": {"n": "Den Den Town", "lat": 34.658, "lng": 135.5066, "pid": "", "q": "Den Den Town Osaka"}, "shinsekai": {"n": "Shinsekai & Tsūtenkaku", "lat": 34.6525, "lng": 135.5063, "pid": "", "q": "Tsutenkaku"}, "dotonbori": {"n": "Dōtonbori", "lat": 34.6687, "lng": 135.5013, "pid": "", "q": "Dotonbori"}, "himejistn": {"n": "Himeji Station", "lat": 34.8267, "lng": 134.6906, "pid": "", "q": "Himeji Station"}, "himejijo": {"n": "Himeji Castle", "lat": 34.8394, "lng": 134.6939, "pid": "", "q": "Himeji Castle"}, "kokoen": {"n": "Kōko-en", "lat": 34.8379, "lng": 134.6905, "pid": "", "q": "Kokoen Garden Himeji"}, "engyoji": {"n": "Engyō-ji, Mount Shosha", "lat": 34.889, "lng": 134.662, "pid": "", "q": "Engyoji Himeji"}, "todaiji": {"n": "Tōdai-ji", "lat": 34.689, "lng": 135.8398, "pid": "", "q": "Todaiji Nara"}, "kasuga": {"n": "Kasuga Taisha", "lat": 34.6813, "lng": 135.8484, "pid": "", "q": "Kasuga Taisha"}, "nigatsudo": {"n": "Nigatsu-dō", "lat": 34.6893, "lng": 135.8443, "pid": "", "q": "Nigatsudo Nara"}, "minoostn": {"n": "Minoo Station", "lat": 34.8366, "lng": 135.47, "pid": "", "q": "Minoo Station"}, "minohfalls": {"n": "Minoh Falls", "lat": 34.8535, "lng": 135.4719, "pid": "", "q": "Minoh Falls"}, "uranamba": {"n": "Ura-Namba", "lat": 34.6655, "lng": 135.501, "pid": "", "q": "Ura-Namba Osaka"}, "namba": {"n": "Nankai Namba Station", "lat": 34.6625, "lng": 135.5014, "pid": "", "q": "Nankai Namba Station"}, "kix": {"n": "Kansai Airport Terminal 1", "lat": 34.432, "lng": 135.2304, "pid": "", "q": "Kansai International Airport Terminal 1"}};
+var GUIDE={"before": [["cancel_resol", "Cancel the duplicate Tokyo booking", "Resol Poshtel, Agoda 2054748507. Free until 18 Nov; 21% charge after."], ["cancel_len", "Cancel the duplicate Kyoto booking", "Len Kyoto Kawaramachi, Agoda 2055362020. Free until 24 Nov."], ["late_checkin", "Tell Fukudaya you arrive around 23:00", "Small hotels sometimes close reception. Email or call +81 3 5808 9368."], ["vjw", "Register on Visit Japan Web", "Immigration and customs QR codes. Screenshot both — don't rely on airport wifi."], ["checkin", "Online check-in for CX624", "Opens 48 hours before. Departs Bengaluru 01:20 on 19 Nov — the night of the 18th."], ["suica", "Add Suica to Apple Wallet and load ¥5,000", "Wallet → + → Transit card → Suica. If your card won't top it up, buy a Welcome Suica at Haneda."], ["esim", "Buy and install an eSIM", "Install on home wifi; switch it on after landing."], ["insurance", "Travel insurance, downloaded offline", "Policy number on your emergency sheet."], ["bookings", "Book the time-sensitive things", "MAIKOYA (24 Nov, 09:00), HIIRAGI Ginza (23 Nov), Shibuya Sky if you want the paid deck."], ["shinkansen", "Have the HIKARI 717 ticket ready", "26 Nov, Mishima 15:46 → Kyoto 17:37. Check how you collect or show it."], ["export_cert", "Export certificate for camera gear you're taking", "File at Bengaluru customs before departure, so you aren't taxed on your own lens coming back."], ["cash", "Carry ¥40,000–60,000 and notify your bank", "Many ramen counters and small shops are cash or ticket-machine only."], ["maps", "Download offline Google Maps", "Tokyo, Kawaguchiko, Kyoto and Osaka — for when the eSIM drops out."], ["offline_docs", "Offline copies of everything", "Passport, visa, e-ticket D8CTXP, four hotel confirmations."], ["adapter", "Plug adapter and power bank", "Japan uses Type A plugs at 100V. Power banks go in the cabin, never in checked bags."]], "arrival": [["Immigration", "Passport plus your Visit Japan Web immigration QR. Fingerprints and a photo at the booth."], ["Baggage and customs", "Collect bags, then scan the customs QR at the e-gates."], ["Phone", "Switch on the eSIM before you leave the terminal."], ["Cash", "Seven Bank or Japan Post ATMs in the arrivals hall take most Visa and Mastercard cards. Take out ¥20,000–30,000."], ["IC card", "Suica in your Wallet works immediately. Otherwise buy a Welcome Suica at the Keikyū or Monorail station."], ["To the hotel", "Keikyū Airport Line through to the Toei Asakusa Line, about 40 minutes to Asakusa — some trains need a change at Sengakuji. Then a taxi for the last 1.5 km. Trains run until around midnight, so don't linger; a taxi all the way from Haneda is ≈ ¥10,000+."], ["First night", "7-Eleven egg sandwich. Ikuta-an is open 24 hours if you still have energy."]], "leaving": [["The night before", "Pack. Keep tax-free purchases and receipts in your carry-on."], ["05:45", "Up and out. Weekly Green's checkout is by 10:00, so leaving early is fine."], ["06:15", "Nankai line from Namba to Kansai Airport, about 40–50 minutes."], ["By 07:15", "KIX Terminal 1. Cathay check-in closes at 08:25, 60 minutes before the 09:25 flight."], ["Customs", "Expect the tax-free export check here — see the tax-free section."], ["Bengaluru, 00:15 on 6 Dec", "Duty-free allowance is ₹50,000 of goods. Declare anything above it at the red channel and keep the invoices."]], "tax": [["What it is", "Japan charges 10% consumption tax. Visitors can get it back on goods they take home — at shops showing the tax-free sign, usually on purchases of ¥5,000 or more in one shop on one day."], ["What changed in November 2026", "Japan switched to a refund system from 1 November 2026, just before you land. You generally pay the full price including tax, the purchase is recorded against your passport, and the tax is refunded once customs confirms at departure that you're taking the goods out. This is new — ask at the till how that shop pays the refund, and expect the old sealed-bag rules may no longer apply."], ["At the till", "Show the physical passport, not a photo. The shop registers the purchase to it electronically."], ["Keep together", "Goods and receipts, in your carry-on, so customs can see them on 5 December."], ["Watches and lenses", "Ask whether the warranty is international. Some Japan-only Seiko models carry a Japan-only warranty."], ["Back in India", "₹50,000 duty-free allowance in total. Above it, expect roughly 38% duty on the excess. A watch and a lens together will likely cross it — declare it rather than risk it."]], "ic": [["What it is", "A rechargeable tap card. Suica and PASMO in Tokyo, ICOCA in Kansai — all accepted across the country, so one card does the whole trip."], ["How to use it", "Tap in at the gate, tap out at the other end, and the fare is deducted. No working out fares, no paper tickets."], ["Getting one — iPhone", "Add Suica in Apple Wallet before you fly and top up with your card. If your Indian card is declined for top-up, use cash at a station machine or ask at a 7-Eleven till."], ["Getting one — Android", "Indian-market Android phones usually can't run mobile Suica. Buy a Welcome Suica at Haneda: valid 28 days, no deposit, not refundable."], ["Topping up", "Station machines take cash. Keep at least ¥2,000 on it so you're never stuck at a gate."], ["Where it works on your route", "Tokyo trains, subways and buses; the Enoden in Kamakura; Yokohama; the Fujikyu line to Chureito; Kyoto's buses and subway; JR, Kintetsu, Hankyu and Nankai around Osaka. Small rural buses and a few minor lines may want cash — keep some coins."], ["What it doesn't cover", "Your Shinkansen reserved seat, limited-express surcharges and the highway buses — those are separate tickets."], ["Beyond trains", "Konbini, vending machines, coin lockers and many cafés take it too."]]};
+var GUIDE_IDS=GUIDE.before.map(function(g){return g[0]});
+var BOOKED={
+ tokyo:{n:"Fukudaya Shinkan Rakuyo",addr:"2-18-10 Higashiasakusa, Taito City, Tokyo 111-0025",tel:"+81 3 5808 9368",ref:"Agoda 2054749929",pk:"fukudaya"},
+ fuji:{n:"Fuji Guest House Ao",addr:"3128 Funatsu, Fujikawaguchiko 401-0301",tel:"+81 555 75 1660",ref:"Booking.com 5293.289.783",pk:"ao"},
+ kyoto:{n:"Hisaya Shirakawa",addr:"555-3 Karatohanacho, Higashiyama-ku, Gion, Kyoto 605-0069",tel:"+81 90-9708-4090",ref:"Agoda 2055360686",pk:"hisaya"},
+ osaka:{n:"Weekly Green In Namba",addr:"2-7-23 Shikitsu-nishi, Naniwa-ku, Osaka 556-0015",tel:"+81 6 6647 3719",ref:"Booking.com 5885.819.144",pk:"weeklygreen"}
+};
+var DAYS=[{"date": "2026-11-19", "base": "tokyo", "title": "Arrive Tokyo", "wake": "none", "flag": "You fly out of Bengaluru at 01:20 on the 19th — so you leave home on the evening of the 18th.", "items": [["01:20", "CX624 from Bengaluru to Hong Kong (09:35), then CX542 at 16:30 to Haneda. Times are local at each end.", null], ["21:15", "Immigration with your Visit Japan Web QR, then customs. Activate the eSIM; set up Suica if you haven't.", "haneda"], ["22:00", "Keikyu Airport Line through onto the Toei Asakusa Line to Asakusa, about 40 minutes. Then a short taxi (≈ ¥1,000): the hotel is 1.5 km north — too far to walk at 23:00 with bags.", null], ["22:50", "Check in. Confirm the late arrival with them in advance. Your nearest station is Minami-Senju, ten minutes' walk.", "fukudaya"], ["23:15", "7-Eleven — the egg sandwich. First konbini run of the trip.", null], ["23:30", "Optional — 24-hour ramen, about 20 minutes' walk. Or sleep.", "ikuta"]]}, {"date": "2026-11-20", "base": "tokyo", "title": "Kamakura, then Yokohama after dark", "wake": "mid", "flag": "Your only clean weekday in Tokyo — the long weekend starts tomorrow.", "items": [["09:00", "Optional, at opening — the queue forms before nine.", "hatoya_asa"], ["10:00", "Ginza line from Asakusa to Shimbashi, then the JR Yokosuka line to Kamakura. About 1h15.", null], ["11:30", "Straight off the train, up the wide approach. The late start skips Engaku-ji.", "tsurugaoka"], ["12:30", "Lunch on your feet: shirasu rice bowls, croquettes, purple sweet potato soft serve.", "komachi"], ["13:45", "A small bamboo grove with a bowl of matcha at the back.", "hokokuji"], ["15:00", "Enoden two stops to Hase. The autumn illumination is just starting this week.", "hasedera"], ["15:40", "Ten minutes' walk from Hasedera.", "daibutsu"], ["16:20", "Sunset over the bay, Fuji on the horizon if it's clear.", "kokomae"], ["17:30", "Enoden to Fujisawa, JR to Yokohama. The bay skyline after dark.", "minatomirai"], ["18:30", "The straight-on skyline shot across the water.", "osanbashi"], ["19:15", "Dinner.", "chinatown"], ["20:30", "Keikyū line straight through to Asakusa, then a short taxi home. Back around 21:45.", null]]}, {"date": "2026-11-21", "base": "tokyo", "title": "Cameras, watches, then clothes", "wake": "late", "flag": "First day of the Labour Thanksgiving long weekend. Shops open and busy.", "items": [["09:30", "Four single-origin matchas and good coffee. Then the JR Sōbu line straight to Shinjuku, about 25 minutes.", "sabo"], ["10:45", "Seiko watches — Presage, Alpinist — tax-free with your passport. Then Bic Camera next door to compare.", "yodobashi"], ["11:45", "Opens at 11:00. Used floors first; then Kitamura, Alps Camera and Lemon-sha in the same blocks.", "mapcam"], ["13:00", "Standing sushi — fast and excellent value.", "uogashi_s"], ["14:00", "Optional. Fujiya Camera, and the vintage watch dealers — to look, not to buy.", "nakano"], ["15:30", "The must. Closes at 18:00.", "shaka"], ["16:15", "Ten minutes' walk. Golden light around sunset.", "gaien"], ["17:00", "PUBLIC TOKYO, Graphpaper, Auralee, Comoli — then second-hand designer at Ragtag and Kindal.", "harajuku"], ["20:00", "Yakitori, then Golden Gai's tiny bars next door.", "omoide"], ["late", "Home: JR to Ueno, then the Hibiya line to Minami-Senju. Last trains around midnight.", null]]}, {"date": "2026-11-22", "base": "tokyo", "title": "Flea market, Shibuya and a club night", "wake": "late", "items": [["10:00", "Sunday antique market — cameras, ceramics, old workwear.", "tomioka"], ["12:00", "1LDK, Okura, Nanamica. I'm donut? may be sold out by now. The Hibiya line runs here direct from Minami-Senju.", "nakameguro"], ["14:30", "Matcha on the route. Closes 18:00.", "hatoya_sh"], ["15:30", "Take a Sushi no Midori queue ticket on LINE now — waits run past an hour.", null], ["15:45", "Free view from the 10th floor.", "parco"], ["16:20", "Free sunset deck. Hikarie 11F is the backup; Shibuya Sky if you booked it.", "shibuniwa"], ["18:00", "The best-value sushi sets in Tokyo.", "midori"], ["20:00", "Six-seat bars before the club. Some close on Sundays — wander till one's open.", "nonbei"], ["22:30", "Same building as Shibu Niwa; open until 04:00. Smart casual.", "celavi"], ["late", "Last trains around midnight. After that a taxi home is ≈ ¥8,000–10,000, or the first train around 05:00.", null]]}, {"date": "2026-11-23", "base": "tokyo", "title": "Ginza, and Your Name at dusk", "wake": "late", "flag": "Public holiday — Ginza's main street is pedestrian-only from about noon to five.", "items": [["12:00", "The Hibiya line runs from here straight to Ginza, about 20 minutes. Late start after the club.", "minamisenju"], ["12:15", "Go first: closes at 16:00 and the queue can run an hour. Takeaway only.", "cloud"], ["13:15", "Pork-broth ramen. Closed Sundays, which is why it's today.", "yamachan"], ["14:00", "Try them on. Out of budget, worth seeing.", "gs"], ["14:45", "The must. Fried cream sandwiches.", "age3"], ["15:30", "Kakigori and matcha. Dine-in is reservation only.", "hiiragi"], ["16:30", "Compare Seiko prices against Saturday's.", "bicyura"], ["17:15", "Optional — the Your Name steps at dusk.", "suga"], ["18:30", "Optional — sushi near Tokyo Station.", "nemuro"]]}, {"date": "2026-11-24", "base": "fuji", "title": "Asakusa morning, then Kawaguchiko", "wake": "mid", "flag": "The bus leaves at noon, so the afternoon lakeside scouting ride is gone. Chureito still makes sunset.", "items": [["07:45", "Check out and ask them to hold your bags.", "fukudaya"], ["08:00", "Opens at eight.", "matchamon"], ["09:00", "Booked. About 75 minutes.", "maikoya"], ["10:30", "Collect bags. Hibiya line to Akihabara, then the JR Sōbu line to Shinjuku — about 45 minutes.", "fukudaya"], ["12:00", "Highway bus to Kawaguchiko, about two hours. Tickets on the day or online.", "busta"], ["14:15", "Drop bags. Pick up an e-bike on a 24-hour rate — the shops open after tomorrow's sunrise.", "ao"], ["15:30", "Fujikyu line two stops to Shimoyoshida, then 400 steps. Sunset around 16:35.", "chureito"], ["16:50", "Fuji framed at the end of the street.", "honcho"], ["18:30", "After dark, sign lit, mountain behind. Five minutes from the station.", "lawson"], ["20:00", "Dinner, bath, early night. Tomorrow is the one early alarm.", null]]}, {"date": "2026-11-25", "base": "fuji", "title": "Fuji, all day", "wake": "EARLY", "items": [["06:20", "The Lawson at first light, five minutes on foot from the station. The one genuinely early morning of the trip, and the reason you came. Fuji grows its own cap cloud as the ground warms, so this hour decides everything. Stand on the legal side; there are wardens.", "lawson"], ["07:00", "On the bike, west along the north shore. Ubuyagasaki in about fifteen minutes, Oishi Park in twenty-five, for the inverted reflection — the water is stillest just after sunrise and no bus is running yet.", "ubuyagasaki"], ["09:00", "East to Oshino Hakkai, roughly 12 km and 40 minutes on the electric. Eight spring-fed ponds with the mountain behind, and you arrive before the coaches rather than with them.", "oshino"], ["12:00", "Ride back for a long lunch in town.", null], ["13:30", "Lake Yamanaka is the one leg the bike loses — 20 km east, uphill, into the afternoon headwind. Take the Retro Bus, or skip it: you will already have three better versions of lake-and-Fuji by now.", null], ["14:30", "Mt Tenjo by the Kachi Kachi ropeway, which is a few minutes from the station, then walk down through the woods.", "kachikachi"], ["17:00", "Onsen. Yurari or Benifuji-no-Yu give you Fuji from the outdoor bath for about ¥1,000 — which is how you get the ryokan feeling inside your budget. Both are a ride away, and the bike has lights; they are legally required after dark here and the police do check.", null], ["gear", "Backpack, both straps, nothing loose in the front basket — the vibration on these roads is worse than it looks, and a sling bag swings into the top tube on every turn. Tripod strapped vertically. At 830 m a dawn here is 0–2°C before wind chill, so proper gloves, and keep a spare battery against your body.", null]]}, {"date": "2026-11-26", "base": "kyoto", "title": "Optional dawn, then the HIKARI to Kyoto", "wake": "optional", "items": [["06:20", "Only if yesterday clouded over — your spare dawn. Otherwise sleep in.", "lawson"], ["10:00", "Check out.", "ao"], ["13:00", "Highway bus to Mishima, about 1h45 — comfortable margin for the 15:46.", "kawaguchikostn"], ["15:46", "Shinkansen HIKARI 717 to Kyoto, arriving 17:37. Booked. Sit on the right, seats D/E, for Fuji out of Mishima.", "mishima"], ["17:37", "Taxi or bus to Gion, about 15 minutes.", "kyotostn"], ["18:15", "Check in.", "hisaya"], ["19:30", "Dinner. Nishiki Market is closed by now.", "pontocho"]]}, {"date": "2026-11-27", "base": "kyoto", "title": "The Eizan line into the northern mountains", "wake": "late", "items": [["—", "Friday, and first in the Kyoto block on purpose: northern Kyoto colours a week or two ahead of the city, so this day is best taken early and on a weekday.", null], ["10:30", "Demachiyanagi and the Eizan railway.", "demachi"], ["10:50", "Take the Kirara observation car if one comes — side-facing windows. Between Ichihara and Ninose the line runs through the momiji tunnel, where the train slows right down inside a canopy of maples.", null], ["11:30", "Kurama. The temple climb through exposed cedar roots to the summit, then over the ridge and down into Kibune — about an hour of walking, and the best hour of the Kyoto week.", "kurama"], ["14:00", "Kifune Shrine and its stone lantern staircase. Lunch in Kibune.", "kifune"], ["15:30", "Eizan back. If Rurikoin's autumn opening is running, change for the Yase branch — these dates give it a real chance where the old ones did not. Timed tickets, book ahead.", null], ["17:00", "Otherwise stop at Ichijoji for Shisen-do and Enko-ji, two small quiet temples with very good late colour.", "shisendo"], ["19:00", "Ichijoji ramen street. Menya Gokkei for thick chicken paitan. Students, not tourists.", null]]}, {"date": "2026-11-28", "base": "kyoto", "title": "Uji all day, Fushimi Inari at night", "wake": "late", "items": [["—", "Saturday in peak season. Uji absorbs a weekend far better than central Kyoto does, and Inari after dark has no crowd at all — so today sidesteps the worst day of the week.", null], ["10:30", "JR south to Uji, twenty-five minutes from Kyoto station.", "uji"], ["11:15", "Byodoin and the Phoenix Hall on its pond; the interior needs a separate timed ticket. Then Byodoin Omotesando for lunch: matcha soba, matcha everything.", "byodoin"], ["14:00", "Matcha culture, hands on: grind your own tea in a stone mill at Fukujuen's Ujicha Kobo or the Chazuna tea museum. Then compare houses — Nakamura Tokichi for the famous parfait, Marukyu Koyamaen and Itoh Kyuemon for the serious leaf.", null], ["16:00", "Taiho-an, the municipal tea house. A formal ceremony for about ¥500, unhurried, nearly always empty. The one you will actually remember.", "taihoan"], ["17:15", "The Uji river at dusk, then the JR Nara line back — Inari station is twelve minutes up.", null], ["18:45", "Fushimi Inari at night. The shrine never closes and never charges, and after dark the senbon torii are lit from within while the crowd is simply gone. Go as far as Yotsutsuji for the city below, take a torch, and turn back there — above that the path is genuinely dark and the boar signs are not decorative.", "inari"], ["21:30", "Ramen on the way home.", null]]}, {"date": "2026-11-29", "base": "kyoto", "title": "Kinkaku-ji, Nijo, and Kiyomizu after dark", "wake": "late", "items": [["—", "Sunday in peak koyo. Today deliberately favours big sites that swallow a crowd over narrow ones that choke on it.", null], ["10:30", "Kinkaku-ji, the golden pavilion. Twenty minutes is enough — it is one view on a one-way loop, which keeps moving even when busy.", "kinkakuji"], ["11:30", "Ryoan-ji's rock garden, fifteen minutes away, then Ninna-ji if you are enjoying yourself.", "ryoanji"], ["14:00", "Nijo Castle. Ninomaru Palace and the nightingale floors, which squeak deliberately underfoot. A big site on a big plot, so Sunday barely registers. Last entry around 16:00.", "nijo"], ["16:30", "Bus east. Coffee somewhere around Gion before the light goes.", null], ["18:00", "Kiyomizu-dera's autumn night opening. Lit hillside, the beam of light thrown into the sky, the whole veranda after dark. Verify the dates; these ones sit comfortably inside the usual window.", "kiyomizu"], ["21:00", "Pontocho or Kiyamachi afterwards. You are twelve minutes' walk from your bed.", "pontocho"]]}, {"date": "2026-11-30", "base": "kyoto", "title": "Tofuku-ji, Higashiyama, Eikan-do lit", "wake": "late", "items": [["10:00", "Tofuku-ji on a Monday. The Tsutenkyo bridge over a valley of maples, exactly in its week and without the weekend crush — which is precisely why it sits here and not yesterday.", "tofukuji"], ["12:00", "North to Kodai-ji and its bamboo path, then Yasaka Shrine and Maruyama Park.", "kodaiji"], ["14:00", "Matcha, properly: Ippodo's Kaboku tearoom on Teramachi, brewed in front of you with the water temperature explained. Founded 1717 and still not a queue attraction.", "ippodo"], ["15:45", "Gion — Hanamikoji, then Shirakawa lane along the canal, which is the prettier half and takes a fraction of the traffic.", "shirakawa"], ["17:00", "The Philosopher's Path at dusk and the Nanzen-ji aqueduct. Both outdoors and open when the halls have shut.", "nanzenji"], ["18:00", "Eikan-do's autumn illumination. The hillside lit and reflected in the pond — the best night photograph in Kyoto, and your last night here.", "eikando"], ["20:30", "Late dinner on Kiyamachi.", "kiyamachi"]]}, {"date": "2026-12-01", "base": "osaka", "title": "Slow morning, then Osaka", "wake": "late", "items": [["—", "Nothing booked before eleven. Sixth day in Kyoto, thirteenth of the trip.", null], ["11:00", "A last coffee, or anything you missed. Kyoto station is fifteen minutes away whenever you decide to move.", null], ["13:00", "Train to Osaka. Thirty minutes. Barely counts as travelling.", "kyotostn"], ["14:30", "Check in at Nipponbashi.", "weeklygreen"], ["15:00", "Den Den Town, directly below you. Second-hand electronics and camera gear, sometimes under Tokyo prices on older lenses. Kuromon Market next door.", "dendentown"], ["18:00", "Shinsekai and Tsutenkaku, better after dark than in daylight. Kushikatsu in Janjan Yokocho — one dip in the communal sauce, no second dip, they will tell you.", "shinsekai"], ["20:30", "Dotonbori for the neon, briefly, then the smaller streets behind it.", "dotonbori"]]}, {"date": "2026-12-02", "base": "osaka", "title": "Himeji", "wake": "mid", "items": [["09:30", "JR Special Rapid from Osaka, about an hour, ¥1,520 each way and no Shinkansen surcharge. A Wednesday, which matters — the castle is a different place midweek.", null], ["10:45", "Out of the station and straight down the avenue. The castle sits at the end of it, framed, about fifteen minutes' walk. That approach is the photograph.", "himejistn"], ["11:00", "Himeji Castle. The only great Japanese castle never burned, bombed or rebuilt in concrete — everything you climb through is original timber. The keep is six storeys of steep wooden stairs, so soft shoes.", "himejijo"], ["13:00", "Koko-en next door: nine walled Edo gardens, very good late colour, and a tea house where you can sit with matcha looking at the moat.", "kokoen"], ["14:30", "Bus to the Mount Shosha ropeway for Engyo-ji — wooden halls on a cedar ridge above the city, where The Last Samurai was filmed. Quiet, atmospheric, and the best of the day if the weather holds.", "engyoji"], ["17:00", "Down and back to the station.", null], ["18:45", "Osaka. Dinner in Namba.", null]]}, {"date": "2026-12-03", "base": "osaka", "title": "Nara", "wake": "mid", "items": [["09:30", "Forty-five minutes out, on a Thursday. Not dawn, but ahead of the coaches and without a weekend.", null], ["10:30", "Todai-ji and the Great Buddha, the largest wooden building you will ever stand inside.", "todaiji"], ["12:00", "Kasuga Taisha's stone lantern paths through the forest.", "kasuga"], ["13:30", "Nigatsu-do's terrace — free, open, and hardly anyone climbs to it. The whole valley from above.", "nigatsudo"], ["15:00", "Nara Park holds its colour into December and the deer are genuinely everywhere. The most relaxed photography of the trip.", null], ["18:00", "Back to Osaka. Okonomiyaki, karaoke in Namba.", null]]}, {"date": "2026-12-04", "base": "osaka", "title": "Minoh Falls, then the last night", "wake": "late", "items": [["10:30", "Hankyu from Umeda to Minoo, about thirty minutes. Out of the city and into a forested gorge in under an hour, on a Friday rather than a Sunday, which matters here — this is an Osaka local favourite.", "minoostn"], ["11:15", "The walk up the valley is 2.7 km on a paved riverside path, about 45 minutes each way, uphill but gentle. The first week of December is exactly when this gorge peaks.", null], ["12:15", "Minoh Falls itself, 33 metres straight down into the pool.", "minohfalls"], ["13:00", "Momiji tempura on the way back — maple leaves salted, battered and fried, sold from stalls along the path. A local thing, not a tourist thing.", null], ["15:00", "Back in Namba. Desserts: Rikuro Ojisan cheesecake eaten warm, Gram Café pancakes if you want the queue.", null], ["18:30", "Jinrui Mina Menrui in Esaka, or Menya Joroku.", null], ["20:30", "Ura-Namba on a Friday night, which is the best it gets. Standing bars and people who start conversations unprompted — your last and best night for making friends. Pack before you go out — you're up at 05:45.", "uranamba"]]}, {"date": "2026-12-05", "base": null, "title": "Fly home", "wake": "EARLY", "items": [["05:45", "Up and out — the flight is at 09:25. Bags packed the night before.", "weeklygreen"], ["06:15", "Nankai line to Kansai Airport, about 40–50 minutes.", "namba"], ["07:15", "Cathay check-in closes 60 minutes before departure. Leave time for the tax-free export check at customs.", "kix"], ["09:25", "CX567 to Hong Kong (13:00), then CX623 at 20:45, landing Bengaluru 00:15 on Sunday 6 December.", null], ["arrival", "Bengaluru customs: duty-free allowance ₹50,000. Declare anything above it and keep the invoices handy.", null]]}];
 var CITYMAPS=[
  {id:"tokyo",name:"Tokyo",sub:"You sleep on the quiet river side and commute west. Nothing here is more than 35 minutes from Kuramae.",
   pts:[{n:"Kuramae",lon:139.792,lat:35.700,k:"stay"},{n:"Asakusa",lon:139.797,lat:35.715,k:"see"},
@@ -853,28 +761,7 @@ var CITYMAPS=[
   off:[["Minoh Falls","north","30 min from Umeda"],["Nara","east","45 min"],["Himeji","west","1 h"],["Kansai airport","southwest","40 min"],["Kyoto","northeast","30 min"]],
   routes:[{lbl:"Day 14 \u00b7 arrival afternoon and evening",c:"#b93a26",p:["Shin-Osaka","Namba / Nipponbashi","Den Den Town","Kuromon Market","Shinsekai","Dotonbori"]},{lbl:"Day 16 \u00b7 Minoh, then the last night",c:"#3f7d6a",p:["Umeda","Namba / Nipponbashi","Ura-Namba"]}]}
 ];
-var FLIGHTS={
- shape:"One ticket, two different airports: into Haneda on 18\u201319 November, out of Kansai on Saturday 5 December. Book it as a single multi-city fare, not two one-ways \u2014 an open jaw is usually priced close to a straight return, and two separate tickets are not.",
- rows:[
-  ["Singapore Airlines","BLR\u2013SIN\u2013HND out, KIX\u2013SIN\u2013BLR back","15\u201317 h","The best-run connection of the four. Singapore to Haneda is an overnight that lands early, so you get a full first day. Usually the most expensive of this group."],
-  ["Thai Airways","BLR\u2013BKK\u2013HND / KIX\u2013BKK\u2013BLR","15\u201318 h","Bangkok is the easiest transit in Asia and connection windows are generous. Often the sweet spot on price against comfort."],
-  ["Cathay Pacific","BLR\u2013HKG\u2013HND / KIX\u2013HKG\u2013BLR","15\u201318 h","Frequently the cheapest full-service option on this pair. Hong Kong transit is quick if the connection is tight."],
-  ["Malaysia Airlines","BLR\u2013KUL\u2013HND / KIX\u2013KUL\u2013BLR","16\u201319 h","Usually the lowest full-service fare. Layovers can be long; check before you commit."],
-  ["Air India","BLR\u2013DEL\u2013HND","14\u201316 h","Single carrier, domestic connection at Delhi T3. Outbound only \u2014 no Kansai service, so it does not fit the open jaw unless you fly home from Tokyo instead."],
-  ["Self-transfer on budget carriers","IndiGo to SIN, KUL or BKK, then Scoot or AirAsia X","18\u201324 h","The cheapest way there and the wrong one for this trip. Two separate tickets means no protection if the first leg slips, bags must be re-collected and re-checked, and you are carrying lenses home. Skip it."]],
- tips:[
-  ["Fly into Haneda, not Narita","Haneda to Kuramae is about 30 minutes. Narita is 60 to 90 and costs more. Worth paying a little extra for."],
-  ["Late-morning out of Kansai, not afternoon","To land in Bengaluru on Saturday evening you need to leave KIX around 10:00\u201312:00, so out of Namba by about 08:00. Later and you arrive home in the small hours of Sunday. The one morning where the alarm earns its keep."],
-  ["Book around June to August 2026","Three to five months out is usually the sweet spot on this route. You are clear of the late-December spike, but fares firm up from September."],
-  ["Hold, don't buy, until the visa lands","The consulate accepts a confirmed reservation. Do not pay for a non-refundable ticket before approval."],
-  ["Buy extra baggage online","You are coming home with lenses and clothes. Pre-purchased allowance is far cheaper than airport rates. Full-service carriers usually give 25\u201330 kg on Indian routes; confirm yours."],
-  ["Lenses and batteries in the cabin","Lithium batteries must fly in the cabin, not the hold. Cabin allowance is typically 7 kg and camera bags do get weighed, so wear the heavy coat and pack accordingly."]],
- caveat:"As far as I know there was no non-stop between Bengaluru and Japan as of mid-2026, though a Tokyo\u2013Bengaluru route has been talked about for years. Check before you assume a connection is required. All fares and routings here are indicative and move constantly.",
- links:[
-  ["Google Flights, outbound","https://www.google.com/travel/flights?q=Flights%20from%20BLR%20to%20HND%20on%202026-11-18"],
-  ["Google Flights, return","https://www.google.com/travel/flights?q=Flights%20from%20KIX%20to%20BLR%20on%202026-12-05"],
-  ["Skyscanner, multi-city","https://www.skyscanner.co.in/"]]
-};
+var FLIGHTS={"shape": "Cathay Pacific, booking reference D8CTXP, ticket 160 2136316580. Economy Light: one checked bag of 23 kg, one cabin bag of 7 kg.", "rows": [["CX624", "Bengaluru 01:20 → Hong Kong 09:35", "Thu 19 Nov", "Terminal 2 → Terminal 1. Seven-hour layover."], ["CX542", "Hong Kong 16:30 → Tokyo Haneda 21:15", "Thu 19 Nov", "Lands at Haneda Terminal 3."], ["CX567", "Osaka Kansai 09:25 → Hong Kong 13:00", "Sat 5 Dec", "Kansai Terminal 1. Leave Namba by 06:15."], ["CX623", "Hong Kong 20:45 → Bengaluru 00:15", "Sun 6 Dec", "Lands just after midnight."]], "tips": [["Check-in closes 60 minutes before", "At KIX that's 08:25 for the 09:25 departure."], ["Batteries in the cabin", "Spare batteries and power banks are banned from checked bags, and Cathay doesn't allow charging from power banks on board."], ["Cameras in the cabin", "Cathay's terms exclude liability for cameras and electronics in checked baggage."], ["Only one checked bag", "Economy Light is 1 × 23 kg. Buy extra allowance online in advance if the shopping goes well — far cheaper than at the airport."]], "caveat": "Times are local at each airport. Check the Cathay app the day before each flight for gate or schedule changes.", "links": [["Cathay Pacific — manage booking", "https://www.cathaypacific.com/"], ["Visit Japan Web", "https://services.digital.go.jp/en/visit-japan-web/"]]};
 var BUD={
  fx:0.57, cap:5000, flights:65000, foodDay:5500,
  nightly:{tokyo:4200,fuji:5500,kyoto:6000,osaka:4000},
@@ -933,45 +820,7 @@ var BUD={
  free:"Free, and among the best of the trip: Fushimi Inari at night, Chureito Pagoda, the Lawson, Oshino Hakkai, Meiji Shrine and the Gaien ginkgo, Yanaka, Tsurugaoka Hachimang\u016b, Nanzen-ji's aqueduct, the Philosopher's Path, Kifune Shrine, Nigatsu-d\u014d's terrace, Minoh Falls, and every yokoch\u014d you drink in."
 };
 var KINDS={stay:["#14203a","Base / station"],see:["#2c4a7c","Sights"],shop:["#8a6d3b","Shopping"],eat:["#48704f","Food"],night:["#b93a26","After dark"],peak:["#9a968c","Mountain"]};
-var STAYS=[
- {base:"tokyo",dates:"19\u201324 Nov, 5 nights",
-  note:"Kuramae and Nihonbashi put you on the quiet river side, twenty minutes from Shibuya and ten from Asakusa. Cheaper and far more pleasant than staying in Shinjuku.",
-  opts:[
-   ["Nui. Hostel & Bar Lounge, Kuramae","Shared dorm","\u00a53,500\u20135,000","The ground-floor bar is the single easiest place in Tokyo to end up in conversation. First choice for a solo traveller."],
-   ["Nui. Hostel, Kuramae","Private single or twin","\u00a59,000\u201313,000","Same bar, your own door."],
-   ["CITAN, Nihonbashi","Shared dorm","\u00a53,000\u20134,500","Basement bar, good coffee, slightly calmer than Nui."],
-   ["The Millennials Shibuya","Smart capsule","\u00a55,000\u20138,000","If you want privacy without hotel money and don't mind Shibuya noise."],
-   ["Hotel Graphy Nezu","Private single","\u00a58,000\u201312,000","Near Yanaka, quiet, good for the old-Tokyo day."]],
-  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Kuramae%2C+Tokyo&checkin=2026-11-19&checkout=2026-11-24&group_adults=1&no_rooms=1"],["Hostelworld, Tokyo","https://www.hostelworld.com/search?search_keywords=Tokyo%2C%20Japan"]]},
- {base:"fuji",dates:"24\u201326 Nov, 2 nights",
-  note:"Stay within walking distance of Kawaguchiko station, and the reason is one photograph: the Lawson is five minutes away on foot, which at 06:20 in the dark is the difference between walking out of the door and negotiating a taxi. The station also has the bus terminal, the Fujikyu line for Chureito, the bike shops and the only food open at night. Do not stay on the north shore \u2014 the view is better and everything else is worse. Your \u20b95,000 ceiling settles the rest. A proper Fuji-view ryokan runs \u00a520,000\u201390,000 for a solo occupant with meals, which is three to ten times over. Take the hostel both nights and buy the experience separately: a day-use onsen with the mountain from the outdoor bath costs about \u00a51,000, and the ryokan kaiseki can be replaced by one good dinner in town. You lose the private bath and keep the budget.",
-  opts:[
-   ["K's House Mt Fuji","Shared dorm","\u00a53,500\u20135,000","The traveller hostel here. Common room, Fuji from the terrace, people to talk to. Inside the ceiling."],
-   ["Kagelow Mt Fuji Hostel","Shared dorm","\u00a53,000\u20134,500","Cheaper, smaller, closer to the lake."],
-   ["K's House Mt Fuji","Private twin","\u00a58,000\u201312,000","Own room. The top of this band is right on your \u20b95,000 line, so check the rate before booking."],
-   ["Day-use onsen, separately","Bath only","\u00a51,000\u20131,500","Yurari or Benifuji-no-Yu, Fuji from the outdoor bath. This is how you get the ryokan feeling without the ryokan price."],
-   ["E-bike, hired on arrival","24-hour rate","\u00a51,500\u20132,500","Not a bed, but it belongs here. Collect it on day 6 \u2014 shops open at 08:30 and buses at nine, so a bike hired the night before is the only way to shoot dawn without a taxi."],
-   ["Ryokan, for reference","Half board, per person","\u00a520,000\u201390,000","What you are choosing not to do. Three to ten times over your nightly ceiling, and many refuse single occupancy anyway."]],
-  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Fujikawaguchiko&checkin=2026-11-24&checkout=2026-11-26&group_adults=1&no_rooms=1"],["Japanican, ryokan specialists","https://www.japanican.com/en/"],["Rakuten Travel","https://travel.rakuten.com/"]]},
- {base:"kyoto",dates:"26 Nov \u2013 1 Dec, 5 nights",
-  note:"Peak maple week, and two of your five nights are a Saturday and a Sunday. Kyoto sells out months ahead at roughly double its normal rate. Book this one first, before the flights if you have to. Stay around Kawaramachi or Sanjo so you can walk home from dinner.",
-  opts:[
-   ["Len Kyoto Kawaramachi","Shared dorm","\u00a53,500\u20135,500","Bar downstairs that locals also drink in. Central, social, the obvious solo pick."],
-   ["Piece Hostel Sanjo","Shared dorm","\u00a53,500\u20135,000","Cleaner and quieter than Len, still sociable."],
-   ["Piece Hostel Sanjo","Private single","\u00a59,000\u201314,000","Small private rooms, very well reviewed."],
-   ["Machiya townhouse guesthouse","Private room","\u00a512,000\u201320,000","A converted wooden townhouse. Worth one or two of the five nights."],
-   ["Mustard Hotel Kyoto","Private double","\u00a514,000\u201322,000","If you want a proper hotel for the back half."]],
-  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Kyoto&checkin=2026-11-26&checkout=2026-12-01&group_adults=1&no_rooms=1"],["Hostelworld, Kyoto","https://www.hostelworld.com/search?search_keywords=Kyoto%2C%20Japan"]]},
- {base:"osaka",dates:"1\u20135 Dec, 4 nights",
-  note:"Namba and Nipponbashi, as you asked. Den Den Town is underneath you and Ura-Namba is a five-minute walk. Four nights now, and it spans a Friday and a Saturday, so hold something refundable early.",
-  opts:[
-   ["Hostel Mitsuwaya Osaka","Shared dorm","\u00a53,000\u20135,000","Nipponbashi, runs guest events most evenings. Built for solo travellers."],
-   ["Hostel Mitsuwaya Osaka","Private twin","\u00a58,000\u201312,000","Same place, own room."],
-   ["J-Hoppers Osaka / Hostel 64","Shared dorm","\u00a52,800\u20134,500","Cheaper, quieter, slightly further out."],
-   ["First Cabin Namba","Cabin","\u00a55,000\u20137,500","Business-class cabin with a real bed and a big shared bath."],
-   ["Hotel Chuo Selene","Private single","\u00a56,000\u201310,000","Plain business hotel, excellent location, cheap."]],
-  links:[["Booking.com, 1 guest, your dates","https://www.booking.com/searchresults.html?ss=Namba%2C+Osaka&checkin=2026-12-01&checkout=2026-12-05&group_adults=1&no_rooms=1"],["Hostelworld, Osaka","https://www.hostelworld.com/search?search_keywords=Osaka%2C%20Japan"]]}
-];
+var STAYS=[{"base": "tokyo", "dates": "19–24 Nov · 5 nights · checked in late on arrival", "note": "Japanese-style single room, shared bathroom, near Minami-Senju station. Asakusa is 1.5 km south. Cancel the duplicate Resol Poshtel booking (Agoda 2054748507) before 18 November.", "opts": [["Fukudaya Shinkan Rakuyo", "Japanese-style room", "¥4,341", "Agoda 2054749929 · +81 3 5808 9368 · 2-18-10 Higashiasakusa, Taito City"]], "links": [["Open in Google Maps", "PLACE:fukudaya"]]}, {"base": "fuji", "dates": "24–26 Nov · 2 nights · check-in 15:00–20:00", "note": "Bunk in a mixed dorm, lower bed requested. About five minutes from Kawaguchiko station and the Lawson.", "opts": [["Fuji Guest House Ao", "Mixed dorm bunk", "¥6,480", "Booking.com 5293.289.783 · PIN 9533 · +81 555 75 1660"]], "links": [["Open in Google Maps", "PLACE:ao"]]}, {"base": "kyoto", "dates": "26 Nov – 1 Dec · 5 nights", "note": "Six-bed mixed dorm in Gion, right where your evenings are. Cancel the duplicate Len Kyoto Kawaramachi booking (Agoda 2055362020) before 24 November.", "opts": [["Hisaya Shirakawa", "6-bed mixed dorm", "¥8,405", "Agoda 2055360686 · +81 90-9708-4090 · 555-3 Karatohanacho, Gion"]], "links": [["Open in Google Maps", "PLACE:hisaya"]]}, {"base": "osaka", "dates": "1–5 Dec · 4 nights · check-in 15:00–22:00", "note": "Single room with private bathroom and kitchenette. Nearest exit with a lift is Daikokuchō Exit 6. You leave at 05:45 on the last morning.", "opts": [["Weekly Green In Namba", "Single, private bath", "¥4,698", "Booking.com 5885.819.144 · PIN 9110 · +81 6 6647 3719"]], "links": [["Open in Google Maps", "PLACE:weeklygreen"]]}];
 var BOOKLINKS=[
  ["Shibuya Sky \u2014 book the sunset slot","https://www.shibuya-scramble-square.com/sky/","Slots open roughly a month ahead and sunset goes first"],
  ["Eizan Railway","https://eizandensha.co.jp/","Timetables and the Kirara observation car"],
@@ -1081,8 +930,9 @@ function dl(name,content,mime){var b=new Blob([content],{type:mime||"text/plain;
 function docFile(name,html){dl(name,'<html xmlns:w="urn:schemas-microsoft-com:office:word"><meta charset="utf-8"><body style="font-family:Calibri,Arial;font-size:11pt;line-height:1.5">'+html+'</body></html>',"application/msword")}
 
 /* ---------- tabs ---------- */
-var TABS=[["cal","Itinerary"],["overview","Overview"],["route","Route & maps"],["budget","Budget"],["stays","Flights & stays"],["documents","Documents"],["visa","Visa checklist"],["letter","Letters"]];
+var TABS=[["cal","Itinerary"],["overview","Overview"],["route","Route & maps"],["budget","Budget"],["stays","Flights & stays"],["guide","Japan guide"]];
 var ICONS={
+  guide:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M8 7h8M8 11h6"/>',
   overview:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
   cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/>',
   route:'<path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Zm6-2v16m6-14v16"/>',
@@ -1098,9 +948,7 @@ var PAGE_INFO={
   route:["A journey across Honshu","Your bases, connections and city maps."],
   budget:["Make room for the memories.","One editable estimate. Every cost in view."],
   stays:["The way there. A place to stay.","Compare recommendations and record your own bookings."],
-  documents:["Your travel essentials","Tickets, paperwork and confirmations, in one place."],
-  visa:["One step closer to Japan.","Organise the paperwork. Verify the official requirements."],
-  letter:["Paperwork, without the repetition.","Draft a cover letter and a schedule from your trip."],
+  guide:["Know before you go.","The checklist, landing, leaving, tax-free and IC cards."],
   backups:["Keep a copy. Travel lighter.","Your browser is not a backup."]
 };
 var activePage="cal";
@@ -1117,6 +965,7 @@ function showPage(id,focus){
   if(id==="overview")renderOverview();
   if(id==="documents")renderLibrary();
   if(id==="cal"){renderDayList();renderItineraryHome()}
+  if(id==="guide")renderGuide();
   if(id==="backups")renderStorage();
   if(focus){$("#pageTitle").focus({preventScroll:true});window.scrollTo({top:0,behavior:"instant"})}
 }
@@ -1322,22 +1171,61 @@ function buildCal(){
   });
   $("#legend").innerHTML=BASES.map(function(b){return '<span><i class="sw" style="background:'+b.colour+'"></i>'+esc(b.name)+'</span>'}).join("")+'<span><i class="sw" style="background:#6d7480"></i>Travel day</span>';
 }
+
+function placeURL(p){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(p.pid?p.n:p.q)+(p.pid?"&query_place_id="+p.pid:"")}
+function dirURL(a,b,mode){
+  function end(p,k){return "&"+k+"="+encodeURIComponent(p.pid?p.n:(p.lat!=null?p.lat+","+p.lng:p.q))+(p.pid?"&"+k+"_place_id="+p.pid:"")}
+  return "https://www.google.com/maps/dir/?api=1"+end(a,"origin")+end(b,"destination")+"&travelmode="+mode;
+}
+function kmBetween(a,b){var r=Math.PI/180,dLat=(b.lat-a.lat)*r,dLng=(b.lng-a.lng)*r;var s=Math.pow(Math.sin(dLat/2),2)+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.pow(Math.sin(dLng/2),2);return 12742*Math.asin(Math.sqrt(s))}
+function hopEstimate(a,b){
+  if(a.lat==null||b.lat==null)return {mode:"transit",txt:""};
+  var d=kmBetween(a,b)*1.25;
+  if(d<1.6)return {mode:"walking",txt:"≈ "+Math.max(2,Math.round(d/4.6*60))+" min walk · "+d.toFixed(1)+" km"};
+  var m=d<45?8+d*2.1:15+d;m=Math.max(10,Math.round(m/5)*5);
+  var t=m>=60?Math.floor(m/60)+" h"+(m%60?" "+(m%60)+" min":""):m+" min";
+  return {mode:"transit",txt:"≈ "+t+" by train or bus · "+(d<10?d.toFixed(1):Math.round(d))+" km"};
+}
+function renderStops(d){
+  var h='<div class="stops">',prev=null;
+  d.items.forEach(function(it){
+    var p=it[2]?PLACES[it[2]]:null;
+    if(p&&prev&&prev!==p){
+      var e=hopEstimate(prev,p);
+      h+='<div class="hop"><span aria-hidden="true">↓</span>'+(e.txt?'<span>'+esc(e.txt)+'</span>':'')+'<a href="'+esc(dirURL(prev,p,e.mode))+'" target="_blank" rel="noreferrer">Directions ↗</a></div>';
+    }
+    h+='<div class="stop"><span class="tm mono">'+esc(it[0])+'</span><div class="stop-body">'+
+       (p?'<b>'+esc(p.n)+'</b><a class="maplink" href="'+esc(placeURL(p))+'" target="_blank" rel="noreferrer">Map ↗</a>':'')+
+       '<p'+(p?'':' class="solo"')+'>'+esc(it[1])+'</p></div></div>';
+    if(p)prev=p;
+  });
+  return h+'</div>';
+}
+function dayTabs(cur){
+  return '<div class="daytabs" role="tablist" aria-label="Days">'+DAYS.map(function(d,i){
+    var dt=new Date(d.date+"T00:00:00"),lbl=dt.toLocaleDateString("en-GB",{weekday:"short"})+" "+dt.getDate();
+    return '<button class="daytab'+(d.date===cur?' on':'')+'" role="tab" aria-selected="'+(d.date===cur)+'" data-tabday="'+d.date+'">'+lbl+'</button>';
+  }).join("")+'</div>';
+}
 function renderDay(){
   var d=dayOf(selDay),b=d.base?baseOf(d.base):null;
   var idx=DAYS.indexOf(d);
   var leg=null;
   if(idx>0){var prev=DAYS[idx-1];if(prev.base!==d.base){LEGS.forEach(function(l){if(l.to===(d.base||"kix"))leg=l})}}
   var wk=d.wake?'<span class="wake '+d.wake+'">'+(d.wake==='EARLY'?'early start':d.wake==='mid'?'09:00-ish':d.wake==='optional'?'alarm optional':d.wake==='none'?'no alarm':'late start')+'</span>':'';
-  var h='<div class="day-nav"><button class="btn q" id="prevDay"'+(idx===0?' disabled':'')+'>← Previous day</button><button class="btn q" id="nextDay"'+(idx===DAYS.length-1?' disabled':'')+'>Next day →</button></div><div class="dayhead"><h3 id="dayTitle" tabindex="-1">Day '+(idx+1)+' · '+esc(d.title)+wk+'</h3><span class="daymeta">'+esc(fmtDate(d.date))+(b?' · overnight in '+esc(b.name):' · flying home')+'</span></div>';
+  var h=dayTabs(d.date)+'<div class="day-nav"><button class="btn q" id="prevDay"'+(idx===0?' disabled':'')+'>← Previous day</button><button class="btn q" id="nextDay"'+(idx===DAYS.length-1?' disabled':'')+'>Next day →</button></div><div class="dayhead"><h3 id="dayTitle" tabindex="-1">Day '+(idx+1)+' · '+esc(d.title)+wk+'</h3><span class="daymeta">'+esc(fmtDate(d.date))+(b?' · overnight in '+esc(b.name):' · flying home')+'</span></div>';
   if(d.flag)h+='<p style="margin:0 0 10px;font-size:13px;color:var(--shu)">'+esc(d.flag)+'</p>';
   if(leg)h+='<p style="margin:0 0 10px;font-size:13px"><b>Getting there:</b> '+esc(leg.mode)+', '+esc(leg.dur)+'. '+esc(leg.note)+'</p>';
-  if(b)h+='<p style="margin:0 0 10px;font-size:12px"><b>'+(D.bookings[b.id]?'Your accommodation note:':'Suggested stay (not booked):')+'</b> '+esc(D.bookings[b.id]||b.stay)+' — '+esc(b.area)+'</p>';
-  h+=d.items.map(function(it){return '<div class="line"><span class="tm mono">'+esc(it[0])+'</span><span>'+esc(it[1])+'</span></div>'}).join("");
+  var bk=b?BOOKED[b.id]:null;
+  if(bk)h+='<div class="booked"><span class="booked-tag">Booked</span><b>'+esc(bk.n)+'</b> · '+esc(bk.addr)+' · '+esc(bk.tel)+' <a href="'+esc(placeURL(PLACES[bk.pk]))+'" target="_blank" rel="noreferrer">Map ↗</a></div>';
+  h+=renderStops(d);
   h+='<div class="day-note"><label class="field-label" for="dayNote">Your notes for this day</label><textarea id="dayNote" placeholder="A place to try, a reservation, something to remember…">'+esc(D.dayNotes[d.date]||"")+'</textarea><small class="muted">Saved in this browser. Included in your planner backup.</small></div>';
   $("#dayDetail").innerHTML=h;
   $("#prevDay").addEventListener("click",function(){if(idx>0)chooseDay(DAYS[idx-1].date,true)});
   $("#nextDay").addEventListener("click",function(){if(idx<DAYS.length-1)chooseDay(DAYS[idx+1].date,true)});
   $("#dayNote").addEventListener("input",function(e){D.dayNotes[d.date]=e.target.value;save()});
+  $$("#dayDetail [data-tabday]").forEach(function(t){t.addEventListener("click",function(){chooseDay(t.dataset.tabday,true)})});
+  var on=$("#dayDetail .daytab.on");if(on)on.scrollIntoView({block:"nearest",inline:"center",behavior:"instant"});
   renderDayList();
 }
 
@@ -1730,12 +1618,12 @@ function renderFlights(){
   h+='<p class="bnote" style="margin-top:12px;border-left:2px solid var(--shu);padding-left:11px">'+esc(FLIGHTS.caveat)+'</p>';
   h+='<div class="tools" style="margin-top:12px">'+FLIGHTS.links.map(function(l){
     return '<a class="btn" href="'+l[1]+'" target="_blank" rel="noreferrer" style="text-decoration:none">'+esc(l[0])+'</a>'}).join("")+'</div>';
-  h+='<div class="day-note"><label class="field-label" for="flightNotes">Your flight booking notes</label><textarea id="flightNotes" placeholder="Airline, dates, reservation reference and things to check…">'+esc(D.flightNotes)+'</textarea><small class="muted">A note is not a confirmed ticket. Keep confirmations in Documents.</small></div></div>';
+  h+='<div class="day-note"><label class="field-label" for="flightNotes">Your flight booking notes</label><textarea id="flightNotes" placeholder="Airline, dates, reservation reference and things to check…">'+esc(D.flightNotes)+'</textarea><small class="muted">Keep the e-ticket saved offline on your phone.</small></div></div>';
   $("#flightPanel").innerHTML=h;
   $("#flightNotes").addEventListener("input",function(e){D.flightNotes=e.target.value;save()});
 }
 function renderStays(){
-  var h='<div class="phead"><h2>Where you sleep</h2><p>'+BASES.length+' bases across '+nightCount()+' nights. Original recommendations, not bookings. Compare a dorm, private room and upgrade, then record your own accommodation details.</p></div>';
+  var h='<div class="phead"><h2>Where you sleep</h2><p>'+BASES.length+' bases across '+nightCount()+' nights. All four confirmed. Every night is inside your ₹5,000 ceiling.</p></div>';
   STAYS.forEach(function(s){
     var b=baseOf(s.base);
     h+='<div class="stay"><h3><span style="display:inline-block;width:10px;height:10px;background:'+b.colour+';margin-right:8px"></span>'+esc(b.name)+'</h3>';
@@ -1743,7 +1631,7 @@ function renderStays(){
     s.opts.forEach(function(o){
       h+='<div class="optrow"><span class="nm">'+esc(o[0])+'</span><span class="ty">'+esc(o[1])+'</span><span class="pr">'+esc(o[2])+' / night</span><span class="wy">'+esc(o[3])+'</span></div>';
     });
-    h+='<div class="tools" style="margin-top:12px">'+s.links.map(function(l){
+    h+='<div class="tools" style="margin-top:12px">'+s.links.map(function(l){if(l[1].indexOf("PLACE:")===0)l=[l[0],placeURL(PLACES[l[1].slice(6)])];
       return '<a class="btn" href="'+l[1]+'" target="_blank" rel="noreferrer" style="text-decoration:none">'+esc(l[0])+'</a>'}).join("")+'</div>';
     h+='<div style="margin-top:16px"><label class="field-label" for="stay_'+s.base+'">Your '+esc(b.name)+' accommodation note</label><input class="txt" id="stay_'+s.base+'" data-bk2="'+s.base+'" value="'+esc(D.bookings[s.base]||"")+'" placeholder="Once booked: property name and phone — feeds your schedule"></div>';
     h+='</div>';
@@ -1765,6 +1653,25 @@ function renderDrive(){
 }
 
 /* ---------- overview, navigation and daily notes ---------- */
+
+function renderGuide(){
+  var g=GUIDE,done=GUIDE_IDS.filter(function(k){return D.guide[k]}).length;
+  var h='<nav class="g-jump" aria-label="Guide sections"><a href="#g-before">Before you go</a><a href="#g-land">When you land</a><a href="#g-leave">Leaving Japan</a><a href="#g-tax">Tax-free</a><a href="#g-ic">IC card</a></nav>';
+  h+='<div class="panel g-sec" id="g-before"><div class="phead"><h2>Before you go</h2><p><span id="gProgress">'+done+' of '+GUIDE_IDS.length+'</span> done. Ticks are saved in this browser.</p></div><div class="g-bar"><i style="width:'+Math.round(done/GUIDE_IDS.length*100)+'%"></i></div><ul class="g-list">';
+  g.before.forEach(function(x){h+='<li><label><input type="checkbox" data-g="'+x[0]+'"'+(D.guide[x[0]]?' checked':'')+'><span><b>'+esc(x[1])+'</b><small>'+esc(x[2])+'</small></span></label></li>'});
+  h+='</ul></div>';
+  function steps(id,title,sub,list){var s='<div class="panel g-sec" id="'+id+'"><div class="phead"><h2>'+title+'</h2><p>'+sub+'</p></div><ol class="g-steps">';list.forEach(function(x){s+='<li><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></li>'});return s+'</ol></div>'}
+  h+=steps("g-land","When you land","Haneda Terminal 3 · Thursday 19 November · 21:15",g.arrival);
+  h+=steps("g-leave","Leaving Japan","Kansai Terminal 1 · Saturday 5 December · flight at 09:25",g.leaving);
+  h+=steps("g-tax","Tax-free shopping","How it works for you, and what changed this month",g.tax);
+  h+=steps("g-ic","IC card","Suica, PASMO, ICOCA — the card that runs the whole trip",g.ic);
+  $("#guideBody").innerHTML=h;
+  $$("#guideBody [data-g]").forEach(function(c){c.addEventListener("change",function(){
+    if(c.checked)D.guide[c.dataset.g]=1;else delete D.guide[c.dataset.g];save();
+    var n=GUIDE_IDS.filter(function(k){return D.guide[k]}).length;
+    $("#gProgress").textContent=n+" of "+GUIDE_IDS.length;$("#guideBody .g-bar i").style.width=Math.round(n/GUIDE_IDS.length*100)+"%";
+  })});
+}
 function renderItineraryHome(){
   $("#homeDayTotal").innerHTML=DAYS.length+'<span>DAYS OF DISCOVERY</span>';
   $("#homeTripDates").textContent=shortDate(DAYS[0].date)+" — "+shortDate(DAYS[DAYS.length-1].date);
@@ -1779,23 +1686,18 @@ function renderOverview(){
   $("#overviewMetrics").innerHTML=
     '<div class="metric"><span class="metric-label">The journey</span><b>'+DAYS.length+' days</b><small>'+nightCount()+' nights · '+BASES.length+' bases</small><a href="#cal">Explore itinerary →</a></div>'+
     '<div class="metric"><span class="metric-label">Estimated total</span><b>'+inr(T.all)+'</b><small>Includes flights & shopping · not spend</small><a href="#budget">Review budget →</a></div>'+
-    '<div class="metric"><span class="metric-label">Visa document readiness</span><b>'+R.done+' <span class="muted">/ '+R.total+'</span></b><small>Required items ready · not approval</small><a href="#visa">Continue checklist →</a></div>'+
-    '<div class="metric"><span class="metric-label">Saved documents</span><b>'+files+' '+(files===1?'file':'files')+'</b><small>'+(D.library.length>files?(D.library.length-files)+' missing files to reattach':'Available in this browser')+'</small><a href="#documents">Open library →</a></div>';
+    '<div class="metric"><span class="metric-label">Before you go</span><b>'+GUIDE_IDS.filter(function(k){return D.guide[k]}).length+' <span class="muted">/ '+GUIDE_IDS.length+'</span></b><small>Checklist items done</small><a href="#guide">Open the guide →</a></div>'+
+    '<div class="metric"><span class="metric-label">Stays</span><b>4 / 4</b><small>Every base booked</small><a href="#stays">See bookings →</a></div>';
   $("#overviewRoute").innerHTML=BASES.map(function(b,i){
     var days=DAYS.filter(function(d){return d.base===b.id}),first=days[0],last=days[days.length-1],next=DAYS[DAYS.indexOf(last)+1];
     return '<div class="route-stop"><span class="route-number">'+String(i+1).padStart(2,"0")+'</span><div><b>'+esc(b.name)+'</b><small>'+esc(shortDate(first.date).replace(" 2026",""))+' — '+esc(shortDate((next||last).date).replace(" 2026",""))+' · '+esc(b.area)+'</small></div><span class="night-pill">'+b.nights+' nights</span></div>';
   }).join("");
-  var todo=DOCS.find(function(d){return d.req&&d.s!=="G"&&rec(d.id).status!=="done"}),missingStay=BASES.find(function(b){return !(D.bookings[b.id]||"").trim()});
   var actions=[];
-  if(!D.name.trim())actions.push({id:"details",title:"Make this trip yours",text:"Add your passport name and submission target.",url:"#overview"});
-  if(todo)actions.push({id:"visa",title:"Next: "+todo.t,text:todo.id+" · Review the guidance and gather the document.",url:"#visa"});
-  else actions.push({title:"Review the official requirements",text:"All required items are marked ready. Check the current rules before submitting.",url:"#visa"});
-  if(missingStay)actions.push({title:"Record your "+missingStay.name+" stay",text:"Suggestions are not reservations. Add details once booked.",url:"#stays"});
-  else actions.push({title:"Review your schedule of stay",text:"All bases have accommodation notes. Check them against confirmations.",url:"#letter"});
-  if(actions.length<3)actions.push({title:"Keep an independent backup",text:"Include saved documents before switching device or browser.",url:"#backups"});
+  if(!D.name.trim())actions.push({id:"details",title:"Make this trip yours",text:"Add your name to the planner.",url:"#overview"});
+  GUIDE.before.filter(function(g){return !D.guide[g[0]]}).slice(0,3).forEach(function(g){actions.push({title:g[1],text:g[2],url:"#guide"})});
+  if(actions.length<3)actions.push({title:"Keep an independent backup",text:"Export your planner before switching device or browser.",url:"#backups"});
   $("#nextActions").innerHTML=actions.slice(0,3).map(function(a,i){return '<a class="next-action" href="'+a.url+'"'+(a.id?' data-next="'+a.id+'"':'')+'><span class="action-dot">'+(i+1)+'</span><span><b>'+esc(a.title)+'</b><small>'+esc(a.text)+'</small></span><span class="arrow" aria-hidden="true">↗</span></a>'}).join("");
   var details=$('[data-next="details"]');if(details)details.addEventListener("click",function(e){e.preventDefault();$("#tripSettings").open=true;$("#f_name").focus();$("#tripSettings").scrollIntoView({block:"center"})});
-  var visa=$('[data-next="visa"]');if(visa)visa.addEventListener("click",function(){curSec=todo.s;openDoc=todo.id;$("#visaSearch").value="";$("#visaFilter").value="";renderVisa()});
 }
 function dayMatches(d){
   var q=$("#daySearch").value.trim().toLowerCase(),city=$("#cityFilter").value,b=baseOf(d.base);
@@ -1948,6 +1850,7 @@ function validateData(input){
     if(!p[pair[0]])return;
     Object.keys(safeObject(p[pair[0]])).forEach(function(k){assert(pair[1].includes(k),"Unknown "+pair[0]+" field.");out[pair[0]][k]=cleanText(p[pair[0]][k])});
   });
+  if(p.guide){Object.keys(safeObject(p.guide)).forEach(function(k){assert(GUIDE_IDS.includes(k),"Unknown checklist item.");out.guide[k]=p.guide[k]?1:0})}
   if(p.budget){
     var b=safeObject(p.budget),budgetKeys=["fx","cap","foodDay","nightly","amt","off","shopLens","shopClothes"];
     Object.keys(b).forEach(function(k){assert(budgetKeys.includes(k),"Unknown budget field.");if(!["nightly","amt","off"].includes(k))out.budget[k]=validNumber(b[k],100000000,k==="fx"?0.001:0)});
@@ -2056,7 +1959,7 @@ async function resetWorkspace(){
 }
 function renderAll(){
   $$("[data-k]").forEach(function(e){e.value=D[e.dataset.k]||""});
-  buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();renderOverview();renderLibrary();renderStorage();renderItineraryHome();
+  buildMap();buildCal();renderDay();renderVisa();renderSeal();renderBudget();renderFlights();renderStays();buildLForm();renderLetter();renderDrive();renderOverview();renderLibrary();renderStorage();renderItineraryHome();renderGuide();
   if(anim.sel)selectNode(anim.sel);
 }
 async function copyText(text,success){

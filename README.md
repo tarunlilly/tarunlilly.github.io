@@ -1,4 +1,18 @@
-# Japan 2026 — your travel notebook (revision 2)
+# Japan 2026 — your travel notebook (revision 3)
+
+## What changed in revision 3
+
+- **Itinerary rebuilt hour by hour.** Day tabs across the top; every stop has a Google Maps link, and between stops an estimated walk or transit time with a Directions link. Estimates are straight-line approximations — the Directions link gives Google's live route.
+- **Tokyo reworked** around your picks: cameras and Seiko watches in Shinjuku, Shaka Shaka, the Ginza dessert run, Shibuya at sunset, CÉ LA VI, Kamakura with Yokohama after dark.
+- **Real bookings everywhere.** Fukudaya, Fuji Guest House Ao, Hisaya Shirakawa, Weekly Green In Namba, and the four Cathay segments under D8CTXP. Each stay shows on its days with address, phone and a map link.
+- **Japan guide** replaces the visa, letter and document pages: a before-you-go checklist (ticks saved), landing at Haneda, leaving from Kansai, tax-free shopping including the November 2026 refund system, and IC cards.
+- The visa, letter and document-library pages are retired: unreachable and hidden, but their data fields are still accepted so older backups and saved notes keep loading.
+
+Re-upload all files. The service worker cache is bumped so browsers fetch the new version.
+
+---
+
+## Earlier notes (revision 2)
 
 A reference-inspired, dependency-free version of the existing Japan planner. Vanilla HTML, CSS and JavaScript: no account, build step, package installation or backend.
 
