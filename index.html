@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
+<script>try{if(localStorage.getItem("jp-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Japan 2026 — Your travel workspace</title>
 <meta name="description" content="Route, day calendar, city maps, budget, visa file and consulate letter for a 16-night trip to Japan, 19 November to 5 December 2026.">
-<meta name="theme-color" content="#ed3c1f">
+<meta name="theme-color" content="#0f1115">
 <meta name="color-scheme" content="light dark">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png" sizes="192x192">
@@ -479,6 +480,40 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
 .g-steps li{padding:8px 0;border-bottom:1px solid var(--rule,#d6d8dd)}
 .g-steps b{display:block;font-size:14px}
 .g-steps span{display:block;font-size:13.5px;line-height:1.55;opacity:.82;margin-top:2px}
+
+:root{color-scheme:dark;
+ --backdrop:#0b0d10;--paper:#0f1115;--parchment:#0f1115;--frame:#0f1115;--card:#181b21;--soft:#1f232b;--white:#0f1115;
+ --sumi:#ebe9e3;--charcoal:#ebe9e3;--outline:#ebe9e3;--mute:#9a9da6;--rule:#2b3038;--letter-rule:#2b3038;
+ --indigo:#ff7a90;--shu:#ff6b85;--vermilion:#ff6b85;--action:#ff5c7a;--focus:#ff8aa0;
+ --moss:#3fb6bd;--success-soft:#11292b;--accent-soft:#341a22;
+ --hero:#1d2129;--hero-ink:#f3f1ea;--hero-mute:#a7abb4;--hero-line:#323844;
+ --preview:#11141a;--preview-ink:#ebe9e3;--shadow:none;
+ --map-land:#1e232b;--map-line:#3a414d;--water:#152230;--green:#18261f}
+:root[data-theme="light"]{color-scheme:light;
+ --backdrop:#e7e6e1;--paper:#f6f5f1;--parchment:#f6f5f1;--frame:#f6f5f1;--card:#ffffff;--soft:#efeee9;--white:#f6f5f1;
+ --sumi:#16181d;--charcoal:#16181d;--outline:#16181d;--mute:#5d616b;--rule:#dcdbd5;--letter-rule:#dcdbd5;
+ --indigo:#c42b49;--shu:#c42b49;--vermilion:#c42b49;--action:#c42b49;--focus:#c42b49;
+ --moss:#16797e;--success-soft:#dff0f0;--accent-soft:#f8e0e5;
+ --hero:#16181d;--hero-ink:#f6f5f1;--hero-mute:#b9bcc4;--hero-line:#3a3f49;
+ --preview:#ffffff;--preview-ink:#16181d;
+ --map-land:#e3e2dc;--map-line:#c9c7c0;--water:#cfdde6;--green:#d6e0d2}
+.btn.primary{background:var(--action);border-color:var(--action);color:var(--paper)}
+.tab.on{background:var(--shu);border-color:var(--shu);color:var(--paper)}
+.warn{background:var(--card)}
+.land{fill:var(--map-land);stroke:var(--map-line)}
+.insetBox,.coffBox{fill:var(--card)}
+.cpt{stroke:var(--card)}
+svg.cmap{background:var(--paper)}
+.cgreen{fill:var(--green);stroke:var(--map-line)}
+.cwater{fill:var(--water);stroke:var(--map-line)}
+.criver{stroke:var(--water)}
+.ccont{stroke:var(--map-line)}
+.booked-tag{background:var(--moss);color:var(--paper)}
+.g-bar i{background:var(--moss)}
+.daytab.on{background:var(--sumi);border-color:var(--sumi);color:var(--paper)}
+.stop .tm{color:var(--indigo)}
+.hdr-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+@media print{:root,:root[data-theme="light"]{color-scheme:light;--sumi:#111;--charcoal:#111;--paper:#fff;--card:#fff;--white:#fff;--backdrop:#fff;--mute:#555;--rule:#bbb;--indigo:#111;--shu:#111;--vermilion:#111}}
 </style>
 </head>
 <body>
@@ -494,7 +529,7 @@ body{background:var(--backdrop);padding:clamp(18px,3.7vw,58px);color:var(--sumi)
   <header class="topbar"><div class="breadcrumb">Japan 2026 <span aria-hidden="true">/</span><span id="crumb">Itinerary</span></div><span id="saveStatus" class="save-indicator" role="status">Opening your workspace…</span></header>
 
 <div class="shell">
-  <div class="section-heading"><div><h1 id="pageTitle" tabindex="-1">Your days in Japan.</h1><p id="pageSubtitle">One journey. Every detail, together.</p></div><button class="btn" id="quickBackup">↥ &nbsp; Back up trip</button></div>
+  <div class="section-heading"><div><h1 id="pageTitle" tabindex="-1">Your days in Japan.</h1><p id="pageSubtitle">One journey. Every detail, together.</p></div><span class="hdr-actions"><button class="btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">Light mode</button><button class="btn" id="quickBackup">↥ &nbsp; Back up trip</button></span></div>
   <section id="p_overview" class="tabpane hide" aria-label="Trip overview">
     <span id="overview"></span>
     <div class="hero">
@@ -1965,6 +2000,22 @@ function renderAll(){
 async function copyText(text,success){
   try{if(!navigator.clipboard)throw Error();await navigator.clipboard.writeText(text);toast(success)}catch(e){toast("Clipboard unavailable. Use the download button instead.")}
 }
+
+
+(function(){
+  var b=document.getElementById("themeToggle");if(!b)return;
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function paint(){var light=document.documentElement.getAttribute("data-theme")==="light";
+    b.textContent=light?"Night mode":"Light mode";b.setAttribute("aria-label",light?"Switch to night mode":"Switch to light mode");
+    if(meta)meta.setAttribute("content",light?"#f6f5f1":"#0f1115")}
+  b.addEventListener("click",function(){
+    var light=document.documentElement.getAttribute("data-theme")!=="light";
+    if(light)document.documentElement.setAttribute("data-theme","light");else document.documentElement.removeAttribute("data-theme");
+    try{localStorage.setItem("jp-theme",light?"light":"night")}catch(e){}
+    paint();
+  });
+  paint();
+})();
 
 /* ---------- boot ---------- */
 (async function(){
